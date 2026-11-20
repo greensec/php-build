@@ -48,7 +48,7 @@ via `workflow_dispatch`.
 | branch | suite | version | built | notes |
 |---|---|---|---|---|
 | 8.0 | bullseye | 1:8.0.30-31001~bullseye45 | 2026-11-20 | 8.0.30 + all Remi backports through GHSA-jm4m (FPM stdio fd); sury quilt series reduced to the ~89 packaging patches - upstream-fix entries already in the backports tree are skipped at build time |
-| 7.0-7.4, 5.6 | - | not built | - | packaging drift too large to auto-skip; php7.x was dropped from ntld-new, php7.4 on accounting is the only live EOL consumer |
+| 7.4 | bullseye | 1:7.4.33-37001~bullseye46 | 2026-11-20 | 7.4.33 + Remi backports; ~100 duplicate quilt entries skipped |
 
 ## Version scheme
 
