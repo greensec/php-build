@@ -44,6 +44,15 @@ jobs:
     container:
       image: "debian:${{ inputs.dist }}"
     steps:
+      - name: Point EOL suites at archive.debian.org
+        if: inputs.dist == 'bullseye'
+        run: |
+          sed -i -e '/bullseye-updates/d' -e '/bullseye-backports/d' \
+              -e 's|deb\.debian\.org/debian-security|archive.debian.org/debian-security|g' \
+              -e 's|deb\.debian\.org/debian|archive.debian.org/debian|g' \
+              -e 's|security\.debian\.org/debian-security|archive.debian.org/debian-security|g' \
+              /etc/apt/sources.list
+
       - name: Install git for checkout
         run: apt-get update -qq && apt-get install -y --no-install-recommends git ca-certificates
 
