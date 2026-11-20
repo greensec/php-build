@@ -75,7 +75,9 @@ cd "$WORKDIR"
 if [ "$src_type" = phpnet ]; then
     # newest sury source package for SRC_DIST already contains the current
     # upstream tarball - rebuilding it on DIST is the whole job.
-    apt-get source --download-only -t "$SRC_DIST" "$PKG"
+    # pkg/suite syntax, not -t: -t validates against binary lists and we only
+    # carry deb-src for SRC_DIST.
+    apt-get source --download-only "${PKG}/${SRC_DIST}"
     dsc=$(ls "${PKG}"_*.dsc | head -n1)
     [ -n "$dsc" ] || { echo "ERROR: no source package for $PKG in $SRC_DIST" >&2; exit 1; }
     dpkg-source -x "$dsc" src
@@ -92,7 +94,7 @@ else
     [ -n "${brname:-}" ] || { echo "ERROR: no security-backports branch for $PHP_BRANCH" >&2; exit 1; }
     git clone --depth 50 --single-branch --branch "$brname" "$SEC_GIT" src
 
-    apt-get source --download-only -t "$DIST" "$PKG"
+    apt-get source --download-only "${PKG}/${DIST}"
     dsc=$(ls "${PKG}"_*.dsc 2>/dev/null | head -n1)
     if [ -n "$dsc" ]; then
         dpkg-source -x "$dsc" pkgsrc
