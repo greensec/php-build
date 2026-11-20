@@ -334,9 +334,10 @@ for hook in "$ROOT/prepare/$PKG.sh" "$ROOT/prepare/all.sh"; do
     fi
 done
 
-# repo-local patches appended to the quilt series
+# repo-local patches appended to the quilt series (only *.patch files -
+# pre.d/ and series.drops are consumed earlier)
 if [ -d "$ROOT/patches/$PKG" ]; then
-    for x in "$ROOT/patches/$PKG"/*; do
+    for x in "$ROOT/patches/$PKG"/*.patch; do
         [ -e "$x" ] || continue
         case "$(basename "$x")" in
             legacy_*) [ -d "$ROOT/debian.$DIST" ] || continue ;;
@@ -346,6 +347,10 @@ if [ -d "$ROOT/patches/$PKG" ]; then
         cp "$x" debian/patches/
         basename "$x" >> debian/patches/series
     done
+    # apply the appended entries - appending to the series alone leaves
+    # them unapplied, so they would ship in the .dsc but not compile
+    export QUILT_PATCHES=debian/patches
+    quilt push -a
 fi
 
 # --- changelog + build ---------------------------------------------------------
