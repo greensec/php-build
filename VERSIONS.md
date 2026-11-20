@@ -49,6 +49,7 @@ via `workflow_dispatch`.
 |---|---|---|---|---|
 | 8.0 | bullseye | 1:8.0.30-31001~bullseye45 | 2026-11-20 | 8.0.30 + all Remi backports through GHSA-jm4m (FPM stdio fd); sury quilt series reduced to the ~89 packaging patches - upstream-fix entries already in the backports tree are skipped at build time |
 | 7.4 | bullseye | 1:7.4.33-37001~bullseye46 | 2026-11-20 | 7.4.33 + Remi backports; ~100 duplicate quilt entries skipped |
+| 7.1 | bullseye | 7.1.33-86001~bullseye53 | 2026-11-20 | 7.1.33 + Remi backports |
 
 ## Version scheme
 
