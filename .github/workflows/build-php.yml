@@ -57,7 +57,7 @@ jobs:
         run: apt-get update -qq && apt-get install -y --no-install-recommends git ca-certificates
 
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
 
       - name: Build package
         run: ./scripts/build.sh
