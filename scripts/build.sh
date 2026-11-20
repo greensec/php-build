@@ -167,6 +167,8 @@ else
     cp -a pkgsrc/debian sec-src/debian
     cd sec-src
     ./buildconf --force
+    # quilt defaults to ./patches - debian keeps them in debian/patches
+    export QUILT_PATCHES=debian/patches
     # quilt patches were written for the last sury tarball - apply; failure is
     # reported verbatim for manual refresh via patches/$PKG/
     if ! quilt push -a; then
