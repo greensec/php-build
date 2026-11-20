@@ -1,0 +1,28 @@
+name: deploy site
+
+on:
+  push:
+    branches: [main]
+    paths: ["site/**"]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+
+      - name: Push site/ to gh-pages root
+        run: |
+          git fetch origin gh-pages
+          git worktree add /tmp/pages gh-pages
+          cp -f site/* /tmp/pages/
+          cd /tmp/pages
+          git add .
+          git diff --cached --quiet && { echo "no changes"; exit 0; }
+          git -c user.name=github-actions -c user.email=actions@github.com \
+            commit -m "Sync site/ from main"
+          git push origin gh-pages
