@@ -235,7 +235,7 @@ missing=$(printf '%s\n' "$missing" | sed -n 's/.*[Uu]nmet build dependencies: //
            END { print g }' \
     | while IFS= read -r grp; do
         for cand in $(printf '%s' "$grp" | tr '|' '\n' | sed -e 's/^[[:space:]]*//; s/[[:space:]]*$//' -e '/^$/d'); do
-            if apt-cache policy "$cand" 2>/dev/null | grep -qE 'Candidate: [^(]'; then
+            if apt-cache policy "$cand" 2>/dev/null | awk '/Candidate:/{e=($2!="(none)")} END{exit !e}'; then
                 printf '%s\n' "$cand"
                 break
             fi
@@ -243,7 +243,7 @@ missing=$(printf '%s\n' "$missing" | sed -n 's/.*[Uu]nmet build dependencies: //
             prov=$(apt-cache showpkg "$cand" 2>/dev/null \
                 | awk '/^Reverse Provides:/{p=1;next} p&&NF{print $1}' \
                 | while read -r pr; do
-                    apt-cache policy "$pr" 2>/dev/null | grep -qE 'Candidate: [^(]' \
+                    apt-cache policy "$pr" 2>/dev/null | awk '/Candidate:/{e=($2!="(none)")} END{exit !e}' \
                         && { echo "$pr"; break; }
                   done)
             if [ -n "$prov" ]; then
