@@ -39,9 +39,16 @@ Versions above sury's last bullseye builds (8.2.35 / 8.3.36 / 8.4.27 /
 ## security branches (EOL, php-src-security backports)
 
 `conf/branches.map` maps 5.6, 7.0-7.4, 8.0 to the `security`
-strategy (remicollet/php-src-security + last sury packaging). Not built
-or published yet - build individually via `workflow_dispatch` once
-needed. The `all` matrix only covers `phpnet` branches.
+strategy (remicollet/php-src-security + last sury packaging). The `all`
+matrix only covers `phpnet` branches; security builds run individually
+via `workflow_dispatch`.
+
+### security builds
+
+| branch | suite | version | built | notes |
+|---|---|---|---|---|
+| 8.0 | bullseye | 1:8.0.30-31001~bullseye45 | 2026-11-20 | 8.0.30 + all Remi backports through GHSA-jm4m (FPM stdio fd); sury quilt series reduced to the ~89 packaging patches - upstream-fix entries already in the backports tree are skipped at build time |
+| 7.0-7.4, 5.6 | - | not built | - | packaging drift too large to auto-skip; php7.x was dropped from ntld-new, php7.4 on accounting is the only live EOL consumer |
 
 ## Version scheme
 
