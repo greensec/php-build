@@ -318,7 +318,22 @@ export DEB_CFLAGS_STRIP="-g -g3 -ggdb" DEB_CXXFLAGS_STRIP="-g -g3 -ggdb"
 DEB_BUILD_OPTIONS="noautodbgsym nocheck nodocs" \
     dpkg-buildpackage -j"$(nproc)" -d -us -uc -b
 
+# --- php-defaults metapackage -------------------------------------------------
+# the packaging Depends on php-common (>= 2:95~) which no target dist ships
+# (buster has 2:69, bullseye 2:76) - rebuild sury's php-defaults per DIST so
+# the repo is self-contained. It produces php-common + the php-* metas, all
+# arch=all, in seconds. Static ~DIST version: identical across branch builds,
+# so the publisher's skip_duplicates keeps the first copy.
+echo ">>> building php-defaults for $DIST"
+mkdir -p "$WORKDIR/defaults"
+cd "$WORKDIR/defaults"
+apt-get source "php-defaults/${SRC_DIST}"
+cd php-defaults-*/
+dch -b -l "~${DIST}" "Rebuild for ${DIST} (greensec php-build)."
+dpkg-buildpackage -b -d -us -uc
+cd "$WORKDIR"
+
 mkdir -p "$OUTDIR"
-mv "$WORKDIR"/*.deb "$OUTDIR/" 2>/dev/null || true
+mv "$WORKDIR"/*.deb "$WORKDIR/defaults/"*.deb "$OUTDIR/" 2>/dev/null || true
 ls -la "$OUTDIR"
 echo ">>> done: $PKG $new_ver for $DIST"
