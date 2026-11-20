@@ -172,6 +172,22 @@ else
     echo ">>> using $PKG packaging from $got_src"
     dsc=$(ls "${PKG}"_*.dsc 2>/dev/null | head -n1 || true)
     dpkg-source -x "$dsc" pkgsrc
+
+    # the security branch is a git checkout - generated files (bison parsers,
+    # ...) only exist in release tarballs and sury's patches target them.
+    # Overlay the checkout onto the matching release tarball: tracked files
+    # come from git, generated files from the tarball.
+    base_ver=$(dpkg-parsechangelog -lpkgsrc/debian/changelog -SVersion | sed 's/.*://; s/-.*//')
+    upball=$(ls "${PKG}"_"${base_ver}".orig.tar.* 2>/dev/null | head -n1 || true)
+    if [ -z "$upball" ]; then
+        upball="php-${base_ver}.tar.xz"
+        curl -fsSL -o "$upball" "https://www.php.net/distributions/$upball" \
+            || curl -fsSL -o "$upball" "https://museum.php.net/php${PHP_BRANCH%%.*}/$upball"
+    fi
+    tar -xaf "$upball"
+    rsync -a --exclude=.git "sec-src/" "php-${base_ver}/"
+    mv "php-${base_ver}" sec-src.new && rm -rf sec-src && mv sec-src.new sec-src
+
     cp -a pkgsrc/debian sec-src/debian
     cd sec-src
     ./buildconf --force
