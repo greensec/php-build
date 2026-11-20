@@ -18,11 +18,18 @@ Two source strategies per branch (`conf/branches.map`):
 
 | type | branches | source |
 |---|---|---|
-| `phpnet` | 8.2-8.6 | sury's newest `SRC_DIST` (bookworm) **source** package - it already contains the current php.net tarball plus packaging; rebuilt unmodified for `$DIST` with a `+greensec1~<dist>` changelog suffix |
-| `security` | 5.6-8.1 | [remicollet/php-src-security](https://github.com/remicollet/php-src-security) `PHP-<b>-security-backports` checkout (`buildconf` bootstrap) + last sury `$DIST` packaging |
+| `phpnet` | 8.2-8.6 | sury's newest `SRC_DIST` (bookworm) **source** package - it already contains the current php.net tarball plus packaging; rebuilt unmodified for `$DIST` |
+| `security` | 5.6-8.1 | [remicollet/php-src-security](https://github.com/remicollet/php-src-security) `PHP-<b>-security-backports` checkout (`buildconf` bootstrap) + newest available packaging (`SRC_DIST` → ondrej Ubuntu PPA `PPA_SUITE` → frozen `$DIST`) |
 
-Versioning sorts above the last sury bullseye builds, so hosts pick the
-packages up as plain upgrades once the repo is added.
+Packages are versioned `<upstream>-<rev*1000+1>~<dist>1` - above any sury
+build hosts have installed - and carry the dist marker the publisher
+(`version_by_filename`) needs.
+
+Build-deps come from `dpkg-checkbuilddeps` on the extracted source's own
+`debian/control` (not `apt-get build-dep`). Bullseye binaries can't come
+from sury upstream - the whole bullseye pool was deleted (index intact,
+every `.deb` 404s) - so `SURY_BIN` defaults to the greensec mirror,
+which still serves the last builds.
 
 ## Building
 
@@ -42,6 +49,20 @@ PHP_BRANCH=8.2 DIST=bullseye ./scripts/build.sh
 `check-upstream.sh` (daily cron workflow) fails when php.net ships a
 newer release than the repo carries for any `phpnet` branch.
 
+## Patches and packaging overlays
+
+Same conventions as `nagios-nrpe-server-ap`:
+
+- `patches/<pkg>/*.patch` - appended to `debian/patches/series` of the
+  fetched source before building (`legacy_*` files only apply when a
+  distro overlay is in use).
+- `debian.<dist>/` - when present, replaces the source's `debian/`
+  wholesale; upstream quilt patches are carried over.
+
+`security` builds apply sury's last `debian/` onto the backport tree. If
+`debian/patches` stop applying, `build.sh` aborts (exit 2) with the
+failing patch - refresh it and add a fixed copy under `patches/<pkg>/`.
+
 ## Repo signing
 
 `scripts/gen-signing-key.sh` creates a dedicated keypair, stores the
@@ -49,10 +70,3 @@ private half in gitignored `.secret/`, exports `public.key` and (with
 `gh` auth) uploads `secrets.APT_SIGNING_KEY` + `vars.APT_PUBLIC_KEY`.
 The action publishes `public.key` + `repo/` onto the `gh-pages` branch -
 enable Pages (source: `gh-pages`, `/`) once after the first publish.
-
-## EOL branches and patch refreshes
-
-`security` builds apply sury's last `$DIST` `debian/` onto the backport
-tree. If `debian/patches` stop applying, `build.sh` aborts and prints the
-failing patch - refresh it and drop overrides into
-`patches-override/<branch>/`.
