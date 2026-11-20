@@ -221,16 +221,33 @@ fi
 # dpkg-checkbuilddeps exits 1 whenever something is unmet - that is the
 # expected case here, so keep it out of pipefail's reach.
 missing=$(dpkg-checkbuilddeps 2>&1 || true)
-# alternatives "a | b": pick the first name that has an install candidate on
-# THIS dist (e.g. libenchant-2-dev exists on bullseye+ but not buster)
+# the unmet list is space-separated; "a | b" is one dep with alternatives.
+# Rebuild dep groups across whitespace tokens, then pick the first
+# alternative that has an install candidate on THIS dist (e.g.
+# libenchant-2-dev exists on bullseye+ but not buster).
 missing=$(printf '%s\n' "$missing" | sed -n 's/.*[Uu]nmet build dependencies: //p' \
     | sed -e 's/([^)]*)//g; s/\[[^]]*\]//g; s/<[^>]*>//g; s/:[a-z0-9-]*//g' \
         -e 's/\bdebhelper-compat\b/debhelper/g' \
-    | tr ',' '\n' | sed -e 's/^[[:space:]]*//; s/[[:space:]]*$//' -e '/^$/d' \
+    | tr ' ,' '\n' | sed -e 's/^[[:space:]]*//; s/[[:space:]]*$//' -e '/^$/d' \
+    | awk 'NR==1 { g=$0; next }
+           $0=="|" { g=g" | "; getline; g=g $0; next }
+           { print g; g=$0 }
+           END { print g }' \
     | while IFS= read -r grp; do
         for cand in $(printf '%s' "$grp" | tr '|' '\n' | sed -e 's/^[[:space:]]*//; s/[[:space:]]*$//' -e '/^$/d'); do
             if apt-cache policy "$cand" 2>/dev/null | grep -qE 'Candidate: [^(]'; then
                 printf '%s\n' "$cand"
+                break
+            fi
+            # pure virtual (no candidate of its own): resolve a provider
+            prov=$(apt-cache showpkg "$cand" 2>/dev/null \
+                | awk '/^Reverse Provides:/{p=1;next} p&&NF{print $1}' \
+                | while read -r pr; do
+                    apt-cache policy "$pr" 2>/dev/null | grep -qE 'Candidate: [^(]' \
+                        && { echo "$pr"; break; }
+                  done)
+            if [ -n "$prov" ]; then
+                printf '%s\n' "$prov"
                 break
             fi
         done
