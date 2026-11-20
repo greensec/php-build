@@ -27,4 +27,4 @@ s/for target in \$\(TARGETS\); do \\\n([\t ]+)dh_auto_build --builddirectory \$\
 s/for target in \$\(TARGETS\); do \\\n([\t ]+)dh_auto_configure --builddirectory \$\$\{target\}-build \$\(PARALLEL\)([^\n]*) \\\n[\t ]+done/$rep->($1, "dh_auto_configure --builddirectory \$\$\{target\}-build \$\(PARALLEL\)$2")/ge;
 ' "$rules"
 
-grep -q 'pids=' "$rules" && echo "parallelized per-variant build loops in debian/rules"
+grep -q 'pids=' "$rules" && echo "parallelized per-variant build loops in debian/rules" || true

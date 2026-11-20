@@ -337,6 +337,7 @@ done
 # repo-local patches appended to the quilt series (only *.patch files -
 # pre.d/ and series.drops are consumed earlier)
 if [ -d "$ROOT/patches/$PKG" ]; then
+    appended=""
     for x in "$ROOT/patches/$PKG"/*.patch; do
         [ -e "$x" ] || continue
         case "$(basename "$x")" in
@@ -346,11 +347,15 @@ if [ -d "$ROOT/patches/$PKG" ]; then
         mkdir -p debian/patches
         cp "$x" debian/patches/
         basename "$x" >> debian/patches/series
+        appended=1
     done
     # apply the appended entries - appending to the series alone leaves
-    # them unapplied, so they would ship in the .dsc but not compile
-    export QUILT_PATCHES=debian/patches
-    quilt push -a
+    # them unapplied, so they would ship in the .dsc but not compile.
+    # quilt push -a exits 2 when nothing is left to push, hence the guard.
+    if [ -n "$appended" ]; then
+        export QUILT_PATCHES=debian/patches
+        quilt push -a
+    fi
 fi
 
 # --- changelog + build ---------------------------------------------------------
