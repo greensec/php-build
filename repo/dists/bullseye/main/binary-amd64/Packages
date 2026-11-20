@@ -22,6 +22,36 @@ Description: server-side, HTML-embedded scripting language (Apache 2 module) (de
  This package is a dependency package, which depends on latest stable
  PHP version (currently 8.4).
 
+Package: libapache2-mod-php5.6
+Source: php5.6
+Version: 5.6.40-110001~bullseye60
+Architecture: amd64
+Maintainer: Debian PHP Maintainers <team+pkg-php@tracker.debian.org>
+Installed-Size: 4253
+Depends: libpcre3 (>= 2:8.41), media-types | mime-support, php5.6-cli, php5.6-common (= 5.6.40-110001~bullseye60), php5.6-json, php5.6-opcache, tzdata, ucf, apache2-api-20120211, apache2-bin (>= 2.4.16), libc6 (>= 2.29), libsodium23 (>= 1.0.14), libssl1.1 (>= 1.1.0), libxml2 (>= 2.8.0), zlib1g (>= 1:1.1.4)
+Recommends: apache2
+Suggests: php-pear
+Provides: libapache2-mod-php, phpapi-20131226
+Homepage: http://www.php.net/
+Priority: optional
+Section: httpd
+Filename: pool/main/p/php5.6/libapache2-mod-php5.6_5.6.40-110001~bullseye60_amd64.deb
+Size: 1205456
+SHA256: acf1e903b9654efd323e3601c9409fa4044604b1467a7ad96437220697d880ba
+SHA1: 6db868105b0804ce249a336d7598d6f4158ab8ff
+MD5sum: 6684df90a2864c0c55359726ea450c80
+Description: server-side, HTML-embedded scripting language (Apache 2 module)
+ This package provides the PHP module for the Apache 2 webserver (as
+ found in the apache2-mpm-prefork package).  Please note that this package
+ ONLY works with Apache's prefork MPM, as it is not compiled thread-safe.
+ .
+ The following extensions are built in: Core date ereg filter hash libxml
+ mhash openssl pcre Reflection session SPL standard zlib.
+ .
+ PHP (recursive acronym for PHP: Hypertext Preprocessor) is a widely-used
+ open source general-purpose scripting language that is especially suited
+ for web development and can be embedded into HTML.
+
 Package: libapache2-mod-php7.0
 Source: php7.0
 Version: 7.0.33-98001~bullseye54
@@ -377,6 +407,38 @@ Description: HTML-embedded scripting language (Embedded SAPI library) (default)
  .
  This package is a dependency package, which depends on latest stable
  PHP version (currently 8.4).
+
+Package: libphp5.6-embed
+Source: php5.6
+Version: 5.6.40-110001~bullseye60
+Architecture: amd64
+Maintainer: Debian PHP Maintainers <team+pkg-php@tracker.debian.org>
+Installed-Size: 4234
+Depends: libpcre3 (>= 2:8.41), media-types | mime-support, php5.6-cli, php5.6-common (= 5.6.40-110001~bullseye60), php5.6-json, php5.6-opcache, tzdata, ucf, libc6 (>= 2.29), libssl1.1 (>= 1.1.0), libxml2 (>= 2.8.0), zlib1g (>= 1:1.1.4)
+Suggests: php-pear
+Provides: libphp-embed, phpapi-20131226
+Homepage: http://www.php.net/
+Priority: optional
+Section: php
+Filename: pool/main/p/php5.6/libphp5.6-embed_5.6.40-110001~bullseye60_amd64.deb
+Size: 1198664
+SHA256: 73935d74d8a1dc68c21e1ceac06f3be75c988137b93099b5d6118ee8d05f3e4a
+SHA1: 08ff00ac8913952c222660a47a137bfcb12310ff
+MD5sum: d70255dc3e9d45435691b570c3253892
+Description: HTML-embedded scripting language (Embedded SAPI library)
+ This package provides the library /usr/lib/libphp5.6.so which can
+ be used by application developers to embed PHP scripting functionality.
+ .
+ The following extensions are built in: Core date ereg filter hash libxml
+ mhash openssl pcntl pcre Reflection session SPL standard zlib.
+ .
+ PHP (recursive acronym for PHP: Hypertext Preprocessor) is a widely-used
+ open source general-purpose scripting language that is especially suited
+ for web development and can be embedded into HTML.
+ .
+ WARNING: The embed SAPI is experimental and there's no guarantee that
+ the API/ABI will be kept compatible even between minor releases.  You
+ have been warned.
 
 Package: libphp7.0-embed
 Source: php7.0
@@ -1475,6 +1537,911 @@ Description: Zip module for PHP [default]
  .
  This package is a dependency package, which depends on Debian's default
  PHP version (currently 8.4).
+
+Package: php5.6
+Version: 5.6.40-110001~bullseye60
+Architecture: all
+Maintainer: Debian PHP Maintainers <team+pkg-php@tracker.debian.org>
+Installed-Size: 295
+Depends: libapache2-mod-php5.6 | php5.6-fpm | php5.6-cgi, php5.6-common
+Provides: php
+Homepage: http://www.php.net/
+Priority: optional
+Section: php
+Filename: pool/main/p/php5.6/php5.6_5.6.40-110001~bullseye60_all.deb
+Size: 277016
+SHA256: c01d84e48d5a3771fe2031403aa946a7273aec2c7b43466389143589016ef950
+SHA1: 9d4824b5a31e97e7512a2ce6bfecd5790d2cd31c
+MD5sum: ee8870d17c3e6250e7047eedfaecaa69
+Description: server-side, HTML-embedded scripting language (metapackage)
+ This package is a metapackage that, when installed, guarantees that you
+ have at least one of the four server-side versions of the PHP interpreter
+ installed. Removing this package won't remove PHP from your system, however
+ it may remove other packages that depend on this one.
+ .
+ PHP (recursive acronym for PHP: Hypertext Preprocessor) is a widely-used
+ open source general-purpose scripting language that is especially suited
+ for web development and can be embedded into HTML.
+
+Package: php5.6-bcmath
+Source: php5.6
+Version: 5.6.40-110001~bullseye60
+Architecture: amd64
+Maintainer: Debian PHP Maintainers <team+pkg-php@tracker.debian.org>
+Installed-Size: 67
+Depends: php-common (>= 1:81~), ucf, php5.6-common (= 5.6.40-110001~bullseye60), libc6 (>= 2.14)
+Provides: php-bcmath
+Homepage: http://www.php.net/
+Priority: optional
+Section: php
+Filename: pool/main/p/php5.6/php5.6-bcmath_5.6.40-110001~bullseye60_amd64.deb
+Size: 14644
+SHA256: bf9eaab1b2292c2a911907f07caf0a4b57043dfe120e9f99c272d004b845fb2a
+SHA1: 108e803d083d61cd8ec20203ffe66a13b8223990
+MD5sum: 43935c2c93c54b536964ba8e2e58da72
+Description: Bcmath module for PHP
+ This package provides the Bcmath module(s) for PHP.
+ .
+ PHP (recursive acronym for PHP: Hypertext Preprocessor) is a widely-used
+ open source general-purpose scripting language that is especially suited
+ for web development and can be embedded into HTML.
+
+Package: php5.6-bz2
+Source: php5.6
+Version: 5.6.40-110001~bullseye60
+Architecture: amd64
+Maintainer: Debian PHP Maintainers <team+pkg-php@tracker.debian.org>
+Installed-Size: 59
+Depends: php-common (>= 1:81~), ucf, php5.6-common (= 5.6.40-110001~bullseye60), libbz2-1.0, libc6 (>= 2.14)
+Provides: php-bz2
+Homepage: http://www.php.net/
+Priority: optional
+Section: php
+Filename: pool/main/p/php5.6/php5.6-bz2_5.6.40-110001~bullseye60_amd64.deb
+Size: 10524
+SHA256: 38217f61a10b78974781ffbca1a2a3329193fd321d26c5c9f758ecb151b98169
+SHA1: cd4c7d239e8deae36378982dcd86385d5bbdb5a2
+MD5sum: 52398c98c6898712c583a22c56348027
+Description: bzip2 module for PHP
+ This package provides the bzip2 module(s) for PHP.
+ .
+ PHP (recursive acronym for PHP: Hypertext Preprocessor) is a widely-used
+ open source general-purpose scripting language that is especially suited
+ for web development and can be embedded into HTML.
+
+Package: php5.6-cgi
+Source: php5.6
+Version: 5.6.40-110001~bullseye60
+Architecture: amd64
+Maintainer: Debian PHP Maintainers <team+pkg-php@tracker.debian.org>
+Installed-Size: 8425
+Depends: libpcre3 (>= 2:8.41), media-types | mime-support, php5.6-cli, php5.6-common (= 5.6.40-110001~bullseye60), php5.6-json, php5.6-opcache, tzdata, ucf, libc6 (>= 2.29), libssl1.1 (>= 1.1.0), libxml2 (>= 2.8.0), zlib1g (>= 1:1.1.4)
+Suggests: php-pear
+Provides: php-cgi, phpapi-20131226
+Homepage: http://www.php.net/
+Priority: optional
+Section: php
+Filename: pool/main/p/php5.6/php5.6-cgi_5.6.40-110001~bullseye60_amd64.deb
+Size: 1217496
+SHA256: 35ca1e04daff53a951226275ad43f1ec69efe9e34d745a10034ec60d3a8acfc1
+SHA1: b6d4f8e7c3d9fbe396e5043a81dff4b7f2071416
+MD5sum: 4798e89bbfda3f0a750b0b609853dfdb
+Description: server-side, HTML-embedded scripting language (CGI binary)
+ This package provides the /usr/lib/cgi-bin/php CGI interpreter built
+ for use in Apache 2 with mod_actions, or any other CGI httpd that
+ supports a similar mechanism.  Note that MOST users probably
+ want the php5.6-fpm package.
+ .
+ The following extensions are built in: Core date ereg filter hash libxml
+ mhash openssl pcntl pcre Reflection session SPL standard zlib.
+ .
+ PHP (recursive acronym for PHP: Hypertext Preprocessor) is a widely-used
+ open source general-purpose scripting language that is especially suited
+ for web development and can be embedded into HTML.
+
+Package: php5.6-cli
+Source: php5.6
+Version: 5.6.40-110001~bullseye60
+Architecture: amd64
+Maintainer: Debian PHP Maintainers <team+pkg-php@tracker.debian.org>
+Installed-Size: 4275
+Depends: libedit2 (>= 2.11-20080614-4), libpcre3 (>= 2:8.41), media-types | mime-support, php5.6-common (= 5.6.40-110001~bullseye60), php5.6-json, php5.6-opcache, php5.6-readline, tzdata, ucf, libc6 (>= 2.29), libssl1.1 (>= 1.1.0), libxml2 (>= 2.8.0), zlib1g (>= 1:1.1.4)
+Suggests: php-pear
+Provides: php-cli, phpapi-20131226
+Homepage: http://www.php.net/
+Priority: optional
+Section: php
+Filename: pool/main/p/php5.6/php5.6-cli_5.6.40-110001~bullseye60_amd64.deb
+Size: 1243504
+SHA256: 48ade1e70ec191a13728592d3e478b5f15849692678cac0070971e1318f3b308
+SHA1: 1f0c9b11bb9520421a005fac90db8a3258b04c73
+MD5sum: 1b0f8294889b48ae0e21ae3d9eceb019
+Description: command-line interpreter for the PHP scripting language
+ This package provides the /usr/bin/php5.6 command interpreter, useful for
+ testing PHP scripts from a shell or performing general shell scripting tasks.
+ .
+ The following extensions are built in: Core date ereg filter hash libxml
+ mhash openssl pcntl pcre Reflection session SPL standard zlib.
+ .
+ PHP (recursive acronym for PHP: Hypertext Preprocessor) is a widely-used
+ open source general-purpose scripting language that is especially suited
+ for web development and can be embedded into HTML.
+
+Package: php5.6-common
+Source: php5.6
+Version: 5.6.40-110001~bullseye60
+Architecture: amd64
+Maintainer: Debian PHP Maintainers <team+pkg-php@tracker.debian.org>
+Installed-Size: 4249
+Depends: php-common (>= 1:81~), ucf, libc6 (>= 2.15), libssl1.1 (>= 1.1.0)
+Provides: php-calendar, php-ctype, php-exif, php-fileinfo, php-ftp, php-iconv, php-pdo, php-phar, php-posix, php-shmop, php-sockets, php-sysvmsg, php-sysvsem, php-sysvshm, php-tokenizer, php5.6-calendar, php5.6-ctype, php5.6-exif, php5.6-fileinfo, php5.6-ftp, php5.6-gettext, php5.6-iconv, php5.6-pdo, php5.6-phar, php5.6-posix, php5.6-shmop, php5.6-sockets, php5.6-sysvmsg, php5.6-sysvsem, php5.6-sysvshm, php5.6-tokenizer
+Homepage: http://www.php.net/
+Priority: optional
+Section: php
+Filename: pool/main/p/php5.6/php5.6-common_5.6.40-110001~bullseye60_amd64.deb
+Size: 731904
+SHA256: a897fab7a95c4573769c2e4f400fb64f0d60444fb4abd1a0d5eb4acd0373ca06
+SHA1: d9250f4318f0704ba03470f39b5ecfd090900a9e
+MD5sum: 33681c6a785f1234c402910427e169a2
+Description: documentation, examples and common module for PHP
+ This package provides the documentation, examples and common module(s) for PHP.
+ .
+ PHP (recursive acronym for PHP: Hypertext Preprocessor) is a widely-used
+ open source general-purpose scripting language that is especially suited
+ for web development and can be embedded into HTML.
+
+Package: php5.6-curl
+Source: php5.6
+Version: 5.6.40-110001~bullseye60
+Architecture: amd64
+Maintainer: Debian PHP Maintainers <team+pkg-php@tracker.debian.org>
+Installed-Size: 119
+Depends: php-common (>= 1:81~), ucf, php5.6-common (= 5.6.40-110001~bullseye60), libc6 (>= 2.14), libcurl4 (>= 7.18.0)
+Provides: php-curl
+Homepage: http://www.php.net/
+Priority: optional
+Section: php
+Filename: pool/main/p/php5.6/php5.6-curl_5.6.40-110001~bullseye60_amd64.deb
+Size: 26940
+SHA256: bf27e0bed0b843383f8759b8b22ded09c182a1fae6498fdb447e69e392e735c2
+SHA1: cebd7e16a702b7f1cefd5f50311c731e80868144
+MD5sum: 536403412992d4cdf26454e52687d42c
+Description: CURL module for PHP
+ This package provides the CURL module(s) for PHP.
+ .
+ PHP (recursive acronym for PHP: Hypertext Preprocessor) is a widely-used
+ open source general-purpose scripting language that is especially suited
+ for web development and can be embedded into HTML.
+
+Package: php5.6-dba
+Source: php5.6
+Version: 5.6.40-110001~bullseye60
+Architecture: amd64
+Maintainer: Debian PHP Maintainers <team+pkg-php@tracker.debian.org>
+Installed-Size: 87
+Depends: php-common (>= 1:81~), ucf, php5.6-common (= 5.6.40-110001~bullseye60), libc6 (>= 2.14), libdb5.3, libqdbm14 (>= 1.8.74)
+Provides: php-dba
+Homepage: http://www.php.net/
+Priority: optional
+Section: php
+Filename: pool/main/p/php5.6/php5.6-dba_5.6.40-110001~bullseye60_amd64.deb
+Size: 21824
+SHA256: 1ace7dc5348bcfaf1674564f3778163556060c5d2da66fb751d1f825880d7654
+SHA1: 7a872397d3dede7ef52cecc85c688b8e938a1841
+MD5sum: 2feebbf8366d7a8ec139e1e73c126604
+Description: DBA module for PHP
+ This package provides the DBA module(s) for PHP.
+ .
+ PHP (recursive acronym for PHP: Hypertext Preprocessor) is a widely-used
+ open source general-purpose scripting language that is especially suited
+ for web development and can be embedded into HTML.
+
+Package: php5.6-dev
+Source: php5.6
+Version: 5.6.40-110001~bullseye60
+Architecture: amd64
+Maintainer: Debian PHP Maintainers <team+pkg-php@tracker.debian.org>
+Installed-Size: 3690
+Depends: autoconf (>= 2.63), automake (>= 1.11), libpcre3-dev (>= 2:8.35), libssl-dev, php5.6-cli (>= 5.6.40-110001~bullseye60), php5.6-common (= 5.6.40-110001~bullseye60), pkg-config, shtool, libtool (>= 2.4.6-0.1~)
+Recommends: pkg-php-tools
+Suggests: dh-php
+Homepage: http://www.php.net/
+Priority: optional
+Section: php
+Filename: pool/main/p/php5.6/php5.6-dev_5.6.40-110001~bullseye60_amd64.deb
+Size: 361460
+SHA256: eabd90000aec7a2d1aa8418a70ccd789d4dc4404efbf77a9f7b78b81c6bd62ed
+SHA1: 3109931a61c6091dbeb95084c4a0c4aad7f5eb9e
+MD5sum: e32184a0697de065822da9aa6c5be5fb
+Description: Files for PHP5.6 module development
+ This package provides the files from the PHP5.6 source needed for compiling
+ additional modules.
+ .
+ PHP (recursive acronym for PHP: Hypertext Preprocessor) is a widely-used
+ open source general-purpose scripting language that is especially suited
+ for web development and can be embedded into HTML.
+
+Package: php5.6-enchant
+Source: php5.6
+Version: 5.6.40-110001~bullseye60
+Architecture: amd64
+Maintainer: Debian PHP Maintainers <team+pkg-php@tracker.debian.org>
+Installed-Size: 55
+Depends: php-common (>= 1:81~), ucf, php5.6-common (= 5.6.40-110001~bullseye60), libc6 (>= 2.4), libenchant-2-2 (>= 2.2.3)
+Provides: php-enchant
+Homepage: http://www.php.net/
+Priority: optional
+Section: php
+Filename: pool/main/p/php5.6/php5.6-enchant_5.6.40-110001~bullseye60_amd64.deb
+Size: 8796
+SHA256: 5aa8f2afe1a7e7bde0837c94feec44c8c9a7568ee71c450a19df5d9d2c9c4f6f
+SHA1: bdbc999d6f88392ec23b6ff634256c256821f64f
+MD5sum: 84dcdb5e28ac7e2a52bf945f7e228c31
+Description: Enchant module for PHP
+ This package provides the Enchant module(s) for PHP.
+ .
+ PHP (recursive acronym for PHP: Hypertext Preprocessor) is a widely-used
+ open source general-purpose scripting language that is especially suited
+ for web development and can be embedded into HTML.
+
+Package: php5.6-fpm
+Source: php5.6
+Version: 5.6.40-110001~bullseye60
+Architecture: amd64
+Maintainer: Debian PHP Maintainers <team+pkg-php@tracker.debian.org>
+Installed-Size: 4377
+Depends: libpcre3 (>= 2:8.41), media-types | mime-support, php5.6-cli, php5.6-common (= 5.6.40-110001~bullseye60), php5.6-json, php5.6-opcache, procps, systemd | systemd-tmpfiles, tzdata, ucf, libacl1 (>= 2.2.23), libapparmor1 (>= 2.7.0~beta1+bzr1772), libc6 (>= 2.29), libsodium23 (>= 1.0.14), libssl1.1 (>= 1.1.0), libsystemd0, libxml2 (>= 2.8.0), zlib1g (>= 1:1.1.4)
+Suggests: php-pear
+Provides: php-fpm, phpapi-20131226
+Homepage: http://www.php.net/
+Priority: optional
+Section: php
+Filename: pool/main/p/php5.6/php5.6-fpm_5.6.40-110001~bullseye60_amd64.deb
+Size: 1263464
+SHA256: 2be0fbec5581c333bb790fdf69019101536f42f32a5cb03cbbad6f9a03f7ff17
+SHA1: 67f30f757954f777be5c4674b93faf6d46916d77
+MD5sum: 9eef0f321b12792c41d258a048dab05a
+Description: server-side, HTML-embedded scripting language (FPM-CGI binary)
+ This package provides the Fast Process Manager interpreter that runs
+ as a daemon and receives Fast/CGI requests.  Note that MOST Apache users
+ probably want the libapache2-mod-php5.6 package.
+ .
+ The following extensions are built in: Core date ereg filter hash libxml
+ mhash openssl pcre Reflection session SPL standard zlib.
+ .
+ PHP (recursive acronym for PHP: Hypertext Preprocessor) is a widely-used
+ open source general-purpose scripting language that is especially suited
+ for web development and can be embedded into HTML.
+
+Package: php5.6-gd
+Source: php5.6
+Version: 5.6.40-110001~bullseye60
+Architecture: amd64
+Maintainer: Debian PHP Maintainers <team+pkg-php@tracker.debian.org>
+Installed-Size: 139
+Depends: php-common (>= 1:81~), ucf, php5.6-common (= 5.6.40-110001~bullseye60), libc6 (>= 2.4), libgd3 (>= 2.1.1), libxpm4
+Provides: php-gd
+Homepage: http://www.php.net/
+Priority: optional
+Section: php
+Filename: pool/main/p/php5.6/php5.6-gd_5.6.40-110001~bullseye60_amd64.deb
+Size: 27292
+SHA256: 9cfd825172486a5e6b9b571c2cbd62669cdf5f7eda411dd3773a3a7cb2a69d6b
+SHA1: c730ef6f254a4953e2461f3a6640377e1733635b
+MD5sum: 5a671c4237f21058ef1bdcb04aead074
+Description: GD module for PHP
+ This package provides the GD module(s) for PHP.
+ .
+ PHP (recursive acronym for PHP: Hypertext Preprocessor) is a widely-used
+ open source general-purpose scripting language that is especially suited
+ for web development and can be embedded into HTML.
+
+Package: php5.6-gmp
+Source: php5.6
+Version: 5.6.40-110001~bullseye60
+Architecture: amd64
+Maintainer: Debian PHP Maintainers <team+pkg-php@tracker.debian.org>
+Installed-Size: 87
+Depends: php-common (>= 1:81~), ucf, php5.6-common (= 5.6.40-110001~bullseye60), libc6 (>= 2.4), libgmp10
+Provides: php-gmp
+Homepage: http://www.php.net/
+Priority: optional
+Section: php
+Filename: pool/main/p/php5.6/php5.6-gmp_5.6.40-110001~bullseye60_amd64.deb
+Size: 18032
+SHA256: 8a61fbd6b1573b1b8fcfdbea81a39e7e1ebfd0dc04abd3a6d7ad00915cc7dfe2
+SHA1: b0f8f9518afb5ebcdfa2602bd50b1f8c776aa28a
+MD5sum: 71eb51cdb30b7c832dbed588bec33b90
+Description: GMP module for PHP
+ This package provides the GMP module(s) for PHP.
+ .
+ PHP (recursive acronym for PHP: Hypertext Preprocessor) is a widely-used
+ open source general-purpose scripting language that is especially suited
+ for web development and can be embedded into HTML.
+
+Package: php5.6-imap
+Source: php5.6
+Version: 5.6.40-110001~bullseye60
+Architecture: amd64
+Maintainer: Debian PHP Maintainers <team+pkg-php@tracker.debian.org>
+Installed-Size: 135
+Depends: php-common (>= 1:81~), ucf, php5.6-common (= 5.6.40-110001~bullseye60), libc-client2007e, libc6 (>= 2.14)
+Provides: php-imap
+Homepage: http://www.php.net/
+Priority: optional
+Section: php
+Filename: pool/main/p/php5.6/php5.6-imap_5.6.40-110001~bullseye60_amd64.deb
+Size: 31772
+SHA256: 7643cc80e655b5e868b3891bbd7f96831d46055ff0e9251cf07367047d69b18b
+SHA1: a64c49f38828fae96179094e24e5108eedb59f40
+MD5sum: 91538a4f312689e642bc79415dcf67de
+Description: IMAP module for PHP
+ This package provides the IMAP module(s) for PHP.
+ .
+ PHP (recursive acronym for PHP: Hypertext Preprocessor) is a widely-used
+ open source general-purpose scripting language that is especially suited
+ for web development and can be embedded into HTML.
+
+Package: php5.6-interbase
+Source: php5.6
+Version: 5.6.40-110001~bullseye60
+Architecture: amd64
+Maintainer: Debian PHP Maintainers <team+pkg-php@tracker.debian.org>
+Installed-Size: 164
+Depends: php-common (>= 1:81~), ucf, php5.6-common (= 5.6.40-110001~bullseye60), libc6 (>= 2.14), libfbclient2 (>= 2.5.0.25784~ReleaseCandidate1.ds2)
+Provides: php-interbase, php-pdo-firebird, php5.6-pdo-firebird
+Homepage: http://www.php.net/
+Priority: optional
+Section: php
+Filename: pool/main/p/php5.6/php5.6-interbase_5.6.40-110001~bullseye60_amd64.deb
+Size: 41340
+SHA256: a3db5a5ac4bb2ee8e76c92fdacae907263d344d95d0313e63c28ccb3b6866716
+SHA1: 6a793a97686b56e317db0ea79b93e654b7123eba
+MD5sum: 4063c26ec283be3deec72aefadc091e7
+Description: Interbase module for PHP
+ This package provides the Interbase module(s) for PHP.
+ .
+ PHP (recursive acronym for PHP: Hypertext Preprocessor) is a widely-used
+ open source general-purpose scripting language that is especially suited
+ for web development and can be embedded into HTML.
+
+Package: php5.6-intl
+Source: php5.6
+Version: 5.6.40-110001~bullseye60
+Architecture: amd64
+Maintainer: Debian PHP Maintainers <team+pkg-php@tracker.debian.org>
+Installed-Size: 426
+Depends: php-common (>= 1:81~), ucf, php5.6-common (= 5.6.40-110001~bullseye60), libc6 (>= 2.14), libgcc-s1 (>= 3.0), libicu67 (>= 67.1-1~)
+Provides: php-intl
+Homepage: http://www.php.net/
+Priority: optional
+Section: php
+Filename: pool/main/p/php5.6/php5.6-intl_5.6.40-110001~bullseye60_amd64.deb
+Size: 111052
+SHA256: 09d6ff085e412fd33c31dd2b5233c2a6d082d7f2acccff9dc6744d61bd1efc45
+SHA1: 018eb5caf0b347fcdad4adc782c93cda7cab5964
+MD5sum: d0af26d46b70d4723d6575a921611661
+Description: Internationalisation module for PHP
+ This package provides the Internationalisation module(s) for PHP.
+ .
+ PHP (recursive acronym for PHP: Hypertext Preprocessor) is a widely-used
+ open source general-purpose scripting language that is especially suited
+ for web development and can be embedded into HTML.
+
+Package: php5.6-json
+Source: php5.6
+Version: 5.6.40-110001~bullseye60
+Architecture: amd64
+Maintainer: Debian PHP Maintainers <team+pkg-php@tracker.debian.org>
+Installed-Size: 79
+Depends: php-common (>= 1:81~), ucf, php5.6-common (= 5.6.40-110001~bullseye60), libc6 (>= 2.14)
+Provides: php-json
+Homepage: http://www.php.net/
+Priority: optional
+Section: php
+Filename: pool/main/p/php5.6/php5.6-json_5.6.40-110001~bullseye60_amd64.deb
+Size: 17472
+SHA256: 7af935a2686933d357fd693b98c373d93059922efdfb8586a806873804c07b89
+SHA1: 54f4ef48ec683e1194dd4c24f0e22dfec48725fb
+MD5sum: 23d3d9616cae2692daffe166c33f566c
+Description: JSON module for PHP
+ This package provides the JSON module(s) for PHP.
+ .
+ PHP (recursive acronym for PHP: Hypertext Preprocessor) is a widely-used
+ open source general-purpose scripting language that is especially suited
+ for web development and can be embedded into HTML.
+
+Package: php5.6-ldap
+Source: php5.6
+Version: 5.6.40-110001~bullseye60
+Architecture: amd64
+Maintainer: Debian PHP Maintainers <team+pkg-php@tracker.debian.org>
+Installed-Size: 99
+Depends: php-common (>= 1:81~), ucf, php5.6-common (= 5.6.40-110001~bullseye60), libc6 (>= 2.4), libldap-2.4-2 (>= 2.4.7)
+Provides: php-ldap
+Homepage: http://www.php.net/
+Priority: optional
+Section: php
+Filename: pool/main/p/php5.6/php5.6-ldap_5.6.40-110001~bullseye60_amd64.deb
+Size: 21792
+SHA256: fcd3e54130db86292aedd06548c0bc81c1d80369be136dc27af4915d9e34c953
+SHA1: 1f5015edb4894cf40b2f27ca9696359834fb042d
+MD5sum: 7a91a89693f1add2944c75c22704a7ba
+Description: LDAP module for PHP
+ This package provides the LDAP module(s) for PHP.
+ .
+ PHP (recursive acronym for PHP: Hypertext Preprocessor) is a widely-used
+ open source general-purpose scripting language that is especially suited
+ for web development and can be embedded into HTML.
+
+Package: php5.6-litespeed
+Source: php5.6
+Version: 5.6.40-110001~bullseye60
+Architecture: amd64
+Maintainer: Debian PHP Maintainers <team+pkg-php@tracker.debian.org>
+Installed-Size: 4228
+Depends: media-types | mime-support, php5.6-cli, php5.6-common (= 5.6.40-110001~bullseye60), procps, systemd | systemd-tmpfiles, tzdata, ucf, libc6 (>= 2.29), libpcre3 (>= 2:8.41), libssl1.1 (>= 1.1.0), libxml2 (>= 2.8.0), zlib1g (>= 1:1.1.4)
+Suggests: php-pear
+Provides: php-json, php-litespeed, php5.6-json, phpapi-20131226
+Homepage: http://www.php.net/
+Priority: optional
+Section: php
+Filename: pool/main/p/php5.6/php5.6-litespeed_5.6.40-110001~bullseye60_amd64.deb
+Size: 1214472
+SHA256: e8f007c42ea5ac68b3d769a618fb4e967f81a44581a0e64306a4b69ab84f36de
+SHA1: d76c33c91c71403a214765fcd06e96db28fa614a
+MD5sum: f6f08dd46f12c62720ff5e70dc783cc5
+Description: server-side, HTML-embedded scripting language (LiteSpeed binary)
+ This package provides the LiteSpeed SAPI module that provides a dedicated
+ interface for PHP integration with OpenLiteSpeed or LiteSpeed Web Server.
+ .
+ The following extensions are built in: Core date ereg filter hash libxml
+ mhash openssl pcre Reflection session SPL standard zlib.
+ .
+ PHP (recursive acronym for PHP: Hypertext Preprocessor) is a widely-used
+ open source general-purpose scripting language that is especially suited
+ for web development and can be embedded into HTML.
+
+Package: php5.6-mbstring
+Source: php5.6
+Version: 5.6.40-110001~bullseye60
+Architecture: amd64
+Maintainer: Debian PHP Maintainers <team+pkg-php@tracker.debian.org>
+Installed-Size: 1414
+Depends: php-common (>= 1:81~), ucf, php5.6-common (= 5.6.40-110001~bullseye60), libc6 (>= 2.14)
+Provides: php-mbstring
+Homepage: http://www.php.net/
+Priority: optional
+Section: php
+Filename: pool/main/p/php5.6/php5.6-mbstring_5.6.40-110001~bullseye60_amd64.deb
+Size: 453932
+SHA256: c52414055e4cb62c7b5d690cdaeecb82cfea210eefe3da6913df6d246ec44fff
+SHA1: 105bffda1b6ab359de2b130c9af2f9810d4c8b52
+MD5sum: f7bbf0c91ec3d5912c6623a2532a7893
+Description: MBSTRING module for PHP
+ This package provides the MBSTRING module(s) for PHP.
+ .
+ PHP (recursive acronym for PHP: Hypertext Preprocessor) is a widely-used
+ open source general-purpose scripting language that is especially suited
+ for web development and can be embedded into HTML.
+
+Package: php5.6-mcrypt
+Source: php5.6
+Version: 5.6.40-110001~bullseye60
+Architecture: amd64
+Maintainer: Debian PHP Maintainers <team+pkg-php@tracker.debian.org>
+Installed-Size: 79
+Depends: php-common (>= 1:81~), ucf, php5.6-common (= 5.6.40-110001~bullseye60), libc6 (>= 2.14), libmcrypt4
+Provides: php-mcrypt
+Homepage: http://www.php.net/
+Priority: optional
+Section: php
+Filename: pool/main/p/php5.6/php5.6-mcrypt_5.6.40-110001~bullseye60_amd64.deb
+Size: 15116
+SHA256: 1a0216cb612ae115f323b38b1cd100a60191234cd82c20272f2fcd191b424133
+SHA1: 20e24c59dbc4a96bb7a3907f66e347f1aa1ccee9
+MD5sum: 78b6a5e4b39837966f670cd628f90d04
+Description: libmcrypt module for PHP
+ This package provides the libmcrypt module(s) for PHP.
+ .
+ PHP (recursive acronym for PHP: Hypertext Preprocessor) is a widely-used
+ open source general-purpose scripting language that is especially suited
+ for web development and can be embedded into HTML.
+
+Package: php5.6-mysql
+Source: php5.6
+Version: 5.6.40-110001~bullseye60
+Architecture: amd64
+Maintainer: Debian PHP Maintainers <team+pkg-php@tracker.debian.org>
+Installed-Size: 539
+Depends: php-common (>= 1:81~), ucf, php5.6-common (= 5.6.40-110001~bullseye60), libc6 (>= 2.15)
+Provides: php-mysql, php-mysqli, php-mysqlnd, php-pdo-mysql, php5.6-mysqli, php5.6-mysqlnd, php5.6-pdo-mysql
+Homepage: http://www.php.net/
+Priority: optional
+Section: php
+Filename: pool/main/p/php5.6/php5.6-mysql_5.6.40-110001~bullseye60_amd64.deb
+Size: 138496
+SHA256: df298e5df62554410a8a8175ef9fb719a32ee007e68f3e1991c00a812806fc0d
+SHA1: 564aab787d2681e973e06ef0d88abfa2289f63b2
+MD5sum: bb38c2c5e6849a8d77ff825bff69ab77
+Description: MySQL module for PHP
+ This package provides the MySQL module(s) for PHP.
+ .
+ PHP (recursive acronym for PHP: Hypertext Preprocessor) is a widely-used
+ open source general-purpose scripting language that is especially suited
+ for web development and can be embedded into HTML.
+
+Package: php5.6-odbc
+Source: php5.6
+Version: 5.6.40-110001~bullseye60
+Architecture: amd64
+Maintainer: Debian PHP Maintainers <team+pkg-php@tracker.debian.org>
+Installed-Size: 131
+Depends: php-common (>= 1:81~), ucf, php5.6-common (= 5.6.40-110001~bullseye60), libc6 (>= 2.14), libodbc1 (>= 2.3.1)
+Provides: php-odbc, php-pdo-odbc, php5.6-pdo-odbc
+Homepage: http://www.php.net/
+Priority: optional
+Section: php
+Filename: pool/main/p/php5.6/php5.6-odbc_5.6.40-110001~bullseye60_amd64.deb
+Size: 30812
+SHA256: 8184afac9b8b34df85bbf474c5cb7f6dced0ec2f08f4ac68a75e775e0ed056eb
+SHA1: eefea797d1cd67ad6e6b8c0543e98caa1eda663a
+MD5sum: ccb6684e0bbca1c67f6e0bd60f3463d0
+Description: ODBC module for PHP
+ This package provides the ODBC module(s) for PHP.
+ .
+ PHP (recursive acronym for PHP: Hypertext Preprocessor) is a widely-used
+ open source general-purpose scripting language that is especially suited
+ for web development and can be embedded into HTML.
+
+Package: php5.6-opcache
+Source: php5.6
+Version: 5.6.40-110001~bullseye60
+Architecture: amd64
+Maintainer: Debian PHP Maintainers <team+pkg-php@tracker.debian.org>
+Installed-Size: 179
+Depends: php-common (>= 1:81~), ucf, php5.6-common (= 5.6.40-110001~bullseye60), libc6 (>= 2.27)
+Provides: php-opcache
+Homepage: http://www.php.net/
+Priority: optional
+Section: php
+Filename: pool/main/p/php5.6/php5.6-opcache_5.6.40-110001~bullseye60_amd64.deb
+Size: 61240
+SHA256: 2c146adeb1539bbf614b012041b7fea238d8953589d25068181d2e2594cd8ad8
+SHA1: 135fc2df2ebc1d86ebcea427977fe61bd6080f75
+MD5sum: 74d22e9eb22bc4d7fe991043fd0ccc31
+Description: Zend OpCache module for PHP
+ This package provides the Zend OpCache module(s) for PHP.
+ .
+ PHP (recursive acronym for PHP: Hypertext Preprocessor) is a widely-used
+ open source general-purpose scripting language that is especially suited
+ for web development and can be embedded into HTML.
+
+Package: php5.6-pgsql
+Source: php5.6
+Version: 5.6.40-110001~bullseye60
+Architecture: amd64
+Maintainer: Debian PHP Maintainers <team+pkg-php@tracker.debian.org>
+Installed-Size: 219
+Depends: php-common (>= 1:81~), ucf, php5.6-common (= 5.6.40-110001~bullseye60), libc6 (>= 2.14), libpq5 (>= 9.3~)
+Provides: php-pdo-pgsql, php-pgsql, php5.6-pdo-pgsql
+Homepage: http://www.php.net/
+Priority: optional
+Section: php
+Filename: pool/main/p/php5.6/php5.6-pgsql_5.6.40-110001~bullseye60_amd64.deb
+Size: 57360
+SHA256: f3c0ae79320221989dbd2a59cf5643729416d49bf4641b02b01aff8c425bc7f8
+SHA1: b9b6189ed48ef2a75bb529b027a8457949e018d5
+MD5sum: d850dbf447318ad940fd293e1d404585
+Description: PostgreSQL module for PHP
+ This package provides the PostgreSQL module(s) for PHP.
+ .
+ PHP (recursive acronym for PHP: Hypertext Preprocessor) is a widely-used
+ open source general-purpose scripting language that is especially suited
+ for web development and can be embedded into HTML.
+
+Package: php5.6-phpdbg
+Source: php5.6
+Version: 5.6.40-110001~bullseye60
+Architecture: amd64
+Maintainer: Debian PHP Maintainers <team+pkg-php@tracker.debian.org>
+Installed-Size: 4339
+Depends: libpcre3 (>= 2:8.41), media-types | mime-support, php5.6-cli, php5.6-common (= 5.6.40-110001~bullseye60), php5.6-json, php5.6-opcache, tzdata, ucf, libc6 (>= 2.29), libedit2 (>= 2.11-20080614-0), libssl1.1 (>= 1.1.0), libxml2 (>= 2.8.0), zlib1g (>= 1:1.1.4)
+Recommends: php-readline
+Provides: php-phpdbg, phpapi-20131226
+Homepage: http://www.php.net/
+Priority: optional
+Section: php
+Filename: pool/main/p/php5.6/php5.6-phpdbg_5.6.40-110001~bullseye60_amd64.deb
+Size: 1252108
+SHA256: 7760be115cc1ac1d8213494f0eb59c9ae533fb90419b681d3f7244f97a518895
+SHA1: 174ecab2ee686d2ebabf272efe2a87d659d1031c
+MD5sum: 24a8bfde9c13b3920bc0513a1748c319
+Description: server-side, HTML-embedded scripting language (PHPDBG binary)
+ This package provides the /usr/bin/phpdbg command interpreter, useful for
+ stepthrough debugging of PHP code.
+ .
+ The following extensions are built in: Core date ereg filter hash libxml
+ mhash openssl pcntl pcre Reflection session SPL standard zlib.
+ .
+ PHP (recursive acronym for PHP: Hypertext Preprocessor) is a widely-used
+ open source general-purpose scripting language that is especially suited
+ for web development and can be embedded into HTML.
+
+Package: php5.6-pspell
+Source: php5.6
+Version: 5.6.40-110001~bullseye60
+Architecture: amd64
+Maintainer: Debian PHP Maintainers <team+pkg-php@tracker.debian.org>
+Installed-Size: 55
+Depends: php-common (>= 1:81~), ucf, php5.6-common (= 5.6.40-110001~bullseye60), libaspell15 (>= 0.60.8), libc6 (>= 2.4)
+Provides: php-pspell
+Homepage: http://www.php.net/
+Priority: optional
+Section: php
+Filename: pool/main/p/php5.6/php5.6-pspell_5.6.40-110001~bullseye60_amd64.deb
+Size: 8264
+SHA256: ed71d98101a47485d922ab34f92c8159f05b45054ed0fd43fb033f81e816f286
+SHA1: c17a644484b05d441a2dcb66702e096dc64926e2
+MD5sum: 789da24143464399a6c7b3d9c273f04b
+Description: pspell module for PHP
+ This package provides the pspell module(s) for PHP.
+ .
+ PHP (recursive acronym for PHP: Hypertext Preprocessor) is a widely-used
+ open source general-purpose scripting language that is especially suited
+ for web development and can be embedded into HTML.
+
+Package: php5.6-readline
+Source: php5.6
+Version: 5.6.40-110001~bullseye60
+Architecture: amd64
+Maintainer: Debian PHP Maintainers <team+pkg-php@tracker.debian.org>
+Installed-Size: 67
+Depends: php-common (>= 1:81~), ucf, php5.6-common (= 5.6.40-110001~bullseye60), libc6 (>= 2.14), libedit2 (>= 3.1-20130611-0)
+Provides: php-readline
+Homepage: http://www.php.net/
+Priority: optional
+Section: php
+Filename: pool/main/p/php5.6/php5.6-readline_5.6.40-110001~bullseye60_amd64.deb
+Size: 12588
+SHA256: e1c084a2dfa3099c9ad63c2e7692566382a7ab8e199e6d507991113990191f7a
+SHA1: 1f62e76e4843af083c13649e7016df867eae9c7b
+MD5sum: 7c6e21133bc1939989e963124448f1f3
+Description: readline module for PHP
+ This package provides the readline module(s) for PHP.
+ .
+ PHP (recursive acronym for PHP: Hypertext Preprocessor) is a widely-used
+ open source general-purpose scripting language that is especially suited
+ for web development and can be embedded into HTML.
+
+Package: php5.6-recode
+Source: php5.6
+Version: 5.6.40-110001~bullseye60
+Architecture: amd64
+Maintainer: Debian PHP Maintainers <team+pkg-php@tracker.debian.org>
+Installed-Size: 43
+Depends: php-common (>= 1:81~), ucf, php5.6-common (= 5.6.40-110001~bullseye60), libc6 (>= 2.4), librecode0 (>= 3.6)
+Provides: php-recode
+Homepage: http://www.php.net/
+Priority: optional
+Section: php
+Filename: pool/main/p/php5.6/php5.6-recode_5.6.40-110001~bullseye60_amd64.deb
+Size: 5524
+SHA256: 56700c70b140b1b542d42f11a3d877cf637e978f78a200d529a501796e56fa97
+SHA1: 9edb6bd3bd329d2e05d45879cba75001bc4b60c4
+MD5sum: 799204b9fc7d52f0e550308bc29fffc4
+Description: recode module for PHP
+ This package provides the recode module(s) for PHP.
+ .
+ PHP (recursive acronym for PHP: Hypertext Preprocessor) is a widely-used
+ open source general-purpose scripting language that is especially suited
+ for web development and can be embedded into HTML.
+
+Package: php5.6-snmp
+Source: php5.6
+Version: 5.6.40-110001~bullseye60
+Architecture: amd64
+Maintainer: Debian PHP Maintainers <team+pkg-php@tracker.debian.org>
+Installed-Size: 87
+Depends: php-common (>= 1:81~), ucf, php5.6-common (= 5.6.40-110001~bullseye60), libc6 (>= 2.4), libsnmp40 (>= 5.9+dfsg)
+Recommends: snmp
+Provides: php-snmp
+Homepage: http://www.php.net/
+Priority: optional
+Section: php
+Filename: pool/main/p/php5.6/php5.6-snmp_5.6.40-110001~bullseye60_amd64.deb
+Size: 19064
+SHA256: 7754e7623353272b3a84e5cdcfcd1da3d786b125adce83621feecf9f3daf8ca0
+SHA1: f304965a1d378ff2424fb7e4bc162ba18038f667
+MD5sum: c7e740cbd7c69073180ff6c6035b4228
+Description: SNMP module for PHP
+ This package provides the SNMP module(s) for PHP.
+ .
+ PHP (recursive acronym for PHP: Hypertext Preprocessor) is a widely-used
+ open source general-purpose scripting language that is especially suited
+ for web development and can be embedded into HTML.
+
+Package: php5.6-soap
+Source: php5.6
+Version: 5.6.40-110001~bullseye60
+Architecture: amd64
+Maintainer: Debian PHP Maintainers <team+pkg-php@tracker.debian.org>
+Installed-Size: 391
+Depends: php-common (>= 1:81~), ucf, php5.6-common (= 5.6.40-110001~bullseye60), libc6 (>= 2.14), libxml2 (>= 2.7.4)
+Provides: php-soap
+Homepage: http://www.php.net/
+Priority: optional
+Section: php
+Filename: pool/main/p/php5.6/php5.6-soap_5.6.40-110001~bullseye60_amd64.deb
+Size: 130268
+SHA256: aa63e4e792f938d7f367df0dd139bb859605f8a9c58d37db7fdaa80b224039d4
+SHA1: 806716f8b2987af81ca4c41f8323908af97fb193
+MD5sum: 58155cbfdba2f8c716b447e732625dfd
+Description: SOAP module for PHP
+ This package provides the SOAP module(s) for PHP.
+ .
+ PHP (recursive acronym for PHP: Hypertext Preprocessor) is a widely-used
+ open source general-purpose scripting language that is especially suited
+ for web development and can be embedded into HTML.
+
+Package: php5.6-sqlite3
+Source: php5.6
+Version: 5.6.40-110001~bullseye60
+Architecture: amd64
+Maintainer: Debian PHP Maintainers <team+pkg-php@tracker.debian.org>
+Installed-Size: 120
+Depends: php-common (>= 1:81~), ucf, php5.6-common (= 5.6.40-110001~bullseye60), libc6 (>= 2.4), libsqlite3-0 (>= 3.7.4)
+Provides: php-pdo-sqlite, php-sqlite3, php5.6-pdo-sqlite
+Homepage: http://www.php.net/
+Priority: optional
+Section: php
+Filename: pool/main/p/php5.6/php5.6-sqlite3_5.6.40-110001~bullseye60_amd64.deb
+Size: 24304
+SHA256: 8484ecacede6d5157b95a47f05c988a2fc15c9d2e9c9c2b5e7878f71212938c6
+SHA1: 9f9a0740ffb399dd6ec205bb8ac4df63742c65f7
+MD5sum: 099cc2daa51e11424980ee80fa9f8190
+Description: SQLite3 module for PHP
+ This package provides the SQLite3 module(s) for PHP.
+ .
+ PHP (recursive acronym for PHP: Hypertext Preprocessor) is a widely-used
+ open source general-purpose scripting language that is especially suited
+ for web development and can be embedded into HTML.
+
+Package: php5.6-sybase
+Source: php5.6
+Version: 5.6.40-110001~bullseye60
+Architecture: amd64
+Maintainer: Debian PHP Maintainers <team+pkg-php@tracker.debian.org>
+Installed-Size: 111
+Depends: php-common (>= 1:81~), ucf, php5.6-common (= 5.6.40-110001~bullseye60), libc6 (>= 2.14), libsybdb5 (>= 0.63)
+Provides: php-mssql, php-pdo-dblib, php5.6-mssql, php5.6-pdo-dblib
+Homepage: http://www.php.net/
+Priority: optional
+Section: php
+Filename: pool/main/p/php5.6/php5.6-sybase_5.6.40-110001~bullseye60_amd64.deb
+Size: 23352
+SHA256: 9a402c45ccbfb22605ceecf2c97d706326f13cbeda68581ca807118cd244c056
+SHA1: 873b05fc2e551b461079c797fc7355e2450ce868
+MD5sum: 04234b322954c18be321ab0ccf45a33d
+Description: Sybase module for PHP
+ This package provides the Sybase module(s) for PHP.
+ .
+ PHP (recursive acronym for PHP: Hypertext Preprocessor) is a widely-used
+ open source general-purpose scripting language that is especially suited
+ for web development and can be embedded into HTML.
+
+Package: php5.6-tidy
+Source: php5.6
+Version: 5.6.40-110001~bullseye60
+Architecture: amd64
+Maintainer: Debian PHP Maintainers <team+pkg-php@tracker.debian.org>
+Installed-Size: 87
+Depends: php-common (>= 1:81~), ucf, php5.6-common (= 5.6.40-110001~bullseye60), libc6 (>= 2.4), libtidy5deb1 (>= 1:5.2.0)
+Provides: php-tidy
+Homepage: http://www.php.net/
+Priority: optional
+Section: php
+Filename: pool/main/p/php5.6/php5.6-tidy_5.6.40-110001~bullseye60_amd64.deb
+Size: 16940
+SHA256: 580eb41101b1829bf9f3329524b0f574e53b82c7efe51afe61778abd3b003a31
+SHA1: 7c55b2bc8bdb3ea218319ab1be1aca3c30c15b19
+MD5sum: 9421b44fb4ae98e9848e344f612c1053
+Description: tidy module for PHP
+ This package provides the tidy module(s) for PHP.
+ .
+ PHP (recursive acronym for PHP: Hypertext Preprocessor) is a widely-used
+ open source general-purpose scripting language that is especially suited
+ for web development and can be embedded into HTML.
+
+Package: php5.6-xml
+Source: php5.6
+Version: 5.6.40-110001~bullseye60
+Architecture: amd64
+Maintainer: Debian PHP Maintainers <team+pkg-php@tracker.debian.org>
+Installed-Size: 505
+Depends: php-common (>= 1:81~), ucf, php5.6-common (= 5.6.40-110001~bullseye60), libc6 (>= 2.14), libxml2 (>= 2.9.0), libxslt1.1 (>= 1.1.25)
+Breaks: php5.6-xsl (<< 5.6.18+dfsg-5~)
+Replaces: php5.6-xsl (<< 5.6.18+dfsg-5~)
+Provides: php-dom, php-simplexml, php-wddx, php-xml, php-xmlreader, php-xmlwriter, php-xsl, php5.6-dom, php5.6-simplexml, php5.6-wddx, php5.6-xmlreader, php5.6-xmlwriter, php5.6-xsl
+Homepage: http://www.php.net/
+Priority: optional
+Section: php
+Filename: pool/main/p/php5.6/php5.6-xml_5.6.40-110001~bullseye60_amd64.deb
+Size: 113568
+SHA256: a3e9f779b4264911c20c791f255a4dc2a4616952f7a39563e725244fe6942dd9
+SHA1: cc37ef9ff552d8fa5bae3c5445f380164937675b
+MD5sum: 046947ac45c802159d33322dc3d1afeb
+Description: DOM, SimpleXML, WDDX, XML, and XSL module for PHP
+ This package provides the DOM, SimpleXML, WDDX, XML, and XSL module(s) for PHP.
+ .
+ PHP (recursive acronym for PHP: Hypertext Preprocessor) is a widely-used
+ open source general-purpose scripting language that is especially suited
+ for web development and can be embedded into HTML.
+
+Package: php5.6-xmlrpc
+Source: php5.6
+Version: 5.6.40-110001~bullseye60
+Architecture: amd64
+Maintainer: Debian PHP Maintainers <team+pkg-php@tracker.debian.org>
+Installed-Size: 67
+Depends: php-common (>= 1:81~), ucf, php5.6-common (= 5.6.40-110001~bullseye60), libc6 (>= 2.4), libxmlrpc-epi0
+Provides: php-xmlrpc
+Homepage: http://www.php.net/
+Priority: optional
+Section: php
+Filename: pool/main/p/php5.6/php5.6-xmlrpc_5.6.40-110001~bullseye60_amd64.deb
+Size: 13596
+SHA256: 3be43c3774315a9cc9e153fbc1a43573a0c5413ab07359e7d3b846f49bec99e1
+SHA1: 4583618549da89008d79af99e190aee00f367c71
+MD5sum: 3f34baef2c4d902fea00027aab280177
+Description: XMLRPC-EPI module for PHP
+ This package provides the XMLRPC-EPI module(s) for PHP.
+ .
+ PHP (recursive acronym for PHP: Hypertext Preprocessor) is a widely-used
+ open source general-purpose scripting language that is especially suited
+ for web development and can be embedded into HTML.
+
+Package: php5.6-xsl
+Source: php5.6
+Version: 5.6.40-110001~bullseye60
+Architecture: all
+Maintainer: Debian PHP Maintainers <team+pkg-php@tracker.debian.org>
+Installed-Size: 292
+Depends: php5.6-common, php5.6-xml
+Homepage: http://www.php.net/
+Priority: optional
+Section: php
+Filename: pool/main/p/php5.6/php5.6-xsl_5.6.40-110001~bullseye60_all.deb
+Size: 276672
+SHA256: fe04e63fb04ca1b14d0324ffe28b039fbe40a460eb81fd87d861ad12f9b8323f
+SHA1: 400082ddd96351b788c73a23be209bb202f46842
+MD5sum: 0d824db3481c4d4dcc6d9b45be4aeccd
+Description: XSL module for PHP (dummy)
+ This package is a transitional dummy package and can be safely
+ removed.
+
+Package: php5.6-zip
+Source: php5.6
+Version: 5.6.40-110001~bullseye60
+Architecture: amd64
+Maintainer: Debian PHP Maintainers <team+pkg-php@tracker.debian.org>
+Installed-Size: 91
+Depends: php-common (>= 1:81~), ucf, php5.6-common (= 5.6.40-110001~bullseye60), libc6 (>= 2.27), libzip4 (>= 0.11.2)
+Provides: php-zip
+Homepage: http://www.php.net/
+Priority: optional
+Section: php
+Filename: pool/main/p/php5.6/php5.6-zip_5.6.40-110001~bullseye60_amd64.deb
+Size: 20024
+SHA256: c04b6f28b3ab9cec3ede96300c975735899d156e6349eeac0465156d98da1776
+SHA1: 000e23f61c53d491fd9eb601db888add2e5812f9
+MD5sum: 0e95a82919d79463ba17b27f4ff3dfc0
+Description: Zip module for PHP
+ This package provides the Zip module(s) for PHP.
+ .
+ PHP (recursive acronym for PHP: Hypertext Preprocessor) is a widely-used
+ open source general-purpose scripting language that is especially suited
+ for web development and can be embedded into HTML.
 
 Package: php7.0
 Version: 7.0.33-98001~bullseye54
