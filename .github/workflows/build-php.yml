@@ -29,6 +29,7 @@ on:
         default: 'bullseye'
         options:
           - 'bullseye'
+          - 'buster'
       release:
         description: 'publish to apt repository'
         type: boolean
@@ -75,13 +76,22 @@ jobs:
       options: --shm-size=32g
     steps:
       - name: Point EOL suites at archive.debian.org
-        if: inputs.dist == 'bullseye'
+        if: inputs.dist == 'bullseye' || inputs.dist == 'buster'
         run: |
-          sed -i -e '/bullseye-updates/d' -e '/bullseye-backports/d' \
+          sed -i -e '/${{ inputs.dist }}-updates/d' \
               -e 's|deb\.debian\.org/debian-security|archive.debian.org/debian-security|g' \
               -e 's|deb\.debian\.org/debian|archive.debian.org/debian|g' \
               -e 's|security\.debian\.org/debian-security|archive.debian.org/debian-security|g' \
               /etc/apt/sources.list
+          # bullseye-backports was emptied at EOL; buster-backports still
+          # carries debhelper 13 and lives on archive - keep/enable it
+          if [ "${{ inputs.dist }}" = bullseye ]; then
+            sed -i '/bullseye-backports/d' /etc/apt/sources.list
+          else
+            grep -q buster-backports /etc/apt/sources.list || \
+              echo "deb http://archive.debian.org/debian buster-backports main" \
+              >>/etc/apt/sources.list
+          fi
 
       - name: Install git for checkout
         run: apt-get update -qq && apt-get install -y --no-install-recommends git ca-certificates

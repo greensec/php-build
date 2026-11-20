@@ -49,19 +49,37 @@ fi
 echo ">>> building $PKG for $DIST (source type: $src_type, packaging base: $SRC_DIST)"
 
 # --- toolchain + repos --------------------------------------------------------
-# bullseye is EOL - the main mirrors dropped it, move to archive.debian.org
-# and drop the emptied -updates/-backports suites.
-if [ "$DIST" = bullseye ]; then
-    sed -i -e '/bullseye-updates/d' -e '/bullseye-backports/d' \
-        -e 's|deb\.debian\.org/debian-security|archive.debian.org/debian-security|g' \
-        -e 's|deb\.debian\.org/debian|archive.debian.org/debian|g' \
-        -e 's|security\.debian\.org/debian-security|archive.debian.org/debian-security|g' \
-        /etc/apt/sources.list
-fi
+# EOL dists move to archive.debian.org; the emptied -updates/-backports suites
+# must go (404 would break apt-get update). buster still has a useful
+# -backports suite (debhelper 13.3.3~bpo10+1 - sury packaging needs compat 13),
+# so it gets an explicit archive line instead.
+case "$DIST" in
+    buster)
+        sed -i -e '/buster-updates/d' \
+            -e 's|deb\.debian\.org/debian-security|archive.debian.org/debian-security|g' \
+            -e 's|deb\.debian\.org/debian|archive.debian.org/debian|g' \
+            -e 's|security\.debian\.org/debian-security|archive.debian.org/debian-security|g' \
+            /etc/apt/sources.list
+        echo "deb http://archive.debian.org/debian buster-backports main" \
+            >>/etc/apt/sources.list
+        ;;
+    bullseye)
+        sed -i -e '/bullseye-updates/d' -e '/bullseye-backports/d' \
+            -e 's|deb\.debian\.org/debian-security|archive.debian.org/debian-security|g' \
+            -e 's|deb\.debian\.org/debian|archive.debian.org/debian|g' \
+            -e 's|security\.debian\.org/debian-security|archive.debian.org/debian-security|g' \
+            /etc/apt/sources.list
+        ;;
+esac
 apt-get update -qq
 apt-get install -y --no-install-recommends \
     build-essential devscripts quilt dpkg-dev equivs ca-certificates \
     curl xz-utils git gnupg rsync locales-all tzdata ccache
+# buster's debhelper 12 cannot satisfy sury's debhelper-compat (= 13);
+# buster-backports still ships 13.3.3
+if [ "$DIST" = buster ]; then
+    apt-get install -y --no-install-recommends -t buster-backports debhelper
+fi
 
 # ccache lives inside the checkout so actions/cache can persist it
 export PATH="/usr/lib/ccache:$PATH"
@@ -177,10 +195,20 @@ fi
 # dpkg-checkbuilddeps exits 1 whenever something is unmet - that is the
 # expected case here, so keep it out of pipefail's reach.
 missing=$(dpkg-checkbuilddeps 2>&1 || true)
+# alternatives "a | b": pick the first name that has an install candidate on
+# THIS dist (e.g. libenchant-2-dev exists on bullseye+ but not buster)
 missing=$(printf '%s\n' "$missing" | sed -n 's/.*[Uu]nmet build dependencies: //p' \
-    | sed -e 's/([^)]*)//g; s/\[[^]]*\]//g; s/<[^>]*>//g; s/ *| *[^ ]*//g' \
+    | sed -e 's/([^)]*)//g; s/\[[^]]*\]//g; s/<[^>]*>//g; s/:[a-z0-9-]*//g' \
         -e 's/\bdebhelper-compat\b/debhelper/g' \
-    | tr ' ,' '\n' | sed -e 's/^[[:space:]]*//; s/[[:space:]]*$//' -e '/^$/d' | sort -u)
+    | tr ',' '\n' | sed -e 's/^[[:space:]]*//; s/[[:space:]]*$//' -e '/^$/d' \
+    | while IFS= read -r grp; do
+        for cand in $(printf '%s' "$grp" | tr '|' '\n' | sed -e 's/^[[:space:]]*//; s/[[:space:]]*$//' -e '/^$/d'); do
+            if apt-cache policy "$cand" 2>/dev/null | grep -qE 'Candidate: [^(]'; then
+                printf '%s\n' "$cand"
+                break
+            fi
+        done
+      done | sort -u)
 if [ -n "${missing}" ]; then
     echo ">>> installing build-deps: $(echo "$missing" | wc -l) packages"
     apt-get -y install --no-install-recommends $missing

@@ -1,0 +1,18 @@
+# Local build environment for php-build (CI uses debian:<dist> directly).
+FROM debian:buster
+
+RUN sed -i -e '/buster-updates/d' \
+        -e 's|deb\.debian\.org/debian-security|archive.debian.org/debian-security|g' \
+        -e 's|deb\.debian\.org/debian|archive.debian.org/debian|g' \
+        -e 's|security\.debian\.org/debian-security|archive.debian.org/debian-security|g' \
+        /etc/apt/sources.list \
+ && echo "deb http://archive.debian.org/debian buster-backports main" \
+        >>/etc/apt/sources.list \
+ && apt-get update -qq && apt-get install -y --no-install-recommends \
+    build-essential devscripts quilt dpkg-dev equivs ca-certificates \
+    curl xz-utils git gnupg rsync locales-all tzdata \
+ && apt-get install -y --no-install-recommends -t buster-backports debhelper \
+ && rm -rf /var/lib/apt/lists/*
+
+WORKDIR /php-build
+ENTRYPOINT ["./scripts/build.sh"]
