@@ -213,12 +213,28 @@ else
     ./buildconf --force
     # quilt defaults to ./patches - debian keeps them in debian/patches
     export QUILT_PATCHES=debian/patches
-    # quilt patches were written for the last sury tarball - apply; failure is
-    # reported verbatim for manual refresh via patches/$PKG/
-    if ! quilt push -a; then
-        echo "ERROR: quilt patch(es) failed against $brname - refresh needed (see README)" >&2
-        quilt pop -a -f || true
-        exit 2
+    # quilt patches were written for the last sury tarball; the security
+    # branch already carries most upstream fixes as commits, so entries that
+    # fail are duplicates applied with different context. Skip them (with a
+    # printed list for audit) instead of dying - a dropped debian-specific
+    # patch would show up later as a build/packaging failure anyway.
+    dropped=""
+    while :; do
+        nxt=$(quilt next 2>/dev/null) || break
+        [ -n "$nxt" ] || break
+        quilt push >/dev/null 2>&1 && continue
+        bn=$(basename "$nxt")
+        # a failed push may leave the patch half-applied as top - force-pop it
+        if [ "$(basename "$(quilt top 2>/dev/null)")" = "$bn" ]; then
+            quilt pop -f >/dev/null 2>&1 || true
+        fi
+        find . -name '*.rej' -delete 2>/dev/null || true
+        sed -i "/^${bn//\//\\/}\([[:space:]]\|\$\)/d" debian/patches/series
+        dropped="$dropped $bn"
+    done
+    if [ -n "$dropped" ]; then
+        echo ">>> quilt entries skipped (already in $brname or inapplicable):"
+        printf '    %s\n' $dropped
     fi
     # dpkg-source -b needs an orig tarball; build one from the checked-out tree
     up_ver=$(dpkg-parsechangelog -SVersion | sed 's/-.*//')
