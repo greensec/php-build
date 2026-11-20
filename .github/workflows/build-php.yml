@@ -1,0 +1,78 @@
+name: build php packages
+
+on:
+  workflow_dispatch:
+    inputs:
+      php_branch:
+        description: 'PHP branch'
+        type: choice
+        required: true
+        options:
+          - '8.2'
+          - '8.3'
+          - '8.4'
+          - '8.5'
+          - '8.6'
+          - '8.1'
+          - '8.0'
+          - '7.4'
+          - '7.3'
+          - '7.2'
+          - '7.1'
+          - '7.0'
+          - '5.6'
+      dist:
+        description: 'Target suite'
+        type: choice
+        required: true
+        default: 'bullseye'
+        options:
+          - 'bullseye'
+      release:
+        description: 'publish to apt repository'
+        type: boolean
+        required: true
+        default: false
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    name: "php${{ inputs.php_branch }} for ${{ inputs.dist }}"
+    runs-on: ubuntu-22.04
+    container:
+      image: "debian:${{ inputs.dist }}"
+    steps:
+      - name: Install git for checkout
+        run: apt-get update -qq && apt-get install -y --no-install-recommends git ca-certificates
+
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Build package
+        run: ./scripts/build.sh
+        env:
+          PHP_BRANCH: ${{ inputs.php_branch }}
+          DIST: ${{ inputs.dist }}
+
+      - name: Upload deb files
+        uses: actions/upload-artifact@v4
+        with:
+          name: "php${{ inputs.php_branch }}-${{ inputs.dist }}"
+          path: ./out/*.deb
+
+      - name: Publish to gh-pages apt repo
+        uses: smeinecke/apt-repo-action@v2.2.1
+        if: inputs.release == true
+        with:
+          github_token: ${{ github.token }}
+          repo_supported_arch: amd64
+          repo_supported_version: ${{ inputs.dist }}
+          file: |
+            ./out/*.deb
+          version_by_filename: true
+          private_key: ${{ secrets.APT_SIGNING_KEY }}
+          public_key: ${{ vars.APT_PUBLIC_KEY }}
+          key_passphrase: ""
+          skip_duplicates: true

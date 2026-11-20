@@ -1,0 +1,7 @@
+*.deb
+*.dsc
+*.tar.*
+out/
+work/
+.secret/
+.gh-run-logs/

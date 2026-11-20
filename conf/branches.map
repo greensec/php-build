@@ -1,0 +1,22 @@
+# PHP branch -> upstream source strategy
+#
+# phpnet    supported branches; source = newest sury SRC_DIST source package
+#           (contains the current php.net release tarball + debian packaging),
+#           rebuilt unmodified for DIST with a greensec changelog suffix.
+#
+# security  EOL branches; source = remicollet/php-src-security git branch
+#           (PHP-<branch>-security-backports) + last sury DIST packaging.
+#           Quilt patches may need manual refresh - see README.
+8.2	phpnet
+8.3	phpnet
+8.4	phpnet
+8.5	phpnet
+8.6	phpnet
+8.1	security
+8.0	security
+7.4	security
+7.3	security
+7.2	security
+7.1	security
+7.0	security
+5.6	security
