@@ -90,6 +90,17 @@ deb-src [signed-by=/etc/apt/keyrings/ppa.gpg] $PPA/ $PPA_SUITE main
 # so this only works again if sury ever restores them
 deb-src [signed-by=/etc/apt/keyrings/sury.gpg] $SURY/ $DIST main
 EOF
+
+# sury backports a few libraries for DIST (pcre2, gd, xml2 - only ones in the
+# mirror pool that outrank the distro). Building against them would leak
+# Depends: entries (e.g. libpcre2-8-0 >= 10.38) that plain DIST cannot
+# satisfy, so pin them to the distro version. Priority 1001 also permits the
+# downgrade if they get installed by a build-dep first.
+cat >/etc/apt/preferences.d/php-build-distro-libs.pref <<'EOF'
+Package: libpcre2-8-0 libpcre2-16-0 libpcre2-32-0 libpcre2-posix2 libpcre2-dev libgd3 libgd-dev libxml2 libxml2-dev libxml2-utils
+Pin: release o=Debian
+Pin-Priority: 1001
+EOF
 apt-get update -qq
 
 cd "$WORKDIR"
