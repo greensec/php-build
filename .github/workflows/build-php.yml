@@ -112,8 +112,8 @@ jobs:
           # latest ccache for this branch+dist
           key: "${{ inputs.dist }}-php${{ matrix.php_branch }}-build-cache-${{ github.run_id }}"
           restore-keys: |
-            "${{ inputs.dist }}-php${{ matrix.php_branch }}-build-cache-"
-            "${{ inputs.dist }}-php${{ matrix.php_branch }}-"
+            ${{ inputs.dist }}-php${{ matrix.php_branch }}-build-cache-
+            ${{ inputs.dist }}-php${{ matrix.php_branch }}-
 
       - name: Build package
         run: ./scripts/build.sh
