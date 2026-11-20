@@ -92,7 +92,7 @@ jobs:
           path: ./out/*.deb
 
       - name: Publish to gh-pages apt repo
-        uses: smeinecke/apt-repo-action@v2.2.1
+        uses: smeinecke/apt-repo-action@v2.2.4
         if: inputs.release == true
         with:
           github_token: ${{ github.token }}
