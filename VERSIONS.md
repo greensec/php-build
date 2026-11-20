@@ -45,15 +45,29 @@ via `workflow_dispatch`.
 
 ### security builds
 
-| branch | suite | version | built | notes |
-|---|---|---|---|---|
-| 8.0 | bullseye | 1:8.0.30-31001~bullseye45 | 2026-11-20 | 8.0.30 + all Remi backports through GHSA-jm4m (FPM stdio fd); sury quilt series reduced to the ~89 packaging patches - upstream-fix entries already in the backports tree are skipped at build time |
-| 7.4 | bullseye | 1:7.4.33-37001~bullseye46 | 2026-11-20 | 7.4.33 + Remi backports; ~100 duplicate quilt entries skipped |
-| 7.3 | bullseye | 7.3.33-41001~bullseye47 | 2026-11-20 | 7.3.33 + Remi backports |
-| 7.2 | bullseye | 7.2.34-71001~bullseye56 | 2026-11-20 | 7.2.34 + Remi backports |
-| 7.1 | bullseye | 7.1.33-86001~bullseye53 | 2026-11-20 | 7.1.33 + Remi backports |
-| 7.0 | bullseye | 7.0.33-98001~bullseye64 | 2026-11-20 | 7.0.33 + Remi backports; rebuilt against distro libpcre3 8.39 |
-| 5.6 | bullseye | 5.6.40-110001~bullseye63 | 2026-11-20 | 5.6.40 + Remi backports; pre.d fuzz-patches for OpenSSL 1.1 compat + php2shell backport; rebuilt against distro libpcre3 8.39 |
+bullseye:
+
+| branch | version | built | notes |
+|---|---|---|---|
+| 8.0 | 1:8.0.30-31001~bullseye45 | 2026-11-20 | 8.0.30 + all Remi backports through GHSA-jm4m (FPM stdio fd); sury quilt series reduced to the ~89 packaging patches - upstream-fix entries already in the backports tree are skipped at build time |
+| 7.4 | 1:7.4.33-37001~bullseye46 | 2026-11-20 | 7.4.33 + Remi backports; ~100 duplicate quilt entries skipped |
+| 7.3 | 7.3.33-41001~bullseye47 | 2026-11-20 | 7.3.33 + Remi backports |
+| 7.2 | 7.2.34-71001~bullseye56 | 2026-11-20 | 7.2.34 + Remi backports |
+| 7.1 | 7.1.33-86001~bullseye53 | 2026-11-20 | 7.1.33 + Remi backports |
+| 7.0 | 7.0.33-98001~bullseye64 | 2026-11-20 | 7.0.33 + Remi backports; rebuilt against distro libpcre3 8.39 |
+| 5.6 | 5.6.40-110001~bullseye63 | 2026-11-20 | 5.6.40 + Remi backports; pre.d fuzz-patches for OpenSSL 1.1 compat + php2shell backport; rebuilt against distro libpcre3 8.39 |
+
+buster:
+
+| branch | version | built | notes |
+|---|---|---|---|
+| 8.0 | 1:8.0.30-32001~buster65 | 2026-11-20 | 8.0.30 + Remi backports |
+| 7.4 | 1:7.4.33-38001~buster72 | 2026-11-20 | 7.4.33 + Remi backports |
+| 7.3 | 7.3.33-42001~buster73 | 2026-11-20 | 7.3.33 + Remi backports |
+| 7.2 | 7.2.34-71001~buster68 | 2026-11-20 | 7.2.34 + Remi backports |
+| 7.1 | 7.1.33-86001~buster74 | 2026-11-20 | 7.1.33 + Remi backports |
+| 7.0 | 7.0.33-98001~buster75 | 2026-11-20 | 7.0.33 + Remi backports |
+| 5.6 | 5.6.40-110001~buster71 | 2026-11-20 | 5.6.40 + Remi backports; pre.d fuzz-patches for OpenSSL 1.1 compat + php2shell backport; installs on stock buster |
 
 ## Version scheme
 
