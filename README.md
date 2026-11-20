@@ -62,6 +62,11 @@ newer release than the repo carries for any `phpnet` branch.
 `debian/patches` stop applying, `build.sh` aborts (exit 2) with the
 failing patch - refresh it and add a fixed copy under `patches/<pkg>/`.
 
+`patches/php<ver>/pr<N>-*.patch` files are upstream PRs from
+remicollet/php-src-security carried locally until they merge
+(currently: php5.6 PR31 PHP2Shell backport, php7.2 PR44 and php7.3 PR43
+backport fixes). Remove each once the corresponding PR lands upstream.
+
 ## Repo signing
 
 `scripts/gen-signing-key.sh` creates a dedicated keypair, stores the

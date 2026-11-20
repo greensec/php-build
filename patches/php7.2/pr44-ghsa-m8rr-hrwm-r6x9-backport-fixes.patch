@@ -1,0 +1,92 @@
+diff --git a/ext/mysqlnd/mysqlnd_ps.c b/ext/mysqlnd/mysqlnd_ps.c
+index cacaa8057b..0a51a5b16e 100644
+--- a/ext/mysqlnd/mysqlnd_ps.c
++++ b/ext/mysqlnd/mysqlnd_ps.c
+@@ -348,6 +348,9 @@ mysqlnd_stmt_prepare_read_eof(MYSQLND_STMT * s)
+ 			if (stmt->result) {
+ 				stmt->result->m.free_result_contents(stmt->result);
+ 				mnd_pefree(stmt->result, stmt->result->persistent);
++				/* The memset() below resets the statement, so release what it still owns first. */
++				conn->m->free_reference(conn);
++				mnd_pefree(stmt->execute_cmd_buffer.buffer, stmt->persistent);
+ 				/* XXX: This will crash, because we will null also the methods.
+ 					But seems it happens in extreme cases or doesn't. Should be fixed by exporting a function
+ 					(from mysqlnd_driver.c?) to do the reset.
+diff --git a/ext/mysqlnd/mysqlnd_wireprotocol.c b/ext/mysqlnd/mysqlnd_wireprotocol.c
+index 722f00266c..f9b3ab5dd9 100644
+--- a/ext/mysqlnd/mysqlnd_wireprotocol.c
++++ b/ext/mysqlnd/mysqlnd_wireprotocol.c
+@@ -460,6 +460,9 @@ php_mysqlnd_greet_read(void * _packet)
+ 		/* And a length of the server scramble in one byte */
+ 		packet->authentication_plugin_data.l = uint1korr(pad_start + 2);
+ 		if (packet->authentication_plugin_data.l > SCRAMBLE_LENGTH) {
++			/* the rest of the scramble has to be in the packet */
++			BAIL_IF_NOT_ENOUGH_DATA_EX(packet->authentication_plugin_data.l - SCRAMBLE_LENGTH);
++
+ 			/* more data*/
+ 			char * new_auth_plugin_data = emalloc(packet->authentication_plugin_data.l);
+ 			if (!new_auth_plugin_data) {
+diff --git a/ext/pgsql/pgsql.c b/ext/pgsql/pgsql.c
+index 4418631e3d..9f797885f3 100644
+--- a/ext/pgsql/pgsql.c
++++ b/ext/pgsql/pgsql.c
+@@ -6119,6 +6119,7 @@ PHP_PGSQL_API int php_pgsql_convert(PGconn *pg_link, const char *table_name, con
+ 							ZSTR_LEN(str) = PQescapeStringConn(pg_link, ZSTR_VAL(str), Z_STRVAL_P(val), Z_STRLEN_P(val), &escape_err);
+ 							if (escape_err) {
+ 								err = 1;
++								zend_string_release(str);
+ 							} else {
+ 								str = zend_string_truncate(str, ZSTR_LEN(str), 0);
+ 								ZVAL_NEW_STR(&new_val, str);
+diff --git a/sapi/cgi/cgi_main.c b/sapi/cgi/cgi_main.c
+index 2d31da2592..98eb719935 100644
+--- a/sapi/cgi/cgi_main.c
++++ b/sapi/cgi/cgi_main.c
+@@ -1924,7 +1924,7 @@ int main(int argc, char *argv[])
+ 
+ 				if ((val = strchr(php_optarg, '='))) {
+ 					val++;
+-					if (!isalnum(*val) && *val != '"' && *val != '\'' && *val != '\0') {
++					if (!isalnum((unsigned char)*val) && *val != '"' && *val != '\'' && *val != '\0') {
+ 						cgi_sapi_module.ini_entries = realloc(cgi_sapi_module.ini_entries, ini_entries_len + len + sizeof("\"\"\n\0"));
+ 						memcpy(cgi_sapi_module.ini_entries + ini_entries_len, php_optarg, (val - php_optarg));
+ 						ini_entries_len += (val - php_optarg);
+diff --git a/sapi/cli/php_cli.c b/sapi/cli/php_cli.c
+index 86d2c6d224..64441432e0 100644
+--- a/sapi/cli/php_cli.c
++++ b/sapi/cli/php_cli.c
+@@ -1297,7 +1297,7 @@ int main(int argc, char *argv[])
+ 
+ 				if ((val = strchr(php_optarg, '='))) {
+ 					val++;
+-					if (!isalnum(*val) && *val != '"' && *val != '\'' && *val != '\0') {
++					if (!isalnum((unsigned char)*val) && *val != '"' && *val != '\'' && *val != '\0') {
+ 						ini_entries = realloc(ini_entries, ini_entries_len + len + sizeof("\"\"\n\0"));
+ 						memcpy(ini_entries + ini_entries_len, php_optarg, (val - php_optarg));
+ 						ini_entries_len += (val - php_optarg);
+diff --git a/sapi/fpm/fpm/fpm_main.c b/sapi/fpm/fpm/fpm_main.c
+index b0e6226d9a..ca9fca5352 100644
+--- a/sapi/fpm/fpm/fpm_main.c
++++ b/sapi/fpm/fpm/fpm_main.c
+@@ -1651,7 +1651,7 @@ int main(int argc, char *argv[])
+ 
+ 				if ((val = strchr(php_optarg, '='))) {
+ 					val++;
+-					if (!isalnum(*val) && *val != '"' && *val != '\'' && *val != '\0') {
++					if (!isalnum((unsigned char)*val) && *val != '"' && *val != '\'' && *val != '\0') {
+ 						cgi_sapi_module.ini_entries = realloc(cgi_sapi_module.ini_entries, ini_entries_len + len + sizeof("\"\"\n\0"));
+ 						memcpy(cgi_sapi_module.ini_entries + ini_entries_len, php_optarg, (val - php_optarg));
+ 						ini_entries_len += (val - php_optarg);
+diff --git a/sapi/phpdbg/phpdbg.c b/sapi/phpdbg/phpdbg.c
+index 2a5ea29a0b..b560a5bb0e 100644
+--- a/sapi/phpdbg/phpdbg.c
++++ b/sapi/phpdbg/phpdbg.c
+@@ -1474,7 +1474,7 @@ int main(int argc, char **argv) /* {{{ */
+ 
+ 				if ((val = strchr(php_optarg, '='))) {
+ 				  val++;
+-				  if (!isalnum(*val) && *val != '"' && *val != '\'' && *val != '\0') {
++				  if (!isalnum((unsigned char)*val) && *val != '"' && *val != '\'' && *val != '\0') {
+ 					  ini_entries = realloc(ini_entries, ini_entries_len + len + sizeof("\"\"\n\0"));
+ 					  memcpy(ini_entries + ini_entries_len, php_optarg, (val - php_optarg));
+ 					  ini_entries_len += (val - php_optarg);

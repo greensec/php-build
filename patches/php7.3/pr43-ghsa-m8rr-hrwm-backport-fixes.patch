@@ -1,0 +1,64 @@
+diff --git a/ext/pgsql/pgsql.c b/ext/pgsql/pgsql.c
+index 7438c3f510..d4160964c8 100644
+--- a/ext/pgsql/pgsql.c
++++ b/ext/pgsql/pgsql.c
+@@ -6126,6 +6126,7 @@ PHP_PGSQL_API int php_pgsql_convert(PGconn *pg_link, const char *table_name, con
+ 							ZSTR_LEN(str) = PQescapeStringConn(pg_link, ZSTR_VAL(str), Z_STRVAL_P(val), Z_STRLEN_P(val), &escape_err);
+ 							if (escape_err) {
+ 								err = 1;
++								zend_string_release_ex(str, 0);
+ 							} else {
+ 								str = zend_string_truncate(str, ZSTR_LEN(str), 0);
+ 								ZVAL_NEW_STR(&new_val, str);
+diff --git a/sapi/cgi/cgi_main.c b/sapi/cgi/cgi_main.c
+index d83d15bc6b..fb6e73c89e 100644
+--- a/sapi/cgi/cgi_main.c
++++ b/sapi/cgi/cgi_main.c
+@@ -1878,7 +1878,7 @@ int main(int argc, char *argv[])
+ 
+ 				if ((val = strchr(php_optarg, '='))) {
+ 					val++;
+-					if (!isalnum(*val) && *val != '"' && *val != '\'' && *val != '\0') {
++					if (!isalnum((unsigned char)*val) && *val != '"' && *val != '\'' && *val != '\0') {
+ 						cgi_sapi_module.ini_entries = realloc(cgi_sapi_module.ini_entries, ini_entries_len + len + sizeof("\"\"\n\0"));
+ 						memcpy(cgi_sapi_module.ini_entries + ini_entries_len, php_optarg, (val - php_optarg));
+ 						ini_entries_len += (val - php_optarg);
+diff --git a/sapi/cli/php_cli.c b/sapi/cli/php_cli.c
+index 2b6ace754c..9072b7a767 100644
+--- a/sapi/cli/php_cli.c
++++ b/sapi/cli/php_cli.c
+@@ -1286,7 +1286,7 @@ int main(int argc, char *argv[])
+ 
+ 				if ((val = strchr(php_optarg, '='))) {
+ 					val++;
+-					if (!isalnum(*val) && *val != '"' && *val != '\'' && *val != '\0') {
++					if (!isalnum((unsigned char)*val) && *val != '"' && *val != '\'' && *val != '\0') {
+ 						ini_entries = realloc(ini_entries, ini_entries_len + len + sizeof("\"\"\n\0"));
+ 						memcpy(ini_entries + ini_entries_len, php_optarg, (val - php_optarg));
+ 						ini_entries_len += (val - php_optarg);
+diff --git a/sapi/fpm/fpm/fpm_main.c b/sapi/fpm/fpm/fpm_main.c
+index 85d83593f3..7715c63a15 100644
+--- a/sapi/fpm/fpm/fpm_main.c
++++ b/sapi/fpm/fpm/fpm_main.c
+@@ -1624,7 +1624,7 @@ int main(int argc, char *argv[])
+ 
+ 				if ((val = strchr(php_optarg, '='))) {
+ 					val++;
+-					if (!isalnum(*val) && *val != '"' && *val != '\'' && *val != '\0') {
++					if (!isalnum((unsigned char)*val) && *val != '"' && *val != '\'' && *val != '\0') {
+ 						cgi_sapi_module.ini_entries = realloc(cgi_sapi_module.ini_entries, ini_entries_len + len + sizeof("\"\"\n\0"));
+ 						memcpy(cgi_sapi_module.ini_entries + ini_entries_len, php_optarg, (val - php_optarg));
+ 						ini_entries_len += (val - php_optarg);
+diff --git a/sapi/phpdbg/phpdbg.c b/sapi/phpdbg/phpdbg.c
+index 648627d56c..c99a5ea084 100644
+--- a/sapi/phpdbg/phpdbg.c
++++ b/sapi/phpdbg/phpdbg.c
+@@ -1467,7 +1467,7 @@ int main(int argc, char **argv) /* {{{ */
+ 
+ 				if ((val = strchr(php_optarg, '='))) {
+ 				  val++;
+-				  if (!isalnum(*val) && *val != '"' && *val != '\'' && *val != '\0') {
++				  if (!isalnum((unsigned char)*val) && *val != '"' && *val != '\'' && *val != '\0') {
+ 					  ini_entries = realloc(ini_entries, ini_entries_len + len + sizeof("\"\"\n\0"));
+ 					  memcpy(ini_entries + ini_entries_len, php_optarg, (val - php_optarg));
+ 					  ini_entries_len += (val - php_optarg);
