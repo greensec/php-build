@@ -52,7 +52,8 @@ via `workflow_dispatch`.
 | 7.3 | bullseye | 7.3.33-41001~bullseye47 | 2026-11-20 | 7.3.33 + Remi backports |
 | 7.2 | bullseye | 7.2.34-71001~bullseye56 | 2026-11-20 | 7.2.34 + Remi backports |
 | 7.1 | bullseye | 7.1.33-86001~bullseye53 | 2026-11-20 | 7.1.33 + Remi backports |
-| 7.0 | bullseye | 7.0.33-98001~bullseye54 | 2026-11-20 | 7.0.33 + Remi backports |
+| 7.0 | bullseye | 7.0.33-98001~bullseye64 | 2026-11-20 | 7.0.33 + Remi backports; rebuilt against distro libpcre3 8.39 |
+| 5.6 | bullseye | 5.6.40-110001~bullseye63 | 2026-11-20 | 5.6.40 + Remi backports; pre.d fuzz-patches for OpenSSL 1.1 compat + php2shell backport; rebuilt against distro libpcre3 8.39 |
 
 ## Version scheme
 
