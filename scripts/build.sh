@@ -213,6 +213,16 @@ else
     ./buildconf --force
     # quilt defaults to ./patches - debian keeps them in debian/patches
     export QUILT_PATCHES=debian/patches
+    # patches/<pkg>/series.drops lists series entries to remove before
+    # pushing - for patches that still apply but duplicate code already in
+    # the backports tree (e.g. 0197-backport-zend_string_efree on 7.1)
+    if [ -f "$ROOT/patches/$PKG/series.drops" ]; then
+        while read -r dp; do
+            [ -n "$dp" ] || continue
+            sed -i "/^${dp//\//\\/}\([[:space:]]\|\$\)/d" debian/patches/series
+            echo ">>> series.drops: removed $dp"
+        done < "$ROOT/patches/$PKG/series.drops"
+    fi
     # quilt patches were written for the last sury tarball; the security
     # branch already carries most upstream fixes as commits, so entries that
     # fail are duplicates applied with different context. Skip them (with a
@@ -222,8 +232,16 @@ else
     while :; do
         nxt=$(quilt next 2>/dev/null) || break
         [ -n "$nxt" ] || break
-        quilt push >/dev/null 2>&1 && continue
         bn=$(basename "$nxt")
+        # already-in-tree check first: reverse-appliable means the content is
+        # present and pushing would silently duplicate code (e.g. redefining
+        # zend_string_efree on 7.1)
+        if patch -R -p1 --dry-run -f -s < "debian/patches/$bn" >/dev/null 2>&1; then
+            sed -i "/^${bn//\//\\/}\([[:space:]]\|\$\)/d" debian/patches/series
+            dropped="$dropped $bn"
+            continue
+        fi
+        quilt push >/dev/null 2>&1 && continue
         # a failed push may leave the patch half-applied as top - force-pop it
         if [ "$(basename "$(quilt top 2>/dev/null)")" = "$bn" ]; then
             quilt pop -f >/dev/null 2>&1 || true
