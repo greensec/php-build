@@ -24,22 +24,22 @@ Description: server-side, HTML-embedded scripting language (Apache 2 module) (de
 
 Package: libapache2-mod-php5.6
 Source: php5.6
-Version: 5.6.40-110001~bullseye60
+Version: 5.6.40-110001~bullseye63
 Architecture: amd64
 Maintainer: Debian PHP Maintainers <team+pkg-php@tracker.debian.org>
 Installed-Size: 4253
-Depends: libpcre3 (>= 2:8.41), media-types | mime-support, php5.6-cli, php5.6-common (= 5.6.40-110001~bullseye60), php5.6-json, php5.6-opcache, tzdata, ucf, apache2-api-20120211, apache2-bin (>= 2.4.16), libc6 (>= 2.29), libsodium23 (>= 1.0.14), libssl1.1 (>= 1.1.0), libxml2 (>= 2.8.0), zlib1g (>= 1:1.1.4)
+Depends: libpcre3 (>= 2:8.35), media-types | mime-support, php5.6-cli, php5.6-common (= 5.6.40-110001~bullseye63), php5.6-json, php5.6-opcache, tzdata, ucf, apache2-api-20120211, apache2-bin (>= 2.4.16), libc6 (>= 2.29), libsodium23 (>= 1.0.14), libssl1.1 (>= 1.1.0), libxml2 (>= 2.8.0), zlib1g (>= 1:1.1.4)
 Recommends: apache2
 Suggests: php-pear
 Provides: libapache2-mod-php, phpapi-20131226
 Homepage: http://www.php.net/
 Priority: optional
 Section: httpd
-Filename: pool/main/p/php5.6/libapache2-mod-php5.6_5.6.40-110001~bullseye60_amd64.deb
-Size: 1205456
-SHA256: acf1e903b9654efd323e3601c9409fa4044604b1467a7ad96437220697d880ba
-SHA1: 6db868105b0804ce249a336d7598d6f4158ab8ff
-MD5sum: 6684df90a2864c0c55359726ea450c80
+Filename: pool/main/p/php5.6/libapache2-mod-php5.6_5.6.40-110001~bullseye63_amd64.deb
+Size: 1205184
+SHA256: cdf0efc0bc87e1223912a426235f85e87ed001873a6b49f117d45d4df591c12c
+SHA1: 5bb93e30da84090cfd5c2d496337588d06cdfe65
+MD5sum: 03df0d719c16ac6cec6f320eadfedcad
 Description: server-side, HTML-embedded scripting language (Apache 2 module)
  This package provides the PHP module for the Apache 2 webserver (as
  found in the apache2-mpm-prefork package).  Please note that this package
@@ -410,21 +410,21 @@ Description: HTML-embedded scripting language (Embedded SAPI library) (default)
 
 Package: libphp5.6-embed
 Source: php5.6
-Version: 5.6.40-110001~bullseye60
+Version: 5.6.40-110001~bullseye63
 Architecture: amd64
 Maintainer: Debian PHP Maintainers <team+pkg-php@tracker.debian.org>
 Installed-Size: 4234
-Depends: libpcre3 (>= 2:8.41), media-types | mime-support, php5.6-cli, php5.6-common (= 5.6.40-110001~bullseye60), php5.6-json, php5.6-opcache, tzdata, ucf, libc6 (>= 2.29), libssl1.1 (>= 1.1.0), libxml2 (>= 2.8.0), zlib1g (>= 1:1.1.4)
+Depends: libpcre3 (>= 2:8.35), media-types | mime-support, php5.6-cli, php5.6-common (= 5.6.40-110001~bullseye63), php5.6-json, php5.6-opcache, tzdata, ucf, libc6 (>= 2.29), libssl1.1 (>= 1.1.0), libxml2 (>= 2.8.0), zlib1g (>= 1:1.1.4)
 Suggests: php-pear
 Provides: libphp-embed, phpapi-20131226
 Homepage: http://www.php.net/
 Priority: optional
 Section: php
-Filename: pool/main/p/php5.6/libphp5.6-embed_5.6.40-110001~bullseye60_amd64.deb
-Size: 1198664
-SHA256: 73935d74d8a1dc68c21e1ceac06f3be75c988137b93099b5d6118ee8d05f3e4a
-SHA1: 08ff00ac8913952c222660a47a137bfcb12310ff
-MD5sum: d70255dc3e9d45435691b570c3253892
+Filename: pool/main/p/php5.6/libphp5.6-embed_5.6.40-110001~bullseye63_amd64.deb
+Size: 1200084
+SHA256: 492fcf29c4dd789e1d41a2573c323c36a5916aa8f33d764973b06fef04df553a
+SHA1: 383a545282c92f3a14f11409bda2cac292aefe46
+MD5sum: eac64e6b52ac35ce180658d91dd644f1
 Description: HTML-embedded scripting language (Embedded SAPI library)
  This package provides the library /usr/lib/libphp5.6.so which can
  be used by application developers to embed PHP scripting functionality.
@@ -1539,7 +1539,7 @@ Description: Zip module for PHP [default]
  PHP version (currently 8.4).
 
 Package: php5.6
-Version: 5.6.40-110001~bullseye60
+Version: 5.6.40-110001~bullseye63
 Architecture: all
 Maintainer: Debian PHP Maintainers <team+pkg-php@tracker.debian.org>
 Installed-Size: 295
@@ -1548,11 +1548,11 @@ Provides: php
 Homepage: http://www.php.net/
 Priority: optional
 Section: php
-Filename: pool/main/p/php5.6/php5.6_5.6.40-110001~bullseye60_all.deb
-Size: 277016
-SHA256: c01d84e48d5a3771fe2031403aa946a7273aec2c7b43466389143589016ef950
-SHA1: 9d4824b5a31e97e7512a2ce6bfecd5790d2cd31c
-MD5sum: ee8870d17c3e6250e7047eedfaecaa69
+Filename: pool/main/p/php5.6/php5.6_5.6.40-110001~bullseye63_all.deb
+Size: 277020
+SHA256: 653a49fe7aca0071768f56e8952ce60f6c74707e26523cac6dfa6e0beae78018
+SHA1: 2f9505b6505ee445a4cc49dc889f38ed753a8851
+MD5sum: 1f535793b5020c7fea68a54c83f47657
 Description: server-side, HTML-embedded scripting language (metapackage)
  This package is a metapackage that, when installed, guarantees that you
  have at least one of the four server-side versions of the PHP interpreter
@@ -1565,20 +1565,20 @@ Description: server-side, HTML-embedded scripting language (metapackage)
 
 Package: php5.6-bcmath
 Source: php5.6
-Version: 5.6.40-110001~bullseye60
+Version: 5.6.40-110001~bullseye63
 Architecture: amd64
 Maintainer: Debian PHP Maintainers <team+pkg-php@tracker.debian.org>
 Installed-Size: 67
-Depends: php-common (>= 1:81~), ucf, php5.6-common (= 5.6.40-110001~bullseye60), libc6 (>= 2.14)
+Depends: php-common (>= 1:81~), ucf, php5.6-common (= 5.6.40-110001~bullseye63), libc6 (>= 2.14)
 Provides: php-bcmath
 Homepage: http://www.php.net/
 Priority: optional
 Section: php
-Filename: pool/main/p/php5.6/php5.6-bcmath_5.6.40-110001~bullseye60_amd64.deb
-Size: 14644
-SHA256: bf9eaab1b2292c2a911907f07caf0a4b57043dfe120e9f99c272d004b845fb2a
-SHA1: 108e803d083d61cd8ec20203ffe66a13b8223990
-MD5sum: 43935c2c93c54b536964ba8e2e58da72
+Filename: pool/main/p/php5.6/php5.6-bcmath_5.6.40-110001~bullseye63_amd64.deb
+Size: 14660
+SHA256: 711f4f7ba7c95cdd6e0b128152bba809cf0dcd0ccd843f5a0b2a73ff4c6d6a82
+SHA1: d7b6b560f16f13644cfed7088628e0d8206ddcd9
+MD5sum: 46d89b5c0b8ca53e8da928e327eb7c3f
 Description: Bcmath module for PHP
  This package provides the Bcmath module(s) for PHP.
  .
@@ -1588,20 +1588,20 @@ Description: Bcmath module for PHP
 
 Package: php5.6-bz2
 Source: php5.6
-Version: 5.6.40-110001~bullseye60
+Version: 5.6.40-110001~bullseye63
 Architecture: amd64
 Maintainer: Debian PHP Maintainers <team+pkg-php@tracker.debian.org>
 Installed-Size: 59
-Depends: php-common (>= 1:81~), ucf, php5.6-common (= 5.6.40-110001~bullseye60), libbz2-1.0, libc6 (>= 2.14)
+Depends: php-common (>= 1:81~), ucf, php5.6-common (= 5.6.40-110001~bullseye63), libbz2-1.0, libc6 (>= 2.14)
 Provides: php-bz2
 Homepage: http://www.php.net/
 Priority: optional
 Section: php
-Filename: pool/main/p/php5.6/php5.6-bz2_5.6.40-110001~bullseye60_amd64.deb
+Filename: pool/main/p/php5.6/php5.6-bz2_5.6.40-110001~bullseye63_amd64.deb
 Size: 10524
-SHA256: 38217f61a10b78974781ffbca1a2a3329193fd321d26c5c9f758ecb151b98169
-SHA1: cd4c7d239e8deae36378982dcd86385d5bbdb5a2
-MD5sum: 52398c98c6898712c583a22c56348027
+SHA256: 697182e768cca60f5ad48f4a845e94501c903b6c2845da2655d47ed1d991eea6
+SHA1: ae05da1627c4f92979709102efbec1ffc8823e2f
+MD5sum: 814a106c8c86b501a897c79516946017
 Description: bzip2 module for PHP
  This package provides the bzip2 module(s) for PHP.
  .
@@ -1611,21 +1611,21 @@ Description: bzip2 module for PHP
 
 Package: php5.6-cgi
 Source: php5.6
-Version: 5.6.40-110001~bullseye60
+Version: 5.6.40-110001~bullseye63
 Architecture: amd64
 Maintainer: Debian PHP Maintainers <team+pkg-php@tracker.debian.org>
 Installed-Size: 8425
-Depends: libpcre3 (>= 2:8.41), media-types | mime-support, php5.6-cli, php5.6-common (= 5.6.40-110001~bullseye60), php5.6-json, php5.6-opcache, tzdata, ucf, libc6 (>= 2.29), libssl1.1 (>= 1.1.0), libxml2 (>= 2.8.0), zlib1g (>= 1:1.1.4)
+Depends: libpcre3 (>= 2:8.35), media-types | mime-support, php5.6-cli, php5.6-common (= 5.6.40-110001~bullseye63), php5.6-json, php5.6-opcache, tzdata, ucf, libc6 (>= 2.29), libssl1.1 (>= 1.1.0), libxml2 (>= 2.8.0), zlib1g (>= 1:1.1.4)
 Suggests: php-pear
 Provides: php-cgi, phpapi-20131226
 Homepage: http://www.php.net/
 Priority: optional
 Section: php
-Filename: pool/main/p/php5.6/php5.6-cgi_5.6.40-110001~bullseye60_amd64.deb
-Size: 1217496
-SHA256: 35ca1e04daff53a951226275ad43f1ec69efe9e34d745a10034ec60d3a8acfc1
-SHA1: b6d4f8e7c3d9fbe396e5043a81dff4b7f2071416
-MD5sum: 4798e89bbfda3f0a750b0b609853dfdb
+Filename: pool/main/p/php5.6/php5.6-cgi_5.6.40-110001~bullseye63_amd64.deb
+Size: 1214500
+SHA256: 3a647203e59900e54f3589a5739e3252aafbbd8c56ee36bc29b8b6fd6885f6dc
+SHA1: ea7aaa3c2e438bac0ab12ea4aafa8923432ac27d
+MD5sum: 9dc62f5f209c569494f70e3e47a60402
 Description: server-side, HTML-embedded scripting language (CGI binary)
  This package provides the /usr/lib/cgi-bin/php CGI interpreter built
  for use in Apache 2 with mod_actions, or any other CGI httpd that
@@ -1641,21 +1641,21 @@ Description: server-side, HTML-embedded scripting language (CGI binary)
 
 Package: php5.6-cli
 Source: php5.6
-Version: 5.6.40-110001~bullseye60
+Version: 5.6.40-110001~bullseye63
 Architecture: amd64
 Maintainer: Debian PHP Maintainers <team+pkg-php@tracker.debian.org>
 Installed-Size: 4275
-Depends: libedit2 (>= 2.11-20080614-4), libpcre3 (>= 2:8.41), media-types | mime-support, php5.6-common (= 5.6.40-110001~bullseye60), php5.6-json, php5.6-opcache, php5.6-readline, tzdata, ucf, libc6 (>= 2.29), libssl1.1 (>= 1.1.0), libxml2 (>= 2.8.0), zlib1g (>= 1:1.1.4)
+Depends: libedit2 (>= 2.11-20080614-4), libpcre3 (>= 2:8.35), media-types | mime-support, php5.6-common (= 5.6.40-110001~bullseye63), php5.6-json, php5.6-opcache, php5.6-readline, tzdata, ucf, libc6 (>= 2.29), libssl1.1 (>= 1.1.0), libxml2 (>= 2.8.0), zlib1g (>= 1:1.1.4)
 Suggests: php-pear
 Provides: php-cli, phpapi-20131226
 Homepage: http://www.php.net/
 Priority: optional
 Section: php
-Filename: pool/main/p/php5.6/php5.6-cli_5.6.40-110001~bullseye60_amd64.deb
-Size: 1243504
-SHA256: 48ade1e70ec191a13728592d3e478b5f15849692678cac0070971e1318f3b308
-SHA1: 1f0c9b11bb9520421a005fac90db8a3258b04c73
-MD5sum: 1b0f8294889b48ae0e21ae3d9eceb019
+Filename: pool/main/p/php5.6/php5.6-cli_5.6.40-110001~bullseye63_amd64.deb
+Size: 1244168
+SHA256: 81a7f52563ed57cd5a15acbd95a2d9b0c330d7d9859346504d8781ecd2bb62b8
+SHA1: 8b489af021f3103fb2e2c53f4414c499054c9962
+MD5sum: 28623e320d723f68cb9ab665cebe99a5
 Description: command-line interpreter for the PHP scripting language
  This package provides the /usr/bin/php5.6 command interpreter, useful for
  testing PHP scripts from a shell or performing general shell scripting tasks.
@@ -1669,7 +1669,7 @@ Description: command-line interpreter for the PHP scripting language
 
 Package: php5.6-common
 Source: php5.6
-Version: 5.6.40-110001~bullseye60
+Version: 5.6.40-110001~bullseye63
 Architecture: amd64
 Maintainer: Debian PHP Maintainers <team+pkg-php@tracker.debian.org>
 Installed-Size: 4249
@@ -1678,11 +1678,11 @@ Provides: php-calendar, php-ctype, php-exif, php-fileinfo, php-ftp, php-iconv, p
 Homepage: http://www.php.net/
 Priority: optional
 Section: php
-Filename: pool/main/p/php5.6/php5.6-common_5.6.40-110001~bullseye60_amd64.deb
-Size: 731904
-SHA256: a897fab7a95c4573769c2e4f400fb64f0d60444fb4abd1a0d5eb4acd0373ca06
-SHA1: d9250f4318f0704ba03470f39b5ecfd090900a9e
-MD5sum: 33681c6a785f1234c402910427e169a2
+Filename: pool/main/p/php5.6/php5.6-common_5.6.40-110001~bullseye63_amd64.deb
+Size: 731824
+SHA256: c3aaab098d0147e8d192a0b77a2de23157e63b1b718d0fdcb7bd135aa44f0e38
+SHA1: d1fc1b29b93705270d993a74fcba21668e36190e
+MD5sum: 6e689ee821fd066979549b810a031e1a
 Description: documentation, examples and common module for PHP
  This package provides the documentation, examples and common module(s) for PHP.
  .
@@ -1692,20 +1692,20 @@ Description: documentation, examples and common module for PHP
 
 Package: php5.6-curl
 Source: php5.6
-Version: 5.6.40-110001~bullseye60
+Version: 5.6.40-110001~bullseye63
 Architecture: amd64
 Maintainer: Debian PHP Maintainers <team+pkg-php@tracker.debian.org>
 Installed-Size: 119
-Depends: php-common (>= 1:81~), ucf, php5.6-common (= 5.6.40-110001~bullseye60), libc6 (>= 2.14), libcurl4 (>= 7.18.0)
+Depends: php-common (>= 1:81~), ucf, php5.6-common (= 5.6.40-110001~bullseye63), libc6 (>= 2.14), libcurl4 (>= 7.18.0)
 Provides: php-curl
 Homepage: http://www.php.net/
 Priority: optional
 Section: php
-Filename: pool/main/p/php5.6/php5.6-curl_5.6.40-110001~bullseye60_amd64.deb
-Size: 26940
-SHA256: bf27e0bed0b843383f8759b8b22ded09c182a1fae6498fdb447e69e392e735c2
-SHA1: cebd7e16a702b7f1cefd5f50311c731e80868144
-MD5sum: 536403412992d4cdf26454e52687d42c
+Filename: pool/main/p/php5.6/php5.6-curl_5.6.40-110001~bullseye63_amd64.deb
+Size: 26792
+SHA256: c18144235b17688c8a00a99363ee7d33fe5e8861f5e6b8e1a1698088c40df5f9
+SHA1: 3954c78ce7cbe8f121ac5ccf95370f882b79342d
+MD5sum: 8dd2fc529e5d3db901ca23ec9592ca28
 Description: CURL module for PHP
  This package provides the CURL module(s) for PHP.
  .
@@ -1715,20 +1715,20 @@ Description: CURL module for PHP
 
 Package: php5.6-dba
 Source: php5.6
-Version: 5.6.40-110001~bullseye60
+Version: 5.6.40-110001~bullseye63
 Architecture: amd64
 Maintainer: Debian PHP Maintainers <team+pkg-php@tracker.debian.org>
 Installed-Size: 87
-Depends: php-common (>= 1:81~), ucf, php5.6-common (= 5.6.40-110001~bullseye60), libc6 (>= 2.14), libdb5.3, libqdbm14 (>= 1.8.74)
+Depends: php-common (>= 1:81~), ucf, php5.6-common (= 5.6.40-110001~bullseye63), libc6 (>= 2.14), libdb5.3, libqdbm14 (>= 1.8.74)
 Provides: php-dba
 Homepage: http://www.php.net/
 Priority: optional
 Section: php
-Filename: pool/main/p/php5.6/php5.6-dba_5.6.40-110001~bullseye60_amd64.deb
-Size: 21824
-SHA256: 1ace7dc5348bcfaf1674564f3778163556060c5d2da66fb751d1f825880d7654
-SHA1: 7a872397d3dede7ef52cecc85c688b8e938a1841
-MD5sum: 2feebbf8366d7a8ec139e1e73c126604
+Filename: pool/main/p/php5.6/php5.6-dba_5.6.40-110001~bullseye63_amd64.deb
+Size: 21832
+SHA256: 8c6b204d7a099fe5c245c4c7dac891b94592af6782c31aec2abcfb4bd9ed9109
+SHA1: 9c032019783df4d2bb523c67db43658355a341ad
+MD5sum: 05a107c82292db9b4f311806225fc4d0
 Description: DBA module for PHP
  This package provides the DBA module(s) for PHP.
  .
@@ -1738,21 +1738,21 @@ Description: DBA module for PHP
 
 Package: php5.6-dev
 Source: php5.6
-Version: 5.6.40-110001~bullseye60
+Version: 5.6.40-110001~bullseye63
 Architecture: amd64
 Maintainer: Debian PHP Maintainers <team+pkg-php@tracker.debian.org>
 Installed-Size: 3690
-Depends: autoconf (>= 2.63), automake (>= 1.11), libpcre3-dev (>= 2:8.35), libssl-dev, php5.6-cli (>= 5.6.40-110001~bullseye60), php5.6-common (= 5.6.40-110001~bullseye60), pkg-config, shtool, libtool (>= 2.4.6-0.1~)
+Depends: autoconf (>= 2.63), automake (>= 1.11), libpcre3-dev (>= 2:8.35), libssl-dev, php5.6-cli (>= 5.6.40-110001~bullseye63), php5.6-common (= 5.6.40-110001~bullseye63), pkg-config, shtool, libtool (>= 2.4.6-0.1~)
 Recommends: pkg-php-tools
 Suggests: dh-php
 Homepage: http://www.php.net/
 Priority: optional
 Section: php
-Filename: pool/main/p/php5.6/php5.6-dev_5.6.40-110001~bullseye60_amd64.deb
-Size: 361460
-SHA256: eabd90000aec7a2d1aa8418a70ccd789d4dc4404efbf77a9f7b78b81c6bd62ed
-SHA1: 3109931a61c6091dbeb95084c4a0c4aad7f5eb9e
-MD5sum: e32184a0697de065822da9aa6c5be5fb
+Filename: pool/main/p/php5.6/php5.6-dev_5.6.40-110001~bullseye63_amd64.deb
+Size: 361572
+SHA256: 93076c7c70daf8c0c2e8b32255dfc6a7aac9cc34a9a3a3ff583e9b1e0a55637c
+SHA1: c0268f8bdd7392dc6af2e650348ab47bf713ad3c
+MD5sum: 1181df86eb7862f1b9a78d73d8a9f1e2
 Description: Files for PHP5.6 module development
  This package provides the files from the PHP5.6 source needed for compiling
  additional modules.
@@ -1763,20 +1763,20 @@ Description: Files for PHP5.6 module development
 
 Package: php5.6-enchant
 Source: php5.6
-Version: 5.6.40-110001~bullseye60
+Version: 5.6.40-110001~bullseye63
 Architecture: amd64
 Maintainer: Debian PHP Maintainers <team+pkg-php@tracker.debian.org>
 Installed-Size: 55
-Depends: php-common (>= 1:81~), ucf, php5.6-common (= 5.6.40-110001~bullseye60), libc6 (>= 2.4), libenchant-2-2 (>= 2.2.3)
+Depends: php-common (>= 1:81~), ucf, php5.6-common (= 5.6.40-110001~bullseye63), libc6 (>= 2.4), libenchant-2-2 (>= 2.2.3)
 Provides: php-enchant
 Homepage: http://www.php.net/
 Priority: optional
 Section: php
-Filename: pool/main/p/php5.6/php5.6-enchant_5.6.40-110001~bullseye60_amd64.deb
-Size: 8796
-SHA256: 5aa8f2afe1a7e7bde0837c94feec44c8c9a7568ee71c450a19df5d9d2c9c4f6f
-SHA1: bdbc999d6f88392ec23b6ff634256c256821f64f
-MD5sum: 84dcdb5e28ac7e2a52bf945f7e228c31
+Filename: pool/main/p/php5.6/php5.6-enchant_5.6.40-110001~bullseye63_amd64.deb
+Size: 8816
+SHA256: 1a1489a88f91742c524cf3e8e0094e357a27ed185ff36ad608650a89cb348f37
+SHA1: 09cdbc23f29505633fd025c7da6fb41795d904f7
+MD5sum: 0d0331dd71d9447ff385e056832ea062
 Description: Enchant module for PHP
  This package provides the Enchant module(s) for PHP.
  .
@@ -1786,21 +1786,21 @@ Description: Enchant module for PHP
 
 Package: php5.6-fpm
 Source: php5.6
-Version: 5.6.40-110001~bullseye60
+Version: 5.6.40-110001~bullseye63
 Architecture: amd64
 Maintainer: Debian PHP Maintainers <team+pkg-php@tracker.debian.org>
 Installed-Size: 4377
-Depends: libpcre3 (>= 2:8.41), media-types | mime-support, php5.6-cli, php5.6-common (= 5.6.40-110001~bullseye60), php5.6-json, php5.6-opcache, procps, systemd | systemd-tmpfiles, tzdata, ucf, libacl1 (>= 2.2.23), libapparmor1 (>= 2.7.0~beta1+bzr1772), libc6 (>= 2.29), libsodium23 (>= 1.0.14), libssl1.1 (>= 1.1.0), libsystemd0, libxml2 (>= 2.8.0), zlib1g (>= 1:1.1.4)
+Depends: libpcre3 (>= 2:8.35), media-types | mime-support, php5.6-cli, php5.6-common (= 5.6.40-110001~bullseye63), php5.6-json, php5.6-opcache, procps, systemd | systemd-tmpfiles, tzdata, ucf, libacl1 (>= 2.2.23), libapparmor1 (>= 2.7.0~beta1+bzr1772), libc6 (>= 2.29), libsodium23 (>= 1.0.14), libssl1.1 (>= 1.1.0), libsystemd0, libxml2 (>= 2.8.0), zlib1g (>= 1:1.1.4)
 Suggests: php-pear
 Provides: php-fpm, phpapi-20131226
 Homepage: http://www.php.net/
 Priority: optional
 Section: php
-Filename: pool/main/p/php5.6/php5.6-fpm_5.6.40-110001~bullseye60_amd64.deb
-Size: 1263464
-SHA256: 2be0fbec5581c333bb790fdf69019101536f42f32a5cb03cbbad6f9a03f7ff17
-SHA1: 67f30f757954f777be5c4674b93faf6d46916d77
-MD5sum: 9eef0f321b12792c41d258a048dab05a
+Filename: pool/main/p/php5.6/php5.6-fpm_5.6.40-110001~bullseye63_amd64.deb
+Size: 1262720
+SHA256: 8223dd7c758c527a9865cae70bd142d54d96785b8e0cef129b29666297aaf7a9
+SHA1: 28ff398d8db3b51646da45b7d1030bc14c01cb82
+MD5sum: 154aa75a72c382332ccd995ee0abce99
 Description: server-side, HTML-embedded scripting language (FPM-CGI binary)
  This package provides the Fast Process Manager interpreter that runs
  as a daemon and receives Fast/CGI requests.  Note that MOST Apache users
@@ -1815,20 +1815,20 @@ Description: server-side, HTML-embedded scripting language (FPM-CGI binary)
 
 Package: php5.6-gd
 Source: php5.6
-Version: 5.6.40-110001~bullseye60
+Version: 5.6.40-110001~bullseye63
 Architecture: amd64
 Maintainer: Debian PHP Maintainers <team+pkg-php@tracker.debian.org>
 Installed-Size: 139
-Depends: php-common (>= 1:81~), ucf, php5.6-common (= 5.6.40-110001~bullseye60), libc6 (>= 2.4), libgd3 (>= 2.1.1), libxpm4
+Depends: php-common (>= 1:81~), ucf, php5.6-common (= 5.6.40-110001~bullseye63), libc6 (>= 2.4), libgd3 (>= 2.1.1), libxpm4
 Provides: php-gd
 Homepage: http://www.php.net/
 Priority: optional
 Section: php
-Filename: pool/main/p/php5.6/php5.6-gd_5.6.40-110001~bullseye60_amd64.deb
-Size: 27292
-SHA256: 9cfd825172486a5e6b9b571c2cbd62669cdf5f7eda411dd3773a3a7cb2a69d6b
-SHA1: c730ef6f254a4953e2461f3a6640377e1733635b
-MD5sum: 5a671c4237f21058ef1bdcb04aead074
+Filename: pool/main/p/php5.6/php5.6-gd_5.6.40-110001~bullseye63_amd64.deb
+Size: 27268
+SHA256: e5f9839c2a1b170f5d90f71732de8281d3b74f93dbfdaaadcfb145d0e3e7019b
+SHA1: 25b58084b81a4b627435ede4b54d1eea93c9a3e5
+MD5sum: ba6d1c1a35e69c7b97031c6f37244152
 Description: GD module for PHP
  This package provides the GD module(s) for PHP.
  .
@@ -1838,20 +1838,20 @@ Description: GD module for PHP
 
 Package: php5.6-gmp
 Source: php5.6
-Version: 5.6.40-110001~bullseye60
+Version: 5.6.40-110001~bullseye63
 Architecture: amd64
 Maintainer: Debian PHP Maintainers <team+pkg-php@tracker.debian.org>
 Installed-Size: 87
-Depends: php-common (>= 1:81~), ucf, php5.6-common (= 5.6.40-110001~bullseye60), libc6 (>= 2.4), libgmp10
+Depends: php-common (>= 1:81~), ucf, php5.6-common (= 5.6.40-110001~bullseye63), libc6 (>= 2.4), libgmp10
 Provides: php-gmp
 Homepage: http://www.php.net/
 Priority: optional
 Section: php
-Filename: pool/main/p/php5.6/php5.6-gmp_5.6.40-110001~bullseye60_amd64.deb
-Size: 18032
-SHA256: 8a61fbd6b1573b1b8fcfdbea81a39e7e1ebfd0dc04abd3a6d7ad00915cc7dfe2
-SHA1: b0f8f9518afb5ebcdfa2602bd50b1f8c776aa28a
-MD5sum: 71eb51cdb30b7c832dbed588bec33b90
+Filename: pool/main/p/php5.6/php5.6-gmp_5.6.40-110001~bullseye63_amd64.deb
+Size: 18040
+SHA256: 55b2ab293895028f84874af2831aad92dd61dd77352b93c9cb570ead9f78e009
+SHA1: 3c046705f14d3ab8d5cc6e94469bade5859fb874
+MD5sum: 16df071f3236c563e9affe71ac8ccebf
 Description: GMP module for PHP
  This package provides the GMP module(s) for PHP.
  .
@@ -1861,20 +1861,20 @@ Description: GMP module for PHP
 
 Package: php5.6-imap
 Source: php5.6
-Version: 5.6.40-110001~bullseye60
+Version: 5.6.40-110001~bullseye63
 Architecture: amd64
 Maintainer: Debian PHP Maintainers <team+pkg-php@tracker.debian.org>
 Installed-Size: 135
-Depends: php-common (>= 1:81~), ucf, php5.6-common (= 5.6.40-110001~bullseye60), libc-client2007e, libc6 (>= 2.14)
+Depends: php-common (>= 1:81~), ucf, php5.6-common (= 5.6.40-110001~bullseye63), libc-client2007e, libc6 (>= 2.14)
 Provides: php-imap
 Homepage: http://www.php.net/
 Priority: optional
 Section: php
-Filename: pool/main/p/php5.6/php5.6-imap_5.6.40-110001~bullseye60_amd64.deb
-Size: 31772
-SHA256: 7643cc80e655b5e868b3891bbd7f96831d46055ff0e9251cf07367047d69b18b
-SHA1: a64c49f38828fae96179094e24e5108eedb59f40
-MD5sum: 91538a4f312689e642bc79415dcf67de
+Filename: pool/main/p/php5.6/php5.6-imap_5.6.40-110001~bullseye63_amd64.deb
+Size: 31832
+SHA256: 9871980208d499e0e7572c3f501bb44a19b9877dd51413a4ed11c13d7b1d20f2
+SHA1: 860100b0dc3aeb060bcfd616da98cda91f23ad00
+MD5sum: 2ed3b2c8c7ad9188ef899d053dc75708
 Description: IMAP module for PHP
  This package provides the IMAP module(s) for PHP.
  .
@@ -1884,20 +1884,20 @@ Description: IMAP module for PHP
 
 Package: php5.6-interbase
 Source: php5.6
-Version: 5.6.40-110001~bullseye60
+Version: 5.6.40-110001~bullseye63
 Architecture: amd64
 Maintainer: Debian PHP Maintainers <team+pkg-php@tracker.debian.org>
 Installed-Size: 164
-Depends: php-common (>= 1:81~), ucf, php5.6-common (= 5.6.40-110001~bullseye60), libc6 (>= 2.14), libfbclient2 (>= 2.5.0.25784~ReleaseCandidate1.ds2)
+Depends: php-common (>= 1:81~), ucf, php5.6-common (= 5.6.40-110001~bullseye63), libc6 (>= 2.14), libfbclient2 (>= 2.5.0.25784~ReleaseCandidate1.ds2)
 Provides: php-interbase, php-pdo-firebird, php5.6-pdo-firebird
 Homepage: http://www.php.net/
 Priority: optional
 Section: php
-Filename: pool/main/p/php5.6/php5.6-interbase_5.6.40-110001~bullseye60_amd64.deb
-Size: 41340
-SHA256: a3db5a5ac4bb2ee8e76c92fdacae907263d344d95d0313e63c28ccb3b6866716
-SHA1: 6a793a97686b56e317db0ea79b93e654b7123eba
-MD5sum: 4063c26ec283be3deec72aefadc091e7
+Filename: pool/main/p/php5.6/php5.6-interbase_5.6.40-110001~bullseye63_amd64.deb
+Size: 41324
+SHA256: 979695bad4692f62dc7f1de41c39833cf7b56ba5ef107db239220011595ec675
+SHA1: 302c6e039ea8cf297e3bfbf8e22bef925fb4cde9
+MD5sum: 743ae01c9469882cf90a16f26d5025ea
 Description: Interbase module for PHP
  This package provides the Interbase module(s) for PHP.
  .
@@ -1907,20 +1907,20 @@ Description: Interbase module for PHP
 
 Package: php5.6-intl
 Source: php5.6
-Version: 5.6.40-110001~bullseye60
+Version: 5.6.40-110001~bullseye63
 Architecture: amd64
 Maintainer: Debian PHP Maintainers <team+pkg-php@tracker.debian.org>
 Installed-Size: 426
-Depends: php-common (>= 1:81~), ucf, php5.6-common (= 5.6.40-110001~bullseye60), libc6 (>= 2.14), libgcc-s1 (>= 3.0), libicu67 (>= 67.1-1~)
+Depends: php-common (>= 1:81~), ucf, php5.6-common (= 5.6.40-110001~bullseye63), libc6 (>= 2.14), libgcc-s1 (>= 3.0), libicu67 (>= 67.1-1~)
 Provides: php-intl
 Homepage: http://www.php.net/
 Priority: optional
 Section: php
-Filename: pool/main/p/php5.6/php5.6-intl_5.6.40-110001~bullseye60_amd64.deb
-Size: 111052
-SHA256: 09d6ff085e412fd33c31dd2b5233c2a6d082d7f2acccff9dc6744d61bd1efc45
-SHA1: 018eb5caf0b347fcdad4adc782c93cda7cab5964
-MD5sum: d0af26d46b70d4723d6575a921611661
+Filename: pool/main/p/php5.6/php5.6-intl_5.6.40-110001~bullseye63_amd64.deb
+Size: 110972
+SHA256: fe6f5553c9ea0403ace23b446fca63f2d1da9c839fafc1d0083d376fd6408343
+SHA1: 80ca41aa2b43386b66fb28db1e8f817034e46628
+MD5sum: ba453392d25526afd651f1104f29a1b5
 Description: Internationalisation module for PHP
  This package provides the Internationalisation module(s) for PHP.
  .
@@ -1930,20 +1930,20 @@ Description: Internationalisation module for PHP
 
 Package: php5.6-json
 Source: php5.6
-Version: 5.6.40-110001~bullseye60
+Version: 5.6.40-110001~bullseye63
 Architecture: amd64
 Maintainer: Debian PHP Maintainers <team+pkg-php@tracker.debian.org>
 Installed-Size: 79
-Depends: php-common (>= 1:81~), ucf, php5.6-common (= 5.6.40-110001~bullseye60), libc6 (>= 2.14)
+Depends: php-common (>= 1:81~), ucf, php5.6-common (= 5.6.40-110001~bullseye63), libc6 (>= 2.14)
 Provides: php-json
 Homepage: http://www.php.net/
 Priority: optional
 Section: php
-Filename: pool/main/p/php5.6/php5.6-json_5.6.40-110001~bullseye60_amd64.deb
-Size: 17472
-SHA256: 7af935a2686933d357fd693b98c373d93059922efdfb8586a806873804c07b89
-SHA1: 54f4ef48ec683e1194dd4c24f0e22dfec48725fb
-MD5sum: 23d3d9616cae2692daffe166c33f566c
+Filename: pool/main/p/php5.6/php5.6-json_5.6.40-110001~bullseye63_amd64.deb
+Size: 17476
+SHA256: b263bd2b74115b0b2a4b755abb992f02c4be424144e362bd4fe75c21a29c2024
+SHA1: 7606356a09215552bfb7ef62d483a079d82c9014
+MD5sum: 5d767f97a0b0e41cd3e8ca170116daf4
 Description: JSON module for PHP
  This package provides the JSON module(s) for PHP.
  .
@@ -1953,20 +1953,20 @@ Description: JSON module for PHP
 
 Package: php5.6-ldap
 Source: php5.6
-Version: 5.6.40-110001~bullseye60
+Version: 5.6.40-110001~bullseye63
 Architecture: amd64
 Maintainer: Debian PHP Maintainers <team+pkg-php@tracker.debian.org>
 Installed-Size: 99
-Depends: php-common (>= 1:81~), ucf, php5.6-common (= 5.6.40-110001~bullseye60), libc6 (>= 2.4), libldap-2.4-2 (>= 2.4.7)
+Depends: php-common (>= 1:81~), ucf, php5.6-common (= 5.6.40-110001~bullseye63), libc6 (>= 2.4), libldap-2.4-2 (>= 2.4.7)
 Provides: php-ldap
 Homepage: http://www.php.net/
 Priority: optional
 Section: php
-Filename: pool/main/p/php5.6/php5.6-ldap_5.6.40-110001~bullseye60_amd64.deb
-Size: 21792
-SHA256: fcd3e54130db86292aedd06548c0bc81c1d80369be136dc27af4915d9e34c953
-SHA1: 1f5015edb4894cf40b2f27ca9696359834fb042d
-MD5sum: 7a91a89693f1add2944c75c22704a7ba
+Filename: pool/main/p/php5.6/php5.6-ldap_5.6.40-110001~bullseye63_amd64.deb
+Size: 21832
+SHA256: 6c25245b722cb9239eb422c5aedfc5a8adf9d5d0beca1fa32410b0ec4c104c1d
+SHA1: e740e09707cec24feece779e36557bab9731ec28
+MD5sum: cd8520e1e429155d17bd0ad815dd1720
 Description: LDAP module for PHP
  This package provides the LDAP module(s) for PHP.
  .
@@ -1976,21 +1976,21 @@ Description: LDAP module for PHP
 
 Package: php5.6-litespeed
 Source: php5.6
-Version: 5.6.40-110001~bullseye60
+Version: 5.6.40-110001~bullseye63
 Architecture: amd64
 Maintainer: Debian PHP Maintainers <team+pkg-php@tracker.debian.org>
-Installed-Size: 4228
-Depends: media-types | mime-support, php5.6-cli, php5.6-common (= 5.6.40-110001~bullseye60), procps, systemd | systemd-tmpfiles, tzdata, ucf, libc6 (>= 2.29), libpcre3 (>= 2:8.41), libssl1.1 (>= 1.1.0), libxml2 (>= 2.8.0), zlib1g (>= 1:1.1.4)
+Installed-Size: 4224
+Depends: media-types | mime-support, php5.6-cli, php5.6-common (= 5.6.40-110001~bullseye63), procps, systemd | systemd-tmpfiles, tzdata, ucf, libc6 (>= 2.29), libpcre3, libssl1.1 (>= 1.1.0), libxml2 (>= 2.8.0), zlib1g (>= 1:1.1.4)
 Suggests: php-pear
 Provides: php-json, php-litespeed, php5.6-json, phpapi-20131226
 Homepage: http://www.php.net/
 Priority: optional
 Section: php
-Filename: pool/main/p/php5.6/php5.6-litespeed_5.6.40-110001~bullseye60_amd64.deb
-Size: 1214472
-SHA256: e8f007c42ea5ac68b3d769a618fb4e967f81a44581a0e64306a4b69ab84f36de
-SHA1: d76c33c91c71403a214765fcd06e96db28fa614a
-MD5sum: f6f08dd46f12c62720ff5e70dc783cc5
+Filename: pool/main/p/php5.6/php5.6-litespeed_5.6.40-110001~bullseye63_amd64.deb
+Size: 1214240
+SHA256: 180d7a5ca5965c4e463df8603480cd02e0af4a4a78b7f42bdfb893c9117a5794
+SHA1: 50dd108163b8572f2184945c3dd5dff24fb16616
+MD5sum: f80988eccdd2c79c79bb8cd3989e6ad3
 Description: server-side, HTML-embedded scripting language (LiteSpeed binary)
  This package provides the LiteSpeed SAPI module that provides a dedicated
  interface for PHP integration with OpenLiteSpeed or LiteSpeed Web Server.
@@ -2004,20 +2004,20 @@ Description: server-side, HTML-embedded scripting language (LiteSpeed binary)
 
 Package: php5.6-mbstring
 Source: php5.6
-Version: 5.6.40-110001~bullseye60
+Version: 5.6.40-110001~bullseye63
 Architecture: amd64
 Maintainer: Debian PHP Maintainers <team+pkg-php@tracker.debian.org>
 Installed-Size: 1414
-Depends: php-common (>= 1:81~), ucf, php5.6-common (= 5.6.40-110001~bullseye60), libc6 (>= 2.14)
+Depends: php-common (>= 1:81~), ucf, php5.6-common (= 5.6.40-110001~bullseye63), libc6 (>= 2.14)
 Provides: php-mbstring
 Homepage: http://www.php.net/
 Priority: optional
 Section: php
-Filename: pool/main/p/php5.6/php5.6-mbstring_5.6.40-110001~bullseye60_amd64.deb
-Size: 453932
-SHA256: c52414055e4cb62c7b5d690cdaeecb82cfea210eefe3da6913df6d246ec44fff
-SHA1: 105bffda1b6ab359de2b130c9af2f9810d4c8b52
-MD5sum: f7bbf0c91ec3d5912c6623a2532a7893
+Filename: pool/main/p/php5.6/php5.6-mbstring_5.6.40-110001~bullseye63_amd64.deb
+Size: 454056
+SHA256: c767dd6b8e42785289720c7e7e27f04cf08b4ee33dbb2ed0a7732da76752b2b2
+SHA1: 16960caccfa19f376d2cc079bc4c489f25b5325f
+MD5sum: 8925ad51650538bdc3b7a6d3120b58f2
 Description: MBSTRING module for PHP
  This package provides the MBSTRING module(s) for PHP.
  .
@@ -2027,20 +2027,20 @@ Description: MBSTRING module for PHP
 
 Package: php5.6-mcrypt
 Source: php5.6
-Version: 5.6.40-110001~bullseye60
+Version: 5.6.40-110001~bullseye63
 Architecture: amd64
 Maintainer: Debian PHP Maintainers <team+pkg-php@tracker.debian.org>
 Installed-Size: 79
-Depends: php-common (>= 1:81~), ucf, php5.6-common (= 5.6.40-110001~bullseye60), libc6 (>= 2.14), libmcrypt4
+Depends: php-common (>= 1:81~), ucf, php5.6-common (= 5.6.40-110001~bullseye63), libc6 (>= 2.14), libmcrypt4
 Provides: php-mcrypt
 Homepage: http://www.php.net/
 Priority: optional
 Section: php
-Filename: pool/main/p/php5.6/php5.6-mcrypt_5.6.40-110001~bullseye60_amd64.deb
-Size: 15116
-SHA256: 1a0216cb612ae115f323b38b1cd100a60191234cd82c20272f2fcd191b424133
-SHA1: 20e24c59dbc4a96bb7a3907f66e347f1aa1ccee9
-MD5sum: 78b6a5e4b39837966f670cd628f90d04
+Filename: pool/main/p/php5.6/php5.6-mcrypt_5.6.40-110001~bullseye63_amd64.deb
+Size: 15056
+SHA256: 3b35640d2b5c6784ef249e05cff737c9f59beabe8fc671a709c2a1e7882910cc
+SHA1: 05300e8eb4605e16abab33c64c87150ee95840df
+MD5sum: 1bd3e0655b9807762036742dbf9cb9d0
 Description: libmcrypt module for PHP
  This package provides the libmcrypt module(s) for PHP.
  .
@@ -2050,20 +2050,20 @@ Description: libmcrypt module for PHP
 
 Package: php5.6-mysql
 Source: php5.6
-Version: 5.6.40-110001~bullseye60
+Version: 5.6.40-110001~bullseye63
 Architecture: amd64
 Maintainer: Debian PHP Maintainers <team+pkg-php@tracker.debian.org>
 Installed-Size: 539
-Depends: php-common (>= 1:81~), ucf, php5.6-common (= 5.6.40-110001~bullseye60), libc6 (>= 2.15)
+Depends: php-common (>= 1:81~), ucf, php5.6-common (= 5.6.40-110001~bullseye63), libc6 (>= 2.15)
 Provides: php-mysql, php-mysqli, php-mysqlnd, php-pdo-mysql, php5.6-mysqli, php5.6-mysqlnd, php5.6-pdo-mysql
 Homepage: http://www.php.net/
 Priority: optional
 Section: php
-Filename: pool/main/p/php5.6/php5.6-mysql_5.6.40-110001~bullseye60_amd64.deb
-Size: 138496
-SHA256: df298e5df62554410a8a8175ef9fb719a32ee007e68f3e1991c00a812806fc0d
-SHA1: 564aab787d2681e973e06ef0d88abfa2289f63b2
-MD5sum: bb38c2c5e6849a8d77ff825bff69ab77
+Filename: pool/main/p/php5.6/php5.6-mysql_5.6.40-110001~bullseye63_amd64.deb
+Size: 138916
+SHA256: 3c774d605c784bc296d20efdba3df3208773e1d67a08640753ffe291246f6549
+SHA1: 342b9f467b0aee3295d7235d2afa935a90c7f0b6
+MD5sum: f4b7da1bc9aa989d33b89607a19c3fe3
 Description: MySQL module for PHP
  This package provides the MySQL module(s) for PHP.
  .
@@ -2073,20 +2073,20 @@ Description: MySQL module for PHP
 
 Package: php5.6-odbc
 Source: php5.6
-Version: 5.6.40-110001~bullseye60
+Version: 5.6.40-110001~bullseye63
 Architecture: amd64
 Maintainer: Debian PHP Maintainers <team+pkg-php@tracker.debian.org>
 Installed-Size: 131
-Depends: php-common (>= 1:81~), ucf, php5.6-common (= 5.6.40-110001~bullseye60), libc6 (>= 2.14), libodbc1 (>= 2.3.1)
+Depends: php-common (>= 1:81~), ucf, php5.6-common (= 5.6.40-110001~bullseye63), libc6 (>= 2.14), libodbc1 (>= 2.3.1)
 Provides: php-odbc, php-pdo-odbc, php5.6-pdo-odbc
 Homepage: http://www.php.net/
 Priority: optional
 Section: php
-Filename: pool/main/p/php5.6/php5.6-odbc_5.6.40-110001~bullseye60_amd64.deb
-Size: 30812
-SHA256: 8184afac9b8b34df85bbf474c5cb7f6dced0ec2f08f4ac68a75e775e0ed056eb
-SHA1: eefea797d1cd67ad6e6b8c0543e98caa1eda663a
-MD5sum: ccb6684e0bbca1c67f6e0bd60f3463d0
+Filename: pool/main/p/php5.6/php5.6-odbc_5.6.40-110001~bullseye63_amd64.deb
+Size: 30864
+SHA256: 20e03c2b88fcd37680075723d97ed939f0e7ae9f2722283f36b972acb3dbdd3d
+SHA1: 873485a9d01941e351aa6b0cce14ee395fa804aa
+MD5sum: 10bb705cae882d103d22441b0584ca15
 Description: ODBC module for PHP
  This package provides the ODBC module(s) for PHP.
  .
@@ -2096,20 +2096,20 @@ Description: ODBC module for PHP
 
 Package: php5.6-opcache
 Source: php5.6
-Version: 5.6.40-110001~bullseye60
+Version: 5.6.40-110001~bullseye63
 Architecture: amd64
 Maintainer: Debian PHP Maintainers <team+pkg-php@tracker.debian.org>
 Installed-Size: 179
-Depends: php-common (>= 1:81~), ucf, php5.6-common (= 5.6.40-110001~bullseye60), libc6 (>= 2.27)
+Depends: php-common (>= 1:81~), ucf, php5.6-common (= 5.6.40-110001~bullseye63), libc6 (>= 2.27)
 Provides: php-opcache
 Homepage: http://www.php.net/
 Priority: optional
 Section: php
-Filename: pool/main/p/php5.6/php5.6-opcache_5.6.40-110001~bullseye60_amd64.deb
-Size: 61240
-SHA256: 2c146adeb1539bbf614b012041b7fea238d8953589d25068181d2e2594cd8ad8
-SHA1: 135fc2df2ebc1d86ebcea427977fe61bd6080f75
-MD5sum: 74d22e9eb22bc4d7fe991043fd0ccc31
+Filename: pool/main/p/php5.6/php5.6-opcache_5.6.40-110001~bullseye63_amd64.deb
+Size: 61144
+SHA256: ff6d0a38f4434fa852605638410160cb02e15b30386d0bab514d68f2f66e4bab
+SHA1: 15dba3856a6c9181913b3ebbb90a5c477b3d12e1
+MD5sum: f158b96991a9b24e0333cb3711c4e0a0
 Description: Zend OpCache module for PHP
  This package provides the Zend OpCache module(s) for PHP.
  .
@@ -2119,20 +2119,20 @@ Description: Zend OpCache module for PHP
 
 Package: php5.6-pgsql
 Source: php5.6
-Version: 5.6.40-110001~bullseye60
+Version: 5.6.40-110001~bullseye63
 Architecture: amd64
 Maintainer: Debian PHP Maintainers <team+pkg-php@tracker.debian.org>
 Installed-Size: 219
-Depends: php-common (>= 1:81~), ucf, php5.6-common (= 5.6.40-110001~bullseye60), libc6 (>= 2.14), libpq5 (>= 9.3~)
+Depends: php-common (>= 1:81~), ucf, php5.6-common (= 5.6.40-110001~bullseye63), libc6 (>= 2.14), libpq5 (>= 9.3~)
 Provides: php-pdo-pgsql, php-pgsql, php5.6-pdo-pgsql
 Homepage: http://www.php.net/
 Priority: optional
 Section: php
-Filename: pool/main/p/php5.6/php5.6-pgsql_5.6.40-110001~bullseye60_amd64.deb
-Size: 57360
-SHA256: f3c0ae79320221989dbd2a59cf5643729416d49bf4641b02b01aff8c425bc7f8
-SHA1: b9b6189ed48ef2a75bb529b027a8457949e018d5
-MD5sum: d850dbf447318ad940fd293e1d404585
+Filename: pool/main/p/php5.6/php5.6-pgsql_5.6.40-110001~bullseye63_amd64.deb
+Size: 57488
+SHA256: 207d9672a7258290addd3e2f561958bb942adddf293fa22127b60f09d4589740
+SHA1: fd1dd57f196c6cf674213ce67e9ea8cd17f053c9
+MD5sum: 2a6ebeff93e6abf444d9ca353d964d2b
 Description: PostgreSQL module for PHP
  This package provides the PostgreSQL module(s) for PHP.
  .
@@ -2142,21 +2142,21 @@ Description: PostgreSQL module for PHP
 
 Package: php5.6-phpdbg
 Source: php5.6
-Version: 5.6.40-110001~bullseye60
+Version: 5.6.40-110001~bullseye63
 Architecture: amd64
 Maintainer: Debian PHP Maintainers <team+pkg-php@tracker.debian.org>
 Installed-Size: 4339
-Depends: libpcre3 (>= 2:8.41), media-types | mime-support, php5.6-cli, php5.6-common (= 5.6.40-110001~bullseye60), php5.6-json, php5.6-opcache, tzdata, ucf, libc6 (>= 2.29), libedit2 (>= 2.11-20080614-0), libssl1.1 (>= 1.1.0), libxml2 (>= 2.8.0), zlib1g (>= 1:1.1.4)
+Depends: libpcre3 (>= 2:8.35), media-types | mime-support, php5.6-cli, php5.6-common (= 5.6.40-110001~bullseye63), php5.6-json, php5.6-opcache, tzdata, ucf, libc6 (>= 2.29), libedit2 (>= 2.11-20080614-0), libssl1.1 (>= 1.1.0), libxml2 (>= 2.8.0), zlib1g (>= 1:1.1.4)
 Recommends: php-readline
 Provides: php-phpdbg, phpapi-20131226
 Homepage: http://www.php.net/
 Priority: optional
 Section: php
-Filename: pool/main/p/php5.6/php5.6-phpdbg_5.6.40-110001~bullseye60_amd64.deb
-Size: 1252108
-SHA256: 7760be115cc1ac1d8213494f0eb59c9ae533fb90419b681d3f7244f97a518895
-SHA1: 174ecab2ee686d2ebabf272efe2a87d659d1031c
-MD5sum: 24a8bfde9c13b3920bc0513a1748c319
+Filename: pool/main/p/php5.6/php5.6-phpdbg_5.6.40-110001~bullseye63_amd64.deb
+Size: 1251120
+SHA256: 708167be41e03d0f57934621213d96f6e05657812b68cdd5d1869830bfd57c97
+SHA1: 22dcb4cf7394a0294a8ebae908768f207e6d4405
+MD5sum: bf5b90978b7c87f8402fbbcd840adc43
 Description: server-side, HTML-embedded scripting language (PHPDBG binary)
  This package provides the /usr/bin/phpdbg command interpreter, useful for
  stepthrough debugging of PHP code.
@@ -2170,20 +2170,20 @@ Description: server-side, HTML-embedded scripting language (PHPDBG binary)
 
 Package: php5.6-pspell
 Source: php5.6
-Version: 5.6.40-110001~bullseye60
+Version: 5.6.40-110001~bullseye63
 Architecture: amd64
 Maintainer: Debian PHP Maintainers <team+pkg-php@tracker.debian.org>
 Installed-Size: 55
-Depends: php-common (>= 1:81~), ucf, php5.6-common (= 5.6.40-110001~bullseye60), libaspell15 (>= 0.60.8), libc6 (>= 2.4)
+Depends: php-common (>= 1:81~), ucf, php5.6-common (= 5.6.40-110001~bullseye63), libaspell15 (>= 0.60.8), libc6 (>= 2.4)
 Provides: php-pspell
 Homepage: http://www.php.net/
 Priority: optional
 Section: php
-Filename: pool/main/p/php5.6/php5.6-pspell_5.6.40-110001~bullseye60_amd64.deb
+Filename: pool/main/p/php5.6/php5.6-pspell_5.6.40-110001~bullseye63_amd64.deb
 Size: 8264
-SHA256: ed71d98101a47485d922ab34f92c8159f05b45054ed0fd43fb033f81e816f286
-SHA1: c17a644484b05d441a2dcb66702e096dc64926e2
-MD5sum: 789da24143464399a6c7b3d9c273f04b
+SHA256: 82681d414687863a346980d42b6fdb1c1125ca771d92f7e165edfa0651a0a316
+SHA1: 752d5b57efe227e09e9fbe02ea05ecf64975517c
+MD5sum: 51cac602770fd5c136ae2a68ca4e9193
 Description: pspell module for PHP
  This package provides the pspell module(s) for PHP.
  .
@@ -2193,20 +2193,20 @@ Description: pspell module for PHP
 
 Package: php5.6-readline
 Source: php5.6
-Version: 5.6.40-110001~bullseye60
+Version: 5.6.40-110001~bullseye63
 Architecture: amd64
 Maintainer: Debian PHP Maintainers <team+pkg-php@tracker.debian.org>
 Installed-Size: 67
-Depends: php-common (>= 1:81~), ucf, php5.6-common (= 5.6.40-110001~bullseye60), libc6 (>= 2.14), libedit2 (>= 3.1-20130611-0)
+Depends: php-common (>= 1:81~), ucf, php5.6-common (= 5.6.40-110001~bullseye63), libc6 (>= 2.14), libedit2 (>= 3.1-20130611-0)
 Provides: php-readline
 Homepage: http://www.php.net/
 Priority: optional
 Section: php
-Filename: pool/main/p/php5.6/php5.6-readline_5.6.40-110001~bullseye60_amd64.deb
-Size: 12588
-SHA256: e1c084a2dfa3099c9ad63c2e7692566382a7ab8e199e6d507991113990191f7a
-SHA1: 1f62e76e4843af083c13649e7016df867eae9c7b
-MD5sum: 7c6e21133bc1939989e963124448f1f3
+Filename: pool/main/p/php5.6/php5.6-readline_5.6.40-110001~bullseye63_amd64.deb
+Size: 12584
+SHA256: ae0a9de3c577d4753e90f06ea8488518fe23d7b5cce800f86892b577cc53abea
+SHA1: 2ccc64e69558a7e9bbcc9c1377c7eadc6254e516
+MD5sum: 48d9c862df828decf4dbf6e084311c2d
 Description: readline module for PHP
  This package provides the readline module(s) for PHP.
  .
@@ -2216,20 +2216,20 @@ Description: readline module for PHP
 
 Package: php5.6-recode
 Source: php5.6
-Version: 5.6.40-110001~bullseye60
+Version: 5.6.40-110001~bullseye63
 Architecture: amd64
 Maintainer: Debian PHP Maintainers <team+pkg-php@tracker.debian.org>
 Installed-Size: 43
-Depends: php-common (>= 1:81~), ucf, php5.6-common (= 5.6.40-110001~bullseye60), libc6 (>= 2.4), librecode0 (>= 3.6)
+Depends: php-common (>= 1:81~), ucf, php5.6-common (= 5.6.40-110001~bullseye63), libc6 (>= 2.4), librecode0 (>= 3.6)
 Provides: php-recode
 Homepage: http://www.php.net/
 Priority: optional
 Section: php
-Filename: pool/main/p/php5.6/php5.6-recode_5.6.40-110001~bullseye60_amd64.deb
-Size: 5524
-SHA256: 56700c70b140b1b542d42f11a3d877cf637e978f78a200d529a501796e56fa97
-SHA1: 9edb6bd3bd329d2e05d45879cba75001bc4b60c4
-MD5sum: 799204b9fc7d52f0e550308bc29fffc4
+Filename: pool/main/p/php5.6/php5.6-recode_5.6.40-110001~bullseye63_amd64.deb
+Size: 5532
+SHA256: 7929351baeefe076b711cb27c5373f47c131f446cf38e643a4f512b30d35f445
+SHA1: b958dc6ac420b25f91c9eb500890d9224307f3a5
+MD5sum: d9b5cc0fbc972ec927da310afde7129b
 Description: recode module for PHP
  This package provides the recode module(s) for PHP.
  .
@@ -2239,21 +2239,21 @@ Description: recode module for PHP
 
 Package: php5.6-snmp
 Source: php5.6
-Version: 5.6.40-110001~bullseye60
+Version: 5.6.40-110001~bullseye63
 Architecture: amd64
 Maintainer: Debian PHP Maintainers <team+pkg-php@tracker.debian.org>
 Installed-Size: 87
-Depends: php-common (>= 1:81~), ucf, php5.6-common (= 5.6.40-110001~bullseye60), libc6 (>= 2.4), libsnmp40 (>= 5.9+dfsg)
+Depends: php-common (>= 1:81~), ucf, php5.6-common (= 5.6.40-110001~bullseye63), libc6 (>= 2.4), libsnmp40 (>= 5.9+dfsg)
 Recommends: snmp
 Provides: php-snmp
 Homepage: http://www.php.net/
 Priority: optional
 Section: php
-Filename: pool/main/p/php5.6/php5.6-snmp_5.6.40-110001~bullseye60_amd64.deb
-Size: 19064
-SHA256: 7754e7623353272b3a84e5cdcfcd1da3d786b125adce83621feecf9f3daf8ca0
-SHA1: f304965a1d378ff2424fb7e4bc162ba18038f667
-MD5sum: c7e740cbd7c69073180ff6c6035b4228
+Filename: pool/main/p/php5.6/php5.6-snmp_5.6.40-110001~bullseye63_amd64.deb
+Size: 19040
+SHA256: d478bb41360b971c04e8c25bd3c47f747baa085908b225b2af5c9c05bbba0eb3
+SHA1: aa25f6f2876381ad61d7f6c96b31d01c7147c6bf
+MD5sum: 1b41bf7794b23aa3cfb07fdfe1a7a68d
 Description: SNMP module for PHP
  This package provides the SNMP module(s) for PHP.
  .
@@ -2263,20 +2263,20 @@ Description: SNMP module for PHP
 
 Package: php5.6-soap
 Source: php5.6
-Version: 5.6.40-110001~bullseye60
+Version: 5.6.40-110001~bullseye63
 Architecture: amd64
 Maintainer: Debian PHP Maintainers <team+pkg-php@tracker.debian.org>
 Installed-Size: 391
-Depends: php-common (>= 1:81~), ucf, php5.6-common (= 5.6.40-110001~bullseye60), libc6 (>= 2.14), libxml2 (>= 2.7.4)
+Depends: php-common (>= 1:81~), ucf, php5.6-common (= 5.6.40-110001~bullseye63), libc6 (>= 2.14), libxml2 (>= 2.7.4)
 Provides: php-soap
 Homepage: http://www.php.net/
 Priority: optional
 Section: php
-Filename: pool/main/p/php5.6/php5.6-soap_5.6.40-110001~bullseye60_amd64.deb
-Size: 130268
-SHA256: aa63e4e792f938d7f367df0dd139bb859605f8a9c58d37db7fdaa80b224039d4
-SHA1: 806716f8b2987af81ca4c41f8323908af97fb193
-MD5sum: 58155cbfdba2f8c716b447e732625dfd
+Filename: pool/main/p/php5.6/php5.6-soap_5.6.40-110001~bullseye63_amd64.deb
+Size: 130188
+SHA256: 96cdfb4ec735472678c12fb982c4726749df4df600bb7ed83d7f3f822c25baba
+SHA1: e616a25b2ec657426a62343cbc2010d1e62e03a0
+MD5sum: b62df7864913c3f276fa3b05ec913051
 Description: SOAP module for PHP
  This package provides the SOAP module(s) for PHP.
  .
@@ -2286,20 +2286,20 @@ Description: SOAP module for PHP
 
 Package: php5.6-sqlite3
 Source: php5.6
-Version: 5.6.40-110001~bullseye60
+Version: 5.6.40-110001~bullseye63
 Architecture: amd64
 Maintainer: Debian PHP Maintainers <team+pkg-php@tracker.debian.org>
 Installed-Size: 120
-Depends: php-common (>= 1:81~), ucf, php5.6-common (= 5.6.40-110001~bullseye60), libc6 (>= 2.4), libsqlite3-0 (>= 3.7.4)
+Depends: php-common (>= 1:81~), ucf, php5.6-common (= 5.6.40-110001~bullseye63), libc6 (>= 2.4), libsqlite3-0 (>= 3.7.4)
 Provides: php-pdo-sqlite, php-sqlite3, php5.6-pdo-sqlite
 Homepage: http://www.php.net/
 Priority: optional
 Section: php
-Filename: pool/main/p/php5.6/php5.6-sqlite3_5.6.40-110001~bullseye60_amd64.deb
-Size: 24304
-SHA256: 8484ecacede6d5157b95a47f05c988a2fc15c9d2e9c9c2b5e7878f71212938c6
-SHA1: 9f9a0740ffb399dd6ec205bb8ac4df63742c65f7
-MD5sum: 099cc2daa51e11424980ee80fa9f8190
+Filename: pool/main/p/php5.6/php5.6-sqlite3_5.6.40-110001~bullseye63_amd64.deb
+Size: 24412
+SHA256: b049be5f1857e78b996cb806d8ea57000ac10a1b53a7d39ffdf6d06d8cbb5ff4
+SHA1: ce10bd5eb0e8a46100babaf381147b8ff8cdb049
+MD5sum: 97b0ed420da08d24d2944853f992b9f1
 Description: SQLite3 module for PHP
  This package provides the SQLite3 module(s) for PHP.
  .
@@ -2309,20 +2309,20 @@ Description: SQLite3 module for PHP
 
 Package: php5.6-sybase
 Source: php5.6
-Version: 5.6.40-110001~bullseye60
+Version: 5.6.40-110001~bullseye63
 Architecture: amd64
 Maintainer: Debian PHP Maintainers <team+pkg-php@tracker.debian.org>
 Installed-Size: 111
-Depends: php-common (>= 1:81~), ucf, php5.6-common (= 5.6.40-110001~bullseye60), libc6 (>= 2.14), libsybdb5 (>= 0.63)
+Depends: php-common (>= 1:81~), ucf, php5.6-common (= 5.6.40-110001~bullseye63), libc6 (>= 2.14), libsybdb5 (>= 0.63)
 Provides: php-mssql, php-pdo-dblib, php5.6-mssql, php5.6-pdo-dblib
 Homepage: http://www.php.net/
 Priority: optional
 Section: php
-Filename: pool/main/p/php5.6/php5.6-sybase_5.6.40-110001~bullseye60_amd64.deb
-Size: 23352
-SHA256: 9a402c45ccbfb22605ceecf2c97d706326f13cbeda68581ca807118cd244c056
-SHA1: 873b05fc2e551b461079c797fc7355e2450ce868
-MD5sum: 04234b322954c18be321ab0ccf45a33d
+Filename: pool/main/p/php5.6/php5.6-sybase_5.6.40-110001~bullseye63_amd64.deb
+Size: 23408
+SHA256: 91f6f6b966f462107b1e14e2bc76e985bdf38db67ab88df79c43af3ea8182617
+SHA1: aa61ef0e89e98fbd6268fe62db4341a145771252
+MD5sum: 82f76e8bb9ddbef7f0f02ce30e03cf34
 Description: Sybase module for PHP
  This package provides the Sybase module(s) for PHP.
  .
@@ -2332,20 +2332,20 @@ Description: Sybase module for PHP
 
 Package: php5.6-tidy
 Source: php5.6
-Version: 5.6.40-110001~bullseye60
+Version: 5.6.40-110001~bullseye63
 Architecture: amd64
 Maintainer: Debian PHP Maintainers <team+pkg-php@tracker.debian.org>
 Installed-Size: 87
-Depends: php-common (>= 1:81~), ucf, php5.6-common (= 5.6.40-110001~bullseye60), libc6 (>= 2.4), libtidy5deb1 (>= 1:5.2.0)
+Depends: php-common (>= 1:81~), ucf, php5.6-common (= 5.6.40-110001~bullseye63), libc6 (>= 2.4), libtidy5deb1 (>= 1:5.2.0)
 Provides: php-tidy
 Homepage: http://www.php.net/
 Priority: optional
 Section: php
-Filename: pool/main/p/php5.6/php5.6-tidy_5.6.40-110001~bullseye60_amd64.deb
-Size: 16940
-SHA256: 580eb41101b1829bf9f3329524b0f574e53b82c7efe51afe61778abd3b003a31
-SHA1: 7c55b2bc8bdb3ea218319ab1be1aca3c30c15b19
-MD5sum: 9421b44fb4ae98e9848e344f612c1053
+Filename: pool/main/p/php5.6/php5.6-tidy_5.6.40-110001~bullseye63_amd64.deb
+Size: 16960
+SHA256: 8a0638a386180ecf79097cb64c5b6165bd94fc06c998cb706b6d83006122707f
+SHA1: 9cdffad8fbf46061c1d6476d2376c33f0c0dea71
+MD5sum: 29fa3a90ac1cbabb3d365a7488174736
 Description: tidy module for PHP
  This package provides the tidy module(s) for PHP.
  .
@@ -2355,22 +2355,22 @@ Description: tidy module for PHP
 
 Package: php5.6-xml
 Source: php5.6
-Version: 5.6.40-110001~bullseye60
+Version: 5.6.40-110001~bullseye63
 Architecture: amd64
 Maintainer: Debian PHP Maintainers <team+pkg-php@tracker.debian.org>
 Installed-Size: 505
-Depends: php-common (>= 1:81~), ucf, php5.6-common (= 5.6.40-110001~bullseye60), libc6 (>= 2.14), libxml2 (>= 2.9.0), libxslt1.1 (>= 1.1.25)
+Depends: php-common (>= 1:81~), ucf, php5.6-common (= 5.6.40-110001~bullseye63), libc6 (>= 2.14), libxml2 (>= 2.9.0), libxslt1.1 (>= 1.1.25)
 Breaks: php5.6-xsl (<< 5.6.18+dfsg-5~)
 Replaces: php5.6-xsl (<< 5.6.18+dfsg-5~)
 Provides: php-dom, php-simplexml, php-wddx, php-xml, php-xmlreader, php-xmlwriter, php-xsl, php5.6-dom, php5.6-simplexml, php5.6-wddx, php5.6-xmlreader, php5.6-xmlwriter, php5.6-xsl
 Homepage: http://www.php.net/
 Priority: optional
 Section: php
-Filename: pool/main/p/php5.6/php5.6-xml_5.6.40-110001~bullseye60_amd64.deb
-Size: 113568
-SHA256: a3e9f779b4264911c20c791f255a4dc2a4616952f7a39563e725244fe6942dd9
-SHA1: cc37ef9ff552d8fa5bae3c5445f380164937675b
-MD5sum: 046947ac45c802159d33322dc3d1afeb
+Filename: pool/main/p/php5.6/php5.6-xml_5.6.40-110001~bullseye63_amd64.deb
+Size: 113700
+SHA256: 71d8f3b666c5ccceed80059ee5d211b29d5bb469315234e4d64fa56c565ece15
+SHA1: fe3805becffeb92f68aa501ae301c4f776f5c435
+MD5sum: 034950b47feacd5b534df86f52231d26
 Description: DOM, SimpleXML, WDDX, XML, and XSL module for PHP
  This package provides the DOM, SimpleXML, WDDX, XML, and XSL module(s) for PHP.
  .
@@ -2380,20 +2380,20 @@ Description: DOM, SimpleXML, WDDX, XML, and XSL module for PHP
 
 Package: php5.6-xmlrpc
 Source: php5.6
-Version: 5.6.40-110001~bullseye60
+Version: 5.6.40-110001~bullseye63
 Architecture: amd64
 Maintainer: Debian PHP Maintainers <team+pkg-php@tracker.debian.org>
 Installed-Size: 67
-Depends: php-common (>= 1:81~), ucf, php5.6-common (= 5.6.40-110001~bullseye60), libc6 (>= 2.4), libxmlrpc-epi0
+Depends: php-common (>= 1:81~), ucf, php5.6-common (= 5.6.40-110001~bullseye63), libc6 (>= 2.4), libxmlrpc-epi0
 Provides: php-xmlrpc
 Homepage: http://www.php.net/
 Priority: optional
 Section: php
-Filename: pool/main/p/php5.6/php5.6-xmlrpc_5.6.40-110001~bullseye60_amd64.deb
-Size: 13596
-SHA256: 3be43c3774315a9cc9e153fbc1a43573a0c5413ab07359e7d3b846f49bec99e1
-SHA1: 4583618549da89008d79af99e190aee00f367c71
-MD5sum: 3f34baef2c4d902fea00027aab280177
+Filename: pool/main/p/php5.6/php5.6-xmlrpc_5.6.40-110001~bullseye63_amd64.deb
+Size: 13600
+SHA256: 0fbec9095b6e262637df0a6a8a6f75b76402f1b1abcf928a9bbfb1ec4902aa9b
+SHA1: e134a2f2d634b100cf8d63331af4370b148facc8
+MD5sum: 113668b50e4698e5f5196dd7d77a81b6
 Description: XMLRPC-EPI module for PHP
  This package provides the XMLRPC-EPI module(s) for PHP.
  .
@@ -2403,7 +2403,7 @@ Description: XMLRPC-EPI module for PHP
 
 Package: php5.6-xsl
 Source: php5.6
-Version: 5.6.40-110001~bullseye60
+Version: 5.6.40-110001~bullseye63
 Architecture: all
 Maintainer: Debian PHP Maintainers <team+pkg-php@tracker.debian.org>
 Installed-Size: 292
@@ -2411,31 +2411,31 @@ Depends: php5.6-common, php5.6-xml
 Homepage: http://www.php.net/
 Priority: optional
 Section: php
-Filename: pool/main/p/php5.6/php5.6-xsl_5.6.40-110001~bullseye60_all.deb
-Size: 276672
-SHA256: fe04e63fb04ca1b14d0324ffe28b039fbe40a460eb81fd87d861ad12f9b8323f
-SHA1: 400082ddd96351b788c73a23be209bb202f46842
-MD5sum: 0d824db3481c4d4dcc6d9b45be4aeccd
+Filename: pool/main/p/php5.6/php5.6-xsl_5.6.40-110001~bullseye63_all.deb
+Size: 276668
+SHA256: 6c25c5b3c42a685f9dcfeb92fb099fdc955ab00e8c7db79a3aedc9b3246c3c3e
+SHA1: ebfc9dcba8d62044a5d023c7d913647221e1881f
+MD5sum: 431e250101fd3c1b36bbb648a0a39a7a
 Description: XSL module for PHP (dummy)
  This package is a transitional dummy package and can be safely
  removed.
 
 Package: php5.6-zip
 Source: php5.6
-Version: 5.6.40-110001~bullseye60
+Version: 5.6.40-110001~bullseye63
 Architecture: amd64
 Maintainer: Debian PHP Maintainers <team+pkg-php@tracker.debian.org>
 Installed-Size: 91
-Depends: php-common (>= 1:81~), ucf, php5.6-common (= 5.6.40-110001~bullseye60), libc6 (>= 2.27), libzip4 (>= 0.11.2)
+Depends: php-common (>= 1:81~), ucf, php5.6-common (= 5.6.40-110001~bullseye63), libc6 (>= 2.27), libzip4 (>= 0.11.2)
 Provides: php-zip
 Homepage: http://www.php.net/
 Priority: optional
 Section: php
-Filename: pool/main/p/php5.6/php5.6-zip_5.6.40-110001~bullseye60_amd64.deb
-Size: 20024
-SHA256: c04b6f28b3ab9cec3ede96300c975735899d156e6349eeac0465156d98da1776
-SHA1: 000e23f61c53d491fd9eb601db888add2e5812f9
-MD5sum: 0e95a82919d79463ba17b27f4ff3dfc0
+Filename: pool/main/p/php5.6/php5.6-zip_5.6.40-110001~bullseye63_amd64.deb
+Size: 20140
+SHA256: 58544adc0d696681df2e001f99832cf318f5d810e3c078d73d6a5373dd4e704f
+SHA1: 15801cc97dfac32764cbd9eddc2b2682e9df776a
+MD5sum: aa41646c987d9a837e67071bc862e8f0
 Description: Zip module for PHP
  This package provides the Zip module(s) for PHP.
  .
