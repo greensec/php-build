@@ -54,22 +54,22 @@ Description: server-side, HTML-embedded scripting language (Apache 2 module)
 
 Package: libapache2-mod-php7.0
 Source: php7.0
-Version: 7.0.33-98001~bullseye54
+Version: 7.0.33-98001~bullseye64
 Architecture: amd64
 Maintainer: Debian PHP Maintainers <team+pkg-php@tracker.debian.org>
 Installed-Size: 4363
-Depends: libpcre3 (>= 2:8.41), media-types | mime-support, php7.0-cli, php7.0-common (= 7.0.33-98001~bullseye54), php7.0-json, php7.0-opcache, tzdata, ucf, apache2-api-20120211, apache2-bin (>= 2.4.16), libc6 (>= 2.29), libsodium23 (>= 1.0.14), libssl1.1 (>= 1.1.0), libxml2 (>= 2.8.0), zlib1g (>= 1:1.1.4)
+Depends: libpcre3 (>= 2:8.35), media-types | mime-support, php7.0-cli, php7.0-common (= 7.0.33-98001~bullseye64), php7.0-json, php7.0-opcache, tzdata, ucf, apache2-api-20120211, apache2-bin (>= 2.4.16), libc6 (>= 2.29), libsodium23 (>= 1.0.14), libssl1.1 (>= 1.1.0), libxml2 (>= 2.8.0), zlib1g (>= 1:1.1.4)
 Recommends: apache2
 Suggests: php-pear
 Provides: libapache2-mod-php, phpapi-20151012
 Homepage: http://www.php.net/
 Priority: optional
 Section: httpd
-Filename: pool/main/p/php7.0/libapache2-mod-php7.0_7.0.33-98001~bullseye54_amd64.deb
-Size: 1265532
-SHA256: f528eaa6b07d0ccf24fcc84d3b31e70ac64e8fa075739fd72d482bc784250e47
-SHA1: 616cc4df6c60b4e4c403c622d1eac57252e0dd89
-MD5sum: 9bda4fa70a8d5cef64a771144829773b
+Filename: pool/main/p/php7.0/libapache2-mod-php7.0_7.0.33-98001~bullseye64_amd64.deb
+Size: 1267012
+SHA256: d4eb4ac37472bd91ff3a94e205a538da3ee8ad80ccc9485b9a8b7e433c738993
+SHA1: 941b839b56d6b7f1acfd05f7d8e70b94180278bc
+MD5sum: 763da2678f6da5d8876f52891852c1ea
 Description: server-side, HTML-embedded scripting language (Apache 2 module)
  This package provides the PHP module for the Apache 2 webserver (as
  found in the apache2-mpm-prefork package).  Please note that this package
@@ -442,21 +442,21 @@ Description: HTML-embedded scripting language (Embedded SAPI library)
 
 Package: libphp7.0-embed
 Source: php7.0
-Version: 7.0.33-98001~bullseye54
+Version: 7.0.33-98001~bullseye64
 Architecture: amd64
 Maintainer: Debian PHP Maintainers <team+pkg-php@tracker.debian.org>
 Installed-Size: 4348
-Depends: libpcre3 (>= 2:8.41), media-types | mime-support, php7.0-cli, php7.0-common (= 7.0.33-98001~bullseye54), php7.0-json, php7.0-opcache, tzdata, ucf, libc6 (>= 2.29), libssl1.1 (>= 1.1.0), libxml2 (>= 2.8.0), zlib1g (>= 1:1.1.4)
+Depends: libpcre3 (>= 2:8.35), media-types | mime-support, php7.0-cli, php7.0-common (= 7.0.33-98001~bullseye64), php7.0-json, php7.0-opcache, tzdata, ucf, libc6 (>= 2.29), libssl1.1 (>= 1.1.0), libxml2 (>= 2.8.0), zlib1g (>= 1:1.1.4)
 Suggests: php-pear
 Provides: libphp-embed, phpapi-20151012
 Homepage: http://www.php.net/
 Priority: optional
 Section: php
-Filename: pool/main/p/php7.0/libphp7.0-embed_7.0.33-98001~bullseye54_amd64.deb
-Size: 1259108
-SHA256: 181b5c2fd7b20165953f54e42979b5b661b77e00ba34c4000e48b7f4099e9116
-SHA1: b58609e7526e024d79688d3eb49bac82448b47f0
-MD5sum: eeda10fbe8f32a39f2c6ae839b4100c4
+Filename: pool/main/p/php7.0/libphp7.0-embed_7.0.33-98001~bullseye64_amd64.deb
+Size: 1260744
+SHA256: 8a9f41e95468f2ac02983dc9d78b6ad12a354d9e1ad2524a991b3732e18bf3df
+SHA1: 8014aa883d4125ae5fd71d83098228102efc62e8
+MD5sum: 9938ea808cff825fb3abe85ee9f90d8d
 Description: HTML-embedded scripting language (Embedded SAPI library)
  This package provides the library /usr/lib/libphp7.0.so which can
  be used by application developers to embed PHP scripting functionality.
@@ -2444,7 +2444,7 @@ Description: Zip module for PHP
  for web development and can be embedded into HTML.
 
 Package: php7.0
-Version: 7.0.33-98001~bullseye54
+Version: 7.0.33-98001~bullseye64
 Architecture: all
 Maintainer: Debian PHP Maintainers <team+pkg-php@tracker.debian.org>
 Installed-Size: 93
@@ -2453,11 +2453,11 @@ Provides: php
 Homepage: http://www.php.net/
 Priority: optional
 Section: php
-Filename: pool/main/p/php7.0/php7.0_7.0.33-98001~bullseye54_all.deb
+Filename: pool/main/p/php7.0/php7.0_7.0.33-98001~bullseye64_all.deb
 Size: 69852
-SHA256: cb888c5087d1ee76fb6d8883ad806368fa6d7338e597c021e45690eec930c285
-SHA1: e98e307f8ad03451545cc82e3232dcc70199c617
-MD5sum: ab0db4a73c3b4226d51e2a10d2ce5047
+SHA256: 625fcf4f3683bf6aaeac3afb294979a86566548d6ef5d5452c383e9edeb1f40f
+SHA1: e25167a299cfabb4dbbd695c9bfff65500492d62
+MD5sum: 6d98e337e4b655a4e2b3d7c7c75590a4
 Description: server-side, HTML-embedded scripting language (metapackage)
  This package is a metapackage that, when installed, guarantees that you
  have at least one of the four server-side versions of the PHP interpreter
@@ -2470,20 +2470,20 @@ Description: server-side, HTML-embedded scripting language (metapackage)
 
 Package: php7.0-bcmath
 Source: php7.0
-Version: 7.0.33-98001~bullseye54
+Version: 7.0.33-98001~bullseye64
 Architecture: amd64
 Maintainer: Debian PHP Maintainers <team+pkg-php@tracker.debian.org>
 Installed-Size: 67
-Depends: php-common (>= 1:81~), ucf, php7.0-common (= 7.0.33-98001~bullseye54), libc6 (>= 2.14)
+Depends: php-common (>= 1:81~), ucf, php7.0-common (= 7.0.33-98001~bullseye64), libc6 (>= 2.14)
 Provides: php-bcmath
 Homepage: http://www.php.net/
 Priority: optional
 Section: php
-Filename: pool/main/p/php7.0/php7.0-bcmath_7.0.33-98001~bullseye54_amd64.deb
-Size: 15832
-SHA256: 915a725921e2fac0f5273c9c09d1bb9a07ab22956fc9c36c97c4b41ced60d750
-SHA1: 64d456944a9252831928cc514bc7b4f5d90d2fc2
-MD5sum: d2095199242ddc3d35ed0af218e46691
+Filename: pool/main/p/php7.0/php7.0-bcmath_7.0.33-98001~bullseye64_amd64.deb
+Size: 15804
+SHA256: 8462cc91a171d79bb1fd90013e617235bf84a5d27bceaba9546401076dde63ab
+SHA1: 54277dc4ad56bc263c23cbb595b208b89bdaf254
+MD5sum: 595b650a87ef2c79d90eb3ceca2759ac
 Description: Bcmath module for PHP
  This package provides the Bcmath module(s) for PHP.
  .
@@ -2493,20 +2493,20 @@ Description: Bcmath module for PHP
 
 Package: php7.0-bz2
 Source: php7.0
-Version: 7.0.33-98001~bullseye54
+Version: 7.0.33-98001~bullseye64
 Architecture: amd64
 Maintainer: Debian PHP Maintainers <team+pkg-php@tracker.debian.org>
 Installed-Size: 55
-Depends: php-common (>= 1:81~), ucf, php7.0-common (= 7.0.33-98001~bullseye54), libbz2-1.0, libc6 (>= 2.14)
+Depends: php-common (>= 1:81~), ucf, php7.0-common (= 7.0.33-98001~bullseye64), libbz2-1.0, libc6 (>= 2.14)
 Provides: php-bz2
 Homepage: http://www.php.net/
 Priority: optional
 Section: php
-Filename: pool/main/p/php7.0/php7.0-bz2_7.0.33-98001~bullseye54_amd64.deb
-Size: 10488
-SHA256: 85729c2d5acc2c6e5a9149ee88cd195b69cc2be6e551a4213e518b14bd34162a
-SHA1: c5d344cb413fb2aa1a84b4beb60bfe3b992dbc87
-MD5sum: 06128b3f2ddcb0957b4f4ea50f0e9aee
+Filename: pool/main/p/php7.0/php7.0-bz2_7.0.33-98001~bullseye64_amd64.deb
+Size: 10480
+SHA256: 1b658393c718faf6e01cbc00a079fff2906afcdd9d82c2586984d6308f1f8387
+SHA1: ca6db7a27a0518a63b80258490e68827ca85067c
+MD5sum: 1cb271c1ae0192e3f9ae38c94b2696e9
 Description: bzip2 module for PHP
  This package provides the bzip2 module(s) for PHP.
  .
@@ -2516,21 +2516,21 @@ Description: bzip2 module for PHP
 
 Package: php7.0-cgi
 Source: php7.0
-Version: 7.0.33-98001~bullseye54
+Version: 7.0.33-98001~bullseye64
 Architecture: amd64
 Maintainer: Debian PHP Maintainers <team+pkg-php@tracker.debian.org>
 Installed-Size: 8605
-Depends: libpcre3 (>= 2:8.41), media-types | mime-support, php7.0-cli, php7.0-common (= 7.0.33-98001~bullseye54), php7.0-json, php7.0-opcache, tzdata, ucf, libc6 (>= 2.29), libssl1.1 (>= 1.1.0), libxml2 (>= 2.8.0), zlib1g (>= 1:1.1.4)
+Depends: libpcre3 (>= 2:8.35), media-types | mime-support, php7.0-cli, php7.0-common (= 7.0.33-98001~bullseye64), php7.0-json, php7.0-opcache, tzdata, ucf, libc6 (>= 2.29), libssl1.1 (>= 1.1.0), libxml2 (>= 2.8.0), zlib1g (>= 1:1.1.4)
 Suggests: php-pear
 Provides: php-cgi, phpapi-20151012
 Homepage: http://www.php.net/
 Priority: optional
 Section: php
-Filename: pool/main/p/php7.0/php7.0-cgi_7.0.33-98001~bullseye54_amd64.deb
-Size: 1280396
-SHA256: 76fed9f122407ad234cbddb673cfdb9825f38b0265210dee4231b8297fc27aa6
-SHA1: 41e82b9f6bbbea2f58c20a3ba18586b8009601f9
-MD5sum: 4ce8f385b8b19cb0204a58eb2404645d
+Filename: pool/main/p/php7.0/php7.0-cgi_7.0.33-98001~bullseye64_amd64.deb
+Size: 1281268
+SHA256: e75d31e97e38b9c28fdb7734146b1ad776244a72464b18a41a1d959e36e0ed6a
+SHA1: 4000665ea57fc12fa47b1f119c68dcb49dcb9f95
+MD5sum: d115aa65941bd2643acb30bc9a28227c
 Description: server-side, HTML-embedded scripting language (CGI binary)
  This package provides the /usr/lib/cgi-bin/php CGI interpreter built
  for use in Apache 2 with mod_actions, or any other CGI httpd that
@@ -2546,21 +2546,21 @@ Description: server-side, HTML-embedded scripting language (CGI binary)
 
 Package: php7.0-cli
 Source: php7.0
-Version: 7.0.33-98001~bullseye54
+Version: 7.0.33-98001~bullseye64
 Architecture: amd64
 Maintainer: Debian PHP Maintainers <team+pkg-php@tracker.debian.org>
 Installed-Size: 4440
-Depends: libedit2 (>= 2.11-20080614-4), libpcre3 (>= 2:8.41), media-types | mime-support, php7.0-common (= 7.0.33-98001~bullseye54), php7.0-json, php7.0-opcache, php7.0-readline, tzdata, ucf, libc6 (>= 2.29), libssl1.1 (>= 1.1.0), libxml2 (>= 2.8.0), zlib1g (>= 1:1.1.4)
+Depends: libedit2 (>= 2.11-20080614-4), libpcre3 (>= 2:8.35), media-types | mime-support, php7.0-common (= 7.0.33-98001~bullseye64), php7.0-json, php7.0-opcache, php7.0-readline, tzdata, ucf, libc6 (>= 2.29), libssl1.1 (>= 1.1.0), libxml2 (>= 2.8.0), zlib1g (>= 1:1.1.4)
 Suggests: php-pear
 Provides: php-cli, phpapi-20151012
 Homepage: http://www.php.net/
 Priority: optional
 Section: php
-Filename: pool/main/p/php7.0/php7.0-cli_7.0.33-98001~bullseye54_amd64.deb
-Size: 1318388
-SHA256: cba9dd0dfdac4d73983f9e0ac4ec806e21dd3a5d41881b7c6fa1a85991a18bee
-SHA1: 8a9e0abbd363a9df290b0595cce58b6dbfe36bfa
-MD5sum: 78e8a5c2500b9eaecbb68eafd8b869b8
+Filename: pool/main/p/php7.0/php7.0-cli_7.0.33-98001~bullseye64_amd64.deb
+Size: 1319164
+SHA256: 5c61b324d1c2c603800286e0dbe0cfe6ce7a6cf1057ebbec4daffd65d377d9d1
+SHA1: 4a846c7194d5d05190ef1f2d757f0cec07c86269
+MD5sum: e5e2995e797aa2076e8087014056f319
 Description: command-line interpreter for the PHP scripting language
  This package provides the /usr/bin/php7.0 command interpreter, useful for
  testing PHP scripts from a shell or performing general shell scripting tasks.
@@ -2574,7 +2574,7 @@ Description: command-line interpreter for the PHP scripting language
 
 Package: php7.0-common
 Source: php7.0
-Version: 7.0.33-98001~bullseye54
+Version: 7.0.33-98001~bullseye64
 Architecture: amd64
 Maintainer: Debian PHP Maintainers <team+pkg-php@tracker.debian.org>
 Installed-Size: 4381
@@ -2584,11 +2584,11 @@ Provides: php-calendar, php-ctype, php-exif, php-fileinfo, php-ftp, php-iconv, p
 Homepage: http://www.php.net/
 Priority: optional
 Section: php
-Filename: pool/main/p/php7.0/php7.0-common_7.0.33-98001~bullseye54_amd64.deb
-Size: 559528
-SHA256: a61b56ac217b5baa8dc6fbe01d3a739f72affbcc04dfb9d10fec1e1c364ae9ef
-SHA1: 508304fd8ac494c7370c98a29efbe2ef8bdf7ef7
-MD5sum: 8395e0411dedd2c328dfe2bc995044c4
+Filename: pool/main/p/php7.0/php7.0-common_7.0.33-98001~bullseye64_amd64.deb
+Size: 559508
+SHA256: 02cb4679a3fc470b95577905131497f0b2007f29e304ed0dd5025acb69d387d9
+SHA1: 608d0045a07c5aca5265a6a170591ab28dec23e1
+MD5sum: eafbbcff8b5e2ad79070c29becd88d7a
 Description: documentation, examples and common module for PHP
  This package provides the documentation, examples and common module(s) for PHP.
  .
@@ -2598,20 +2598,20 @@ Description: documentation, examples and common module for PHP
 
 Package: php7.0-curl
 Source: php7.0
-Version: 7.0.33-98001~bullseye54
+Version: 7.0.33-98001~bullseye64
 Architecture: amd64
 Maintainer: Debian PHP Maintainers <team+pkg-php@tracker.debian.org>
 Installed-Size: 119
-Depends: php-common (>= 1:81~), ucf, php7.0-common (= 7.0.33-98001~bullseye54), libc6 (>= 2.14), libcurl4 (>= 7.18.0)
+Depends: php-common (>= 1:81~), ucf, php7.0-common (= 7.0.33-98001~bullseye64), libc6 (>= 2.14), libcurl4 (>= 7.18.0)
 Provides: php-curl
 Homepage: http://www.php.net/
 Priority: optional
 Section: php
-Filename: pool/main/p/php7.0/php7.0-curl_7.0.33-98001~bullseye54_amd64.deb
-Size: 27320
-SHA256: afed1c39c7eef9c30756ab688d4a905d8ea540749400096227ef89bab67bf12e
-SHA1: 0f516cf0ef353e9dc2a1e466d87ccfc215cbaf7e
-MD5sum: dc34d26baf7badbb85b0a0ba6e72962f
+Filename: pool/main/p/php7.0/php7.0-curl_7.0.33-98001~bullseye64_amd64.deb
+Size: 27264
+SHA256: e396d43af057bc4a39ba414e66609da93e2d470fe33a7a64b33b454d3551a861
+SHA1: 5893d49f3b4109d855a382c7b3e3460fa7f3a88b
+MD5sum: 9c1ae04ac96132596a2e117820ea5de2
 Description: CURL module for PHP
  This package provides the CURL module(s) for PHP.
  .
@@ -2621,20 +2621,20 @@ Description: CURL module for PHP
 
 Package: php7.0-dba
 Source: php7.0
-Version: 7.0.33-98001~bullseye54
+Version: 7.0.33-98001~bullseye64
 Architecture: amd64
 Maintainer: Debian PHP Maintainers <team+pkg-php@tracker.debian.org>
 Installed-Size: 95
-Depends: php-common (>= 1:81~), ucf, php7.0-common (= 7.0.33-98001~bullseye54), libc6 (>= 2.14), libdb5.3, libqdbm14 (>= 1.8.74)
+Depends: php-common (>= 1:81~), ucf, php7.0-common (= 7.0.33-98001~bullseye64), libc6 (>= 2.14), libdb5.3, libqdbm14 (>= 1.8.74)
 Provides: php-dba
 Homepage: http://www.php.net/
 Priority: optional
 Section: php
-Filename: pool/main/p/php7.0/php7.0-dba_7.0.33-98001~bullseye54_amd64.deb
-Size: 23896
-SHA256: 60ecf4dc12d9ac9bc9d3f9029a514478d6dc345b67163e8c86e5e52ffc80c043
-SHA1: fcf8d4f407594936e37af22246e2f33527f594d3
-MD5sum: 1e5f0f74792842169964305b3db92a50
+Filename: pool/main/p/php7.0/php7.0-dba_7.0.33-98001~bullseye64_amd64.deb
+Size: 24008
+SHA256: b67a14750146de215545bd87a0933243ad2056d26f9eb6931fabcbcf48a60078
+SHA1: 48b2d132eaf552366c9c274f78a64811ebe1eb68
+MD5sum: 81d5b96e09ed74db96f65720dc5c4564
 Description: DBA module for PHP
  This package provides the DBA module(s) for PHP.
  .
@@ -2644,21 +2644,21 @@ Description: DBA module for PHP
 
 Package: php7.0-dev
 Source: php7.0
-Version: 7.0.33-98001~bullseye54
+Version: 7.0.33-98001~bullseye64
 Architecture: amd64
 Maintainer: Debian PHP Maintainers <team+pkg-php@tracker.debian.org>
 Installed-Size: 4063
-Depends: autoconf (>= 2.63), automake (>= 1.11), libpcre3-dev (>= 2:8.35), libssl-dev, php7.0-cli (>= 7.0.33-98001~bullseye54), php7.0-common (= 7.0.33-98001~bullseye54), pkg-config, shtool, libtool (>= 2.4.6-0.1~)
+Depends: autoconf (>= 2.63), automake (>= 1.11), libpcre3-dev (>= 2:8.35), libssl-dev, php7.0-cli (>= 7.0.33-98001~bullseye64), php7.0-common (= 7.0.33-98001~bullseye64), pkg-config, shtool, libtool (>= 2.4.6-0.1~)
 Recommends: pkg-php-tools
 Suggests: dh-php
 Homepage: http://www.php.net/
 Priority: optional
 Section: php
-Filename: pool/main/p/php7.0/php7.0-dev_7.0.33-98001~bullseye54_amd64.deb
-Size: 386104
-SHA256: d2dd70d02ee2ce22bd3d37d101f1d2eaa94ae3b06ce3ba1bb3c2327f12711f7e
-SHA1: d7d549f41dd81249bca082296757dc6dd1f6abbb
-MD5sum: ae78352195e8ad364c7a9fea60c46480
+Filename: pool/main/p/php7.0/php7.0-dev_7.0.33-98001~bullseye64_amd64.deb
+Size: 386004
+SHA256: 18e2c24fc02e7e39f4a6a8aa82432eaab9b6a4fc6221a1f2ce24b5d58ec142ec
+SHA1: 35718f9c726fd6796c636324f9cecff375d6112c
+MD5sum: ecd09a5f59491fe9aa6dd3ae22421c2e
 Description: Files for PHP7.0 module development
  This package provides the files from the PHP7.0 source needed for compiling
  additional modules.
@@ -2669,20 +2669,20 @@ Description: Files for PHP7.0 module development
 
 Package: php7.0-enchant
 Source: php7.0
-Version: 7.0.33-98001~bullseye54
+Version: 7.0.33-98001~bullseye64
 Architecture: amd64
 Maintainer: Debian PHP Maintainers <team+pkg-php@tracker.debian.org>
 Installed-Size: 55
-Depends: php-common (>= 1:81~), ucf, php7.0-common (= 7.0.33-98001~bullseye54), libc6 (>= 2.14), libenchant-2-2 (>= 2.2.3)
+Depends: php-common (>= 1:81~), ucf, php7.0-common (= 7.0.33-98001~bullseye64), libc6 (>= 2.14), libenchant-2-2 (>= 2.2.3)
 Provides: php-enchant
 Homepage: http://www.php.net/
 Priority: optional
 Section: php
-Filename: pool/main/p/php7.0/php7.0-enchant_7.0.33-98001~bullseye54_amd64.deb
-Size: 9264
-SHA256: 6dbe0b54e074507ccf0babb8f49f0822d3bb0b2ec7073725b5920caf4dfbfa93
-SHA1: 18244e6622871f925f1333a7937a25b5df262c48
-MD5sum: af236436fcf1e59d57f827c7fc3a7200
+Filename: pool/main/p/php7.0/php7.0-enchant_7.0.33-98001~bullseye64_amd64.deb
+Size: 9284
+SHA256: ae88da7d913398666a12bee4a3e83c8bb32b04d32c9481787378262a7bd53e18
+SHA1: 543a34e851fadc339c31e7e27b438ff18b74ad02
+MD5sum: 10a144ebc128fba7622ecfa9e5e43b18
 Description: Enchant module for PHP
  This package provides the Enchant module(s) for PHP.
  .
@@ -2692,21 +2692,21 @@ Description: Enchant module for PHP
 
 Package: php7.0-fpm
 Source: php7.0
-Version: 7.0.33-98001~bullseye54
+Version: 7.0.33-98001~bullseye64
 Architecture: amd64
 Maintainer: Debian PHP Maintainers <team+pkg-php@tracker.debian.org>
 Installed-Size: 4472
-Depends: libpcre3 (>= 2:8.41), media-types | mime-support, php7.0-cli, php7.0-common (= 7.0.33-98001~bullseye54), php7.0-json, php7.0-opcache, procps, systemd | systemd-tmpfiles, tzdata, ucf, libacl1 (>= 2.2.23), libapparmor1 (>= 2.7.0~beta1+bzr1772), libc6 (>= 2.29), libsodium23 (>= 1.0.14), libssl1.1 (>= 1.1.0), libsystemd0, libxml2 (>= 2.8.0), zlib1g (>= 1:1.1.4)
+Depends: libpcre3 (>= 2:8.35), media-types | mime-support, php7.0-cli, php7.0-common (= 7.0.33-98001~bullseye64), php7.0-json, php7.0-opcache, procps, systemd | systemd-tmpfiles, tzdata, ucf, libacl1 (>= 2.2.23), libapparmor1 (>= 2.7.0~beta1+bzr1772), libc6 (>= 2.29), libsodium23 (>= 1.0.14), libssl1.1 (>= 1.1.0), libsystemd0, libxml2 (>= 2.8.0), zlib1g (>= 1:1.1.4)
 Suggests: php-pear
 Provides: php-fpm, phpapi-20151012
 Homepage: http://www.php.net/
 Priority: optional
 Section: php
-Filename: pool/main/p/php7.0/php7.0-fpm_7.0.33-98001~bullseye54_amd64.deb
-Size: 1330148
-SHA256: 4d310b7e14cd9575d7661fab95909209118bf7a92bac9d79ddf98f16a1938289
-SHA1: e437f7c73b79ab0288fdc208d4c6bf501e1fb825
-MD5sum: 25da1f17d73617f18f3116efa4cb9fef
+Filename: pool/main/p/php7.0/php7.0-fpm_7.0.33-98001~bullseye64_amd64.deb
+Size: 1330700
+SHA256: 2e54b65f227c02cc3afc55e99111a05c4c80ae828cd982c93580b4f313952485
+SHA1: d276d3e1a9a5ebcf54c91c848431bd0d9b70820d
+MD5sum: 7c2a237300df8c5876ccd94b2f306836
 Description: server-side, HTML-embedded scripting language (FPM-CGI binary)
  This package provides the Fast Process Manager interpreter that runs
  as a daemon and receives Fast/CGI requests.  Note that MOST Apache users
@@ -2721,20 +2721,20 @@ Description: server-side, HTML-embedded scripting language (FPM-CGI binary)
 
 Package: php7.0-gd
 Source: php7.0
-Version: 7.0.33-98001~bullseye54
+Version: 7.0.33-98001~bullseye64
 Architecture: amd64
 Maintainer: Debian PHP Maintainers <team+pkg-php@tracker.debian.org>
 Installed-Size: 135
-Depends: php-common (>= 1:81~), ucf, php7.0-common (= 7.0.33-98001~bullseye54), libc6 (>= 2.4), libgd3 (>= 2.1.1), libxpm4
+Depends: php-common (>= 1:81~), ucf, php7.0-common (= 7.0.33-98001~bullseye64), libc6 (>= 2.4), libgd3 (>= 2.1.1), libxpm4
 Provides: php-gd
 Homepage: http://www.php.net/
 Priority: optional
 Section: php
-Filename: pool/main/p/php7.0/php7.0-gd_7.0.33-98001~bullseye54_amd64.deb
+Filename: pool/main/p/php7.0/php7.0-gd_7.0.33-98001~bullseye64_amd64.deb
 Size: 27908
-SHA256: cc35e2e33bc033e2c055289fca6b32571c4637a116e0f0483edc0ed294b89b2b
-SHA1: 7104d771484ff5b8e22a0c6cf352404b3c349ed0
-MD5sum: 99aa1b2134225aedb0946f93ea3f02c6
+SHA256: 8e7730206d9228ae23d53357c22d7506ac4cfa823b045146d3a2698603d01ed1
+SHA1: ff2fff8e4c6ba8c169e4ffb3c9342aacd4cfe3d5
+MD5sum: 907f5fc5bacb7fd34fb35a769a3dedd4
 Description: GD module for PHP
  This package provides the GD module(s) for PHP.
  .
@@ -2744,20 +2744,20 @@ Description: GD module for PHP
 
 Package: php7.0-gmp
 Source: php7.0
-Version: 7.0.33-98001~bullseye54
+Version: 7.0.33-98001~bullseye64
 Architecture: amd64
 Maintainer: Debian PHP Maintainers <team+pkg-php@tracker.debian.org>
 Installed-Size: 95
-Depends: php-common (>= 1:81~), ucf, php7.0-common (= 7.0.33-98001~bullseye54), libc6 (>= 2.4), libgmp10
+Depends: php-common (>= 1:81~), ucf, php7.0-common (= 7.0.33-98001~bullseye64), libc6 (>= 2.4), libgmp10
 Provides: php-gmp
 Homepage: http://www.php.net/
 Priority: optional
 Section: php
-Filename: pool/main/p/php7.0/php7.0-gmp_7.0.33-98001~bullseye54_amd64.deb
-Size: 18824
-SHA256: 702b25e9cfc9a7c668b13c09ea9a1671d08929e4a6652284c2a54d79956c1620
-SHA1: 974ff50d5907d478e7d07f024e194a7075af97a7
-MD5sum: 9155b7c73ee2becde36b88788f6c3ecd
+Filename: pool/main/p/php7.0/php7.0-gmp_7.0.33-98001~bullseye64_amd64.deb
+Size: 18852
+SHA256: cf58ccd4a9eea6e5ca12ee8936628589b18605548e87ec260b96cb72def84928
+SHA1: d69a38162bf4987425843271c9b44956dc3ea919
+MD5sum: b3a5a5aab3aa5c9364d5610f55214b94
 Description: GMP module for PHP
  This package provides the GMP module(s) for PHP.
  .
@@ -2767,20 +2767,20 @@ Description: GMP module for PHP
 
 Package: php7.0-imap
 Source: php7.0
-Version: 7.0.33-98001~bullseye54
+Version: 7.0.33-98001~bullseye64
 Architecture: amd64
 Maintainer: Debian PHP Maintainers <team+pkg-php@tracker.debian.org>
 Installed-Size: 135
-Depends: php-common (>= 1:81~), ucf, php7.0-common (= 7.0.33-98001~bullseye54), libc-client2007e, libc6 (>= 2.14)
+Depends: php-common (>= 1:81~), ucf, php7.0-common (= 7.0.33-98001~bullseye64), libc-client2007e, libc6 (>= 2.14)
 Provides: php-imap
 Homepage: http://www.php.net/
 Priority: optional
 Section: php
-Filename: pool/main/p/php7.0/php7.0-imap_7.0.33-98001~bullseye54_amd64.deb
-Size: 31360
-SHA256: 61210b623082a9bcf9c882e62778d44b29483710fe785b92c0af6bd5470e2de3
-SHA1: 8698443a43c939b700b6804bdac581cfa025ca63
-MD5sum: f879cce7bfd525e89d10f94a649330e0
+Filename: pool/main/p/php7.0/php7.0-imap_7.0.33-98001~bullseye64_amd64.deb
+Size: 31244
+SHA256: 6379c1f92fe4369614a9f6ac1cd50c4803e0bbb13f785947f1094b22d73ef1ab
+SHA1: 49629bc6577df3d302a96781971b1ac1e9f9d032
+MD5sum: 9ca6eaf712138910ff404739ad865fb4
 Description: IMAP module for PHP
  This package provides the IMAP module(s) for PHP.
  .
@@ -2790,20 +2790,20 @@ Description: IMAP module for PHP
 
 Package: php7.0-interbase
 Source: php7.0
-Version: 7.0.33-98001~bullseye54
+Version: 7.0.33-98001~bullseye64
 Architecture: amd64
 Maintainer: Debian PHP Maintainers <team+pkg-php@tracker.debian.org>
 Installed-Size: 164
-Depends: php-common (>= 1:81~), ucf, php7.0-common (= 7.0.33-98001~bullseye54), libc6 (>= 2.14), libfbclient2 (>= 2.5.0.25784~ReleaseCandidate1.ds2)
+Depends: php-common (>= 1:81~), ucf, php7.0-common (= 7.0.33-98001~bullseye64), libc6 (>= 2.14), libfbclient2 (>= 2.5.0.25784~ReleaseCandidate1.ds2)
 Provides: php-interbase, php-pdo-firebird, php7.0-pdo-firebird
 Homepage: http://www.php.net/
 Priority: optional
 Section: php
-Filename: pool/main/p/php7.0/php7.0-interbase_7.0.33-98001~bullseye54_amd64.deb
-Size: 41988
-SHA256: 3a90fd76950bab1f121fe83500f365f4ea0cda01e0218569689672dfa10987df
-SHA1: 8da3a3b8edc4e170fd5fccddead7e8132ee5db00
-MD5sum: 4ee6452220de60b24680439ac3b60da4
+Filename: pool/main/p/php7.0/php7.0-interbase_7.0.33-98001~bullseye64_amd64.deb
+Size: 41824
+SHA256: a38962fdf91dd1610c34a2d6f63d102864c11eef2023ee0eb601f7f811b54a5d
+SHA1: d4cf58be78e912c1b3a7df965c1228db6aa2c7dd
+MD5sum: ca8cb08c88e4f94c8ca2eb025f41f595
 Description: Interbase module for PHP
  This package provides the Interbase module(s) for PHP.
  .
@@ -2813,20 +2813,20 @@ Description: Interbase module for PHP
 
 Package: php7.0-intl
 Source: php7.0
-Version: 7.0.33-98001~bullseye54
+Version: 7.0.33-98001~bullseye64
 Architecture: amd64
 Maintainer: Debian PHP Maintainers <team+pkg-php@tracker.debian.org>
 Installed-Size: 503
-Depends: php-common (>= 1:81~), ucf, php7.0-common (= 7.0.33-98001~bullseye54), libc6 (>= 2.14), libgcc-s1 (>= 3.0), libicu67 (>= 67.1-1~), libstdc++6 (>= 5)
+Depends: php-common (>= 1:81~), ucf, php7.0-common (= 7.0.33-98001~bullseye64), libc6 (>= 2.14), libgcc-s1 (>= 3.0), libicu67 (>= 67.1-1~), libstdc++6 (>= 5)
 Provides: php-intl
 Homepage: http://www.php.net/
 Priority: optional
 Section: php
-Filename: pool/main/p/php7.0/php7.0-intl_7.0.33-98001~bullseye54_amd64.deb
-Size: 125736
-SHA256: 6271c6add1868e2c938bb34df295e51a663ee30c4b24506cf5d092025af89c5a
-SHA1: 9dd278d7f78974197081ba785416857277b2532c
-MD5sum: 257ec24d66cb257f97759289bc679704
+Filename: pool/main/p/php7.0/php7.0-intl_7.0.33-98001~bullseye64_amd64.deb
+Size: 125992
+SHA256: 6b6eb86760fdc931c793fda205b3a5f6e8239bc8ba5a80d856fa198f5fb24339
+SHA1: 23bea670e7533442ff4457fc98f65ae0b4b7f856
+MD5sum: 121f091c9eac91ae5c566ea5ac390fbf
 Description: Internationalisation module for PHP
  This package provides the Internationalisation module(s) for PHP.
  .
@@ -2836,20 +2836,20 @@ Description: Internationalisation module for PHP
 
 Package: php7.0-json
 Source: php7.0
-Version: 7.0.33-98001~bullseye54
+Version: 7.0.33-98001~bullseye64
 Architecture: amd64
 Maintainer: Debian PHP Maintainers <team+pkg-php@tracker.debian.org>
 Installed-Size: 71
-Depends: php-common (>= 1:81~), ucf, php7.0-common (= 7.0.33-98001~bullseye54), libc6 (>= 2.14)
+Depends: php-common (>= 1:81~), ucf, php7.0-common (= 7.0.33-98001~bullseye64), libc6 (>= 2.14)
 Provides: php-json
 Homepage: http://www.php.net/
 Priority: optional
 Section: php
-Filename: pool/main/p/php7.0/php7.0-json_7.0.33-98001~bullseye54_amd64.deb
-Size: 17516
-SHA256: 567f1304fc03bf0e3e3f04f4ea478f8aa06230e7266a86fe195731bbe7363f1d
-SHA1: 0ff945ad86b340c9ff0f86915e58883c3a886e3a
-MD5sum: d6254f72a2e5658da5a09b56fc713018
+Filename: pool/main/p/php7.0/php7.0-json_7.0.33-98001~bullseye64_amd64.deb
+Size: 17488
+SHA256: 451214f6c5e6cbd4563122499175ebd26dc2f60c36de33b48c8455f1d649f68e
+SHA1: d6a33c8e9f38949191fdcdf507a85d843501c2d7
+MD5sum: 583da5bafa52ea4b94f6ae431c9d6026
 Description: JSON module for PHP
  This package provides the JSON module(s) for PHP.
  .
@@ -2859,20 +2859,20 @@ Description: JSON module for PHP
 
 Package: php7.0-ldap
 Source: php7.0
-Version: 7.0.33-98001~bullseye54
+Version: 7.0.33-98001~bullseye64
 Architecture: amd64
 Maintainer: Debian PHP Maintainers <team+pkg-php@tracker.debian.org>
 Installed-Size: 99
-Depends: php-common (>= 1:81~), ucf, php7.0-common (= 7.0.33-98001~bullseye54), libc6 (>= 2.14), libldap-2.4-2 (>= 2.4.7)
+Depends: php-common (>= 1:81~), ucf, php7.0-common (= 7.0.33-98001~bullseye64), libc6 (>= 2.14), libldap-2.4-2 (>= 2.4.7)
 Provides: php-ldap
 Homepage: http://www.php.net/
 Priority: optional
 Section: php
-Filename: pool/main/p/php7.0/php7.0-ldap_7.0.33-98001~bullseye54_amd64.deb
-Size: 21688
-SHA256: 55c6e27a1a17bd3b9e73541355187d2bb1aa525fe15f7d0df0907f1b9cf2c312
-SHA1: f9c44cb9b4b3b102af401a33a874f787fae1442c
-MD5sum: 8291c468789858aa6e94cbbd5a6155f7
+Filename: pool/main/p/php7.0/php7.0-ldap_7.0.33-98001~bullseye64_amd64.deb
+Size: 21680
+SHA256: b019408e819db7c37dffa47fc5d0b99bd28248c030426e875f06281cc37e3a8a
+SHA1: 3100fb229677706c11c1b39f3e14fe4ab2664e91
+MD5sum: 3ef263b9c857560515a6503626f67230
 Description: LDAP module for PHP
  This package provides the LDAP module(s) for PHP.
  .
@@ -2882,21 +2882,21 @@ Description: LDAP module for PHP
 
 Package: php7.0-litespeed
 Source: php7.0
-Version: 7.0.33-98001~bullseye54
+Version: 7.0.33-98001~bullseye64
 Architecture: amd64
 Maintainer: Debian PHP Maintainers <team+pkg-php@tracker.debian.org>
 Installed-Size: 4310
-Depends: media-types | mime-support, php7.0-cli, php7.0-common (= 7.0.33-98001~bullseye54), procps, systemd | systemd-tmpfiles, tzdata, ucf, libc6 (>= 2.29), libpcre3 (>= 2:8.41), libssl1.1 (>= 1.1.0), libxml2 (>= 2.8.0), zlib1g (>= 1:1.1.4)
+Depends: media-types | mime-support, php7.0-cli, php7.0-common (= 7.0.33-98001~bullseye64), procps, systemd | systemd-tmpfiles, tzdata, ucf, libc6 (>= 2.29), libpcre3, libssl1.1 (>= 1.1.0), libxml2 (>= 2.8.0), zlib1g (>= 1:1.1.4)
 Suggests: php-pear
 Provides: php-json, php-litespeed, php7.0-json, phpapi-20151012
 Homepage: http://www.php.net/
 Priority: optional
 Section: php
-Filename: pool/main/p/php7.0/php7.0-litespeed_7.0.33-98001~bullseye54_amd64.deb
-Size: 1278576
-SHA256: f105a7b50014ebbf525aeaf1c09d1dda2a0cd62013ae730719de43e9e7013670
-SHA1: c4ca44fd1d4c0899a1cc8256641ec1d100986013
-MD5sum: e26b05241f0d9339f4bd7619a271c158
+Filename: pool/main/p/php7.0/php7.0-litespeed_7.0.33-98001~bullseye64_amd64.deb
+Size: 1277688
+SHA256: 2d21f0069911b6074744193b754f9ad78533ca8bd5e5d5fbb63ed430f9622f41
+SHA1: 024206290d8e4ee1dba523877398d10896b2cf07
+MD5sum: bc6acdb556a56c71c4e19bda1d65ad02
 Description: server-side, HTML-embedded scripting language (LiteSpeed binary)
  This package provides the LiteSpeed SAPI module that provides a dedicated
  interface for PHP integration with OpenLiteSpeed or LiteSpeed Web Server.
@@ -2910,20 +2910,20 @@ Description: server-side, HTML-embedded scripting language (LiteSpeed binary)
 
 Package: php7.0-mbstring
 Source: php7.0
-Version: 7.0.33-98001~bullseye54
+Version: 7.0.33-98001~bullseye64
 Architecture: amd64
 Maintainer: Debian PHP Maintainers <team+pkg-php@tracker.debian.org>
 Installed-Size: 1478
-Depends: php-common (>= 1:81~), ucf, php7.0-common (= 7.0.33-98001~bullseye54), libc6 (>= 2.14)
+Depends: php-common (>= 1:81~), ucf, php7.0-common (= 7.0.33-98001~bullseye64), libc6 (>= 2.14)
 Provides: php-mbstring
 Homepage: http://www.php.net/
 Priority: optional
 Section: php
-Filename: pool/main/p/php7.0/php7.0-mbstring_7.0.33-98001~bullseye54_amd64.deb
-Size: 466436
-SHA256: c894ad0edabbae4f74747164afea7544499259afd850ad8da829ea6e46dd93f5
-SHA1: efe468ec4edc4d2540dfba60d720dd23e1e7f00e
-MD5sum: 4dc04baeceebfbb1958efc5893df3bdb
+Filename: pool/main/p/php7.0/php7.0-mbstring_7.0.33-98001~bullseye64_amd64.deb
+Size: 467864
+SHA256: 9fc2b13ba7148e4a2e414846443457e08726fe0ed11dcc4f7d8e868d8a13b223
+SHA1: bac02898871383acc316bce39c803679dbcd2e01
+MD5sum: 9deb4f3c14606a7157f6fe240e596d53
 Description: MBSTRING module for PHP
  This package provides the MBSTRING module(s) for PHP.
  .
@@ -2933,20 +2933,20 @@ Description: MBSTRING module for PHP
 
 Package: php7.0-mcrypt
 Source: php7.0
-Version: 7.0.33-98001~bullseye54
+Version: 7.0.33-98001~bullseye64
 Architecture: amd64
 Maintainer: Debian PHP Maintainers <team+pkg-php@tracker.debian.org>
 Installed-Size: 75
-Depends: php-common (>= 1:81~), ucf, php7.0-common (= 7.0.33-98001~bullseye54), libc6 (>= 2.14), libmcrypt4
+Depends: php-common (>= 1:81~), ucf, php7.0-common (= 7.0.33-98001~bullseye64), libc6 (>= 2.14), libmcrypt4
 Provides: php-mcrypt
 Homepage: http://www.php.net/
 Priority: optional
 Section: php
-Filename: pool/main/p/php7.0/php7.0-mcrypt_7.0.33-98001~bullseye54_amd64.deb
-Size: 14800
-SHA256: fa2ffb1c5eef3140cda5e7ca7a418e40884092562a501a26f7a114e8b0f16b8f
-SHA1: 18e68b1bb2a54fa62e8479146acd810e9987d63c
-MD5sum: bae075c0c5948774c010e9630f11067c
+Filename: pool/main/p/php7.0/php7.0-mcrypt_7.0.33-98001~bullseye64_amd64.deb
+Size: 14816
+SHA256: b74947175dc58f0b71d44043d0e433d7d9c3adf30f4570a192fe301b8934c07d
+SHA1: b4a79eed7cfd5f1153f9bbd96fbfdec8df14a120
+MD5sum: 53964801c42289f5f129f428a976eb3a
 Description: libmcrypt module for PHP
  This package provides the libmcrypt module(s) for PHP.
  .
@@ -2956,20 +2956,20 @@ Description: libmcrypt module for PHP
 
 Package: php7.0-mysql
 Source: php7.0
-Version: 7.0.33-98001~bullseye54
+Version: 7.0.33-98001~bullseye64
 Architecture: amd64
 Maintainer: Debian PHP Maintainers <team+pkg-php@tracker.debian.org>
 Installed-Size: 495
-Depends: php-common (>= 1:81~), ucf, php7.0-common (= 7.0.33-98001~bullseye54), libc6 (>= 2.15)
+Depends: php-common (>= 1:81~), ucf, php7.0-common (= 7.0.33-98001~bullseye64), libc6 (>= 2.15)
 Provides: php-mysqli, php-mysqlnd, php-pdo-mysql, php7.0-mysqli, php7.0-mysqlnd, php7.0-pdo-mysql
 Homepage: http://www.php.net/
 Priority: optional
 Section: php
-Filename: pool/main/p/php7.0/php7.0-mysql_7.0.33-98001~bullseye54_amd64.deb
-Size: 128384
-SHA256: 9e138c72d9bde7a1a26788644d35ba682efd6710f4f4ef0a2202873b4f8bf1fb
-SHA1: 5363260342f5acdda22fb810ad348087a87558be
-MD5sum: 7c5e1e033cfa307704b8117e7a2323c2
+Filename: pool/main/p/php7.0/php7.0-mysql_7.0.33-98001~bullseye64_amd64.deb
+Size: 128144
+SHA256: 08071715763139d8115da35dd144a12ccfb1397473fa79a327941ddba27a3479
+SHA1: d1cbc8eac0b2172290e558722f29fe77806bfc45
+MD5sum: cf8d4bcddfa078fbb08f96994575520d
 Description: MySQL module for PHP
  This package provides the MySQL module(s) for PHP.
  .
@@ -2979,20 +2979,20 @@ Description: MySQL module for PHP
 
 Package: php7.0-odbc
 Source: php7.0
-Version: 7.0.33-98001~bullseye54
+Version: 7.0.33-98001~bullseye64
 Architecture: amd64
 Maintainer: Debian PHP Maintainers <team+pkg-php@tracker.debian.org>
 Installed-Size: 135
-Depends: php-common (>= 1:81~), ucf, php7.0-common (= 7.0.33-98001~bullseye54), libc6 (>= 2.14), libodbc1 (>= 2.3.1)
+Depends: php-common (>= 1:81~), ucf, php7.0-common (= 7.0.33-98001~bullseye64), libc6 (>= 2.14), libodbc1 (>= 2.3.1)
 Provides: php-odbc, php-pdo-odbc, php7.0-pdo-odbc
 Homepage: http://www.php.net/
 Priority: optional
 Section: php
-Filename: pool/main/p/php7.0/php7.0-odbc_7.0.33-98001~bullseye54_amd64.deb
-Size: 31736
-SHA256: 0f3e38f5d279f9e07efffbdd1754b31a18302282b6c1f1b12e01d12a28661e07
-SHA1: ebecf5487b65e3e39bc12dd59920ad84826cc535
-MD5sum: 74bc55b22fdf31417b6bb15056306895
+Filename: pool/main/p/php7.0/php7.0-odbc_7.0.33-98001~bullseye64_amd64.deb
+Size: 31796
+SHA256: 86f60849c8c98adc3ad9d8a96a10c7fb1c6d459cb532c3e090efd709af8ef688
+SHA1: e0b9c7afd3fee06b7dc1cd75d4fb198118f52d39
+MD5sum: 910daba5bc2797cca0bdbfe5e168a939
 Description: ODBC module for PHP
  This package provides the ODBC module(s) for PHP.
  .
@@ -3002,20 +3002,20 @@ Description: ODBC module for PHP
 
 Package: php7.0-opcache
 Source: php7.0
-Version: 7.0.33-98001~bullseye54
+Version: 7.0.33-98001~bullseye64
 Architecture: amd64
 Maintainer: Debian PHP Maintainers <team+pkg-php@tracker.debian.org>
 Installed-Size: 231
-Depends: php-common (>= 1:81~), ucf, php7.0-common (= 7.0.33-98001~bullseye54), libc6 (>= 2.27)
+Depends: php-common (>= 1:81~), ucf, php7.0-common (= 7.0.33-98001~bullseye64), libc6 (>= 2.27)
 Provides: php-opcache
 Homepage: http://www.php.net/
 Priority: optional
 Section: php
-Filename: pool/main/p/php7.0/php7.0-opcache_7.0.33-98001~bullseye54_amd64.deb
-Size: 79260
-SHA256: c590b5bf7ef02dce70677e5dc746fba7c0f5abc59ee30d29948a1868b8336db0
-SHA1: 3bfe7b04b947473deb871af288512a8aa20829df
-MD5sum: 7e6254e9a67f93dbede5a0671d922d14
+Filename: pool/main/p/php7.0/php7.0-opcache_7.0.33-98001~bullseye64_amd64.deb
+Size: 79656
+SHA256: 3457e1d7c4302928f083e257165592c203ae4d089467089f9b4764227959c7a4
+SHA1: 2eda1affe3574ffab6f265ee5c13728e9cfff15c
+MD5sum: ae1de48c9698924c8e2d58883b57db2b
 Description: Zend OpCache module for PHP
  This package provides the Zend OpCache module(s) for PHP.
  .
@@ -3025,20 +3025,20 @@ Description: Zend OpCache module for PHP
 
 Package: php7.0-pgsql
 Source: php7.0
-Version: 7.0.33-98001~bullseye54
+Version: 7.0.33-98001~bullseye64
 Architecture: amd64
 Maintainer: Debian PHP Maintainers <team+pkg-php@tracker.debian.org>
 Installed-Size: 223
-Depends: php-common (>= 1:81~), ucf, php7.0-common (= 7.0.33-98001~bullseye54), libc6 (>= 2.14), libpq5 (>= 9.3~)
+Depends: php-common (>= 1:81~), ucf, php7.0-common (= 7.0.33-98001~bullseye64), libc6 (>= 2.14), libpq5 (>= 9.3~)
 Provides: php-pdo-pgsql, php-pgsql, php7.0-pdo-pgsql
 Homepage: http://www.php.net/
 Priority: optional
 Section: php
-Filename: pool/main/p/php7.0/php7.0-pgsql_7.0.33-98001~bullseye54_amd64.deb
-Size: 56396
-SHA256: f7250095f7fdb99a634eae7a390bf75b2cd39d78c25685f1becffbbb1bed3b4f
-SHA1: d38d2a655f55d2c75c5388c08cae4f6fdbfd92ad
-MD5sum: d2b7392ed596419f99adc6552a3bfd90
+Filename: pool/main/p/php7.0/php7.0-pgsql_7.0.33-98001~bullseye64_amd64.deb
+Size: 56312
+SHA256: 6823192be7b30adda46d2c65da5807b8ab3c0b4436fe615a8433382b34f70445
+SHA1: cd94292cec195ee2312cd15838c7a551ae8bea82
+MD5sum: d639a9392b568efaecc6a4b626eb7189
 Description: PostgreSQL module for PHP
  This package provides the PostgreSQL module(s) for PHP.
  .
@@ -3048,21 +3048,21 @@ Description: PostgreSQL module for PHP
 
 Package: php7.0-phpdbg
 Source: php7.0
-Version: 7.0.33-98001~bullseye54
+Version: 7.0.33-98001~bullseye64
 Architecture: amd64
 Maintainer: Debian PHP Maintainers <team+pkg-php@tracker.debian.org>
 Installed-Size: 4541
-Depends: libpcre3 (>= 2:8.41), media-types | mime-support, php7.0-cli, php7.0-common (= 7.0.33-98001~bullseye54), php7.0-json, php7.0-opcache, tzdata, ucf, libc6 (>= 2.29), libedit2 (>= 2.11-20080614-0), libssl1.1 (>= 1.1.0), libxml2 (>= 2.8.0), zlib1g (>= 1:1.1.4)
+Depends: libpcre3 (>= 2:8.35), media-types | mime-support, php7.0-cli, php7.0-common (= 7.0.33-98001~bullseye64), php7.0-json, php7.0-opcache, tzdata, ucf, libc6 (>= 2.29), libedit2 (>= 2.11-20080614-0), libssl1.1 (>= 1.1.0), libxml2 (>= 2.8.0), zlib1g (>= 1:1.1.4)
 Recommends: php-readline
 Provides: php-phpdbg, phpapi-20151012
 Homepage: http://www.php.net/
 Priority: optional
 Section: php
-Filename: pool/main/p/php7.0/php7.0-phpdbg_7.0.33-98001~bullseye54_amd64.deb
-Size: 1358296
-SHA256: e41d0835aa10efd41d978ae0d8443b0c330c50ea9c3b138d7883c4f173b3f6ec
-SHA1: 0baa0818e1302a60310274856ae08dc8f00168a1
-MD5sum: 8d1acdf6f76503694d6d9a0b7802d612
+Filename: pool/main/p/php7.0/php7.0-phpdbg_7.0.33-98001~bullseye64_amd64.deb
+Size: 1359868
+SHA256: d004f812ef7ef9e941d819f38c368fadde194b3c86ea79fc2df02198bbf29916
+SHA1: 121e6daa1b94e6deb375ce989db9e62905e33a3a
+MD5sum: bb12d80bded84f7919b9430b9fcd09bb
 Description: server-side, HTML-embedded scripting language (PHPDBG binary)
  This package provides the /usr/bin/phpdbg command interpreter, useful for
  stepthrough debugging of PHP code.
@@ -3076,20 +3076,20 @@ Description: server-side, HTML-embedded scripting language (PHPDBG binary)
 
 Package: php7.0-pspell
 Source: php7.0
-Version: 7.0.33-98001~bullseye54
+Version: 7.0.33-98001~bullseye64
 Architecture: amd64
 Maintainer: Debian PHP Maintainers <team+pkg-php@tracker.debian.org>
 Installed-Size: 55
-Depends: php-common (>= 1:81~), ucf, php7.0-common (= 7.0.33-98001~bullseye54), libaspell15 (>= 0.60.8), libc6 (>= 2.4)
+Depends: php-common (>= 1:81~), ucf, php7.0-common (= 7.0.33-98001~bullseye64), libaspell15 (>= 0.60.8), libc6 (>= 2.4)
 Provides: php-pspell
 Homepage: http://www.php.net/
 Priority: optional
 Section: php
-Filename: pool/main/p/php7.0/php7.0-pspell_7.0.33-98001~bullseye54_amd64.deb
-Size: 8520
-SHA256: 9f731a615556993078f5086ee653862982c4208b94d23686d3b303eaf7c0fd2b
-SHA1: 71401d4a17f7ad897db4fe30d7d6819552f4b6e6
-MD5sum: 83c24527fbc69c28436b1bd7ac7373d9
+Filename: pool/main/p/php7.0/php7.0-pspell_7.0.33-98001~bullseye64_amd64.deb
+Size: 8544
+SHA256: 8c08a901e2e2a904d547fe9cf92747ec635b3c2410ea6104e26fd1ea7282a6b0
+SHA1: 525c455aaf3a6aafe9602f2a6b1f647224832722
+MD5sum: f27a997d8517b08e2bd7380017ea33d2
 Description: pspell module for PHP
  This package provides the pspell module(s) for PHP.
  .
@@ -3099,20 +3099,20 @@ Description: pspell module for PHP
 
 Package: php7.0-readline
 Source: php7.0
-Version: 7.0.33-98001~bullseye54
+Version: 7.0.33-98001~bullseye64
 Architecture: amd64
 Maintainer: Debian PHP Maintainers <team+pkg-php@tracker.debian.org>
 Installed-Size: 63
-Depends: php-common (>= 1:81~), ucf, php7.0-common (= 7.0.33-98001~bullseye54), libc6 (>= 2.14), libedit2 (>= 3.1-20130611-0)
+Depends: php-common (>= 1:81~), ucf, php7.0-common (= 7.0.33-98001~bullseye64), libc6 (>= 2.14), libedit2 (>= 3.1-20130611-0)
 Provides: php-readline
 Homepage: http://www.php.net/
 Priority: optional
 Section: php
-Filename: pool/main/p/php7.0/php7.0-readline_7.0.33-98001~bullseye54_amd64.deb
-Size: 12488
-SHA256: aec2d333d22b25263338c4433893876be2c52ce2370eda6a58960a77bfbca219
-SHA1: 67b7789cd71e51bf960cc131be604dd34bb6a4e4
-MD5sum: 186a5e5919171176f151bd001d13194c
+Filename: pool/main/p/php7.0/php7.0-readline_7.0.33-98001~bullseye64_amd64.deb
+Size: 12476
+SHA256: 5537b25d8a6b342ea0e9c968de9dc33513d0ef9088578395ed8d1ac83f9a1aac
+SHA1: b1f2b26da58d307fec72491b5372888bdf4c8cd7
+MD5sum: 4b20c809f52df0b87eb5a0f95283b197
 Description: readline module for PHP
  This package provides the readline module(s) for PHP.
  .
@@ -3122,20 +3122,20 @@ Description: readline module for PHP
 
 Package: php7.0-recode
 Source: php7.0
-Version: 7.0.33-98001~bullseye54
+Version: 7.0.33-98001~bullseye64
 Architecture: amd64
 Maintainer: Debian PHP Maintainers <team+pkg-php@tracker.debian.org>
 Installed-Size: 43
-Depends: php-common (>= 1:81~), ucf, php7.0-common (= 7.0.33-98001~bullseye54), libc6 (>= 2.14), librecode0 (>= 3.6)
+Depends: php-common (>= 1:81~), ucf, php7.0-common (= 7.0.33-98001~bullseye64), libc6 (>= 2.14), librecode0 (>= 3.6)
 Provides: php-recode
 Homepage: http://www.php.net/
 Priority: optional
 Section: php
-Filename: pool/main/p/php7.0/php7.0-recode_7.0.33-98001~bullseye54_amd64.deb
-Size: 5692
-SHA256: be232c356b670f5911a974ce2246a52d0dd30c664424ac09ce72a93abbfa4e70
-SHA1: 8ff4ac8378b6026b2315eb24ad079e70d3aeaf59
-MD5sum: 5bdc060872d118262638c7f60c02fef7
+Filename: pool/main/p/php7.0/php7.0-recode_7.0.33-98001~bullseye64_amd64.deb
+Size: 5688
+SHA256: 00924714a2567e7e55d2709ec5c2124ed58562275d01d349fc97b58957777a95
+SHA1: 87fec554eb0718d4d06b008d50ad61f6b53c622c
+MD5sum: ceaf766ad90323ae2fb2d7917a0347d9
 Description: recode module for PHP
  This package provides the recode module(s) for PHP.
  .
@@ -3145,21 +3145,21 @@ Description: recode module for PHP
 
 Package: php7.0-snmp
 Source: php7.0
-Version: 7.0.33-98001~bullseye54
+Version: 7.0.33-98001~bullseye64
 Architecture: amd64
 Maintainer: Debian PHP Maintainers <team+pkg-php@tracker.debian.org>
 Installed-Size: 91
-Depends: php-common (>= 1:81~), ucf, php7.0-common (= 7.0.33-98001~bullseye54), libc6 (>= 2.14), libsnmp40 (>= 5.9+dfsg)
+Depends: php-common (>= 1:81~), ucf, php7.0-common (= 7.0.33-98001~bullseye64), libc6 (>= 2.14), libsnmp40 (>= 5.9+dfsg)
 Recommends: snmp
 Provides: php-snmp
 Homepage: http://www.php.net/
 Priority: optional
 Section: php
-Filename: pool/main/p/php7.0/php7.0-snmp_7.0.33-98001~bullseye54_amd64.deb
-Size: 19392
-SHA256: 6d51e6fa91ae780a3f4223eeaa14e1f6988c2772ab4c799f563dec232a6b1a10
-SHA1: f36f730e613cac22723cf4c8c2e1e235d9761566
-MD5sum: 6f12d41034b75bf57ed1c23bafeb9ec8
+Filename: pool/main/p/php7.0/php7.0-snmp_7.0.33-98001~bullseye64_amd64.deb
+Size: 19384
+SHA256: 085369f3e41ad90c28b34943fa611d00c269408395af17aa6dd032498a78a028
+SHA1: 1ba0cacbec520ce5eac668414f909fdb1eeccaa7
+MD5sum: c88e097cbbafa5945540c3fc1c673c96
 Description: SNMP module for PHP
  This package provides the SNMP module(s) for PHP.
  .
@@ -3169,20 +3169,20 @@ Description: SNMP module for PHP
 
 Package: php7.0-soap
 Source: php7.0
-Version: 7.0.33-98001~bullseye54
+Version: 7.0.33-98001~bullseye64
 Architecture: amd64
 Maintainer: Debian PHP Maintainers <team+pkg-php@tracker.debian.org>
 Installed-Size: 351
-Depends: php-common (>= 1:81~), ucf, php7.0-common (= 7.0.33-98001~bullseye54), libc6 (>= 2.14), libxml2 (>= 2.7.4)
+Depends: php-common (>= 1:81~), ucf, php7.0-common (= 7.0.33-98001~bullseye64), libc6 (>= 2.14), libxml2 (>= 2.7.4)
 Provides: php-soap
 Homepage: http://www.php.net/
 Priority: optional
 Section: php
-Filename: pool/main/p/php7.0/php7.0-soap_7.0.33-98001~bullseye54_amd64.deb
-Size: 119004
-SHA256: d52025945b77a072951c174ba99ef8d026e27494fda2220dbafa36b808346a5f
-SHA1: 2098504cee7e73ef046ed48c8fd12aa135dd19bb
-MD5sum: 5d0a602a3c84adc840a09bc2a9d8f846
+Filename: pool/main/p/php7.0/php7.0-soap_7.0.33-98001~bullseye64_amd64.deb
+Size: 119204
+SHA256: 1f0f40c51a50954c1c5ff10276d4b2db40f4d0bde54f855f32fa012ca318a9a8
+SHA1: 3674063d7a3433440ffbf5bdbb6633fb75ce6cdb
+MD5sum: e14656151d63e637e50b508d553bcb3b
 Description: SOAP module for PHP
  This package provides the SOAP module(s) for PHP.
  .
@@ -3192,20 +3192,20 @@ Description: SOAP module for PHP
 
 Package: php7.0-sqlite3
 Source: php7.0
-Version: 7.0.33-98001~bullseye54
+Version: 7.0.33-98001~bullseye64
 Architecture: amd64
 Maintainer: Debian PHP Maintainers <team+pkg-php@tracker.debian.org>
 Installed-Size: 124
-Depends: php-common (>= 1:81~), ucf, php7.0-common (= 7.0.33-98001~bullseye54), libc6 (>= 2.14), libsqlite3-0 (>= 3.7.15)
+Depends: php-common (>= 1:81~), ucf, php7.0-common (= 7.0.33-98001~bullseye64), libc6 (>= 2.14), libsqlite3-0 (>= 3.7.15)
 Provides: php-pdo-sqlite, php-sqlite3, php7.0-pdo-sqlite
 Homepage: http://www.php.net/
 Priority: optional
 Section: php
-Filename: pool/main/p/php7.0/php7.0-sqlite3_7.0.33-98001~bullseye54_amd64.deb
-Size: 26576
-SHA256: 35062fd5292d64514bd4756337f32cfe9602fc9f60c09cbaf9d274949ee1482d
-SHA1: 8a85ea3ec21bf7855eeec37bd8fc957fc8976957
-MD5sum: a68707511995ed029fb9e151fd5bb4db
+Filename: pool/main/p/php7.0/php7.0-sqlite3_7.0.33-98001~bullseye64_amd64.deb
+Size: 26468
+SHA256: d165bdcb251a22c9b6a8b5a46aa2fa4f77fe8137663ab4337071af91aa8388f6
+SHA1: 10a179155cd4ff9ae424b9ba2001d35e86a38cb4
+MD5sum: d72325c3aa4bb909d911e5e4c06e1d8f
 Description: SQLite3 module for PHP
  This package provides the SQLite3 module(s) for PHP.
  .
@@ -3215,20 +3215,20 @@ Description: SQLite3 module for PHP
 
 Package: php7.0-sybase
 Source: php7.0
-Version: 7.0.33-98001~bullseye54
+Version: 7.0.33-98001~bullseye64
 Architecture: amd64
 Maintainer: Debian PHP Maintainers <team+pkg-php@tracker.debian.org>
 Installed-Size: 59
-Depends: php-common (>= 1:81~), ucf, php7.0-common (= 7.0.33-98001~bullseye54), libc6 (>= 2.14), libsybdb5 (>= 0.63)
+Depends: php-common (>= 1:81~), ucf, php7.0-common (= 7.0.33-98001~bullseye64), libc6 (>= 2.14), libsybdb5 (>= 0.63)
 Provides: php-pdo-dblib, php7.0-pdo-dblib
 Homepage: http://www.php.net/
 Priority: optional
 Section: php
-Filename: pool/main/p/php7.0/php7.0-sybase_7.0.33-98001~bullseye54_amd64.deb
-Size: 11204
-SHA256: e14347e0f761a9ac759b13e96d37b61957625fe190d9bd057a9a9e8c205fbabb
-SHA1: 5b81a4031c49bce500098968573d46407f810a30
-MD5sum: a496de1a188187e31d10b5621fa5fb97
+Filename: pool/main/p/php7.0/php7.0-sybase_7.0.33-98001~bullseye64_amd64.deb
+Size: 11192
+SHA256: 537d3a9589af0f9815cee5ef97ebccbb5191f82426d84e04cd62d6ad09b9c9dd
+SHA1: d4936e519d9881ba988f57e13d6baff9429a2fd5
+MD5sum: cf7e5994045e5e7d5f8de5ce93f24d26
 Description: Sybase module for PHP
  This package provides the Sybase module(s) for PHP.
  .
@@ -3238,20 +3238,20 @@ Description: Sybase module for PHP
 
 Package: php7.0-tidy
 Source: php7.0
-Version: 7.0.33-98001~bullseye54
+Version: 7.0.33-98001~bullseye64
 Architecture: amd64
 Maintainer: Debian PHP Maintainers <team+pkg-php@tracker.debian.org>
 Installed-Size: 87
-Depends: php-common (>= 1:81~), ucf, php7.0-common (= 7.0.33-98001~bullseye54), libc6 (>= 2.14), libtidy5deb1 (>= 1:5.2.0)
+Depends: php-common (>= 1:81~), ucf, php7.0-common (= 7.0.33-98001~bullseye64), libc6 (>= 2.14), libtidy5deb1 (>= 1:5.2.0)
 Provides: php-tidy
 Homepage: http://www.php.net/
 Priority: optional
 Section: php
-Filename: pool/main/p/php7.0/php7.0-tidy_7.0.33-98001~bullseye54_amd64.deb
-Size: 17156
-SHA256: e15ac7297c82e1ddc9b7a627a5a2f84a2ef6267eb36f9b5828ed8c9eca1a4af1
-SHA1: 0b53c37987da5641a3ef67539598be007ebecefc
-MD5sum: eaec391111c7023af9e830d50ee951a9
+Filename: pool/main/p/php7.0/php7.0-tidy_7.0.33-98001~bullseye64_amd64.deb
+Size: 17152
+SHA256: 403759cb91a672d8f366381511976ad77d9571b9eff2b466f8758095caf4a05c
+SHA1: 3d5ae5c94abcac1627301f5a9348c2826aa96e16
+MD5sum: 7d2c8d0099c0d30fbbe89a74b212c8dc
 Description: tidy module for PHP
  This package provides the tidy module(s) for PHP.
  .
@@ -3261,22 +3261,22 @@ Description: tidy module for PHP
 
 Package: php7.0-xml
 Source: php7.0
-Version: 7.0.33-98001~bullseye54
+Version: 7.0.33-98001~bullseye64
 Architecture: amd64
 Maintainer: Debian PHP Maintainers <team+pkg-php@tracker.debian.org>
 Installed-Size: 533
-Depends: php-common (>= 1:81~), ucf, php7.0-common (= 7.0.33-98001~bullseye54), libc6 (>= 2.14), libxml2 (>= 2.9.0), libxslt1.1 (>= 1.1.25)
+Depends: php-common (>= 1:81~), ucf, php7.0-common (= 7.0.33-98001~bullseye64), libc6 (>= 2.14), libxml2 (>= 2.9.0), libxslt1.1 (>= 1.1.25)
 Breaks: php7.0-xsl (<< 7.0.3-6~)
 Replaces: php7.0-xsl (<< 7.0.3-6~)
 Provides: php-dom, php-simplexml, php-wddx, php-xml, php-xmlreader, php-xmlwriter, php-xsl, php7.0-dom, php7.0-simplexml, php7.0-wddx, php7.0-xmlreader, php7.0-xmlwriter, php7.0-xsl
 Homepage: http://www.php.net/
 Priority: optional
 Section: php
-Filename: pool/main/p/php7.0/php7.0-xml_7.0.33-98001~bullseye54_amd64.deb
-Size: 118724
-SHA256: 23a699792742d813ac6498da72414a2b439f5cb6cd765923cd4e608e2e6d0678
-SHA1: 2edc542360d25981eadc48f9bc8d9dea24c757ad
-MD5sum: 5101182f41e5c9a5aaa3c4f8501eaf67
+Filename: pool/main/p/php7.0/php7.0-xml_7.0.33-98001~bullseye64_amd64.deb
+Size: 118836
+SHA256: 79045f921840647c023717e6462f618b6ad6d3e4b9a4916cf9810c524fcfae85
+SHA1: c52b5215b7ceef24a29ccdb74b7695dee6735051
+MD5sum: c2f7b3cc11ece5079e27ca9213155d3e
 Description: DOM, SimpleXML, WDDX, XML, and XSL module for PHP
  This package provides the DOM, SimpleXML, WDDX, XML, and XSL module(s) for PHP.
  .
@@ -3286,20 +3286,20 @@ Description: DOM, SimpleXML, WDDX, XML, and XSL module for PHP
 
 Package: php7.0-xmlrpc
 Source: php7.0
-Version: 7.0.33-98001~bullseye54
+Version: 7.0.33-98001~bullseye64
 Architecture: amd64
 Maintainer: Debian PHP Maintainers <team+pkg-php@tracker.debian.org>
 Installed-Size: 67
-Depends: php-common (>= 1:81~), ucf, php7.0-common (= 7.0.33-98001~bullseye54), libc6 (>= 2.14), libxmlrpc-epi0
+Depends: php-common (>= 1:81~), ucf, php7.0-common (= 7.0.33-98001~bullseye64), libc6 (>= 2.14), libxmlrpc-epi0
 Provides: php-xmlrpc
 Homepage: http://www.php.net/
 Priority: optional
 Section: php
-Filename: pool/main/p/php7.0/php7.0-xmlrpc_7.0.33-98001~bullseye54_amd64.deb
-Size: 13320
-SHA256: 6b4457ce55c3d4a87f6fe892c5afaf5cb9a72cd792e77c8da34466aaa00d0d56
-SHA1: 9dd4207e0fc3c46ab0ab7b994c04cd4c5b454611
-MD5sum: 82ed973203da8f74a8a5a2d9291864b4
+Filename: pool/main/p/php7.0/php7.0-xmlrpc_7.0.33-98001~bullseye64_amd64.deb
+Size: 13336
+SHA256: 14bfa8ec50d13e99e343c9b67a4d562a4316e87b18584989472df01a19ec49ff
+SHA1: f9760911eacd3990ad161eb8250ce1c9397d3e5c
+MD5sum: 16a1f04adb97b12be98bc039e6704ef3
 Description: XMLRPC-EPI module for PHP
  This package provides the XMLRPC-EPI module(s) for PHP.
  .
@@ -3309,7 +3309,7 @@ Description: XMLRPC-EPI module for PHP
 
 Package: php7.0-xsl
 Source: php7.0
-Version: 7.0.33-98001~bullseye54
+Version: 7.0.33-98001~bullseye64
 Architecture: all
 Maintainer: Debian PHP Maintainers <team+pkg-php@tracker.debian.org>
 Installed-Size: 90
@@ -3317,31 +3317,31 @@ Depends: php7.0-common, php7.0-xml
 Homepage: http://www.php.net/
 Priority: optional
 Section: php
-Filename: pool/main/p/php7.0/php7.0-xsl_7.0.33-98001~bullseye54_all.deb
-Size: 69476
-SHA256: 708b2500cb58eb0834d05d5c477a53fb7a98012b2fc4f6443825ef3cc3a0a28c
-SHA1: 7cfd249e28e026580e671aa5e2c7daa40e723c77
-MD5sum: 11e1373db4b0eb7e0be3816eaeb53e71
+Filename: pool/main/p/php7.0/php7.0-xsl_7.0.33-98001~bullseye64_all.deb
+Size: 69480
+SHA256: d745a6a5aac0e11396755fc3de15d013c323b169a45c1d8cfddeac045242c0e6
+SHA1: 547ffcc4ad8328ef4f950d98bff81b32e4fcf62b
+MD5sum: 4614c5d7dbbaa1324917ca3e3bafe3f8
 Description: XSL module for PHP (dummy)
  This package is a transitional dummy package and can be safely
  removed.
 
 Package: php7.0-zip
 Source: php7.0
-Version: 7.0.33-98001~bullseye54
+Version: 7.0.33-98001~bullseye64
 Architecture: amd64
 Maintainer: Debian PHP Maintainers <team+pkg-php@tracker.debian.org>
 Installed-Size: 91
-Depends: php-common (>= 1:81~), ucf, php7.0-common (= 7.0.33-98001~bullseye54), libc6 (>= 2.27), libzip4 (>= 1.0)
+Depends: php-common (>= 1:81~), ucf, php7.0-common (= 7.0.33-98001~bullseye64), libc6 (>= 2.27), libzip4 (>= 1.0)
 Provides: php-zip
 Homepage: http://www.php.net/
 Priority: optional
 Section: php
-Filename: pool/main/p/php7.0/php7.0-zip_7.0.33-98001~bullseye54_amd64.deb
-Size: 20820
-SHA256: 879912d38da6170f3f5cbf43dccae33b0955ad865589988bf2769846203226c9
-SHA1: 31358a5e35da665b231f1fbf2547240537f2146d
-MD5sum: 9b1e51e211a3571dab2af3a83c9cf9d2
+Filename: pool/main/p/php7.0/php7.0-zip_7.0.33-98001~bullseye64_amd64.deb
+Size: 20800
+SHA256: 93826428cf84bd5893175dd3ebc2b7d3a1df29445e71031a964ed59fc716221b
+SHA1: aea64bf33b074c51aefa7447e8b8dd3582930b9c
+MD5sum: 0f9cbd21e96b07e50ff2278a6485d2bf
 Description: Zip module for PHP
  This package provides the Zip module(s) for PHP.
  .

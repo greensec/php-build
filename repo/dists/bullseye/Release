@@ -1,17 +1,17 @@
 Codename: bullseye
-Date: Fri, 20 Nov 2026 21:13:28 UTC
+Date: Fri, 20 Nov 2026 21:37:28 UTC
 Architectures: amd64
 Components: main
 Description: greensec/php-build
 MD5Sum:
- cf8255565966e1bdc47509dda0a50751 506717 main/binary-amd64/Packages
- a506105d5d8df770a6586d68103a5652 82924 main/binary-amd64/Packages.gz
+ df2c01306c03814dd48e6954d4595545 506705 main/binary-amd64/Packages
+ 1f9ac18d139933524f264c980af7b826 82959 main/binary-amd64/Packages.gz
  c6ae360c4aadc68d3088ffb3af10b507 68 main/binary-amd64/Release
 SHA1:
- 6911b9705474281b365168cc74bc81217b4ed10e 506717 main/binary-amd64/Packages
- e7426b296e5312dca03ffa7e20f953d41201d559 82924 main/binary-amd64/Packages.gz
+ ba488167dea4ad098f62f2eba7faec052c64f922 506705 main/binary-amd64/Packages
+ c1bf5717be29d76ac0aca40d7404d600a300ea85 82959 main/binary-amd64/Packages.gz
  ebefbce4f10dd822911a8f92724248d7d306b445 68 main/binary-amd64/Release
 SHA256:
- 908de9fee3a571fbfe08e8132bba2ba80a15d8c4cf365648ead06f554392e24f 506717 main/binary-amd64/Packages
- 3db3a8552161087825096db34a373f89607b3a55229ce78a3a9cfd932a7d130e 82924 main/binary-amd64/Packages.gz
+ de3bc4dcb884991272e8754e3da7ebbe438f6f35045c6979c926c45eb09fa760 506705 main/binary-amd64/Packages
+ 78338c471f154b25a4b36d09d431f83bc19dc22356741011e2e1e2a7d4d0d765 82959 main/binary-amd64/Packages.gz
  c26d10b961eeda41e21dcb5126caaaefdc4d4289a635d2adc63ac2fefb8150a5 68 main/binary-amd64/Release
