@@ -23,7 +23,7 @@ my $rep = sub {
   $line =~ s/;\s*$//;
   return "pids=\x27\x27; for target in \$(TARGETS); do \\\n$indent$line \& pids=\"\$\$pids \$\$!\"; \\\n${indent}done; rc=0; for p in \$\$pids; do wait \$\$p || rc=\$\$?; done; exit \$\$rc";
 };
-s/for target in \$\(TARGETS\); do \\\n([\t ]+)dh_auto_build --builddirectory \$\$\{target\}-build \$\(PARALLEL\); \\\n[\t ]+done/$rep->($1, "dh_auto_build --builddirectory \$\$\{target\}-build -j\$\$(( \$\$(nproc) \/ \$\(words \$(TARGETS)\) ))")/ge;
+s/for target in \$\(TARGETS\); do \\\n([\t ]+)dh_auto_build --builddirectory \$\$\{target\}-build \$\(PARALLEL\); \\\n[\t ]+done/$rep->($1, "dh_auto_build --builddirectory \$\$\{target\}-build -- -j\$\$(( \$\$(nproc) \/ \$\(words \$(TARGETS)\) ))")/ge;
 s/for target in \$\(TARGETS\); do \\\n([\t ]+)dh_auto_configure --builddirectory \$\$\{target\}-build \$\(PARALLEL\)([^\n]*) \\\n[\t ]+done/$rep->($1, "dh_auto_configure --builddirectory \$\$\{target\}-build \$\(PARALLEL\)$2")/ge;
 ' "$rules"
 
