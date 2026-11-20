@@ -40,7 +40,7 @@ permissions:
 jobs:
   build:
     name: "php${{ inputs.php_branch }} for ${{ inputs.dist }}"
-    runs-on: ubuntu-22.04
+    runs-on: [self-hosted, linux, x64]
     container:
       image: "debian:${{ inputs.dist }}"
     steps:
