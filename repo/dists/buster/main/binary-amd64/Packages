@@ -82,6 +82,36 @@ Description: server-side, HTML-embedded scripting language (Apache 2 module)
  open source general-purpose scripting language that is especially suited
  for web development and can be embedded into HTML.
 
+Package: libapache2-mod-php7.3
+Source: php7.3
+Version: 7.3.33-42001~buster73
+Architecture: amd64
+Maintainer: Debian PHP Maintainers <team+pkg-php@tracker.debian.org>
+Installed-Size: 4635
+Depends: media-types | mime-support, php7.3-cli, php7.3-common (= 7.3.33-42001~buster73), php7.3-json, php7.3-opcache, tzdata, ucf, apache2-api-20120211, apache2-bin (>= 2.4.16), libargon2-1 (>= 0~20171227), libc6 (>= 2.27), libpcre2-8-0 (>= 10.32), libsodium23 (>= 1.0.14), libssl1.1 (>= 1.1.0), libxml2 (>= 2.8.0), zlib1g (>= 1:1.1.4)
+Recommends: apache2
+Suggests: php-pear
+Provides: libapache2-mod-php, phpapi-20180731
+Homepage: http://www.php.net/
+Priority: optional
+Section: httpd
+Filename: pool/main/p/php7.3/libapache2-mod-php7.3_7.3.33-42001~buster73_amd64.deb
+Size: 1367444
+SHA256: fdd5e128fa713e7323031d1942a7a0e7a3e45a511cccd8119c29baa82a88951c
+SHA1: 7b4de7dad12df0d03853f727662ad82961e0e1fb
+MD5sum: 2a03838c73044201f5ff36d241fe7523
+Description: server-side, HTML-embedded scripting language (Apache 2 module)
+ This package provides the PHP module for the Apache 2 webserver (as
+ found in the apache2-mpm-prefork package).  Please note that this package
+ ONLY works with Apache's prefork MPM, as it is not compiled thread-safe.
+ .
+ The following extensions are built in: Core date filter hash libxml openssl
+ pcre Reflection session sodium SPL standard zlib.
+ .
+ PHP (recursive acronym for PHP: Hypertext Preprocessor) is a widely-used
+ open source general-purpose scripting language that is especially suited
+ for web development and can be embedded into HTML.
+
 Package: libapache2-mod-php7.4
 Source: php7.4
 Version: 1:7.4.33-38001~buster72
@@ -400,6 +430,38 @@ SHA1: 661bc862903b1b9e17e41a7564a07c7d0d1e0061
 MD5sum: 300c7482bfb09ca3e8fe1b2fdbedaeaa
 Description: HTML-embedded scripting language (Embedded SAPI library)
  This package provides the library /usr/lib/libphp7.2.so which can
+ be used by application developers to embed PHP scripting functionality.
+ .
+ The following extensions are built in: Core date filter hash libxml openssl
+ pcntl pcre Reflection session sodium SPL standard zlib.
+ .
+ PHP (recursive acronym for PHP: Hypertext Preprocessor) is a widely-used
+ open source general-purpose scripting language that is especially suited
+ for web development and can be embedded into HTML.
+ .
+ WARNING: The embed SAPI is experimental and there's no guarantee that
+ the API/ABI will be kept compatible even between minor releases.  You
+ have been warned.
+
+Package: libphp7.3-embed
+Source: php7.3
+Version: 7.3.33-42001~buster73
+Architecture: amd64
+Maintainer: Debian PHP Maintainers <team+pkg-php@tracker.debian.org>
+Installed-Size: 4624
+Depends: media-types | mime-support, php7.3-cli, php7.3-common (= 7.3.33-42001~buster73), php7.3-json, php7.3-opcache, tzdata, ucf, libargon2-1 (>= 0~20171227), libc6 (>= 2.27), libpcre2-8-0 (>= 10.32), libsodium23 (>= 1.0.14), libssl1.1 (>= 1.1.0), libxml2 (>= 2.8.0), zlib1g (>= 1:1.1.4)
+Suggests: php-pear
+Provides: libphp-embed, phpapi-20180731
+Homepage: http://www.php.net/
+Priority: optional
+Section: php
+Filename: pool/main/p/php7.3/libphp7.3-embed_7.3.33-42001~buster73_amd64.deb
+Size: 1366036
+SHA256: a2c52b595696f8cba7dcad3bcd7c6979d0d83f3f17412aa01478201cda3aa9f5
+SHA1: 80ef1d00388866ba62bea22c8159f42215d06e0d
+MD5sum: 5f3bfbb12b2609823a684edb4af41d9c
+Description: HTML-embedded scripting language (Embedded SAPI library)
+ This package provides the library /usr/lib/libphp7.3.so which can
  be used by application developers to embed PHP scripting functionality.
  .
  The following extensions are built in: Core date filter hash libxml openssl
@@ -3197,6 +3259,890 @@ Size: 21456
 SHA256: f9f8a98d47bc490ec4c309b6771f9d8d41b67ca9b5345a37212878cd87929076
 SHA1: a6a7672a18eecf636d475de34dbdf917bfdb7c5d
 MD5sum: f170053baadfc7b03de2d89bdecb1a47
+Description: Zip module for PHP
+ This package provides the Zip module(s) for PHP.
+ .
+ PHP (recursive acronym for PHP: Hypertext Preprocessor) is a widely-used
+ open source general-purpose scripting language that is especially suited
+ for web development and can be embedded into HTML.
+
+Package: php7.3
+Version: 7.3.33-42001~buster73
+Architecture: all
+Maintainer: Debian PHP Maintainers <team+pkg-php@tracker.debian.org>
+Installed-Size: 91
+Depends: libapache2-mod-php7.3 | php7.3-fpm | php7.3-cgi, php7.3-common
+Provides: php
+Homepage: http://www.php.net/
+Priority: optional
+Section: php
+Filename: pool/main/p/php7.3/php7.3_7.3.33-42001~buster73_all.deb
+Size: 57880
+SHA256: f1597ad184a16468308e0b02d8dbed84a95090d08d923cda8e41e139deea382d
+SHA1: 4d50baec813bcd42eed869480297c48ff0a8cc42
+MD5sum: a83322fbad2ddae6333c821a029ddaff
+Description: server-side, HTML-embedded scripting language (metapackage)
+ This package is a metapackage that, when installed, guarantees that you
+ have at least one of the four server-side versions of the PHP interpreter
+ installed. Removing this package won't remove PHP from your system, however
+ it may remove other packages that depend on this one.
+ .
+ PHP (recursive acronym for PHP: Hypertext Preprocessor) is a widely-used
+ open source general-purpose scripting language that is especially suited
+ for web development and can be embedded into HTML.
+
+Package: php7.3-bcmath
+Source: php7.3
+Version: 7.3.33-42001~buster73
+Architecture: amd64
+Maintainer: Debian PHP Maintainers <team+pkg-php@tracker.debian.org>
+Installed-Size: 67
+Depends: php-common (>= 1:81~), ucf, php7.3-common (= 7.3.33-42001~buster73), libc6 (>= 2.14)
+Provides: php-bcmath
+Homepage: http://www.php.net/
+Priority: optional
+Section: php
+Filename: pool/main/p/php7.3/php7.3-bcmath_7.3.33-42001~buster73_amd64.deb
+Size: 14796
+SHA256: a772b9a67d15779c00e79501839ddb032d8e9d4648c8aa4134233413678ddf50
+SHA1: 963ef35b7d950da9cf9461313cbd8dadb915b211
+MD5sum: 53ad12cfe11edad88aa86c3b64dd90fc
+Description: Bcmath module for PHP
+ This package provides the Bcmath module(s) for PHP.
+ .
+ PHP (recursive acronym for PHP: Hypertext Preprocessor) is a widely-used
+ open source general-purpose scripting language that is especially suited
+ for web development and can be embedded into HTML.
+
+Package: php7.3-bz2
+Source: php7.3
+Version: 7.3.33-42001~buster73
+Architecture: amd64
+Maintainer: Debian PHP Maintainers <team+pkg-php@tracker.debian.org>
+Installed-Size: 55
+Depends: php-common (>= 1:81~), ucf, php7.3-common (= 7.3.33-42001~buster73), libbz2-1.0, libc6 (>= 2.14)
+Provides: php-bz2
+Homepage: http://www.php.net/
+Priority: optional
+Section: php
+Filename: pool/main/p/php7.3/php7.3-bz2_7.3.33-42001~buster73_amd64.deb
+Size: 10064
+SHA256: 061596d04849354f6b2142132d049085289cd53b0b0ad8ffa857566b56fda38f
+SHA1: 0d966d7194b8310d4465c6efd0542388d7f8a3fb
+MD5sum: 3cce3345b338449b7b7e7b5501c4e355
+Description: bzip2 module for PHP
+ This package provides the bzip2 module(s) for PHP.
+ .
+ PHP (recursive acronym for PHP: Hypertext Preprocessor) is a widely-used
+ open source general-purpose scripting language that is especially suited
+ for web development and can be embedded into HTML.
+
+Package: php7.3-cgi
+Source: php7.3
+Version: 7.3.33-42001~buster73
+Architecture: amd64
+Maintainer: Debian PHP Maintainers <team+pkg-php@tracker.debian.org>
+Installed-Size: 9195
+Depends: media-types | mime-support, php7.3-cli, php7.3-common (= 7.3.33-42001~buster73), php7.3-json, php7.3-opcache, tzdata, ucf, libargon2-1 (>= 0~20171227), libc6 (>= 2.27), libpcre2-8-0 (>= 10.32), libsodium23 (>= 1.0.14), libssl1.1 (>= 1.1.0), libxml2 (>= 2.8.0), zlib1g (>= 1:1.1.4)
+Suggests: php-pear
+Provides: php-cgi, phpapi-20180731
+Homepage: http://www.php.net/
+Priority: optional
+Section: php
+Filename: pool/main/p/php7.3/php7.3-cgi_7.3.33-42001~buster73_amd64.deb
+Size: 1381476
+SHA256: 9da2e77c4b128adfc57ecee7fe4b95dbb39f77ae43f1da5d254aee46ada6c3ee
+SHA1: 5ab9a8d401a0ffca01b16008180c0fea98188108
+MD5sum: 222508fc6ac56e612e8f56940ef1112a
+Description: server-side, HTML-embedded scripting language (CGI binary)
+ This package provides the /usr/lib/cgi-bin/php CGI interpreter built
+ for use in Apache 2 with mod_actions, or any other CGI httpd that
+ supports a similar mechanism.  Note that MOST users probably
+ want the php7.3-fpm package.
+ .
+ The following extensions are built in: Core date filter hash libxml openssl
+ pcntl pcre Reflection session sodium SPL standard zlib.
+ .
+ PHP (recursive acronym for PHP: Hypertext Preprocessor) is a widely-used
+ open source general-purpose scripting language that is especially suited
+ for web development and can be embedded into HTML.
+
+Package: php7.3-cli
+Source: php7.3
+Version: 7.3.33-42001~buster73
+Architecture: amd64
+Maintainer: Debian PHP Maintainers <team+pkg-php@tracker.debian.org>
+Installed-Size: 4735
+Depends: libedit2 (>= 2.11-20080614-4), media-types | mime-support, php7.3-common (= 7.3.33-42001~buster73), php7.3-json, php7.3-opcache, php7.3-readline, tzdata, ucf, libargon2-1 (>= 0~20171227), libc6 (>= 2.27), libpcre2-8-0 (>= 10.32), libsodium23 (>= 1.0.14), libssl1.1 (>= 1.1.0), libxml2 (>= 2.8.0), zlib1g (>= 1:1.1.4)
+Suggests: php-pear
+Provides: php-cli, phpapi-20180731
+Homepage: http://www.php.net/
+Priority: optional
+Section: php
+Filename: pool/main/p/php7.3/php7.3-cli_7.3.33-42001~buster73_amd64.deb
+Size: 1421000
+SHA256: e0f2efce3f2874ebb5fd601921532ccf27e712c9f2a1c4de88ab112c24366c43
+SHA1: 9b764bc6b0eff5d0a606694e6c63b7e17b020ca5
+MD5sum: 4b479c1d694514ec89bc29599e77e2cb
+Description: command-line interpreter for the PHP scripting language
+ This package provides the /usr/bin/php7.3 command interpreter, useful for
+ testing PHP scripts from a shell or performing general shell scripting tasks.
+ .
+ The following extensions are built in: Core date filter hash libxml openssl
+ pcntl pcre Reflection session sodium SPL standard zlib.
+ .
+ PHP (recursive acronym for PHP: Hypertext Preprocessor) is a widely-used
+ open source general-purpose scripting language that is especially suited
+ for web development and can be embedded into HTML.
+
+Package: php7.3-common
+Source: php7.3
+Version: 7.3.33-42001~buster73
+Architecture: amd64
+Maintainer: Debian PHP Maintainers <team+pkg-php@tracker.debian.org>
+Installed-Size: 6559
+Depends: php-common (>= 1:81~), ucf, libc6 (>= 2.15), libssl1.1 (>= 1.1.0)
+Breaks: gforge-common (<< 6), php7.0-curl (<< 7.0.33-1~), php7.2-sodium (<< 7.2.12~)
+Provides: php-calendar, php-ctype, php-exif, php-fileinfo, php-ftp, php-iconv, php-pdo, php-phar, php-posix, php-shmop, php-sockets, php-sysvmsg, php-sysvsem, php-sysvshm, php-tokenizer, php7.3-calendar, php7.3-ctype, php7.3-exif, php7.3-fileinfo, php7.3-ftp, php7.3-gettext, php7.3-iconv, php7.3-pdo, php7.3-phar, php7.3-posix, php7.3-shmop, php7.3-sockets, php7.3-sysvmsg, php7.3-sysvsem, php7.3-sysvshm, php7.3-tokenizer
+Homepage: http://www.php.net/
+Priority: optional
+Section: php
+Filename: pool/main/p/php7.3/php7.3-common_7.3.33-42001~buster73_amd64.deb
+Size: 590304
+SHA256: 728fb38e5a26ff64249857d922ec49b2bc59bef0880920c07e8a6d61d8f4cb26
+SHA1: 0caa6cd0a923693d712bf1aec3bc9c756414550c
+MD5sum: e1c4529b5c5d1e89e719d325c448b5da
+Description: documentation, examples and common module for PHP
+ This package provides the documentation, examples and common module(s) for PHP.
+ .
+ PHP (recursive acronym for PHP: Hypertext Preprocessor) is a widely-used
+ open source general-purpose scripting language that is especially suited
+ for web development and can be embedded into HTML.
+
+Package: php7.3-curl
+Source: php7.3
+Version: 7.3.33-42001~buster73
+Architecture: amd64
+Maintainer: Debian PHP Maintainers <team+pkg-php@tracker.debian.org>
+Installed-Size: 131
+Depends: php-common (>= 1:81~), ucf, php7.3-common (= 7.3.33-42001~buster73), libc6 (>= 2.14), libcurl4 (>= 7.56.1)
+Breaks: php7.0-curl (<< 7.0.33-1~)
+Provides: php-curl
+Homepage: http://www.php.net/
+Priority: optional
+Section: php
+Filename: pool/main/p/php7.3/php7.3-curl_7.3.33-42001~buster73_amd64.deb
+Size: 30600
+SHA256: 7de4c44792515ef67836529cff3c9f4945dac85a1d7e1d9053c7a03813a1ad25
+SHA1: aa3109c7d942356f46357df9f3f6a35e13aaff7f
+MD5sum: 7e1448fb2d3ac7597e53bc50335a1242
+Description: CURL module for PHP
+ This package provides the CURL module(s) for PHP.
+ .
+ PHP (recursive acronym for PHP: Hypertext Preprocessor) is a widely-used
+ open source general-purpose scripting language that is especially suited
+ for web development and can be embedded into HTML.
+
+Package: php7.3-dba
+Source: php7.3
+Version: 7.3.33-42001~buster73
+Architecture: amd64
+Maintainer: Debian PHP Maintainers <team+pkg-php@tracker.debian.org>
+Installed-Size: 95
+Depends: php-common (>= 1:81~), ucf, php7.3-common (= 7.3.33-42001~buster73), libc6 (>= 2.14), libdb5.3, liblmdb0 (>= 0.9.7), libqdbm14 (>= 1.8.74)
+Provides: php-dba
+Homepage: http://www.php.net/
+Priority: optional
+Section: php
+Filename: pool/main/p/php7.3/php7.3-dba_7.3.33-42001~buster73_amd64.deb
+Size: 23552
+SHA256: 85b2380800a216a017593227f5593c37f4fa191569472c8d25b75b9cbfd574a2
+SHA1: fa809cf996a7b5503b6619f66fac7e51e4569928
+MD5sum: 16bcea37b7b6d6f39bc81995874866b3
+Description: DBA module for PHP
+ This package provides the DBA module(s) for PHP.
+ .
+ PHP (recursive acronym for PHP: Hypertext Preprocessor) is a widely-used
+ open source general-purpose scripting language that is especially suited
+ for web development and can be embedded into HTML.
+
+Package: php7.3-dev
+Source: php7.3
+Version: 7.3.33-42001~buster73
+Architecture: amd64
+Maintainer: Debian PHP Maintainers <team+pkg-php@tracker.debian.org>
+Installed-Size: 4926
+Depends: autoconf (>= 2.63), automake (>= 1.11), libpcre2-dev (>= 10.30), libssl-dev, php7.3-cli (>= 7.3.33-42001~buster73), php7.3-common (= 7.3.33-42001~buster73), pkg-config, shtool, libtool (>= 2.4.6-0.1~)
+Recommends: pkg-php-tools
+Suggests: dh-php
+Homepage: http://www.php.net/
+Priority: optional
+Section: php
+Filename: pool/main/p/php7.3/php7.3-dev_7.3.33-42001~buster73_amd64.deb
+Size: 441932
+SHA256: 545b78e219f2f9842656e27b4e47a812344ba43bc5d0db19be7e518c7eea492b
+SHA1: 6321401bf1fb01f21a2d4f790e6d9d7faf640adb
+MD5sum: bb8109a75b87191177ced08c8d4407cc
+Description: Files for PHP7.3 module development
+ This package provides the files from the PHP7.3 source needed for compiling
+ additional modules.
+ .
+ PHP (recursive acronym for PHP: Hypertext Preprocessor) is a widely-used
+ open source general-purpose scripting language that is especially suited
+ for web development and can be embedded into HTML.
+
+Package: php7.3-enchant
+Source: php7.3
+Version: 7.3.33-42001~buster73
+Architecture: amd64
+Maintainer: Debian PHP Maintainers <team+pkg-php@tracker.debian.org>
+Installed-Size: 55
+Depends: php-common (>= 1:81~), ucf, php7.3-common (= 7.3.33-42001~buster73), libc6 (>= 2.14), libenchant1c2a (>= 1.6.0)
+Provides: php-enchant
+Homepage: http://www.php.net/
+Priority: optional
+Section: php
+Filename: pool/main/p/php7.3/php7.3-enchant_7.3.33-42001~buster73_amd64.deb
+Size: 9128
+SHA256: a6a2383294451198c28fb487cc4fdd7730d5c81f85c71828c9fa5bd8b7fb88a9
+SHA1: ab45480196045fbe60975e049bfee0da678cabfe
+MD5sum: 9387deef313fd870f23c2560a0af7001
+Description: Enchant module for PHP
+ This package provides the Enchant module(s) for PHP.
+ .
+ PHP (recursive acronym for PHP: Hypertext Preprocessor) is a widely-used
+ open source general-purpose scripting language that is especially suited
+ for web development and can be embedded into HTML.
+
+Package: php7.3-fpm
+Source: php7.3
+Version: 7.3.33-42001~buster73
+Architecture: amd64
+Maintainer: Debian PHP Maintainers <team+pkg-php@tracker.debian.org>
+Installed-Size: 4779
+Depends: media-types | mime-support, php7.3-cli, php7.3-common (= 7.3.33-42001~buster73), php7.3-json, php7.3-opcache, procps, systemd | systemd-tmpfiles, tzdata, ucf, libacl1 (>= 2.2.23), libapparmor1 (>= 2.7.0~beta1+bzr1772), libargon2-1 (>= 0~20171227), libc6 (>= 2.27), libpcre2-8-0 (>= 10.32), libsodium23 (>= 1.0.14), libssl1.1 (>= 1.1.0), libsystemd0, libxml2 (>= 2.8.0), zlib1g (>= 1:1.1.4)
+Suggests: php-pear
+Provides: php-fpm, phpapi-20180731
+Homepage: http://www.php.net/
+Priority: optional
+Section: php
+Filename: pool/main/p/php7.3/php7.3-fpm_7.3.33-42001~buster73_amd64.deb
+Size: 1434816
+SHA256: 724d8994e539d378a98a60d148f438885a403f00893cc191d7b867d5f60fb008
+SHA1: 5d365ceb3d836dabc2438c5a57bfda76bdb57473
+MD5sum: 5ec3b603e6415adbcedbef0a8d79b2e7
+Description: server-side, HTML-embedded scripting language (FPM-CGI binary)
+ This package provides the Fast Process Manager interpreter that runs
+ as a daemon and receives Fast/CGI requests.  Note that MOST Apache users
+ probably want the libapache2-mod-php7.3 package.
+ .
+ The following extensions are built in: Core date filter hash libxml openssl
+ pcre Reflection session sodium SPL standard zlib.
+ .
+ PHP (recursive acronym for PHP: Hypertext Preprocessor) is a widely-used
+ open source general-purpose scripting language that is especially suited
+ for web development and can be embedded into HTML.
+
+Package: php7.3-gd
+Source: php7.3
+Version: 7.3.33-42001~buster73
+Architecture: amd64
+Maintainer: Debian PHP Maintainers <team+pkg-php@tracker.debian.org>
+Installed-Size: 135
+Depends: php-common (>= 1:81~), ucf, php7.3-common (= 7.3.33-42001~buster73), libc6 (>= 2.4), libfreetype6 (>= 2.2.1), libgd3 (>= 2.1.1), libjpeg62-turbo (>= 1.3.1), libpng16-16 (>= 1.6.2-1), libwebp6 (>= 0.5.1), libx11-6, libxpm4, zlib1g (>= 1:1.1.4)
+Provides: php-gd
+Homepage: http://www.php.net/
+Priority: optional
+Section: php
+Filename: pool/main/p/php7.3/php7.3-gd_7.3.33-42001~buster73_amd64.deb
+Size: 27368
+SHA256: f512359bf13a375b9cafede29ccff4785f298df669bc939d61c2489bada124de
+SHA1: 8cb0b32364689b399f6b6ba705a848d473a8e313
+MD5sum: 5361afdef0e19e2d69fa9c3354519cfc
+Description: GD module for PHP
+ This package provides the GD module(s) for PHP.
+ .
+ PHP (recursive acronym for PHP: Hypertext Preprocessor) is a widely-used
+ open source general-purpose scripting language that is especially suited
+ for web development and can be embedded into HTML.
+
+Package: php7.3-gmp
+Source: php7.3
+Version: 7.3.33-42001~buster73
+Architecture: amd64
+Maintainer: Debian PHP Maintainers <team+pkg-php@tracker.debian.org>
+Installed-Size: 103
+Depends: php-common (>= 1:81~), ucf, php7.3-common (= 7.3.33-42001~buster73), libc6 (>= 2.4), libgmp10
+Provides: php-gmp
+Homepage: http://www.php.net/
+Priority: optional
+Section: php
+Filename: pool/main/p/php7.3/php7.3-gmp_7.3.33-42001~buster73_amd64.deb
+Size: 20964
+SHA256: ad7a95fa44cd983b79c706a15c7756dc8a036c5ce7932caadf0611a665131bb7
+SHA1: 1744d7246418dfefae0280126f2465805d9820a8
+MD5sum: 9d636af736f0b6fb92d3c6fb8c4cf809
+Description: GMP module for PHP
+ This package provides the GMP module(s) for PHP.
+ .
+ PHP (recursive acronym for PHP: Hypertext Preprocessor) is a widely-used
+ open source general-purpose scripting language that is especially suited
+ for web development and can be embedded into HTML.
+
+Package: php7.3-imap
+Source: php7.3
+Version: 7.3.33-42001~buster73
+Architecture: amd64
+Maintainer: Debian PHP Maintainers <team+pkg-php@tracker.debian.org>
+Installed-Size: 131
+Depends: php-common (>= 1:81~), ucf, php7.3-common (= 7.3.33-42001~buster73), libc-client2007e, libc6 (>= 2.14), libcom-err2 (>= 1.43.9), libgssapi-krb5-2 (>= 1.6.dfsg.2), libk5crypto3 (>= 1.6.dfsg.2), libkrb5-3 (>= 1.6.dfsg.2), libpam0g (>= 0.99.7.1), libssl1.1 (>= 1.1.0)
+Provides: php-imap
+Homepage: http://www.php.net/
+Priority: optional
+Section: php
+Filename: pool/main/p/php7.3/php7.3-imap_7.3.33-42001~buster73_amd64.deb
+Size: 30800
+SHA256: 55f04d45086517ec15d2dfcccc4820ae482cf64501dfc9aa83f8ee00b3c7fe9d
+SHA1: bb27350c8585f488b3bbbed284ebc84609556cc2
+MD5sum: f40e14652392f82aa4033e00938f94c0
+Description: IMAP module for PHP
+ This package provides the IMAP module(s) for PHP.
+ .
+ PHP (recursive acronym for PHP: Hypertext Preprocessor) is a widely-used
+ open source general-purpose scripting language that is especially suited
+ for web development and can be embedded into HTML.
+
+Package: php7.3-interbase
+Source: php7.3
+Version: 7.3.33-42001~buster73
+Architecture: amd64
+Maintainer: Debian PHP Maintainers <team+pkg-php@tracker.debian.org>
+Installed-Size: 156
+Depends: php-common (>= 1:81~), ucf, php7.3-common (= 7.3.33-42001~buster73), libc6 (>= 2.14), libfbclient2 (>= 2.5.0.25784~ReleaseCandidate1.ds2)
+Provides: php-interbase, php-pdo-firebird, php7.3-pdo-firebird
+Homepage: http://www.php.net/
+Priority: optional
+Section: php
+Filename: pool/main/p/php7.3/php7.3-interbase_7.3.33-42001~buster73_amd64.deb
+Size: 40584
+SHA256: 26160ad43a9a600c8969397109e1b135d49676092149c6de3029d299ce651528
+SHA1: 01b22c044ed6c3a33e1e0b8ae657b80c8dd1f8ed
+MD5sum: 8f84b94c6066a96d613ca5a14aa07b0f
+Description: Interbase module for PHP
+ This package provides the Interbase module(s) for PHP.
+ .
+ PHP (recursive acronym for PHP: Hypertext Preprocessor) is a widely-used
+ open source general-purpose scripting language that is especially suited
+ for web development and can be embedded into HTML.
+
+Package: php7.3-intl
+Source: php7.3
+Version: 7.3.33-42001~buster73
+Architecture: amd64
+Maintainer: Debian PHP Maintainers <team+pkg-php@tracker.debian.org>
+Installed-Size: 507
+Depends: php-common (>= 1:81~), ucf, php7.3-common (= 7.3.33-42001~buster73), libc6 (>= 2.14), libgcc1 (>= 1:3.0), libicu63 (>= 63.1-1~), libstdc++6 (>= 4.9)
+Provides: php-intl
+Homepage: http://www.php.net/
+Priority: optional
+Section: php
+Filename: pool/main/p/php7.3/php7.3-intl_7.3.33-42001~buster73_amd64.deb
+Size: 126180
+SHA256: c0db2f11226444c85c8d212344d15b2010441fa3121830b4c4c80588c77e42c0
+SHA1: fe8ecbe2799a87673bd1fd21565be6c7c9fc3a20
+MD5sum: 801ec9c7e9ec97b1eac0b5f658ceeeb5
+Description: Internationalisation module for PHP
+ This package provides the Internationalisation module(s) for PHP.
+ .
+ PHP (recursive acronym for PHP: Hypertext Preprocessor) is a widely-used
+ open source general-purpose scripting language that is especially suited
+ for web development and can be embedded into HTML.
+
+Package: php7.3-json
+Source: php7.3
+Version: 7.3.33-42001~buster73
+Architecture: amd64
+Maintainer: Debian PHP Maintainers <team+pkg-php@tracker.debian.org>
+Installed-Size: 75
+Depends: php-common (>= 1:81~), ucf, php7.3-common (= 7.3.33-42001~buster73), libc6 (>= 2.14)
+Provides: php-json
+Homepage: http://www.php.net/
+Priority: optional
+Section: php
+Filename: pool/main/p/php7.3/php7.3-json_7.3.33-42001~buster73_amd64.deb
+Size: 18416
+SHA256: 9b69a2b6b1964b8fa11c460c729b5da2288d6d3757ed683dcc1774e9a0dcd63f
+SHA1: 7577f985cbea65f53bd863399f76704d8b793974
+MD5sum: 9f551632ee66dc59a028008f8f6d22a1
+Description: JSON module for PHP
+ This package provides the JSON module(s) for PHP.
+ .
+ PHP (recursive acronym for PHP: Hypertext Preprocessor) is a widely-used
+ open source general-purpose scripting language that is especially suited
+ for web development and can be embedded into HTML.
+
+Package: php7.3-ldap
+Source: php7.3
+Version: 7.3.33-42001~buster73
+Architecture: amd64
+Maintainer: Debian PHP Maintainers <team+pkg-php@tracker.debian.org>
+Installed-Size: 123
+Depends: php-common (>= 1:81~), ucf, php7.3-common (= 7.3.33-42001~buster73), libc6 (>= 2.14), libldap-2.4-2 (>= 2.4.11), libsasl2-2 (>= 2.1.27+dfsg)
+Provides: php-ldap
+Homepage: http://www.php.net/
+Priority: optional
+Section: php
+Filename: pool/main/p/php7.3/php7.3-ldap_7.3.33-42001~buster73_amd64.deb
+Size: 29288
+SHA256: 87bf0d9baf94c89d56b65252a2b4bf67b2130e8f50a59e76239e40cc66796acb
+SHA1: d17d42f22c793dfd44ebce308354f6766fdf3e16
+MD5sum: b44c658b477b28576febca54612d1458
+Description: LDAP module for PHP
+ This package provides the LDAP module(s) for PHP.
+ .
+ PHP (recursive acronym for PHP: Hypertext Preprocessor) is a widely-used
+ open source general-purpose scripting language that is especially suited
+ for web development and can be embedded into HTML.
+
+Package: php7.3-litespeed
+Source: php7.3
+Version: 7.3.33-42001~buster73
+Architecture: amd64
+Maintainer: Debian PHP Maintainers <team+pkg-php@tracker.debian.org>
+Installed-Size: 4623
+Depends: media-types | mime-support, php7.3-cli, php7.3-common (= 7.3.33-42001~buster73), procps, systemd | systemd-tmpfiles, tzdata, ucf, libargon2-1 (>= 0~20171227), libc6 (>= 2.27), libpcre2-8-0 (>= 10.32), libsodium23 (>= 1.0.14), libssl1.1 (>= 1.1.0), libxml2 (>= 2.8.0), zlib1g (>= 1:1.1.4)
+Suggests: php-pear
+Provides: php-json, php-litespeed, php7.3-json, phpapi-20180731
+Homepage: http://www.php.net/
+Priority: optional
+Section: php
+Filename: pool/main/p/php7.3/php7.3-litespeed_7.3.33-42001~buster73_amd64.deb
+Size: 1384536
+SHA256: b5c9c71855d6b2b7f561a61fe95fdcd297d1ac9c462b3e11c3fa6eee68aac6e6
+SHA1: ce09566d38fd21468ca1110e25d5da09b1b33a8a
+MD5sum: 37941a1fdd33e8b25af91385a19641f9
+Description: server-side, HTML-embedded scripting language (LiteSpeed binary)
+ This package provides the LiteSpeed SAPI module that provides a dedicated
+ interface for PHP integration with OpenLiteSpeed or LiteSpeed Web Server.
+ .
+ The following extensions are built in: Core date filter hash libxml openssl
+ pcre Reflection session sodium SPL standard zlib.
+ .
+ PHP (recursive acronym for PHP: Hypertext Preprocessor) is a widely-used
+ open source general-purpose scripting language that is especially suited
+ for web development and can be embedded into HTML.
+
+Package: php7.3-mbstring
+Source: php7.3
+Version: 7.3.33-42001~buster73
+Architecture: amd64
+Maintainer: Debian PHP Maintainers <team+pkg-php@tracker.debian.org>
+Installed-Size: 1603
+Depends: php-common (>= 1:81~), ucf, php7.3-common (= 7.3.33-42001~buster73), libc6 (>= 2.14)
+Provides: php-mbstring
+Homepage: http://www.php.net/
+Priority: optional
+Section: php
+Filename: pool/main/p/php7.3/php7.3-mbstring_7.3.33-42001~buster73_amd64.deb
+Size: 517884
+SHA256: 8da9435a4dddb276d573fccef816d4fdabfb25cb902a235911016851addcb8a3
+SHA1: 959f7f32715d9b1b747cfb11093cca7fd63b51f1
+MD5sum: 2017e92592185ef7a257cae991f2ccfd
+Description: MBSTRING module for PHP
+ This package provides the MBSTRING module(s) for PHP.
+ .
+ PHP (recursive acronym for PHP: Hypertext Preprocessor) is a widely-used
+ open source general-purpose scripting language that is especially suited
+ for web development and can be embedded into HTML.
+
+Package: php7.3-mysql
+Source: php7.3
+Version: 7.3.33-42001~buster73
+Architecture: amd64
+Maintainer: Debian PHP Maintainers <team+pkg-php@tracker.debian.org>
+Installed-Size: 451
+Depends: php-common (>= 1:81~), ucf, php7.3-common (= 7.3.33-42001~buster73), libc6 (>= 2.15)
+Provides: php-mysqli, php-mysqlnd, php-pdo-mysql, php7.3-mysqli, php7.3-mysqlnd, php7.3-pdo-mysql
+Homepage: http://www.php.net/
+Priority: optional
+Section: php
+Filename: pool/main/p/php7.3/php7.3-mysql_7.3.33-42001~buster73_amd64.deb
+Size: 119596
+SHA256: f2381a8a48fdf3ec8a3d4fab20cb66ed52aa6c5c86f651241297575a396967f4
+SHA1: 748bbfd34964bae862a3c106c7cc0235f1b7c367
+MD5sum: b2d9c6683004477e3b1da2c368352137
+Description: MySQL module for PHP
+ This package provides the MySQL module(s) for PHP.
+ .
+ PHP (recursive acronym for PHP: Hypertext Preprocessor) is a widely-used
+ open source general-purpose scripting language that is especially suited
+ for web development and can be embedded into HTML.
+
+Package: php7.3-odbc
+Source: php7.3
+Version: 7.3.33-42001~buster73
+Architecture: amd64
+Maintainer: Debian PHP Maintainers <team+pkg-php@tracker.debian.org>
+Installed-Size: 131
+Depends: php-common (>= 1:81~), ucf, php7.3-common (= 7.3.33-42001~buster73), libc6 (>= 2.14), libodbc1 (>= 2.3.1)
+Provides: php-odbc, php-pdo-odbc, php7.3-pdo-odbc
+Homepage: http://www.php.net/
+Priority: optional
+Section: php
+Filename: pool/main/p/php7.3/php7.3-odbc_7.3.33-42001~buster73_amd64.deb
+Size: 31216
+SHA256: bf1fc1ffed1f5ea7a05c0a7feed073f4cab5dd5d9c6404b1f1b84c347f3690cc
+SHA1: 53b8031ad3685599e38d30a761538f222daec63c
+MD5sum: fbf8c75bf4f6e60a0ede5506d48feaf5
+Description: ODBC module for PHP
+ This package provides the ODBC module(s) for PHP.
+ .
+ PHP (recursive acronym for PHP: Hypertext Preprocessor) is a widely-used
+ open source general-purpose scripting language that is especially suited
+ for web development and can be embedded into HTML.
+
+Package: php7.3-opcache
+Source: php7.3
+Version: 7.3.33-42001~buster73
+Architecture: amd64
+Maintainer: Debian PHP Maintainers <team+pkg-php@tracker.debian.org>
+Installed-Size: 535
+Depends: php-common (>= 1:81~), ucf, php7.3-common (= 7.3.33-42001~buster73), libc6 (>= 2.27)
+Provides: php-opcache
+Homepage: http://www.php.net/
+Priority: optional
+Section: php
+Filename: pool/main/p/php7.3/php7.3-opcache_7.3.33-42001~buster73_amd64.deb
+Size: 183924
+SHA256: c3549a4822467afe44782370ee06ff9fdcfdd3d2a5dc4bf48e662458c613df8d
+SHA1: a05d016901a17d07d8897067cc01d6b98195bb82
+MD5sum: b61f92207dfbf7e93b0b16706f88e8f6
+Description: Zend OpCache module for PHP
+ This package provides the Zend OpCache module(s) for PHP.
+ .
+ PHP (recursive acronym for PHP: Hypertext Preprocessor) is a widely-used
+ open source general-purpose scripting language that is especially suited
+ for web development and can be embedded into HTML.
+
+Package: php7.3-pgsql
+Source: php7.3
+Version: 7.3.33-42001~buster73
+Architecture: amd64
+Maintainer: Debian PHP Maintainers <team+pkg-php@tracker.debian.org>
+Installed-Size: 223
+Depends: php-common (>= 1:81~), ucf, php7.3-common (= 7.3.33-42001~buster73), libc6 (>= 2.14), libpq5 (>= 9.3~)
+Provides: php-pdo-pgsql, php-pgsql, php7.3-pdo-pgsql
+Homepage: http://www.php.net/
+Priority: optional
+Section: php
+Filename: pool/main/p/php7.3/php7.3-pgsql_7.3.33-42001~buster73_amd64.deb
+Size: 58564
+SHA256: af5a76b39a16d76094832983246d6f1a3b0669a1a777f00b0213a06c8fc95886
+SHA1: 1d588b258599149d11a0d96b06196c53a4757545
+MD5sum: b35bd3fcc3a73370db5143d91d8508f7
+Description: PostgreSQL module for PHP
+ This package provides the PostgreSQL module(s) for PHP.
+ .
+ PHP (recursive acronym for PHP: Hypertext Preprocessor) is a widely-used
+ open source general-purpose scripting language that is especially suited
+ for web development and can be embedded into HTML.
+
+Package: php7.3-phpdbg
+Source: php7.3
+Version: 7.3.33-42001~buster73
+Architecture: amd64
+Maintainer: Debian PHP Maintainers <team+pkg-php@tracker.debian.org>
+Installed-Size: 4838
+Depends: media-types | mime-support, php7.3-cli, php7.3-common (= 7.3.33-42001~buster73), php7.3-json, php7.3-opcache, tzdata, ucf, libargon2-1 (>= 0~20171227), libc6 (>= 2.27), libpcre2-8-0 (>= 10.32), libsodium23 (>= 1.0.14), libssl1.1 (>= 1.1.0), libxml2 (>= 2.8.0), zlib1g (>= 1:1.1.4)
+Recommends: php-readline
+Provides: php-phpdbg, phpapi-20180731
+Homepage: http://www.php.net/
+Priority: optional
+Section: php
+Filename: pool/main/p/php7.3/php7.3-phpdbg_7.3.33-42001~buster73_amd64.deb
+Size: 1461308
+SHA256: f33689f7381339cfdfb5e7592afd8557cbedb20af5f94f48bc4020d60feb341f
+SHA1: 2f2b580ace2212dfeafd584b5ee825a9c15cebcf
+MD5sum: 2482974bf03040ecc1927ef7dfd3c35b
+Description: server-side, HTML-embedded scripting language (PHPDBG binary)
+ This package provides the /usr/bin/phpdbg command interpreter, useful for
+ stepthrough debugging of PHP code.
+ .
+ The following extensions are built in: Core date filter hash libxml openssl
+ pcntl pcre Reflection session sodium SPL standard zlib.
+ .
+ PHP (recursive acronym for PHP: Hypertext Preprocessor) is a widely-used
+ open source general-purpose scripting language that is especially suited
+ for web development and can be embedded into HTML.
+
+Package: php7.3-pspell
+Source: php7.3
+Version: 7.3.33-42001~buster73
+Architecture: amd64
+Maintainer: Debian PHP Maintainers <team+pkg-php@tracker.debian.org>
+Installed-Size: 55
+Depends: php-common (>= 1:81~), ucf, php7.3-common (= 7.3.33-42001~buster73), libaspell15, libc6 (>= 2.4)
+Provides: php-pspell
+Homepage: http://www.php.net/
+Priority: optional
+Section: php
+Filename: pool/main/p/php7.3/php7.3-pspell_7.3.33-42001~buster73_amd64.deb
+Size: 8416
+SHA256: a3d957b606a6740ad378fc33a5aed39d04dcda68146dd1f9e5ce9e0ee6c1d8dc
+SHA1: 6963523e7e8cf3af7d3289ad61924a526083ae23
+MD5sum: dfd36b920dcbe514475d59fcc63961e1
+Description: pspell module for PHP
+ This package provides the pspell module(s) for PHP.
+ .
+ PHP (recursive acronym for PHP: Hypertext Preprocessor) is a widely-used
+ open source general-purpose scripting language that is especially suited
+ for web development and can be embedded into HTML.
+
+Package: php7.3-readline
+Source: php7.3
+Version: 7.3.33-42001~buster73
+Architecture: amd64
+Maintainer: Debian PHP Maintainers <team+pkg-php@tracker.debian.org>
+Installed-Size: 63
+Depends: php-common (>= 1:81~), ucf, php7.3-common (= 7.3.33-42001~buster73), libc6 (>= 2.14), libedit2 (>= 3.1-20130611-0), libncurses6 (>= 6), libtinfo6 (>= 6)
+Provides: php-readline
+Homepage: http://www.php.net/
+Priority: optional
+Section: php
+Filename: pool/main/p/php7.3/php7.3-readline_7.3.33-42001~buster73_amd64.deb
+Size: 11844
+SHA256: f9bc7988c436b2e90bdb3c3a9222e386bed5000d02dc62069783eab4546a708f
+SHA1: 0c38b80d4fb95ca5ae9df5af982a06677954475b
+MD5sum: 5093d1c43f775294050116f86f53da76
+Description: readline module for PHP
+ This package provides the readline module(s) for PHP.
+ .
+ PHP (recursive acronym for PHP: Hypertext Preprocessor) is a widely-used
+ open source general-purpose scripting language that is especially suited
+ for web development and can be embedded into HTML.
+
+Package: php7.3-recode
+Source: php7.3
+Version: 7.3.33-42001~buster73
+Architecture: amd64
+Maintainer: Debian PHP Maintainers <team+pkg-php@tracker.debian.org>
+Installed-Size: 43
+Depends: php-common (>= 1:81~), ucf, php7.3-common (= 7.3.33-42001~buster73), libc6 (>= 2.14), librecode0 (>= 3.6)
+Provides: php-recode
+Homepage: http://www.php.net/
+Priority: optional
+Section: php
+Filename: pool/main/p/php7.3/php7.3-recode_7.3.33-42001~buster73_amd64.deb
+Size: 5424
+SHA256: b30a5ca10530a91060aebb7f072239443167576abaf076dac0737cce14fd0c5e
+SHA1: ec344a7ca25b9a20b2fa223367f5b627321da1eb
+MD5sum: c9e8b54411d41e02b01f14c609533327
+Description: recode module for PHP
+ This package provides the recode module(s) for PHP.
+ .
+ PHP (recursive acronym for PHP: Hypertext Preprocessor) is a widely-used
+ open source general-purpose scripting language that is especially suited
+ for web development and can be embedded into HTML.
+
+Package: php7.3-snmp
+Source: php7.3
+Version: 7.3.33-42001~buster73
+Architecture: amd64
+Maintainer: Debian PHP Maintainers <team+pkg-php@tracker.debian.org>
+Installed-Size: 83
+Depends: php-common (>= 1:81~), ucf, php7.3-common (= 7.3.33-42001~buster73), libc6 (>= 2.14), libsnmp30 (>= 5.7.3+dfsg), libssl1.1 (>= 1.1.0)
+Recommends: snmp
+Provides: php-snmp
+Homepage: http://www.php.net/
+Priority: optional
+Section: php
+Filename: pool/main/p/php7.3/php7.3-snmp_7.3.33-42001~buster73_amd64.deb
+Size: 18420
+SHA256: 7a623a92e531454f02b83d15745111e0975d4f45f2f453218e4ed97314ac4881
+SHA1: 9c1f4d0411f5889190017b5f0db5a4eb05cef445
+MD5sum: df9df8718ab15e6529f600e3da231a4f
+Description: SNMP module for PHP
+ This package provides the SNMP module(s) for PHP.
+ .
+ PHP (recursive acronym for PHP: Hypertext Preprocessor) is a widely-used
+ open source general-purpose scripting language that is especially suited
+ for web development and can be embedded into HTML.
+
+Package: php7.3-soap
+Source: php7.3
+Version: 7.3.33-42001~buster73
+Architecture: amd64
+Maintainer: Debian PHP Maintainers <team+pkg-php@tracker.debian.org>
+Installed-Size: 335
+Depends: php-common (>= 1:81~), ucf, php7.3-common (= 7.3.33-42001~buster73), libc6 (>= 2.14), libxml2 (>= 2.7.4)
+Provides: php-soap
+Homepage: http://www.php.net/
+Priority: optional
+Section: php
+Filename: pool/main/p/php7.3/php7.3-soap_7.3.33-42001~buster73_amd64.deb
+Size: 114736
+SHA256: 7233769b826e5876d2e4531dc1e48de2f76b630724432ec7747f58469fd2becc
+SHA1: 8dd4df1d44aa4a8cf0697e7baa998e88c9feb3ab
+MD5sum: cac8f8ba54ec566473a3b224c98fe428
+Description: SOAP module for PHP
+ This package provides the SOAP module(s) for PHP.
+ .
+ PHP (recursive acronym for PHP: Hypertext Preprocessor) is a widely-used
+ open source general-purpose scripting language that is especially suited
+ for web development and can be embedded into HTML.
+
+Package: php7.3-sqlite3
+Source: php7.3
+Version: 7.3.33-42001~buster73
+Architecture: amd64
+Maintainer: Debian PHP Maintainers <team+pkg-php@tracker.debian.org>
+Installed-Size: 123
+Depends: php-common (>= 1:81~), ucf, php7.3-common (= 7.3.33-42001~buster73), libc6 (>= 2.14), libsqlite3-0 (>= 3.7.15)
+Provides: php-pdo-sqlite, php-sqlite3, php7.3-pdo-sqlite
+Homepage: http://www.php.net/
+Priority: optional
+Section: php
+Filename: pool/main/p/php7.3/php7.3-sqlite3_7.3.33-42001~buster73_amd64.deb
+Size: 26072
+SHA256: d27fe27657c1e9c3793b6fe9cb0ec5cabef3c7cc4a8fd10677677db42b297ce7
+SHA1: adb1e0f8e01398b994e8f676b8cbafa77c3e7c0b
+MD5sum: bcf44fb67a270f31b25bd85b71874f16
+Description: SQLite3 module for PHP
+ This package provides the SQLite3 module(s) for PHP.
+ .
+ PHP (recursive acronym for PHP: Hypertext Preprocessor) is a widely-used
+ open source general-purpose scripting language that is especially suited
+ for web development and can be embedded into HTML.
+
+Package: php7.3-sybase
+Source: php7.3
+Version: 7.3.33-42001~buster73
+Architecture: amd64
+Maintainer: Debian PHP Maintainers <team+pkg-php@tracker.debian.org>
+Installed-Size: 59
+Depends: php-common (>= 1:81~), ucf, php7.3-common (= 7.3.33-42001~buster73), libc6 (>= 2.14), libsybdb5 (>= 0.63)
+Provides: php-pdo-dblib, php7.3-pdo-dblib
+Homepage: http://www.php.net/
+Priority: optional
+Section: php
+Filename: pool/main/p/php7.3/php7.3-sybase_7.3.33-42001~buster73_amd64.deb
+Size: 11848
+SHA256: 23272b5afb34674f5c6a27fc03be181f717c45b44a350c1e35c8d0ac1928b9ca
+SHA1: 9709f28a30df9b3f73de1e77e351801df204c6b5
+MD5sum: 9bca584a4a71a47bda00288e006572b7
+Description: Sybase module for PHP
+ This package provides the Sybase module(s) for PHP.
+ .
+ PHP (recursive acronym for PHP: Hypertext Preprocessor) is a widely-used
+ open source general-purpose scripting language that is especially suited
+ for web development and can be embedded into HTML.
+
+Package: php7.3-tidy
+Source: php7.3
+Version: 7.3.33-42001~buster73
+Architecture: amd64
+Maintainer: Debian PHP Maintainers <team+pkg-php@tracker.debian.org>
+Installed-Size: 87
+Depends: php-common (>= 1:81~), ucf, php7.3-common (= 7.3.33-42001~buster73), libc6 (>= 2.14), libtidy5deb1 (>= 1:5.2.0)
+Provides: php-tidy
+Homepage: http://www.php.net/
+Priority: optional
+Section: php
+Filename: pool/main/p/php7.3/php7.3-tidy_7.3.33-42001~buster73_amd64.deb
+Size: 17208
+SHA256: c620b227e181151cc695c46b736705c4e18a78cf33ae75f05c9843da2a939d22
+SHA1: 9c3d87459ceeb8323958a0c1318f5f7b5fa7c3c8
+MD5sum: f0f2dc833ea8d783477e85b365cff024
+Description: tidy module for PHP
+ This package provides the tidy module(s) for PHP.
+ .
+ PHP (recursive acronym for PHP: Hypertext Preprocessor) is a widely-used
+ open source general-purpose scripting language that is especially suited
+ for web development and can be embedded into HTML.
+
+Package: php7.3-xml
+Source: php7.3
+Version: 7.3.33-42001~buster73
+Architecture: amd64
+Maintainer: Debian PHP Maintainers <team+pkg-php@tracker.debian.org>
+Installed-Size: 469
+Depends: php-common (>= 1:81~), ucf, php7.3-common (= 7.3.33-42001~buster73), libc6 (>= 2.14), libxml2 (>= 2.9.0), libxslt1.1 (>= 1.1.25)
+Breaks: php7.3-xsl (<< 7.0.3-6~)
+Replaces: php7.3-xsl (<< 7.0.3-6~)
+Provides: php-dom, php-simplexml, php-wddx, php-xml, php-xmlreader, php-xmlwriter, php-xsl, php7.3-dom, php7.3-simplexml, php7.3-wddx, php7.3-xmlreader, php7.3-xmlwriter, php7.3-xsl
+Homepage: http://www.php.net/
+Priority: optional
+Section: php
+Filename: pool/main/p/php7.3/php7.3-xml_7.3.33-42001~buster73_amd64.deb
+Size: 110008
+SHA256: 5fe6597b17be08be780815e40f094b363e6b3b2db6560a1e69735f2484f04121
+SHA1: b2700ef22f63ef6b2b32bf1c30c174eed3d006d1
+MD5sum: fb2f8390ca310141c13508c4b8c47518
+Description: DOM, SimpleXML, WDDX, XML, and XSL module for PHP
+ This package provides the DOM, SimpleXML, WDDX, XML, and XSL module(s) for PHP.
+ .
+ PHP (recursive acronym for PHP: Hypertext Preprocessor) is a widely-used
+ open source general-purpose scripting language that is especially suited
+ for web development and can be embedded into HTML.
+
+Package: php7.3-xmlrpc
+Source: php7.3
+Version: 7.3.33-42001~buster73
+Architecture: amd64
+Maintainer: Debian PHP Maintainers <team+pkg-php@tracker.debian.org>
+Installed-Size: 63
+Depends: php-common (>= 1:81~), ucf, php7.3-common (= 7.3.33-42001~buster73), libc6 (>= 2.14), libxml2 (>= 2.6.27), libxmlrpc-epi0
+Provides: php-xmlrpc
+Homepage: http://www.php.net/
+Priority: optional
+Section: php
+Filename: pool/main/p/php7.3/php7.3-xmlrpc_7.3.33-42001~buster73_amd64.deb
+Size: 12568
+SHA256: 9f06d4dcda02fb0d72efaac73e491a7754e138335252d269a657351b5d00eb2e
+SHA1: e5df9ff34ae2284fc45f4c19214200aabfc08eb7
+MD5sum: 24bc4fee96aab5f0debadcae4b74977d
+Description: XMLRPC-EPI module for PHP
+ This package provides the XMLRPC-EPI module(s) for PHP.
+ .
+ PHP (recursive acronym for PHP: Hypertext Preprocessor) is a widely-used
+ open source general-purpose scripting language that is especially suited
+ for web development and can be embedded into HTML.
+
+Package: php7.3-xsl
+Source: php7.3
+Version: 7.3.33-42001~buster73
+Architecture: all
+Maintainer: Debian PHP Maintainers <team+pkg-php@tracker.debian.org>
+Installed-Size: 88
+Depends: php7.3-common, php7.3-xml
+Homepage: http://www.php.net/
+Priority: optional
+Section: php
+Filename: pool/main/p/php7.3/php7.3-xsl_7.3.33-42001~buster73_all.deb
+Size: 57540
+SHA256: 65f71d474bc4d35e5fd30354807dfd16beb686b070bcd9c874fb862935214ed5
+SHA1: 7b30de5ce6802dc547a1b5c314731b1752660668
+MD5sum: c40948001fda32bd32c34e2db1aead73
+Description: XSL module for PHP (dummy)
+ This package is a transitional dummy package and can be safely
+ removed.
+
+Package: php7.3-zip
+Source: php7.3
+Version: 7.3.33-42001~buster73
+Architecture: amd64
+Maintainer: Debian PHP Maintainers <team+pkg-php@tracker.debian.org>
+Installed-Size: 95
+Depends: php-common (>= 1:81~), ucf, php7.3-common (= 7.3.33-42001~buster73), libc6 (>= 2.27), libzip4 (>= 1.3.2), zlib1g (>= 1:1.1.4)
+Provides: php-zip
+Homepage: http://www.php.net/
+Priority: optional
+Section: php
+Filename: pool/main/p/php7.3/php7.3-zip_7.3.33-42001~buster73_amd64.deb
+Size: 21280
+SHA256: 10e656c66586b55e99d6843cdf17bcc0d642a85c395266fe2739fe025c36f72b
+SHA1: 5a553358cf43095908cca5436542583e180251c3
+MD5sum: 914d2f6c7f536efd6d521a46f09bf34f
 Description: Zip module for PHP
  This package provides the Zip module(s) for PHP.
  .
