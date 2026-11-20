@@ -5,3 +5,4 @@ out/
 work/
 .secret/
 .gh-run-logs/
+cache/

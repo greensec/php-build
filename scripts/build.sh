@@ -61,7 +61,12 @@ fi
 apt-get update -qq
 apt-get install -y --no-install-recommends \
     build-essential devscripts quilt dpkg-dev equivs ca-certificates \
-    curl xz-utils git gnupg rsync locales-all tzdata
+    curl xz-utils git gnupg rsync locales-all tzdata ccache
+
+# ccache lives inside the checkout so actions/cache can persist it
+export PATH="/usr/lib/ccache:$PATH"
+export CCACHE_DIR="${CCACHE_DIR:-$ROOT/cache/ccache}"
+mkdir -p "$CCACHE_DIR"
 
 install -m0755 -d /etc/apt/keyrings
 curl -fsSL "$SURY/apt.gpg" -o /etc/apt/keyrings/sury.asc
