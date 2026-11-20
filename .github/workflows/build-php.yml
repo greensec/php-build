@@ -62,6 +62,10 @@ jobs:
     name: "php${{ matrix.php_branch }} for ${{ inputs.dist }}"
     strategy:
       fail-fast: false
+      # serialize matrix jobs at the strategy level - a concurrency group
+      # only holds one pending job, so queued matrix jobs would cancel
+      # each other
+      max-parallel: 1
       matrix:
         php_branch: ${{ fromJSON(needs.branches.outputs.list) }}
     # serialize builds - the runner fleet is one box and the publish step
