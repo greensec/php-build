@@ -1,3 +1,27 @@
+Package: libapache2-mod-php
+Source: php-defaults (101+debsuryorg12.1+php+1~bullseye1)
+Version: 2:8.4+101+debsuryorg12.1+php+1~bullseye1
+Architecture: all
+Maintainer: Debian PHP Maintainers <team+pkg-php@tracker.debian.org>
+Installed-Size: 40
+Depends: libapache2-mod-php8.4
+Priority: optional
+Section: php
+Filename: pool/main/p/php-defaults/libapache2-mod-php_8.4+101+debsuryorg12.1+php+1~bullseye1_all.deb
+Size: 8124
+SHA256: 18f9112092e5ccbc29ddfccd2d68d6af4416f64ca81b459c4bd6c487fa4799dc
+SHA1: d8ace7d934c14bafc07cb91ed3eff535f1417be0
+MD5sum: 0366974eee44e339af606fdc418797ac
+Description: server-side, HTML-embedded scripting language (Apache 2 module) (default)
+ This package provides the PHP module for the Apache 2 webserver.
+ .
+ PHP (recursive acronym for PHP: Hypertext Preprocessor) is a widely-used
+ open source general-purpose scripting language that is especially suited
+ for web development and can be embedded into HTML.
+ .
+ This package is a dependency package, which depends on latest stable
+ PHP version (currently 8.4).
+
 Package: libapache2-mod-php8.1
 Source: php8.1
 Version: 8.1.34-14001~bullseye37
@@ -30,22 +54,22 @@ Description: server-side, HTML-embedded scripting language (Apache 2 module)
 
 Package: libapache2-mod-php8.2
 Source: php8.2
-Version: 8.2.36-2001~bullseye20
+Version: 8.2.36-2001~bullseye41
 Architecture: amd64
 Maintainer: Debian PHP Maintainers <team+pkg-php@tracker.debian.org>
 Installed-Size: 5503
-Depends: media-types | mime-support, php8.2-cli, php8.2-common (= 8.2.36-2001~bullseye20), php8.2-opcache, tzdata, ucf, apache2-api-20120211, apache2-bin (>= 2.4.16), libargon2-1 (>= 0~20171227), libc6 (>= 2.29), libpcre2-8-0 (>= 10.32), libsodium23 (>= 1.0.18), libssl1.1 (>= 1.1.1), libxml2 (>= 2.8.0), zlib1g (>= 1:1.1.4)
+Depends: media-types | mime-support, php8.2-cli, php8.2-common (= 8.2.36-2001~bullseye41), php8.2-opcache, tzdata, ucf, apache2-api-20120211, apache2-bin (>= 2.4.16), libargon2-1 (>= 0~20171227), libc6 (>= 2.29), libpcre2-8-0 (>= 10.32), libsodium23 (>= 1.0.18), libssl1.1 (>= 1.1.1), libxml2 (>= 2.8.0), zlib1g (>= 1:1.1.4)
 Recommends: apache2
 Suggests: php-pear
 Provides: libapache2-mod-php, php-json, php8.2-json, phpapi-20220829
 Homepage: http://www.php.net/
 Priority: optional
 Section: httpd
-Filename: pool/main/p/php8.2/libapache2-mod-php8.2_8.2.36-2001~bullseye20_amd64.deb
-Size: 1671860
-SHA256: eec322144bee479f3c25ec3fed511c759e1ccf289c26d8e1fcef5c15a16195ca
-SHA1: 66dd877dbcbcce320dfe3afb15ae17a2c79b7b18
-MD5sum: 1a7d6a6d2b17bab6300541eb5067b73b
+Filename: pool/main/p/php8.2/libapache2-mod-php8.2_8.2.36-2001~bullseye41_amd64.deb
+Size: 1671656
+SHA256: cd8995e93ef92b915d360ddb7ce5a7114fbbd53977170a8eb8b5b488da979f5e
+SHA1: 08e7fdfa66ec0d3124d84e3aeff8c17b40b17bce
+MD5sum: 481ba5c50bf052c9ab038bb9c3a56480
 Description: server-side, HTML-embedded scripting language (Apache 2 module)
  This package provides the PHP module for the Apache 2 webserver (as
  found in the apache2-mpm-prefork package).  Please note that this package
@@ -149,6 +173,31 @@ Description: server-side, HTML-embedded scripting language (Apache 2 module)
  open source general-purpose scripting language that is especially suited
  for web development and can be embedded into HTML.
 
+Package: libphp-embed
+Source: php-defaults (101+debsuryorg12.1+php+1~bullseye1)
+Version: 2:8.4+101+debsuryorg12.1+php+1~bullseye1
+Architecture: all
+Maintainer: Debian PHP Maintainers <team+pkg-php@tracker.debian.org>
+Installed-Size: 14
+Depends: libphp8.4-embed
+Priority: optional
+Section: php
+Filename: pool/main/p/php-defaults/libphp-embed_8.4+101+debsuryorg12.1+php+1~bullseye1_all.deb
+Size: 7980
+SHA256: ad17a4ef93e44bf7df7953ac09c4de4d2c623c4ee4fe60f198ee6d9eb9b40687
+SHA1: 15db88d8a4bb869bc4ebc1dcff82fb16cb4c4001
+MD5sum: 7d8f435f8731e67aaa81d6a9cdeeaaa5
+Description: HTML-embedded scripting language (Embedded SAPI library) (default)
+ This package provides the library /usr/lib/libphp.so which can
+ be used by application developers to embed PHP scripting functionality.
+ .
+ PHP (recursive acronym for PHP: Hypertext Preprocessor) is a widely-used
+ open source general-purpose scripting language that is especially suited
+ for web development and can be embedded into HTML.
+ .
+ This package is a dependency package, which depends on latest stable
+ PHP version (currently 8.4).
+
 Package: libphp8.1-embed
 Source: php8.1
 Version: 8.1.34-14001~bullseye37
@@ -183,21 +232,21 @@ Description: HTML-embedded scripting language (Embedded SAPI library)
 
 Package: libphp8.2-embed
 Source: php8.2
-Version: 8.2.36-2001~bullseye20
+Version: 8.2.36-2001~bullseye41
 Architecture: amd64
 Maintainer: Debian PHP Maintainers <team+pkg-php@tracker.debian.org>
 Installed-Size: 5495
-Depends: media-types | mime-support, php8.2-cli, php8.2-common (= 8.2.36-2001~bullseye20), php8.2-opcache, tzdata, ucf, libargon2-1 (>= 0~20171227), libc6 (>= 2.29), libpcre2-8-0 (>= 10.32), libsodium23 (>= 1.0.18), libssl1.1 (>= 1.1.1), libxml2 (>= 2.8.0), zlib1g (>= 1:1.1.4)
+Depends: media-types | mime-support, php8.2-cli, php8.2-common (= 8.2.36-2001~bullseye41), php8.2-opcache, tzdata, ucf, libargon2-1 (>= 0~20171227), libc6 (>= 2.29), libpcre2-8-0 (>= 10.32), libsodium23 (>= 1.0.18), libssl1.1 (>= 1.1.1), libxml2 (>= 2.8.0), zlib1g (>= 1:1.1.4)
 Suggests: php-pear
 Provides: libphp-embed, php-json, php8.2-json, phpapi-20220829
 Homepage: http://www.php.net/
 Priority: optional
 Section: php
-Filename: pool/main/p/php8.2/libphp8.2-embed_8.2.36-2001~bullseye20_amd64.deb
-Size: 1669416
-SHA256: 7713cbbdf9e452c0cbf585bb1b27060ced7eca80ded7be73c54b7a3a0ea4918b
-SHA1: 752ab4f76a5dee85c94c772957655878ee143dbe
-MD5sum: 6e29fccd5815d4a5db9917dc3fabaee5
+Filename: pool/main/p/php8.2/libphp8.2-embed_8.2.36-2001~bullseye41_amd64.deb
+Size: 1668796
+SHA256: 10de345fcbd426c81e55bba7d3b64ec397702ee4865561804f1123645531329a
+SHA1: b4c844a16dbd6e2e428fa377d1c756267d42f5ca
+MD5sum: 792b7a93dbbcacb4f73a0da735534108
 Description: HTML-embedded scripting language (Embedded SAPI library)
  This package provides the library /usr/lib/libphp8.2.so which can
  be used by application developers to embed PHP scripting functionality.
@@ -309,6 +358,751 @@ Description: HTML-embedded scripting language (Embedded SAPI library)
  WARNING: The embed SAPI is experimental and there's no guarantee that
  the API/ABI will be kept compatible even between minor releases.  You
  have been warned.
+
+Package: php
+Source: php-defaults (101+debsuryorg12.1+php+1~bullseye1)
+Version: 2:8.4+101+debsuryorg12.1+php+1~bullseye1
+Architecture: all
+Maintainer: Debian PHP Maintainers <team+pkg-php@tracker.debian.org>
+Installed-Size: 14
+Depends: php8.4
+Priority: optional
+Section: php
+Filename: pool/main/p/php-defaults/php_8.4+101+debsuryorg12.1+php+1~bullseye1_all.deb
+Size: 7892
+SHA256: 98d7ac0ed95999db2003eca294f8684ef91a69d3fd524fb4a57900ac0ea0ee0c
+SHA1: e5bb63db824082443f973d7828245f1c485d2dec
+MD5sum: a07e3653c6dbb18c6b42afcf20f7ed54
+Description: server-side, HTML-embedded scripting language (default)
+ PHP (recursive acronym for PHP: Hypertext Preprocessor) is a widely-used
+ open source general-purpose scripting language that is especially suited
+ for web development and can be embedded into HTML.
+ .
+ This package is a dependency package, which depends on latest stable
+ PHP version (currently 8.4).
+
+Package: php-all-dev
+Source: php-defaults (101+debsuryorg12.1+php+1~bullseye1)
+Version: 2:101+debsuryorg12.1+php+1~bullseye1
+Architecture: all
+Maintainer: Debian PHP Maintainers <team+pkg-php@tracker.debian.org>
+Installed-Size: 14
+Depends: php5.6-dev, php5.6-json, php5.6-mbstring, php5.6-xml, php7.0-dev, php7.0-json, php7.0-mbstring, php7.0-xml, php7.1-dev, php7.1-json, php7.1-mbstring, php7.1-xml, php7.2-dev, php7.2-json, php7.2-mbstring, php7.2-xml, php7.3-dev, php7.3-json, php7.3-mbstring, php7.3-xml, php7.4-dev, php7.4-json, php7.4-mbstring, php7.4-xml, php8.0-dev, php8.0-json, php8.0-mbstring, php8.0-xml, php8.1-dev, php8.1-json, php8.1-mbstring, php8.1-xml, php8.2-dev, php8.2-json, php8.2-mbstring, php8.2-xml, php8.3-dev, php8.3-json, php8.3-mbstring, php8.3-xml, php8.4-dev, php8.4-json, php8.4-mbstring, php8.4-xml, php8.5-dev, php8.5-json, php8.5-mbstring, php8.5-xml
+Priority: optional
+Section: php
+Filename: pool/main/p/php-defaults/php-all-dev_101+debsuryorg12.1+php+1~bullseye1_all.deb
+Size: 7892
+SHA256: 20295232adbc72bc8cc630aaf1b35b14994bc60fae68171f50c394a47a98f0d7
+SHA1: 7eb9b1b8864595af7e1c01881c77ead9c436557b
+MD5sum: c001bbeb153ba1230e5e4d4e291ff948
+Description: package depending on all supported PHP development packages
+ This package is a dependency package used as a build dependency for other
+ packages to avoid hardcoded dependencies on specific PHP development
+ packages.
+
+Package: php-bcmath
+Source: php-defaults (101+debsuryorg12.1+php+1~bullseye1)
+Version: 2:8.4+101+debsuryorg12.1+php+1~bullseye1
+Architecture: all
+Maintainer: Debian PHP Maintainers <team+pkg-php@tracker.debian.org>
+Installed-Size: 14
+Depends: php-common, php8.4-bcmath
+Priority: optional
+Section: php
+Filename: pool/main/p/php-defaults/php-bcmath_8.4+101+debsuryorg12.1+php+1~bullseye1_all.deb
+Size: 7920
+SHA256: 12633fea3138610a140f5351ce870e00058771926062cac57b27e9fc26c963be
+SHA1: 0857dd5965972f0c78762fb263d7652138899c16
+MD5sum: 6e4a17b07d1005d34ac9c91ea36186c9
+Description: Bcmath module for PHP [default]
+ This package provides a Bcmath module for PHP.
+ .
+ PHP (recursive acronym for PHP: Hypertext Preprocessor) is a widely-used
+ open source general-purpose scripting language that is especially suited
+ for web development and can be embedded into HTML.
+ .
+ This package is a dependency package, which depends on Debian's default
+ PHP version (currently 8.4).
+
+Package: php-bz2
+Source: php-defaults (101+debsuryorg12.1+php+1~bullseye1)
+Version: 2:8.4+101+debsuryorg12.1+php+1~bullseye1
+Architecture: all
+Maintainer: Debian PHP Maintainers <team+pkg-php@tracker.debian.org>
+Installed-Size: 14
+Depends: php-common, php8.4-bz2
+Priority: optional
+Section: php
+Filename: pool/main/p/php-defaults/php-bz2_8.4+101+debsuryorg12.1+php+1~bullseye1_all.deb
+Size: 7916
+SHA256: 023984e6a1a507c8c33b72d8f2942bb119553b7c6138c3f7b2afeef40c495bea
+SHA1: 33fb55e074cfee66bbb53e9ec33baf07c2da2e4b
+MD5sum: 00a62ea8ea4426a26182cc419851a22c
+Description: bzip2 module for PHP [default]
+ This package provides a bzip2 module for PHP.
+ .
+ PHP (recursive acronym for PHP: Hypertext Preprocessor) is a widely-used
+ open source general-purpose scripting language that is especially suited
+ for web development and can be embedded into HTML.
+ .
+ This package is a dependency package, which depends on Debian's default
+ PHP version (currently 8.4).
+
+Package: php-cgi
+Source: php-defaults (101+debsuryorg12.1+php+1~bullseye1)
+Version: 2:8.4+101+debsuryorg12.1+php+1~bullseye1
+Architecture: all
+Maintainer: Debian PHP Maintainers <team+pkg-php@tracker.debian.org>
+Installed-Size: 24
+Depends: php8.4-cgi
+Priority: optional
+Section: php
+Filename: pool/main/p/php-defaults/php-cgi_8.4+101+debsuryorg12.1+php+1~bullseye1_all.deb
+Size: 8404
+SHA256: 1b08e02d61945ff524e37ca0e0d4a1dfd669881bae98fbc09a4bdb388ddee452
+SHA1: b9f4f97a851e16ea3e0097ee500a19541c030567
+MD5sum: bee1b615fbb40459b13e2aa285351ae4
+Description: server-side, HTML-embedded scripting language (CGI binary) (default)
+ This package provides the /usr/lib/cgi-bin/php CGI interpreter built
+ for use in Apache 2 with mod_actions, or any other CGI httpd that
+ supports a similar mechanism.  Note that MOST users probably
+ want the php-fpm package that provide FastCGI support.
+ .
+ PHP (recursive acronym for PHP: Hypertext Preprocessor) is a widely-used
+ open source general-purpose scripting language that is especially suited
+ for web development and can be embedded into HTML.
+ .
+ This package is a dependency package, which depends on latest stable
+ PHP version (currently 8.4).
+
+Package: php-cli
+Source: php-defaults (101+debsuryorg12.1+php+1~bullseye1)
+Version: 2:8.4+101+debsuryorg12.1+php+1~bullseye1
+Architecture: all
+Maintainer: Debian PHP Maintainers <team+pkg-php@tracker.debian.org>
+Installed-Size: 25
+Depends: php8.4-cli
+Priority: optional
+Section: php
+Filename: pool/main/p/php-defaults/php-cli_8.4+101+debsuryorg12.1+php+1~bullseye1_all.deb
+Size: 8344
+SHA256: 5c316efd200db16f9c905cab266499efbf8e349501b5d66c324a35a1906ab509
+SHA1: f4776606d8c0815b7dad38f687678f5381b05e6c
+MD5sum: b3736f2c663945afe2cf24e97d0cd78b
+Description: command-line interpreter for the PHP scripting language (default)
+ This package provides the /usr/bin/php command interpreter, useful for
+ testing PHP scripts from a shell or performing general shell scripting tasks.
+ .
+ PHP (recursive acronym for PHP: Hypertext Preprocessor) is a widely-used
+ open source general-purpose scripting language that is especially suited
+ for web development and can be embedded into HTML.
+ .
+ This package is a dependency package, which depends on latest stable
+ PHP version (currently 8.4).
+
+Package: php-common
+Source: php-defaults (101+debsuryorg12.1+php+1~bullseye1)
+Version: 2:101+debsuryorg12.1+php+1~bullseye1
+Architecture: all
+Maintainer: Debian PHP Maintainers <team+pkg-php@tracker.debian.org>
+Installed-Size: 76
+Depends: procps, psmisc (>= 22.15-1~)
+Recommends: cron | cron-daemon | anacron | systemd-sysv
+Breaks: php-amqp (<< 2.1.2-5~), php-apcu (<< 5.1.24-1~), php-ast (<< 1.1.2-3~), php-ds (<< 1.5.0-5~), php-excimer (<< 1.2.3-1~), php-gearman (<< 2.1.2-4~), php-gmagick (<< 2.0.6~rc1++-5~), php-gnupg (<< 1.5.1-6~), php-igbinary (<< 3.2.16-4~), php-imagick (<< 3.7.0-12~), php-imap (<< 3:1.0.3-1), php-libvirt-php (<< 0.5.8-7~), php-mailparse (<< 3.1.8-1~), php-maxminddb (<< 1.12.0-1~), php-mcrypt (<< 3:1.0.7-5~), php-memcache (<< 8.2-5~), php-memcached (<< 3.3.0-3~), php-mongodb (<< 1.20.1-1~), php-msgpack (<< 1:3.0.0-1~), php-oauth (<< 2.0.9-1~), php-pcov (<< 1.0.11-9~), php-pecl-http (<< 4.2.6-3~), php-pq (<< 2.2.3-5~), php-ps (<< 1.4.4++-4~), php-pspell (<< 3:1.0.1-3~), php-psr (<< 1.2.0-9~), php-raphf (<< 2.0.1++-4~), php-redis (<< 6.1.0-3~), php-rrd (<< 2.0.3++-5~), php-smbclient (<< 1.1.2-3~), php-solr (<< 2.7.0-4~), php-ssh2 (<< 1.4.1-4~), php-stomp (<< 2.0.3-5~), php-uopz (<< 7.1.1++-4~), php-uploadprogress (<< 2.0.2++-4~), php-uuid (<< 1.2.1-2~), php-xdebug (<< 3.4.0-2~), php-xmlrpc (<< 3:1.0.0~rc3-10~), php-yac (<< 2.3.1++-4~), php-yaml (<< 2.2.4-1~), php-zmq (<< 1.1.3-30~), php-zstd (<< 0.14.0-1~)
+Multi-Arch: foreign
+Priority: optional
+Section: php
+Filename: pool/main/p/php-defaults/php-common_101+debsuryorg12.1+php+1~bullseye1_all.deb
+Size: 17492
+SHA256: dca1d5a74682fd33dcadc31481b075f4c21ee1bb2eb3d47dcc0946346911c339
+SHA1: 915de0e03b4280a7483f6eefbd0c4dec440d79f8
+MD5sum: 6726b1c0ead222eafb3b983e41b771bd
+Description: Common files for PHP packages
+ This package contains common utilities shared among all packaged PHP
+ versions.
+ .
+ PHP (recursive acronym for PHP: Hypertext Preprocessor) is a widely-used
+ open source general-purpose scripting language that is especially suited
+ for web development and can be embedded into HTML.
+
+Package: php-curl
+Source: php-defaults (101+debsuryorg12.1+php+1~bullseye1)
+Version: 2:8.4+101+debsuryorg12.1+php+1~bullseye1
+Architecture: all
+Maintainer: Debian PHP Maintainers <team+pkg-php@tracker.debian.org>
+Installed-Size: 14
+Depends: php-common, php8.4-curl
+Priority: optional
+Section: php
+Filename: pool/main/p/php-defaults/php-curl_8.4+101+debsuryorg12.1+php+1~bullseye1_all.deb
+Size: 7920
+SHA256: f64082141ca8c610975a9a8f39465f6ea1f34716f4d12addcad16dc17a15318e
+SHA1: 9f2c04ca23a535345667512b53ee2d3a6d059469
+MD5sum: 80bc6019d1749f3d7faf8f99e326709c
+Description: CURL module for PHP [default]
+ This package provides a CURL module for PHP.
+ .
+ PHP (recursive acronym for PHP: Hypertext Preprocessor) is a widely-used
+ open source general-purpose scripting language that is especially suited
+ for web development and can be embedded into HTML.
+ .
+ This package is a dependency package, which depends on Debian's default
+ PHP version (currently 8.4).
+
+Package: php-dev
+Source: php-defaults (101+debsuryorg12.1+php+1~bullseye1)
+Version: 2:8.4+101+debsuryorg12.1+php+1~bullseye1
+Architecture: all
+Maintainer: Debian PHP Maintainers <team+pkg-php@tracker.debian.org>
+Installed-Size: 23
+Depends: php8.4-dev
+Priority: optional
+Section: php
+Filename: pool/main/p/php-defaults/php-dev_8.4+101+debsuryorg12.1+php+1~bullseye1_all.deb
+Size: 8284
+SHA256: 6e3b26599cfa20791094e53acb45df52e38357e671a18d49e39e2409e1b71d11
+SHA1: f138e126ef37dec6af554cca1475e9572946a29a
+MD5sum: ff425b5b7e34853d49adb3c6f3d3d892
+Description: Files for PHP module development (default)
+ Headers and other PHP needed for compiling additional modules.
+ .
+ PHP (recursive acronym for PHP: Hypertext Preprocessor) is a widely-used
+ open source general-purpose scripting language that is especially suited
+ for web development and can be embedded into HTML.
+ .
+ This package is a dependency package, which depends on latest stable
+ PHP version (currently 8.4).
+
+Package: php-enchant
+Source: php-defaults (101+debsuryorg12.1+php+1~bullseye1)
+Version: 2:8.4+101+debsuryorg12.1+php+1~bullseye1
+Architecture: all
+Maintainer: Debian PHP Maintainers <team+pkg-php@tracker.debian.org>
+Installed-Size: 14
+Depends: php-common, php8.4-enchant
+Priority: optional
+Section: php
+Filename: pool/main/p/php-defaults/php-enchant_8.4+101+debsuryorg12.1+php+1~bullseye1_all.deb
+Size: 7916
+SHA256: 7634d3887022f2cb0f76162cd7db6a21159c6c425cb707ae03dddaad835a5edb
+SHA1: 54a751d3dee51db84f3c645ecddeb87779bebff1
+MD5sum: df72c0a5bfbd57110c00516f5afb3a32
+Description: Enchant module for PHP [default]
+ This package provides a Enchant module for PHP.
+ .
+ PHP (recursive acronym for PHP: Hypertext Preprocessor) is a widely-used
+ open source general-purpose scripting language that is especially suited
+ for web development and can be embedded into HTML.
+ .
+ This package is a dependency package, which depends on Debian's default
+ PHP version (currently 8.4).
+
+Package: php-fpm
+Source: php-defaults (101+debsuryorg12.1+php+1~bullseye1)
+Version: 2:8.4+101+debsuryorg12.1+php+1~bullseye1
+Architecture: all
+Maintainer: Debian PHP Maintainers <team+pkg-php@tracker.debian.org>
+Installed-Size: 14
+Depends: php8.4-fpm
+Priority: optional
+Section: php
+Filename: pool/main/p/php-defaults/php-fpm_8.4+101+debsuryorg12.1+php+1~bullseye1_all.deb
+Size: 7984
+SHA256: acd2bf42fa88e0a2dc6908b7dc3c2d14697d775977d0b182c19296d49382963f
+SHA1: 7891a96a94328638177ccdc39c63a3fd071b9654
+MD5sum: cadcfe50421ae2e765af1a4e2e0e5dae
+Description: server-side, HTML-embedded scripting language (FPM-CGI binary) (default)
+ This package provides the Fast Process Manager interpreter that runs
+ as a daemon and receives Fast/CGI requests.
+ .
+ PHP (recursive acronym for PHP: Hypertext Preprocessor) is a widely-used
+ open source general-purpose scripting language that is especially suited
+ for web development and can be embedded into HTML.
+ .
+ This package is a dependency package, which depends on latest stable
+ PHP version (currently 8.4).
+
+Package: php-gd
+Source: php-defaults (101+debsuryorg12.1+php+1~bullseye1)
+Version: 2:8.4+101+debsuryorg12.1+php+1~bullseye1
+Architecture: all
+Maintainer: Debian PHP Maintainers <team+pkg-php@tracker.debian.org>
+Installed-Size: 14
+Depends: php-common, php8.4-gd
+Priority: optional
+Section: php
+Filename: pool/main/p/php-defaults/php-gd_8.4+101+debsuryorg12.1+php+1~bullseye1_all.deb
+Size: 7912
+SHA256: b1cf49bb18ee2e2d12eec4de8fa49d442d3dbdfcb3b01cd3d2fcc53219674604
+SHA1: c8c06337712bbe6511ee3552b82e3c45f5f0e9a9
+MD5sum: 556627ebc71ba401a7edfc85d7fd50fa
+Description: GD module for PHP [default]
+ This package provides a GD module for PHP.
+ .
+ PHP (recursive acronym for PHP: Hypertext Preprocessor) is a widely-used
+ open source general-purpose scripting language that is especially suited
+ for web development and can be embedded into HTML.
+ .
+ This package is a dependency package, which depends on Debian's default
+ PHP version (currently 8.4).
+
+Package: php-gmp
+Source: php-defaults (101+debsuryorg12.1+php+1~bullseye1)
+Version: 2:8.4+101+debsuryorg12.1+php+1~bullseye1
+Architecture: all
+Maintainer: Debian PHP Maintainers <team+pkg-php@tracker.debian.org>
+Installed-Size: 14
+Depends: php-common, php8.4-gmp
+Priority: optional
+Section: php
+Filename: pool/main/p/php-defaults/php-gmp_8.4+101+debsuryorg12.1+php+1~bullseye1_all.deb
+Size: 7916
+SHA256: 13b0b65eb57b1d9be74da71d0d121b4d0f45c42e65baecad46dbf436ddf080b5
+SHA1: a739cc2024e708f8bffdc9538b092b5f14728689
+MD5sum: 9b191ab0901eb54ae52c94e56b593c4c
+Description: GMP module for PHP [default]
+ This package provides a GMP module for PHP.
+ .
+ PHP (recursive acronym for PHP: Hypertext Preprocessor) is a widely-used
+ open source general-purpose scripting language that is especially suited
+ for web development and can be embedded into HTML.
+ .
+ This package is a dependency package, which depends on Debian's default
+ PHP version (currently 8.4).
+
+Package: php-interbase
+Source: php-defaults (101+debsuryorg12.1+php+1~bullseye1)
+Version: 2:8.4+101+debsuryorg12.1+php+1~bullseye1
+Architecture: all
+Maintainer: Debian PHP Maintainers <team+pkg-php@tracker.debian.org>
+Installed-Size: 14
+Depends: php-common, php8.4-interbase
+Priority: optional
+Section: php
+Filename: pool/main/p/php-defaults/php-interbase_8.4+101+debsuryorg12.1+php+1~bullseye1_all.deb
+Size: 7920
+SHA256: 3912e01bdf1febe7e57e54d237d9f0c0272f574fc1694c84e7a241b895ee5340
+SHA1: af281762f52614e46f3e09d918b3cf0addb47ca2
+MD5sum: 1aca5b116458238ddbeb65a61b9a8d1a
+Description: Interbase module for PHP [default]
+ This package provides a Interbase module for PHP.
+ .
+ PHP (recursive acronym for PHP: Hypertext Preprocessor) is a widely-used
+ open source general-purpose scripting language that is especially suited
+ for web development and can be embedded into HTML.
+ .
+ This package is a dependency package, which depends on Debian's default
+ PHP version (currently 8.4).
+
+Package: php-intl
+Source: php-defaults (101+debsuryorg12.1+php+1~bullseye1)
+Version: 2:8.4+101+debsuryorg12.1+php+1~bullseye1
+Architecture: all
+Maintainer: Debian PHP Maintainers <team+pkg-php@tracker.debian.org>
+Installed-Size: 14
+Depends: php-common, php8.4-intl
+Priority: optional
+Section: php
+Filename: pool/main/p/php-defaults/php-intl_8.4+101+debsuryorg12.1+php+1~bullseye1_all.deb
+Size: 7924
+SHA256: 76395162767c3bfcbcf9f9f5f256ee636a78fca3b59b3aa599f5077eaeff6b5a
+SHA1: 64232b07f55921e5527263814cf3af2a6f0c6ec6
+MD5sum: 89a6241b0209135dba35bb14819e8e9f
+Description: Internationalisation module for PHP [default]
+ This package provides a Internationalisation module for PHP.
+ .
+ PHP (recursive acronym for PHP: Hypertext Preprocessor) is a widely-used
+ open source general-purpose scripting language that is especially suited
+ for web development and can be embedded into HTML.
+ .
+ This package is a dependency package, which depends on Debian's default
+ PHP version (currently 8.4).
+
+Package: php-json
+Source: php-defaults (101+debsuryorg12.1+php+1~bullseye1)
+Version: 2:8.4+101+debsuryorg12.1+php+1~bullseye1
+Architecture: all
+Maintainer: Debian PHP Maintainers <team+pkg-php@tracker.debian.org>
+Installed-Size: 14
+Depends: php-common, php8.4-json
+Priority: optional
+Section: php
+Filename: pool/main/p/php-defaults/php-json_8.4+101+debsuryorg12.1+php+1~bullseye1_all.deb
+Size: 7920
+SHA256: eeda03bd1dc3b9dee0dbb642e3f448372679af1300e373e803904d64063db74a
+SHA1: 4c750cdf51ebf49f1f5060e5e232d240f8dc4119
+MD5sum: e147f7db0730645128658c2811d0e178
+Description: JSON module for PHP [default]
+ This package provides a JSON module for PHP.
+ .
+ PHP (recursive acronym for PHP: Hypertext Preprocessor) is a widely-used
+ open source general-purpose scripting language that is especially suited
+ for web development and can be embedded into HTML.
+ .
+ This package is a dependency package, which depends on Debian's default
+ PHP version (currently 8.4).
+
+Package: php-ldap
+Source: php-defaults (101+debsuryorg12.1+php+1~bullseye1)
+Version: 2:8.4+101+debsuryorg12.1+php+1~bullseye1
+Architecture: all
+Maintainer: Debian PHP Maintainers <team+pkg-php@tracker.debian.org>
+Installed-Size: 14
+Depends: php-common, php8.4-ldap
+Priority: optional
+Section: php
+Filename: pool/main/p/php-defaults/php-ldap_8.4+101+debsuryorg12.1+php+1~bullseye1_all.deb
+Size: 7916
+SHA256: 414a4a02775714c3aebed6c0f1e8bdd835794ab1cd6e277c19d3bda0edbc1611
+SHA1: e42e81258e1dc71d937b2152e90b7e8d07537df0
+MD5sum: 2e45eed855c8ee7f3ac790794e310058
+Description: LDAP module for PHP [default]
+ This package provides a LDAP module for PHP.
+ .
+ PHP (recursive acronym for PHP: Hypertext Preprocessor) is a widely-used
+ open source general-purpose scripting language that is especially suited
+ for web development and can be embedded into HTML.
+ .
+ This package is a dependency package, which depends on Debian's default
+ PHP version (currently 8.4).
+
+Package: php-litespeed
+Source: php-defaults (101+debsuryorg12.1+php+1~bullseye1)
+Version: 2:8.4+101+debsuryorg12.1+php+1~bullseye1
+Architecture: all
+Maintainer: Debian PHP Maintainers <team+pkg-php@tracker.debian.org>
+Installed-Size: 14
+Depends: php8.4-litespeed
+Priority: optional
+Section: php
+Filename: pool/main/p/php-defaults/php-litespeed_8.4+101+debsuryorg12.1+php+1~bullseye1_all.deb
+Size: 7992
+SHA256: bb6971a8000b077c411eeef7f5375bc779fd482981b6f5aed46a63f4300281a8
+SHA1: 70fb7eef76a39b25d4abd13b583e7d62710504dd
+MD5sum: 8a2fd269fc93894a10afa3d2c045d87b
+Description: server-side, HTML-embedded scripting language (LiteSpeed binary) (default)
+ This package provides the LiteSpeed SAPI module that provides a dedicated
+ interface for PHP integration with OpenLiteSpeed or LiteSpeed Web Server.
+ .
+ PHP (recursive acronym for PHP: Hypertext Preprocessor) is a widely-used
+ open source general-purpose scripting language that is especially suited
+ for web development and can be embedded into HTML.
+ .
+ This package is a dependency package, which depends on latest stable
+ PHP version (currently 8.4).
+
+Package: php-mbstring
+Source: php-defaults (101+debsuryorg12.1+php+1~bullseye1)
+Version: 2:8.4+101+debsuryorg12.1+php+1~bullseye1
+Architecture: all
+Maintainer: Debian PHP Maintainers <team+pkg-php@tracker.debian.org>
+Installed-Size: 14
+Depends: php-common, php8.4-mbstring
+Priority: optional
+Section: php
+Filename: pool/main/p/php-defaults/php-mbstring_8.4+101+debsuryorg12.1+php+1~bullseye1_all.deb
+Size: 7924
+SHA256: 14f7e5d9498800c6b84e8fcd2727ddd692f9abb5025fdcffb838ed76cb3824c1
+SHA1: dd1873b1bf1251a748bfe4e65f44efcaed113725
+MD5sum: 8329be0ffb8ee77f483d730df04201d1
+Description: MBSTRING module for PHP [default]
+ This package provides a MBSTRING module for PHP.
+ .
+ PHP (recursive acronym for PHP: Hypertext Preprocessor) is a widely-used
+ open source general-purpose scripting language that is especially suited
+ for web development and can be embedded into HTML.
+ .
+ This package is a dependency package, which depends on Debian's default
+ PHP version (currently 8.4).
+
+Package: php-mysql
+Source: php-defaults (101+debsuryorg12.1+php+1~bullseye1)
+Version: 2:8.4+101+debsuryorg12.1+php+1~bullseye1
+Architecture: all
+Maintainer: Debian PHP Maintainers <team+pkg-php@tracker.debian.org>
+Installed-Size: 14
+Depends: php-common, php8.4-mysql
+Priority: optional
+Section: php
+Filename: pool/main/p/php-defaults/php-mysql_8.4+101+debsuryorg12.1+php+1~bullseye1_all.deb
+Size: 7916
+SHA256: f75f1d03a6cc499dc73dcabd1b93273f11d370bcf17e5bd0c427c5ef7f791760
+SHA1: 3a7d728003dc3069dce94a71fbc9c8d47f150782
+MD5sum: a1cd2abad3cd0a3b93e23411742db552
+Description: MySQL module for PHP [default]
+ This package provides a MySQL module for PHP.
+ .
+ PHP (recursive acronym for PHP: Hypertext Preprocessor) is a widely-used
+ open source general-purpose scripting language that is especially suited
+ for web development and can be embedded into HTML.
+ .
+ This package is a dependency package, which depends on Debian's default
+ PHP version (currently 8.4).
+
+Package: php-odbc
+Source: php-defaults (101+debsuryorg12.1+php+1~bullseye1)
+Version: 2:8.4+101+debsuryorg12.1+php+1~bullseye1
+Architecture: all
+Maintainer: Debian PHP Maintainers <team+pkg-php@tracker.debian.org>
+Installed-Size: 14
+Depends: php-common, php8.4-odbc
+Priority: optional
+Section: php
+Filename: pool/main/p/php-defaults/php-odbc_8.4+101+debsuryorg12.1+php+1~bullseye1_all.deb
+Size: 7916
+SHA256: ae694aa5dfaf31ad1322203a2ff1cedb04a3165cf5f6bd5c79a7af60868130b7
+SHA1: 647acf947c9f96b9336210bd299b45bf07f5a8a6
+MD5sum: b662dfba6419c54cfb2f83eee24e025b
+Description: ODBC module for PHP [default]
+ This package provides a ODBC module for PHP.
+ .
+ PHP (recursive acronym for PHP: Hypertext Preprocessor) is a widely-used
+ open source general-purpose scripting language that is especially suited
+ for web development and can be embedded into HTML.
+ .
+ This package is a dependency package, which depends on Debian's default
+ PHP version (currently 8.4).
+
+Package: php-pgsql
+Source: php-defaults (101+debsuryorg12.1+php+1~bullseye1)
+Version: 2:8.4+101+debsuryorg12.1+php+1~bullseye1
+Architecture: all
+Maintainer: Debian PHP Maintainers <team+pkg-php@tracker.debian.org>
+Installed-Size: 14
+Depends: php-common, php8.4-pgsql
+Priority: optional
+Section: php
+Filename: pool/main/p/php-defaults/php-pgsql_8.4+101+debsuryorg12.1+php+1~bullseye1_all.deb
+Size: 7916
+SHA256: 49508a2d5733db54a87d7f39f66f761c96ce4c99dca8c32da0ef28e62bcc918c
+SHA1: 039d0028719271dd478836bbaddfe69dd333fe7d
+MD5sum: b6413159337f63decacba0718beb10c6
+Description: PostgreSQL module for PHP [default]
+ This package provides a PostgreSQL module for PHP.
+ .
+ PHP (recursive acronym for PHP: Hypertext Preprocessor) is a widely-used
+ open source general-purpose scripting language that is especially suited
+ for web development and can be embedded into HTML.
+ .
+ This package is a dependency package, which depends on Debian's default
+ PHP version (currently 8.4).
+
+Package: php-phpdbg
+Source: php-defaults (101+debsuryorg12.1+php+1~bullseye1)
+Version: 2:8.4+101+debsuryorg12.1+php+1~bullseye1
+Architecture: all
+Maintainer: Debian PHP Maintainers <team+pkg-php@tracker.debian.org>
+Installed-Size: 21
+Depends: php8.4-phpdbg
+Priority: optional
+Section: php
+Filename: pool/main/p/php-defaults/php-phpdbg_8.4+101+debsuryorg12.1+php+1~bullseye1_all.deb
+Size: 8264
+SHA256: c8e9db05348fc37640c37e7e8ebffea6b1b14ba0a80cd118133a780a74b88e3c
+SHA1: e13577071de580397c30ec6c001c9151259434a3
+MD5sum: eaedce8d141b37ff501925daeb1ba1c0
+Description: server-side, HTML-embedded scripting language (PHPDBG binary) (default)
+ This package provides the /usr/bin/phpdbg command interpreter, useful for
+ stepthrough debugging of PHP code.
+ .
+ PHP (recursive acronym for PHP: Hypertext Preprocessor) is a widely-used
+ open source general-purpose scripting language that is especially suited
+ for web development and can be embedded into HTML.
+ .
+ This package is a dependency package, which depends on latest stable
+ PHP version (currently 8.4).
+
+Package: php-readline
+Source: php-defaults (101+debsuryorg12.1+php+1~bullseye1)
+Version: 2:8.4+101+debsuryorg12.1+php+1~bullseye1
+Architecture: all
+Maintainer: Debian PHP Maintainers <team+pkg-php@tracker.debian.org>
+Installed-Size: 14
+Depends: php-common, php8.4-readline
+Priority: optional
+Section: php
+Filename: pool/main/p/php-defaults/php-readline_8.4+101+debsuryorg12.1+php+1~bullseye1_all.deb
+Size: 7916
+SHA256: d705cd4be0e0a8ed0d0d4a0cfcc09aec891dfcc2a6672f9ae2bb6c58f173d447
+SHA1: 73cde25c0ff1379daaf4986e9677d54d1e50063e
+MD5sum: 5e33afcf22bf20deee7293c8f2e1785c
+Description: readline module for PHP [default]
+ This package provides a readline module for PHP.
+ .
+ PHP (recursive acronym for PHP: Hypertext Preprocessor) is a widely-used
+ open source general-purpose scripting language that is especially suited
+ for web development and can be embedded into HTML.
+ .
+ This package is a dependency package, which depends on Debian's default
+ PHP version (currently 8.4).
+
+Package: php-snmp
+Source: php-defaults (101+debsuryorg12.1+php+1~bullseye1)
+Version: 2:8.4+101+debsuryorg12.1+php+1~bullseye1
+Architecture: all
+Maintainer: Debian PHP Maintainers <team+pkg-php@tracker.debian.org>
+Installed-Size: 14
+Depends: php-common, php8.4-snmp
+Priority: optional
+Section: php
+Filename: pool/main/p/php-defaults/php-snmp_8.4+101+debsuryorg12.1+php+1~bullseye1_all.deb
+Size: 7920
+SHA256: 395fb1ef68eece181cfecedea88fdc05461de7f44ac40d62f16cb5047f12d8d7
+SHA1: 01a9b350df7fb8aec10dd40f220f2536d739ccd5
+MD5sum: 6217e3e68aa6e5c52455929245361c70
+Description: SNMP module for PHP [default]
+ This package provides a SNMP module for PHP.
+ .
+ PHP (recursive acronym for PHP: Hypertext Preprocessor) is a widely-used
+ open source general-purpose scripting language that is especially suited
+ for web development and can be embedded into HTML.
+ .
+ This package is a dependency package, which depends on Debian's default
+ PHP version (currently 8.4).
+
+Package: php-soap
+Source: php-defaults (101+debsuryorg12.1+php+1~bullseye1)
+Version: 2:8.4+101+debsuryorg12.1+php+1~bullseye1
+Architecture: all
+Maintainer: Debian PHP Maintainers <team+pkg-php@tracker.debian.org>
+Installed-Size: 14
+Depends: php-common, php8.4-soap
+Priority: optional
+Section: php
+Filename: pool/main/p/php-defaults/php-soap_8.4+101+debsuryorg12.1+php+1~bullseye1_all.deb
+Size: 7920
+SHA256: 17aca649550f8f1ea9e2408b60527c90ba1b9222df1a1bfff2ab8e84864d682b
+SHA1: fcd3118d3e0dde2c65095fad50af1d530bed9dba
+MD5sum: b8a700eccfbccb259b35ee2d7d96dcde
+Description: SOAP module for PHP [default]
+ This package provides a SOAP module for PHP.
+ .
+ PHP (recursive acronym for PHP: Hypertext Preprocessor) is a widely-used
+ open source general-purpose scripting language that is especially suited
+ for web development and can be embedded into HTML.
+ .
+ This package is a dependency package, which depends on Debian's default
+ PHP version (currently 8.4).
+
+Package: php-sqlite3
+Source: php-defaults (101+debsuryorg12.1+php+1~bullseye1)
+Version: 2:8.4+101+debsuryorg12.1+php+1~bullseye1
+Architecture: all
+Maintainer: Debian PHP Maintainers <team+pkg-php@tracker.debian.org>
+Installed-Size: 14
+Depends: php-common, php8.4-sqlite3
+Priority: optional
+Section: php
+Filename: pool/main/p/php-defaults/php-sqlite3_8.4+101+debsuryorg12.1+php+1~bullseye1_all.deb
+Size: 7920
+SHA256: 873efd36f5644d94703ea74ad046a267bba078e9b56f6e39aed020167d8b4027
+SHA1: 954b72c4c89af75d062bf685ee10cb23cf035e4b
+MD5sum: 47be57b2880cf4937214516028af222c
+Description: SQLite3 module for PHP [default]
+ This package provides a SQLite3 module for PHP.
+ .
+ PHP (recursive acronym for PHP: Hypertext Preprocessor) is a widely-used
+ open source general-purpose scripting language that is especially suited
+ for web development and can be embedded into HTML.
+ .
+ This package is a dependency package, which depends on Debian's default
+ PHP version (currently 8.4).
+
+Package: php-sybase
+Source: php-defaults (101+debsuryorg12.1+php+1~bullseye1)
+Version: 2:8.4+101+debsuryorg12.1+php+1~bullseye1
+Architecture: all
+Maintainer: Debian PHP Maintainers <team+pkg-php@tracker.debian.org>
+Installed-Size: 14
+Depends: php-common, php8.4-sybase
+Priority: optional
+Section: php
+Filename: pool/main/p/php-defaults/php-sybase_8.4+101+debsuryorg12.1+php+1~bullseye1_all.deb
+Size: 7920
+SHA256: 86dc3688d46217dd27f891bd6462a8c68b87c0f5cc547360b94a6f80640e7ed7
+SHA1: 1de7b0599724a1cf8c30214f986e67c8cdd3b5e5
+MD5sum: fccaa25db7d36df45819908b636424d9
+Description: Sybase module for PHP [default]
+ This package provides a Sybase module for PHP.
+ .
+ PHP (recursive acronym for PHP: Hypertext Preprocessor) is a widely-used
+ open source general-purpose scripting language that is especially suited
+ for web development and can be embedded into HTML.
+ .
+ This package is a dependency package, which depends on Debian's default
+ PHP version (currently 8.4).
+
+Package: php-tidy
+Source: php-defaults (101+debsuryorg12.1+php+1~bullseye1)
+Version: 2:8.4+101+debsuryorg12.1+php+1~bullseye1
+Architecture: all
+Maintainer: Debian PHP Maintainers <team+pkg-php@tracker.debian.org>
+Installed-Size: 14
+Depends: php-common, php8.4-tidy
+Priority: optional
+Section: php
+Filename: pool/main/p/php-defaults/php-tidy_8.4+101+debsuryorg12.1+php+1~bullseye1_all.deb
+Size: 7916
+SHA256: 945c814863eb9f6365ce5cd74e603904ab51f5e65a052aa49ae6a59b18ef76e0
+SHA1: 8dc4982a0a9a77f57f18e5b5e3435ac16d30105b
+MD5sum: 1fb3b48e8b5aec3deb368d3bde5e0bf1
+Description: tidy module for PHP [default]
+ This package provides a tidy module for PHP.
+ .
+ PHP (recursive acronym for PHP: Hypertext Preprocessor) is a widely-used
+ open source general-purpose scripting language that is especially suited
+ for web development and can be embedded into HTML.
+ .
+ This package is a dependency package, which depends on Debian's default
+ PHP version (currently 8.4).
+
+Package: php-xml
+Source: php-defaults (101+debsuryorg12.1+php+1~bullseye1)
+Version: 2:8.4+101+debsuryorg12.1+php+1~bullseye1
+Architecture: all
+Maintainer: Debian PHP Maintainers <team+pkg-php@tracker.debian.org>
+Installed-Size: 14
+Depends: php-common, php8.4-xml
+Priority: optional
+Section: php
+Filename: pool/main/p/php-defaults/php-xml_8.4+101+debsuryorg12.1+php+1~bullseye1_all.deb
+Size: 7940
+SHA256: 132ee7129dd9ce071ae158fdc8bec0c97c22452f7e643fb6825f88e306e78854
+SHA1: fcc4701579f695adf82466584123e4a1ef1952fb
+MD5sum: 7e93e000f057a2b0a6e58fabbf2017ed
+Description: DOM, SimpleXML, WDDX, XML, and XSL module for PHP [default]
+ This package provides a DOM, SimpleXML, WDDX, XML, and XSL module for PHP.
+ .
+ PHP (recursive acronym for PHP: Hypertext Preprocessor) is a widely-used
+ open source general-purpose scripting language that is especially suited
+ for web development and can be embedded into HTML.
+ .
+ This package is a dependency package, which depends on Debian's default
+ PHP version (currently 8.4).
+
+Package: php-zip
+Source: php-defaults (101+debsuryorg12.1+php+1~bullseye1)
+Version: 2:8.4+101+debsuryorg12.1+php+1~bullseye1
+Architecture: all
+Maintainer: Debian PHP Maintainers <team+pkg-php@tracker.debian.org>
+Installed-Size: 14
+Depends: php-common, php8.4-zip
+Priority: optional
+Section: php
+Filename: pool/main/p/php-defaults/php-zip_8.4+101+debsuryorg12.1+php+1~bullseye1_all.deb
+Size: 7912
+SHA256: d7fab2ce5a4c5f31f05c692bec55bdcbbd70ce964ff5c2799811c77b2f0dceed
+SHA1: 4d0426ef09a56dac30903d7a4d13e60ef5889eb2
+MD5sum: 3df02ab7411e473b7c1ed9f4273fc441
+Description: Zip module for PHP [default]
+ This package provides a Zip module for PHP.
+ .
+ PHP (recursive acronym for PHP: Hypertext Preprocessor) is a widely-used
+ open source general-purpose scripting language that is especially suited
+ for web development and can be embedded into HTML.
+ .
+ This package is a dependency package, which depends on Debian's default
+ PHP version (currently 8.4).
 
 Package: php8.1
 Version: 8.1.34-14001~bullseye37
@@ -1126,7 +1920,7 @@ Description: Zip module for PHP
  for web development and can be embedded into HTML.
 
 Package: php8.2
-Version: 8.2.36-2001~bullseye20
+Version: 8.2.36-2001~bullseye41
 Architecture: all
 Maintainer: Debian PHP Maintainers <team+pkg-php@tracker.debian.org>
 Installed-Size: 90
@@ -1135,11 +1929,11 @@ Provides: php
 Homepage: http://www.php.net/
 Priority: optional
 Section: php
-Filename: pool/main/p/php8.2/php8.2_8.2.36-2001~bullseye20_all.deb
-Size: 55728
-SHA256: 4e52234ae9302d501f910f7c2713cc46cb7118efd8845851a6846c785b8a8acd
-SHA1: 9a510a588fd681b2c65650c6066ef433ad4e87be
-MD5sum: f9d814e28c8f730daf2a561d633e332e
+Filename: pool/main/p/php8.2/php8.2_8.2.36-2001~bullseye41_all.deb
+Size: 55720
+SHA256: eb3510a7c1420d6ac0ac698d262880e8db87c0096029e39059fe453faa960af1
+SHA1: 09d14bceda0307348fc804db662c25c22e2aacc3
+MD5sum: a2047f6a6575a480c2e649508e6b98ae
 Description: server-side, HTML-embedded scripting language (metapackage)
  This package is a metapackage that, when installed, guarantees that you
  have at least one of the four server-side versions of the PHP interpreter
@@ -1152,20 +1946,20 @@ Description: server-side, HTML-embedded scripting language (metapackage)
 
 Package: php8.2-bcmath
 Source: php8.2
-Version: 8.2.36-2001~bullseye20
+Version: 8.2.36-2001~bullseye41
 Architecture: amd64
 Maintainer: Debian PHP Maintainers <team+pkg-php@tracker.debian.org>
 Installed-Size: 68
-Depends: php-common (>= 1:81~), ucf, php8.2-common (= 8.2.36-2001~bullseye20), libc6 (>= 2.14)
+Depends: php-common (>= 1:81~), ucf, php8.2-common (= 8.2.36-2001~bullseye41), libc6 (>= 2.14)
 Provides: php-bcmath
 Homepage: http://www.php.net/
 Priority: optional
 Section: php
-Filename: pool/main/p/php8.2/php8.2-bcmath_8.2.36-2001~bullseye20_amd64.deb
+Filename: pool/main/p/php8.2/php8.2-bcmath_8.2.36-2001~bullseye41_amd64.deb
 Size: 15452
-SHA256: 04a5f816f4a2c8953cc470cf522bac44f85b8ce6f075c7bcc62b5f3827306c4e
-SHA1: 240402f9a4a94e11f0de3f6cc1b9722d4831d669
-MD5sum: b21eafc033c097d87a7988b6ceec6625
+SHA256: f9fe5c4414772d450c876aacb8c34aae0ae8f0b40ded34ddb8b0d075aee55a52
+SHA1: bbb4fefa4ef829c6ee37dd32987f9e43488b6cd2
+MD5sum: afc6cfe57e8c1ff71d051e4f5a31654b
 Description: Bcmath module for PHP
  This package provides the Bcmath module(s) for PHP.
  .
@@ -1175,20 +1969,20 @@ Description: Bcmath module for PHP
 
 Package: php8.2-bz2
 Source: php8.2
-Version: 8.2.36-2001~bullseye20
+Version: 8.2.36-2001~bullseye41
 Architecture: amd64
 Maintainer: Debian PHP Maintainers <team+pkg-php@tracker.debian.org>
 Installed-Size: 60
-Depends: php-common (>= 1:81~), ucf, php8.2-common (= 8.2.36-2001~bullseye20), libbz2-1.0, libc6 (>= 2.14)
+Depends: php-common (>= 1:81~), ucf, php8.2-common (= 8.2.36-2001~bullseye41), libbz2-1.0, libc6 (>= 2.14)
 Provides: php-bz2
 Homepage: http://www.php.net/
 Priority: optional
 Section: php
-Filename: pool/main/p/php8.2/php8.2-bz2_8.2.36-2001~bullseye20_amd64.deb
-Size: 10764
-SHA256: a7bae85a727403c4602b2094075a8e7725bde56d65e859857ae4ead711fa7381
-SHA1: f24755283a22acee2911ce69e0848439455017db
-MD5sum: d3c4817291aef3b07e298ebb578f37a1
+Filename: pool/main/p/php8.2/php8.2-bz2_8.2.36-2001~bullseye41_amd64.deb
+Size: 10768
+SHA256: ed5b2f3bb5e27ee5623d271f56a988224da0310109619fe1e803450106a53a0d
+SHA1: 854f73b1172956f5f52ad7eca9505a73bc90c2ba
+MD5sum: f55c1c261a8e1ec7cce97e68f5043667
 Description: bzip2 module for PHP
  This package provides the bzip2 module(s) for PHP.
  .
@@ -1198,21 +1992,21 @@ Description: bzip2 module for PHP
 
 Package: php8.2-cgi
 Source: php8.2
-Version: 8.2.36-2001~bullseye20
+Version: 8.2.36-2001~bullseye41
 Architecture: amd64
 Maintainer: Debian PHP Maintainers <team+pkg-php@tracker.debian.org>
 Installed-Size: 10907
-Depends: media-types | mime-support, php8.2-cli, php8.2-common (= 8.2.36-2001~bullseye20), php8.2-opcache, tzdata, ucf, libargon2-1 (>= 0~20171227), libc6 (>= 2.29), libpcre2-8-0 (>= 10.32), libsodium23 (>= 1.0.18), libssl1.1 (>= 1.1.1), libxml2 (>= 2.8.0), zlib1g (>= 1:1.1.4)
+Depends: media-types | mime-support, php8.2-cli, php8.2-common (= 8.2.36-2001~bullseye41), php8.2-opcache, tzdata, ucf, libargon2-1 (>= 0~20171227), libc6 (>= 2.29), libpcre2-8-0 (>= 10.32), libsodium23 (>= 1.0.18), libssl1.1 (>= 1.1.1), libxml2 (>= 2.8.0), zlib1g (>= 1:1.1.4)
 Suggests: php-pear
 Provides: php-cgi, php-json, php8.2-json, phpapi-20220829
 Homepage: http://www.php.net/
 Priority: optional
 Section: php
-Filename: pool/main/p/php8.2/php8.2-cgi_8.2.36-2001~bullseye20_amd64.deb
-Size: 1684148
-SHA256: 41af456885994f5a884a50e56e318a62242d12f198a12296f1357db5b6027e44
-SHA1: 944237c89997c22dd2667eab170199c43cb974a7
-MD5sum: 5dc0ffc7486641ac6ba01a7bdbf5dba5
+Filename: pool/main/p/php8.2/php8.2-cgi_8.2.36-2001~bullseye41_amd64.deb
+Size: 1683876
+SHA256: ad8eadf311eb2ec00c4745880618aa09f35d8826431733c8864634dd39d75a28
+SHA1: d18e1e870e29369dbb2b6dd69522dbd9e153b313
+MD5sum: 387ad6b4da3000ef55d0e1f9109d2add
 Description: server-side, HTML-embedded scripting language (CGI binary)
  This package provides the /usr/lib/cgi-bin/php CGI interpreter built
  for use in Apache 2 with mod_actions, or any other CGI httpd that
@@ -1228,21 +2022,21 @@ Description: server-side, HTML-embedded scripting language (CGI binary)
 
 Package: php8.2-cli
 Source: php8.2
-Version: 8.2.36-2001~bullseye20
+Version: 8.2.36-2001~bullseye41
 Architecture: amd64
 Maintainer: Debian PHP Maintainers <team+pkg-php@tracker.debian.org>
 Installed-Size: 5613
-Depends: libedit2 (>= 2.11-20080614-4), media-types | mime-support, php8.2-common (= 8.2.36-2001~bullseye20), php8.2-opcache, php8.2-readline, tzdata, ucf, libargon2-1 (>= 0~20171227), libc6 (>= 2.29), libpcre2-8-0 (>= 10.32), libsodium23 (>= 1.0.18), libssl1.1 (>= 1.1.1), libxml2 (>= 2.8.0), zlib1g (>= 1:1.1.4)
+Depends: libedit2 (>= 2.11-20080614-4), media-types | mime-support, php8.2-common (= 8.2.36-2001~bullseye41), php8.2-opcache, php8.2-readline, tzdata, ucf, libargon2-1 (>= 0~20171227), libc6 (>= 2.29), libpcre2-8-0 (>= 10.32), libsodium23 (>= 1.0.18), libssl1.1 (>= 1.1.1), libxml2 (>= 2.8.0), zlib1g (>= 1:1.1.4)
 Suggests: php-pear
 Provides: php-cli, php-json, php8.2-json, phpapi-20220829
 Homepage: http://www.php.net/
 Priority: optional
 Section: php
-Filename: pool/main/p/php8.2/php8.2-cli_8.2.36-2001~bullseye20_amd64.deb
-Size: 1727564
-SHA256: 00c5c405e4cfe55978de1b780f0ee8e6f1415d7bd28b65de5cc8de7000392e43
-SHA1: 8ef7478bf28d9bbc2ec7e7df1bacfa7acfda75ef
-MD5sum: a846bf2f7c8af618324e4bfc151903f2
+Filename: pool/main/p/php8.2/php8.2-cli_8.2.36-2001~bullseye41_amd64.deb
+Size: 1726884
+SHA256: 45c16fa6983dbee6bddd2e5b91c506fb48d861504b3abeafe39e483d9f709423
+SHA1: a42160d0b93e766fcf3fba8ab3f61f7630a6e047
+MD5sum: 5a308cd8420c4721a285d6119c7ce418
 Description: command-line interpreter for the PHP scripting language
  This package provides the /usr/bin/php8.2 command interpreter, useful for
  testing PHP scripts from a shell or performing general shell scripting tasks.
@@ -1256,7 +2050,7 @@ Description: command-line interpreter for the PHP scripting language
 
 Package: php8.2-common
 Source: php8.2
-Version: 8.2.36-2001~bullseye20
+Version: 8.2.36-2001~bullseye41
 Architecture: amd64
 Maintainer: Debian PHP Maintainers <team+pkg-php@tracker.debian.org>
 Installed-Size: 8461
@@ -1266,11 +2060,11 @@ Provides: php-calendar, php-ctype, php-exif, php-ffi, php-fileinfo, php-ftp, php
 Homepage: http://www.php.net/
 Priority: optional
 Section: php
-Filename: pool/main/p/php8.2/php8.2-common_8.2.36-2001~bullseye20_amd64.deb
-Size: 696928
-SHA256: 23ef0c8a88662ec75556dfa3a7cd0a2b4526b87a82abade8c1b159597591bdf8
-SHA1: fe6d3d075e8907693c27a4eb9af569732e7c21e1
-MD5sum: d7483d98ec376489ac4d864f41f9da8c
+Filename: pool/main/p/php8.2/php8.2-common_8.2.36-2001~bullseye41_amd64.deb
+Size: 696700
+SHA256: cc2cfdba8e84f84e7b584aaaa467788dea34d9d5c2c20dab4a3a47f718ca684d
+SHA1: 93b7a1b2feff7d251f872a27296a5362a4a59078
+MD5sum: 5314cd267883c006012fd0dc184fe002
 Description: documentation, examples and common module for PHP
  This package provides the documentation, examples and common module(s) for PHP.
  .
@@ -1280,21 +2074,21 @@ Description: documentation, examples and common module for PHP
 
 Package: php8.2-curl
 Source: php8.2
-Version: 8.2.36-2001~bullseye20
+Version: 8.2.36-2001~bullseye41
 Architecture: amd64
 Maintainer: Debian PHP Maintainers <team+pkg-php@tracker.debian.org>
 Installed-Size: 148
-Depends: php-common (>= 1:81~), ucf, php8.2-common (= 8.2.36-2001~bullseye20), libc6 (>= 2.14), libcurl4 (>= 7.63.0)
+Depends: php-common (>= 1:81~), ucf, php8.2-common (= 8.2.36-2001~bullseye41), libc6 (>= 2.14), libcurl4 (>= 7.63.0)
 Breaks: php7.0-curl (<< 7.0.33-1~)
 Provides: php-curl
 Homepage: http://www.php.net/
 Priority: optional
 Section: php
-Filename: pool/main/p/php8.2/php8.2-curl_8.2.36-2001~bullseye20_amd64.deb
-Size: 35424
-SHA256: 1f82ce4b8f416c43cf17f5f0f86f0472b3a9a89407c915ab93d04d7e3aa68cc7
-SHA1: 7f3420f61866ae7062b376410517d303cabf173d
-MD5sum: c3ff27b0bfb05d78b034e53969b1ba4c
+Filename: pool/main/p/php8.2/php8.2-curl_8.2.36-2001~bullseye41_amd64.deb
+Size: 35404
+SHA256: 502991bf866b88c4c5ca7d3139f16eb960746300679a9b6be09ed96ced369a35
+SHA1: 5e1824da95d70ccffa03e976b9cdf9804a7fbd11
+MD5sum: 9819b35b2d56af7c0f7f7b7ea7c987c2
 Description: CURL module for PHP
  This package provides the CURL module(s) for PHP.
  .
@@ -1304,20 +2098,20 @@ Description: CURL module for PHP
 
 Package: php8.2-dba
 Source: php8.2
-Version: 8.2.36-2001~bullseye20
+Version: 8.2.36-2001~bullseye41
 Architecture: amd64
 Maintainer: Debian PHP Maintainers <team+pkg-php@tracker.debian.org>
 Installed-Size: 96
-Depends: php-common (>= 1:81~), ucf, php8.2-common (= 8.2.36-2001~bullseye20), libc6 (>= 2.14), libdb5.3, liblmdb0 (>= 0.9.7), libqdbm14 (>= 1.8.74)
+Depends: php-common (>= 1:81~), ucf, php8.2-common (= 8.2.36-2001~bullseye41), libc6 (>= 2.14), libdb5.3, liblmdb0 (>= 0.9.7), libqdbm14 (>= 1.8.74)
 Provides: php-dba
 Homepage: http://www.php.net/
 Priority: optional
 Section: php
-Filename: pool/main/p/php8.2/php8.2-dba_8.2.36-2001~bullseye20_amd64.deb
+Filename: pool/main/p/php8.2/php8.2-dba_8.2.36-2001~bullseye41_amd64.deb
 Size: 23820
-SHA256: 0a895fb15cdbb2359fdac7ebcccbfa0f29e4f64870cf561dc7b41a0b4746890e
-SHA1: 8f3e5d2ad59b3e6615a467a2caa17205edc38349
-MD5sum: 61c04358a8077fec10ba01a23c0510b4
+SHA256: af628767c31b7aa84da602eb63702d46580c0d771413a504a357e24e485f90a8
+SHA1: fa808060fa633860934aa7d38cc554041e2d87ba
+MD5sum: 6fd821af0a5bb21f0ce312cc92a30a78
 Description: DBA module for PHP
  This package provides the DBA module(s) for PHP.
  .
@@ -1327,21 +2121,21 @@ Description: DBA module for PHP
 
 Package: php8.2-dev
 Source: php8.2
-Version: 8.2.36-2001~bullseye20
+Version: 8.2.36-2001~bullseye41
 Architecture: amd64
 Maintainer: Debian PHP Maintainers <team+pkg-php@tracker.debian.org>
 Installed-Size: 5447
-Depends: autoconf (>= 2.63), automake (>= 1.11), libpcre2-dev (>= 10.30), libssl-dev, php8.2-cli (>= 8.2.36-2001~bullseye20), php8.2-common (= 8.2.36-2001~bullseye20), pkg-config, shtool, libtool (>= 2.4.6-0.1~)
+Depends: autoconf (>= 2.63), automake (>= 1.11), libpcre2-dev (>= 10.30), libssl-dev, php8.2-cli (>= 8.2.36-2001~bullseye41), php8.2-common (= 8.2.36-2001~bullseye41), pkg-config, shtool, libtool (>= 2.4.6-0.1~)
 Recommends: pkg-php-tools
 Suggests: dh-php
 Homepage: http://www.php.net/
 Priority: optional
 Section: php
-Filename: pool/main/p/php8.2/php8.2-dev_8.2.36-2001~bullseye20_amd64.deb
-Size: 517132
-SHA256: 690bb04f33c1af85476116431bc9b4dbb0ea99d8feeaf7e5a8bc59325d574b98
-SHA1: d5304898d1c2fdb2849ec0a230ace4ea14df0fa5
-MD5sum: 37e53b548185e1dbeb7b2562892cb434
+Filename: pool/main/p/php8.2/php8.2-dev_8.2.36-2001~bullseye41_amd64.deb
+Size: 517096
+SHA256: 421685708b3e1106c184ab7e24d8c7ff26bf4424b9c7c017e43290d99abc5552
+SHA1: dbfda17b3d1189173aa4a42d927d9e1640c58186
+MD5sum: de9a4da977a04e6a9f680e1da7a8e738
 Description: Files for PHP8.2 module development
  This package provides the files from the PHP8.2 source needed for compiling
  additional modules.
@@ -1352,20 +2146,20 @@ Description: Files for PHP8.2 module development
 
 Package: php8.2-enchant
 Source: php8.2
-Version: 8.2.36-2001~bullseye20
+Version: 8.2.36-2001~bullseye41
 Architecture: amd64
 Maintainer: Debian PHP Maintainers <team+pkg-php@tracker.debian.org>
 Installed-Size: 56
-Depends: php-common (>= 1:81~), ucf, php8.2-common (= 8.2.36-2001~bullseye20), libc6 (>= 2.14), libenchant-2-2 (>= 2.2.3)
+Depends: php-common (>= 1:81~), ucf, php8.2-common (= 8.2.36-2001~bullseye41), libc6 (>= 2.14), libenchant-2-2 (>= 2.2.3)
 Provides: php-enchant
 Homepage: http://www.php.net/
 Priority: optional
 Section: php
-Filename: pool/main/p/php8.2/php8.2-enchant_8.2.36-2001~bullseye20_amd64.deb
-Size: 9384
-SHA256: 666229d4bd1331c6d7c7b7a96d189db25c5d6c53b4cf12f1e5b600aad4cbbf82
-SHA1: 1e764d244f9a48d3cb740a9fb1bc8a8444925371
-MD5sum: 6280448428a0b2aece76ee2275c0129b
+Filename: pool/main/p/php8.2/php8.2-enchant_8.2.36-2001~bullseye41_amd64.deb
+Size: 9364
+SHA256: f3816d4f2bac26149408fc4d4efbbf2819169598b4fda4abca26efe345ecbd43
+SHA1: 29e0eabf7d756affa8f16f6be6326e33c295b64c
+MD5sum: cd507fe1ab166b08946e81bf1a3529c8
 Description: Enchant module for PHP
  This package provides the Enchant module(s) for PHP.
  .
@@ -1375,21 +2169,21 @@ Description: Enchant module for PHP
 
 Package: php8.2-fpm
 Source: php8.2
-Version: 8.2.36-2001~bullseye20
+Version: 8.2.36-2001~bullseye41
 Architecture: amd64
 Maintainer: Debian PHP Maintainers <team+pkg-php@tracker.debian.org>
 Installed-Size: 5649
-Depends: media-types | mime-support, php8.2-cli, php8.2-common (= 8.2.36-2001~bullseye20), php8.2-opcache, procps, systemd | systemd-tmpfiles, tzdata, ucf, libacl1 (>= 2.2.23), libapparmor1 (>= 2.7.0~beta1+bzr1772), libargon2-1 (>= 0~20171227), libc6 (>= 2.29), libpcre2-8-0 (>= 10.32), libsodium23 (>= 1.0.18), libssl1.1 (>= 1.1.1), libsystemd0, libxml2 (>= 2.8.0), zlib1g (>= 1:1.1.4)
+Depends: media-types | mime-support, php8.2-cli, php8.2-common (= 8.2.36-2001~bullseye41), php8.2-opcache, procps, systemd | systemd-tmpfiles, tzdata, ucf, libacl1 (>= 2.2.23), libapparmor1 (>= 2.7.0~beta1+bzr1772), libargon2-1 (>= 0~20171227), libc6 (>= 2.29), libpcre2-8-0 (>= 10.32), libsodium23 (>= 1.0.18), libssl1.1 (>= 1.1.1), libsystemd0, libxml2 (>= 2.8.0), zlib1g (>= 1:1.1.4)
 Suggests: php-pear
 Provides: php-fpm, php-json, php8.2-json, phpapi-20220829
 Homepage: http://www.php.net/
 Priority: optional
 Section: php
-Filename: pool/main/p/php8.2/php8.2-fpm_8.2.36-2001~bullseye20_amd64.deb
-Size: 1740428
-SHA256: cf0aeca267a3ba0fecda4cebfa32a238572f47385e8f57178b66bafc8a925d7b
-SHA1: 255f2b1b3c21edb64e2457deb538468bbd996ff5
-MD5sum: 99bfb7270a80c70746e144a5f4bddb59
+Filename: pool/main/p/php8.2/php8.2-fpm_8.2.36-2001~bullseye41_amd64.deb
+Size: 1741544
+SHA256: d8387af5402ddb7c46f266bbd2855b13567999c9f013de227428a22370c80011
+SHA1: 956d8819162c8c79896bdb59253aed679be97ad4
+MD5sum: 67c46b9ade45f7326a31f6da53b56735
 Description: server-side, HTML-embedded scripting language (FPM-CGI binary)
  This package provides the Fast Process Manager interpreter that runs
  as a daemon and receives Fast/CGI requests.  Note that MOST Apache users
@@ -1404,20 +2198,20 @@ Description: server-side, HTML-embedded scripting language (FPM-CGI binary)
 
 Package: php8.2-gd
 Source: php8.2
-Version: 8.2.36-2001~bullseye20
+Version: 8.2.36-2001~bullseye41
 Architecture: amd64
 Maintainer: Debian PHP Maintainers <team+pkg-php@tracker.debian.org>
 Installed-Size: 136
-Depends: php-common (>= 1:81~), ucf, php8.2-common (= 8.2.36-2001~bullseye20), libc6 (>= 2.4), libgd3 (>= 2.1.1)
+Depends: php-common (>= 1:81~), ucf, php8.2-common (= 8.2.36-2001~bullseye41), libc6 (>= 2.4), libgd3 (>= 2.1.1)
 Provides: php-gd
 Homepage: http://www.php.net/
 Priority: optional
 Section: php
-Filename: pool/main/p/php8.2/php8.2-gd_8.2.36-2001~bullseye20_amd64.deb
-Size: 28932
-SHA256: 9b8b50f715bed2f307f2d4b2bade1b53574e81126ff416a71727454cd1c85cd3
-SHA1: e1ce793962a991f16cedef4ab8c03fdc0429cc00
-MD5sum: 3480d13015858f4db4434c6ae7a39a52
+Filename: pool/main/p/php8.2/php8.2-gd_8.2.36-2001~bullseye41_amd64.deb
+Size: 28860
+SHA256: 86c1b12908986c79cf070b7948f7202e2c6a29c0a5f853e0f1ff1bdadcdc03d2
+SHA1: 53d862ee592a2e3b78f31adaea2c583bef97b650
+MD5sum: 94fe8d688855b75b3afc059ae25433fa
 Description: GD module for PHP
  This package provides the GD module(s) for PHP.
  .
@@ -1427,20 +2221,20 @@ Description: GD module for PHP
 
 Package: php8.2-gmp
 Source: php8.2
-Version: 8.2.36-2001~bullseye20
+Version: 8.2.36-2001~bullseye41
 Architecture: amd64
 Maintainer: Debian PHP Maintainers <team+pkg-php@tracker.debian.org>
 Installed-Size: 100
-Depends: php-common (>= 1:81~), ucf, php8.2-common (= 8.2.36-2001~bullseye20), libc6 (>= 2.4), libgmp10
+Depends: php-common (>= 1:81~), ucf, php8.2-common (= 8.2.36-2001~bullseye41), libc6 (>= 2.4), libgmp10
 Provides: php-gmp
 Homepage: http://www.php.net/
 Priority: optional
 Section: php
-Filename: pool/main/p/php8.2/php8.2-gmp_8.2.36-2001~bullseye20_amd64.deb
-Size: 21172
-SHA256: ce1e763b099a30be8a547bb2f9d42dcb79e061131abb7c21637399095424439c
-SHA1: 337f80b4589d842f6847edf6ce86fb4241a0c1e6
-MD5sum: ac2fe9c77bac9a5c4f7ec44440daf789
+Filename: pool/main/p/php8.2/php8.2-gmp_8.2.36-2001~bullseye41_amd64.deb
+Size: 21212
+SHA256: 7da11018a15d9f4b4c1a54ef5b2881c6f8972cfd4a67aa152e7cfbe0dbf11945
+SHA1: 0d16cac631f723f374e3e6f126f4cd6d329f26bd
+MD5sum: 15881e58fc66a67e1babbfa0b0600372
 Description: GMP module for PHP
  This package provides the GMP module(s) for PHP.
  .
@@ -1450,20 +2244,20 @@ Description: GMP module for PHP
 
 Package: php8.2-imap
 Source: php8.2
-Version: 8.2.36-2001~bullseye20
+Version: 8.2.36-2001~bullseye41
 Architecture: amd64
 Maintainer: Debian PHP Maintainers <team+pkg-php@tracker.debian.org>
 Installed-Size: 140
-Depends: php-common (>= 1:81~), ucf, php8.2-common (= 8.2.36-2001~bullseye20), libc-client2007e, libc6 (>= 2.14)
+Depends: php-common (>= 1:81~), ucf, php8.2-common (= 8.2.36-2001~bullseye41), libc-client2007e, libc6 (>= 2.14)
 Provides: php-imap
 Homepage: http://www.php.net/
 Priority: optional
 Section: php
-Filename: pool/main/p/php8.2/php8.2-imap_8.2.36-2001~bullseye20_amd64.deb
-Size: 32852
-SHA256: 2da9f8c2e5d5aabfcbe2c4e78fb736e8392409142bdbdb0bc86664dd539eed4c
-SHA1: e285b0dc3cf5cbab483e71fcb3dfda87bce02144
-MD5sum: a27d5c838d2e62797ae7ecd20034c169
+Filename: pool/main/p/php8.2/php8.2-imap_8.2.36-2001~bullseye41_amd64.deb
+Size: 32884
+SHA256: 432f40199ea7281074c16412dec4b799599c4d06af18df902f0e166fd481b4b9
+SHA1: 64eddb39ad4c59942b9ca4ef9fe0d120854e62d6
+MD5sum: 138f377bc3ea0396111a3c2f01620bad
 Description: IMAP module for PHP
  This package provides the IMAP module(s) for PHP.
  .
@@ -1473,20 +2267,20 @@ Description: IMAP module for PHP
 
 Package: php8.2-interbase
 Source: php8.2
-Version: 8.2.36-2001~bullseye20
+Version: 8.2.36-2001~bullseye41
 Architecture: amd64
 Maintainer: Debian PHP Maintainers <team+pkg-php@tracker.debian.org>
 Installed-Size: 64
-Depends: php-common (>= 1:81~), ucf, php8.2-common (= 8.2.36-2001~bullseye20), libc6 (>= 2.14), libfbclient2 (>= 2.5.0.25784~ReleaseCandidate1.ds2)
+Depends: php-common (>= 1:81~), ucf, php8.2-common (= 8.2.36-2001~bullseye41), libc6 (>= 2.14), libfbclient2 (>= 2.5.0.25784~ReleaseCandidate1.ds2)
 Provides: php-pdo-firebird, php8.2-pdo-firebird
 Homepage: http://www.php.net/
 Priority: optional
 Section: php
-Filename: pool/main/p/php8.2/php8.2-interbase_8.2.36-2001~bullseye20_amd64.deb
-Size: 15372
-SHA256: 1c757e62a3205871b84c924e59e81bd314fdee9aa039a127a52ee087f279f4cd
-SHA1: 14da57f07156d5d3e77a3e03d05ddb3c18077906
-MD5sum: 1a62d4fba0557f0afd023689d96ebfe3
+Filename: pool/main/p/php8.2/php8.2-interbase_8.2.36-2001~bullseye41_amd64.deb
+Size: 15368
+SHA256: 655292af752fb901d6a9bceb5e62e6fbceecd8f0c61d6e75f47fc4886094adb8
+SHA1: 1cf285186d43ac040ad7a52d20e357e9c8597f27
+MD5sum: 51247e1f6efaf6fd77a22ad743843ac7
 Description: Interbase module for PHP
  This package provides the Interbase module(s) for PHP.
  .
@@ -1496,20 +2290,20 @@ Description: Interbase module for PHP
 
 Package: php8.2-intl
 Source: php8.2
-Version: 8.2.36-2001~bullseye20
+Version: 8.2.36-2001~bullseye41
 Architecture: amd64
 Maintainer: Debian PHP Maintainers <team+pkg-php@tracker.debian.org>
 Installed-Size: 600
-Depends: php-common (>= 1:81~), ucf, php8.2-common (= 8.2.36-2001~bullseye20), libc6 (>= 2.14), libgcc-s1 (>= 3.0), libicu67 (>= 67.1-1~), libstdc++6 (>= 4.9)
+Depends: php-common (>= 1:81~), ucf, php8.2-common (= 8.2.36-2001~bullseye41), libc6 (>= 2.14), libgcc-s1 (>= 3.0), libicu67 (>= 67.1-1~), libstdc++6 (>= 4.9)
 Provides: php-intl
 Homepage: http://www.php.net/
 Priority: optional
 Section: php
-Filename: pool/main/p/php8.2/php8.2-intl_8.2.36-2001~bullseye20_amd64.deb
-Size: 139356
-SHA256: 550e5110854bbac242121cbf470a78d9720e8577101cb1c3ed749db1238fbeff
-SHA1: ded0b241c206c6870546ac3cef89728dda9370af
-MD5sum: 557f646af1e8d288284e8817d06a303a
+Filename: pool/main/p/php8.2/php8.2-intl_8.2.36-2001~bullseye41_amd64.deb
+Size: 138952
+SHA256: 2b6b419f07284ebc5beec887c6857c9ef3a014d376e052f2af889e2259de4b41
+SHA1: f2d0440bcbae159ee141d9a7c6ffd025df225e2d
+MD5sum: 983365e774a5bc4bfb703aba8d20f0d4
 Description: Internationalisation module for PHP
  This package provides the Internationalisation module(s) for PHP.
  .
@@ -1519,20 +2313,20 @@ Description: Internationalisation module for PHP
 
 Package: php8.2-ldap
 Source: php8.2
-Version: 8.2.36-2001~bullseye20
+Version: 8.2.36-2001~bullseye41
 Architecture: amd64
 Maintainer: Debian PHP Maintainers <team+pkg-php@tracker.debian.org>
 Installed-Size: 128
-Depends: php-common (>= 1:81~), ucf, php8.2-common (= 8.2.36-2001~bullseye20), libc6 (>= 2.14), libldap-2.4-2 (>= 2.4.25)
+Depends: php-common (>= 1:81~), ucf, php8.2-common (= 8.2.36-2001~bullseye41), libc6 (>= 2.14), libldap-2.4-2 (>= 2.4.25)
 Provides: php-ldap
 Homepage: http://www.php.net/
 Priority: optional
 Section: php
-Filename: pool/main/p/php8.2/php8.2-ldap_8.2.36-2001~bullseye20_amd64.deb
-Size: 31176
-SHA256: ac81c49d549de47d08275b7890da74c284ed13e07220b55995a23aad18e2d8a5
-SHA1: 1a18511b5ff1b46a9e9b1442b8eb6c943a52b171
-MD5sum: 08decdca32615e3e90c4fd890e48e8ed
+Filename: pool/main/p/php8.2/php8.2-ldap_8.2.36-2001~bullseye41_amd64.deb
+Size: 31056
+SHA256: 82163cc2feaf9f947736c1a5705553c1c0262fcaa8f867a08e7415f32abb67c7
+SHA1: f7640a9a58591a4584ecd09da29c3e9d4c9d12ba
+MD5sum: 36a4b1fac184bbb4ed2c98b36a0d5166
 Description: LDAP module for PHP
  This package provides the LDAP module(s) for PHP.
  .
@@ -1542,21 +2336,21 @@ Description: LDAP module for PHP
 
 Package: php8.2-litespeed
 Source: php8.2
-Version: 8.2.36-2001~bullseye20
+Version: 8.2.36-2001~bullseye41
 Architecture: amd64
 Maintainer: Debian PHP Maintainers <team+pkg-php@tracker.debian.org>
 Installed-Size: 5467
-Depends: media-types | mime-support, php8.2-cli, php8.2-common (= 8.2.36-2001~bullseye20), procps, systemd | systemd-tmpfiles, tzdata, ucf, libargon2-1 (>= 0~20171227), libc6 (>= 2.29), libpcre2-8-0 (>= 10.32), libsodium23 (>= 1.0.18), libssl1.1 (>= 1.1.1), libxml2 (>= 2.8.0), zlib1g (>= 1:1.1.4)
+Depends: media-types | mime-support, php8.2-cli, php8.2-common (= 8.2.36-2001~bullseye41), procps, systemd | systemd-tmpfiles, tzdata, ucf, libargon2-1 (>= 0~20171227), libc6 (>= 2.29), libpcre2-8-0 (>= 10.32), libsodium23 (>= 1.0.18), libssl1.1 (>= 1.1.1), libxml2 (>= 2.8.0), zlib1g (>= 1:1.1.4)
 Suggests: php-pear
 Provides: php-json, php-litespeed, php8.2-json, phpapi-20220829
 Homepage: http://www.php.net/
 Priority: optional
 Section: php
-Filename: pool/main/p/php8.2/php8.2-litespeed_8.2.36-2001~bullseye20_amd64.deb
-Size: 1686356
-SHA256: 168ca48ee00281e2ce400378e03f8087b46bbbdc63fdfb08e7b4a953fa038aee
-SHA1: 7fff20cd2306c7285aa34538ba1c449549906a2a
-MD5sum: d47649d878e62b7ef971357f7b16bf20
+Filename: pool/main/p/php8.2/php8.2-litespeed_8.2.36-2001~bullseye41_amd64.deb
+Size: 1685996
+SHA256: 6b1eaa6a669358d5781a63d1067bb72f1cc1d6e2da957b0907d4b4f956f4a0b4
+SHA1: e9ffa39945b446c167fe87409b38921bb79329c2
+MD5sum: aa01875e35f0bd8b749b3dbdf215fb27
 Description: server-side, HTML-embedded scripting language (LiteSpeed binary)
  This package provides the LiteSpeed SAPI module that provides a dedicated
  interface for PHP integration with OpenLiteSpeed or LiteSpeed Web Server.
@@ -1570,20 +2364,20 @@ Description: server-side, HTML-embedded scripting language (LiteSpeed binary)
 
 Package: php8.2-mbstring
 Source: php8.2
-Version: 8.2.36-2001~bullseye20
+Version: 8.2.36-2001~bullseye41
 Architecture: amd64
 Maintainer: Debian PHP Maintainers <team+pkg-php@tracker.debian.org>
 Installed-Size: 1206
-Depends: php-common (>= 1:81~), ucf, php8.2-common (= 8.2.36-2001~bullseye20), libc6 (>= 2.14), libonig5 (>= 6.8.1)
+Depends: php-common (>= 1:81~), ucf, php8.2-common (= 8.2.36-2001~bullseye41), libc6 (>= 2.14), libonig5 (>= 6.8.1)
 Provides: php-mbstring
 Homepage: http://www.php.net/
 Priority: optional
 Section: php
-Filename: pool/main/p/php8.2/php8.2-mbstring_8.2.36-2001~bullseye20_amd64.deb
-Size: 442728
-SHA256: f7ee5b8e662aa5b1b312b24e6965f9daaa1184109cbc217ed94e2d6522e18542
-SHA1: 56f6b1a8ed8b2545f0c692d30216aeee92e3d301
-MD5sum: d61cea792eae851ec0a3db4204f91339
+Filename: pool/main/p/php8.2/php8.2-mbstring_8.2.36-2001~bullseye41_amd64.deb
+Size: 442580
+SHA256: d4703164bebc59bb1b9d101b48cf74adca7e8cd4e0c2120663765f63aeb1f31a
+SHA1: a887f5e2964e7d097e56c566f7a383313a7581b7
+MD5sum: 939b4e12ec269e4a527f3990659b1932
 Description: MBSTRING module for PHP
  This package provides the MBSTRING module(s) for PHP.
  .
@@ -1593,20 +2387,20 @@ Description: MBSTRING module for PHP
 
 Package: php8.2-mysql
 Source: php8.2
-Version: 8.2.36-2001~bullseye20
+Version: 8.2.36-2001~bullseye41
 Architecture: amd64
 Maintainer: Debian PHP Maintainers <team+pkg-php@tracker.debian.org>
 Installed-Size: 455
-Depends: php-common (>= 1:81~), ucf, php8.2-common (= 8.2.36-2001~bullseye20), libc6 (>= 2.15)
+Depends: php-common (>= 1:81~), ucf, php8.2-common (= 8.2.36-2001~bullseye41), libc6 (>= 2.15)
 Provides: php-mysqli, php-mysqlnd, php-pdo-mysql, php8.2-mysqli, php8.2-mysqlnd, php8.2-pdo-mysql
 Homepage: http://www.php.net/
 Priority: optional
 Section: php
-Filename: pool/main/p/php8.2/php8.2-mysql_8.2.36-2001~bullseye20_amd64.deb
-Size: 117888
-SHA256: 36bf3464341db239c5359afa8eb7c4a897efdc4e060c4fe687c0980273060d3a
-SHA1: 278b89f49640429f4d3e6092777f23c00abe9fa6
-MD5sum: a3f18c8af0dd7e2ff856fcfdc90851ef
+Filename: pool/main/p/php8.2/php8.2-mysql_8.2.36-2001~bullseye41_amd64.deb
+Size: 117944
+SHA256: 8f70522424f10f54b5905b4bfb94151aaa5e92c002f2f1fe49ba1033dfc6227b
+SHA1: 3b28991c24164da9c8428e52a3941f132106da75
+MD5sum: 7915742bd904e3aaacd6fd35571774d9
 Description: MySQL module for PHP
  This package provides the MySQL module(s) for PHP.
  .
@@ -1616,20 +2410,20 @@ Description: MySQL module for PHP
 
 Package: php8.2-odbc
 Source: php8.2
-Version: 8.2.36-2001~bullseye20
+Version: 8.2.36-2001~bullseye41
 Architecture: amd64
 Maintainer: Debian PHP Maintainers <team+pkg-php@tracker.debian.org>
 Installed-Size: 140
-Depends: php-common (>= 1:81~), ucf, php8.2-common (= 8.2.36-2001~bullseye20), libc6 (>= 2.14), libodbc1 (>= 2.3.1)
+Depends: php-common (>= 1:81~), ucf, php8.2-common (= 8.2.36-2001~bullseye41), libc6 (>= 2.14), libodbc1 (>= 2.3.1)
 Provides: php-odbc, php-pdo-odbc, php8.2-pdo-odbc
 Homepage: http://www.php.net/
 Priority: optional
 Section: php
-Filename: pool/main/p/php8.2/php8.2-odbc_8.2.36-2001~bullseye20_amd64.deb
-Size: 33316
-SHA256: 0379514e5f1c981dbf605ded75fec90dad82537ba59ac11a0407737401c0f668
-SHA1: 7ec0ca1ef780b5f7b9fa0c048f56a547ae37b338
-MD5sum: 6b87af20c069378fb9e177c48ee03863
+Filename: pool/main/p/php8.2/php8.2-odbc_8.2.36-2001~bullseye41_amd64.deb
+Size: 33372
+SHA256: 6f655c4b9a22f55d996bee2b1f88d1dccfba14e2a69e9e18036f2474d8762ea8
+SHA1: 7f0a14e78ca9d86c21e63bc1ed34e6f4cd2c5770
+MD5sum: aab366e751dfa0b1556afcb58a9a48d4
 Description: ODBC module for PHP
  This package provides the ODBC module(s) for PHP.
  .
@@ -1639,20 +2433,20 @@ Description: ODBC module for PHP
 
 Package: php8.2-opcache
 Source: php8.2
-Version: 8.2.36-2001~bullseye20
+Version: 8.2.36-2001~bullseye41
 Architecture: amd64
 Maintainer: Debian PHP Maintainers <team+pkg-php@tracker.debian.org>
 Installed-Size: 1028
-Depends: php-common (>= 1:81~), ucf, php8.2-common (= 8.2.36-2001~bullseye20), libc6 (>= 2.27), libgcc-s1 (>= 3.3)
+Depends: php-common (>= 1:81~), ucf, php8.2-common (= 8.2.36-2001~bullseye41), libc6 (>= 2.27), libgcc-s1 (>= 3.3)
 Provides: php-opcache
 Homepage: http://www.php.net/
 Priority: optional
 Section: php
-Filename: pool/main/p/php8.2/php8.2-opcache_8.2.36-2001~bullseye20_amd64.deb
-Size: 342336
-SHA256: 5081a0015ad41079505265f1a7f3480e4bec8acb82edfb763b6af3ad303fe4d7
-SHA1: 505f56eca5767ca8153999e867bfd1e41c65265e
-MD5sum: eecce6c3bde5013ee7abfbd89f702507
+Filename: pool/main/p/php8.2/php8.2-opcache_8.2.36-2001~bullseye41_amd64.deb
+Size: 342408
+SHA256: 64aa9a58a8207c274afedb0b69e2324b06be0e07c374239f5b2feeb57d84a4a2
+SHA1: b2b7977c40dc3f2f7ab5ed00182f975e795b05dd
+MD5sum: 75f0def2086f592105de544df098914f
 Description: Zend OpCache module for PHP
  This package provides the Zend OpCache module(s) for PHP.
  .
@@ -1662,20 +2456,20 @@ Description: Zend OpCache module for PHP
 
 Package: php8.2-pgsql
 Source: php8.2
-Version: 8.2.36-2001~bullseye20
+Version: 8.2.36-2001~bullseye41
 Architecture: amd64
 Maintainer: Debian PHP Maintainers <team+pkg-php@tracker.debian.org>
 Installed-Size: 220
-Depends: php-common (>= 1:81~), ucf, php8.2-common (= 8.2.36-2001~bullseye20), libc6 (>= 2.14), libpq5 (>= 9.3~)
+Depends: php-common (>= 1:81~), ucf, php8.2-common (= 8.2.36-2001~bullseye41), libc6 (>= 2.14), libpq5 (>= 9.3~)
 Provides: php-pdo-pgsql, php-pgsql, php8.2-pdo-pgsql
 Homepage: http://www.php.net/
 Priority: optional
 Section: php
-Filename: pool/main/p/php8.2/php8.2-pgsql_8.2.36-2001~bullseye20_amd64.deb
-Size: 58308
-SHA256: 927b2fe64965f1d99227054cdf3ae03a8902eabfb32f72a218f9b92c0390f955
-SHA1: 072422f2892ff0ca614f7f3432b47de47a31c250
-MD5sum: c2a0c81d9e800e118a34f8124d2d321d
+Filename: pool/main/p/php8.2/php8.2-pgsql_8.2.36-2001~bullseye41_amd64.deb
+Size: 58252
+SHA256: 5e3d1881828d027169a4f93aef722bd9e18fe90f6092609216d123bdbb481fa3
+SHA1: 3f602e8d07722bc3e56c85bcbb1bfdb38fe5e80c
+MD5sum: 672649b34cdce0ce594e08af7f667b24
 Description: PostgreSQL module for PHP
  This package provides the PostgreSQL module(s) for PHP.
  .
@@ -1685,21 +2479,21 @@ Description: PostgreSQL module for PHP
 
 Package: php8.2-phpdbg
 Source: php8.2
-Version: 8.2.36-2001~bullseye20
+Version: 8.2.36-2001~bullseye41
 Architecture: amd64
 Maintainer: Debian PHP Maintainers <team+pkg-php@tracker.debian.org>
 Installed-Size: 5645
-Depends: media-types | mime-support, php8.2-cli, php8.2-common (= 8.2.36-2001~bullseye20), php8.2-opcache, tzdata, ucf, libargon2-1 (>= 0~20171227), libc6 (>= 2.29), libpcre2-8-0 (>= 10.32), libsodium23 (>= 1.0.18), libssl1.1 (>= 1.1.1), libxml2 (>= 2.8.0), zlib1g (>= 1:1.1.4)
+Depends: media-types | mime-support, php8.2-cli, php8.2-common (= 8.2.36-2001~bullseye41), php8.2-opcache, tzdata, ucf, libargon2-1 (>= 0~20171227), libc6 (>= 2.29), libpcre2-8-0 (>= 10.32), libsodium23 (>= 1.0.18), libssl1.1 (>= 1.1.1), libxml2 (>= 2.8.0), zlib1g (>= 1:1.1.4)
 Recommends: php-readline
 Provides: php-json, php-phpdbg, php8.2-json, phpapi-20220829
 Homepage: http://www.php.net/
 Priority: optional
 Section: php
-Filename: pool/main/p/php8.2/php8.2-phpdbg_8.2.36-2001~bullseye20_amd64.deb
-Size: 1745544
-SHA256: 3407e3c52efb47ca6f6d4ff01eb533ae79ee1ca1dbfdd3f0e8a9a02a56048e7e
-SHA1: 6442e3526c0550e9b842db60c96888088a5d00c8
-MD5sum: 91072f0ce0a70ea60818ed6cabe7c6ca
+Filename: pool/main/p/php8.2/php8.2-phpdbg_8.2.36-2001~bullseye41_amd64.deb
+Size: 1746736
+SHA256: 1964a467eadf4abd0c6bcf9877fe2975fad1302d11b41f02660894d6106b20dd
+SHA1: 5117e41a6c5de4f5a93140c43573f8085fad6dfa
+MD5sum: d09e2bd596f63b84d822d05f9b30050f
 Description: server-side, HTML-embedded scripting language (PHPDBG binary)
  This package provides the /usr/bin/phpdbg command interpreter, useful for
  stepthrough debugging of PHP code.
@@ -1713,20 +2507,20 @@ Description: server-side, HTML-embedded scripting language (PHPDBG binary)
 
 Package: php8.2-pspell
 Source: php8.2
-Version: 8.2.36-2001~bullseye20
+Version: 8.2.36-2001~bullseye41
 Architecture: amd64
 Maintainer: Debian PHP Maintainers <team+pkg-php@tracker.debian.org>
 Installed-Size: 56
-Depends: php-common (>= 1:81~), ucf, php8.2-common (= 8.2.36-2001~bullseye20), libaspell15 (>= 0.60.8), libc6 (>= 2.4)
+Depends: php-common (>= 1:81~), ucf, php8.2-common (= 8.2.36-2001~bullseye41), libaspell15 (>= 0.60.8), libc6 (>= 2.4)
 Provides: php-pspell
 Homepage: http://www.php.net/
 Priority: optional
 Section: php
-Filename: pool/main/p/php8.2/php8.2-pspell_8.2.36-2001~bullseye20_amd64.deb
-Size: 8808
-SHA256: ce61b812000eb7b5f27e9921c9118c24d111bc6f7f7c5005a3c5b57edc1af537
-SHA1: acfbe330db86610d057bc65f2b22d38e263da9e8
-MD5sum: e9d1d7f9e06e689ad46e619124f1300a
+Filename: pool/main/p/php8.2/php8.2-pspell_8.2.36-2001~bullseye41_amd64.deb
+Size: 8812
+SHA256: e985dcf3e711c0315b459257e0cc622db5138e8033bfce097de200d05c663520
+SHA1: 37f10b2720d07a9a8ceb0766da2ab36ca2a6c6d9
+MD5sum: 972eb47a22ca65fc5f44f918878257a4
 Description: pspell module for PHP
  This package provides the pspell module(s) for PHP.
  .
@@ -1736,20 +2530,20 @@ Description: pspell module for PHP
 
 Package: php8.2-readline
 Source: php8.2
-Version: 8.2.36-2001~bullseye20
+Version: 8.2.36-2001~bullseye41
 Architecture: amd64
 Maintainer: Debian PHP Maintainers <team+pkg-php@tracker.debian.org>
 Installed-Size: 64
-Depends: php-common (>= 1:81~), ucf, php8.2-common (= 8.2.36-2001~bullseye20), libc6 (>= 2.14), libedit2 (>= 3.1-20160903-0)
+Depends: php-common (>= 1:81~), ucf, php8.2-common (= 8.2.36-2001~bullseye41), libc6 (>= 2.14), libedit2 (>= 3.1-20160903-0)
 Provides: php-readline
 Homepage: http://www.php.net/
 Priority: optional
 Section: php
-Filename: pool/main/p/php8.2/php8.2-readline_8.2.36-2001~bullseye20_amd64.deb
-Size: 12548
-SHA256: 7ced302835e66fbb5ecd6cfcc53219589bfd8c1d771d7948a2e34ee1dd0facd7
-SHA1: 493ba5eaf59cf3b324f08a6a6b602c4408ed063a
-MD5sum: 64cde4300e44382b2e3075c59227aeb7
+Filename: pool/main/p/php8.2/php8.2-readline_8.2.36-2001~bullseye41_amd64.deb
+Size: 12540
+SHA256: 3aa9569203e3df4731c72b994fab8b3b9e2822b1a2722a0e7090ae1c4fb7b159
+SHA1: 51ea08e9a5fcb4fdf0021624b955e9569c519dcf
+MD5sum: 1aa93830c187f5a9119362a836a2b3c0
 Description: readline module for PHP
  This package provides the readline module(s) for PHP.
  .
@@ -1759,21 +2553,21 @@ Description: readline module for PHP
 
 Package: php8.2-snmp
 Source: php8.2
-Version: 8.2.36-2001~bullseye20
+Version: 8.2.36-2001~bullseye41
 Architecture: amd64
 Maintainer: Debian PHP Maintainers <team+pkg-php@tracker.debian.org>
 Installed-Size: 92
-Depends: php-common (>= 1:81~), ucf, php8.2-common (= 8.2.36-2001~bullseye20), libc6 (>= 2.14), libsnmp40 (>= 5.9+dfsg)
+Depends: php-common (>= 1:81~), ucf, php8.2-common (= 8.2.36-2001~bullseye41), libc6 (>= 2.14), libsnmp40 (>= 5.9+dfsg)
 Recommends: snmp
 Provides: php-snmp
 Homepage: http://www.php.net/
 Priority: optional
 Section: php
-Filename: pool/main/p/php8.2/php8.2-snmp_8.2.36-2001~bullseye20_amd64.deb
-Size: 22036
-SHA256: 065c9bc50fefbaca3ea9233b04441713381e1d8e0905da7c3f86fd171a47179a
-SHA1: 812f8530bebbbad0ff19b939060351120f3c82a5
-MD5sum: b3f0f1fc9872f27f1110a80f8b8378b3
+Filename: pool/main/p/php8.2/php8.2-snmp_8.2.36-2001~bullseye41_amd64.deb
+Size: 22008
+SHA256: 0962fcb7726b12c39ba5cfc4202d5ce616411f5733681990a2c64756df74f002
+SHA1: bb8d0e7d9b5ed51f02c972725952d2828329cede
+MD5sum: a761dc053baf61cd3ef737669cfea952
 Description: SNMP module for PHP
  This package provides the SNMP module(s) for PHP.
  .
@@ -1783,20 +2577,20 @@ Description: SNMP module for PHP
 
 Package: php8.2-soap
 Source: php8.2
-Version: 8.2.36-2001~bullseye20
+Version: 8.2.36-2001~bullseye41
 Architecture: amd64
 Maintainer: Debian PHP Maintainers <team+pkg-php@tracker.debian.org>
 Installed-Size: 360
-Depends: php-common (>= 1:81~), ucf, php8.2-common (= 8.2.36-2001~bullseye20), libc6 (>= 2.14), libxml2 (>= 2.7.4)
+Depends: php-common (>= 1:81~), ucf, php8.2-common (= 8.2.36-2001~bullseye41), libc6 (>= 2.14), libxml2 (>= 2.7.4)
 Provides: php-soap
 Homepage: http://www.php.net/
 Priority: optional
 Section: php
-Filename: pool/main/p/php8.2/php8.2-soap_8.2.36-2001~bullseye20_amd64.deb
-Size: 124112
-SHA256: 0a31b61b4eaa829a84a35796972fc55f9845111a7ddbd4ffc8ec0134c3d91cf0
-SHA1: 4fc6b875afbedcd09359223dd5423bfb5779061d
-MD5sum: 0e7aff62d0e97f39d2e0138d82955e37
+Filename: pool/main/p/php8.2/php8.2-soap_8.2.36-2001~bullseye41_amd64.deb
+Size: 124040
+SHA256: 9eb3829714976f6ee5c6da357478d65ea199ec3019826fdfea7e9fb05577eff8
+SHA1: f434eb9976bd97aa2afd4da78496a8ba5910a6b2
+MD5sum: 355fd49a9fc3e70834db28a5c0ae2375
 Description: SOAP module for PHP
  This package provides the SOAP module(s) for PHP.
  .
@@ -1806,20 +2600,20 @@ Description: SOAP module for PHP
 
 Package: php8.2-sqlite3
 Source: php8.2
-Version: 8.2.36-2001~bullseye20
+Version: 8.2.36-2001~bullseye41
 Architecture: amd64
 Maintainer: Debian PHP Maintainers <team+pkg-php@tracker.debian.org>
 Installed-Size: 140
-Depends: php-common (>= 1:81~), ucf, php8.2-common (= 8.2.36-2001~bullseye20), libc6 (>= 2.14), libsqlite3-0 (>= 3.14.0)
+Depends: php-common (>= 1:81~), ucf, php8.2-common (= 8.2.36-2001~bullseye41), libc6 (>= 2.14), libsqlite3-0 (>= 3.14.0)
 Provides: php-pdo-sqlite, php-sqlite3, php8.2-pdo-sqlite
 Homepage: http://www.php.net/
 Priority: optional
 Section: php
-Filename: pool/main/p/php8.2/php8.2-sqlite3_8.2.36-2001~bullseye20_amd64.deb
-Size: 30504
-SHA256: d807838c1efb09af8281483d2c56434ab19d356e313ef2495adf86997b390928
-SHA1: 48df4390073f2de4cf038a71f620207d72a6f3eb
-MD5sum: 6509ae9d10109de21a4dace5b8ff317e
+Filename: pool/main/p/php8.2/php8.2-sqlite3_8.2.36-2001~bullseye41_amd64.deb
+Size: 30556
+SHA256: 5f83df7717c8f39132d9423ffc854972902d9a1b190fa4f146d5136c56a274e1
+SHA1: 0c0190fa4001ad3bafe5434d4e967931e8ebf872
+MD5sum: 4d9323c29c28aa63385de56f25d2edf3
 Description: SQLite3 module for PHP
  This package provides the SQLite3 module(s) for PHP.
  .
@@ -1829,20 +2623,20 @@ Description: SQLite3 module for PHP
 
 Package: php8.2-sybase
 Source: php8.2
-Version: 8.2.36-2001~bullseye20
+Version: 8.2.36-2001~bullseye41
 Architecture: amd64
 Maintainer: Debian PHP Maintainers <team+pkg-php@tracker.debian.org>
 Installed-Size: 60
-Depends: php-common (>= 1:81~), ucf, php8.2-common (= 8.2.36-2001~bullseye20), libc6 (>= 2.14), libsybdb5 (>= 0.63)
+Depends: php-common (>= 1:81~), ucf, php8.2-common (= 8.2.36-2001~bullseye41), libc6 (>= 2.14), libsybdb5 (>= 0.63)
 Provides: php-pdo-dblib, php8.2-pdo-dblib
 Homepage: http://www.php.net/
 Priority: optional
 Section: php
-Filename: pool/main/p/php8.2/php8.2-sybase_8.2.36-2001~bullseye20_amd64.deb
+Filename: pool/main/p/php8.2/php8.2-sybase_8.2.36-2001~bullseye41_amd64.deb
 Size: 12012
-SHA256: c797633f3372023436e50ec09b1c887f065b61c61fe00ee8ba1ca7c65860957b
-SHA1: c9ac4a88e47052bd2eed18024f2519aa2b199160
-MD5sum: febfae732f9dc62a6e4d9e484ed5f771
+SHA256: 0005512a491af5b3f97b57c632e5cbb2a3f7425fc35d2bf469f36d21b68e6ba1
+SHA1: aa0c56ca1e19973bde1338be4e5e5097f5abe375
+MD5sum: a8c87f786828b94027723ec393e640fb
 Description: Sybase module for PHP
  This package provides the Sybase module(s) for PHP.
  .
@@ -1852,20 +2646,20 @@ Description: Sybase module for PHP
 
 Package: php8.2-tidy
 Source: php8.2
-Version: 8.2.36-2001~bullseye20
+Version: 8.2.36-2001~bullseye41
 Architecture: amd64
 Maintainer: Debian PHP Maintainers <team+pkg-php@tracker.debian.org>
 Installed-Size: 92
-Depends: php-common (>= 1:81~), ucf, php8.2-common (= 8.2.36-2001~bullseye20), libc6 (>= 2.14), libtidy5deb1 (>= 1:5.2.0)
+Depends: php-common (>= 1:81~), ucf, php8.2-common (= 8.2.36-2001~bullseye41), libc6 (>= 2.14), libtidy5deb1 (>= 1:5.2.0)
 Provides: php-tidy
 Homepage: http://www.php.net/
 Priority: optional
 Section: php
-Filename: pool/main/p/php8.2/php8.2-tidy_8.2.36-2001~bullseye20_amd64.deb
-Size: 19004
-SHA256: 394cde98394c9ec277e7581ac24860c89880b17d5fdb0e15711500ef53171457
-SHA1: ec82c5cae4c8f40afafea1262c5eb69e653beb3c
-MD5sum: d117cc250d07ad979ff8feea2e6af93e
+Filename: pool/main/p/php8.2/php8.2-tidy_8.2.36-2001~bullseye41_amd64.deb
+Size: 18936
+SHA256: 3dd274c0599fbb4611a2f7e03428ace21573f33c72a8b1a6edfc6b06b0cb625a
+SHA1: 1e470cbc10b6723e87820039d993ce624197d184
+MD5sum: 8245c99c2c786b7575cc0b9336378256
 Description: tidy module for PHP
  This package provides the tidy module(s) for PHP.
  .
@@ -1875,22 +2669,22 @@ Description: tidy module for PHP
 
 Package: php8.2-xml
 Source: php8.2
-Version: 8.2.36-2001~bullseye20
+Version: 8.2.36-2001~bullseye41
 Architecture: amd64
 Maintainer: Debian PHP Maintainers <team+pkg-php@tracker.debian.org>
 Installed-Size: 481
-Depends: php-common (>= 1:81~), ucf, php8.2-common (= 8.2.36-2001~bullseye20), libc6 (>= 2.14), libxml2 (>= 2.9.0), libxslt1.1 (>= 1.1.25)
+Depends: php-common (>= 1:81~), ucf, php8.2-common (= 8.2.36-2001~bullseye41), libc6 (>= 2.14), libxml2 (>= 2.9.0), libxslt1.1 (>= 1.1.25)
 Breaks: php8.2-xsl (<< 7.0.3-6~)
 Replaces: php8.2-xsl (<< 7.0.3-6~)
 Provides: php-dom, php-simplexml, php-xml, php-xmlreader, php-xmlwriter, php-xsl, php8.2-dom, php8.2-simplexml, php8.2-xmlreader, php8.2-xmlwriter, php8.2-xsl
 Homepage: http://www.php.net/
 Priority: optional
 Section: php
-Filename: pool/main/p/php8.2/php8.2-xml_8.2.36-2001~bullseye20_amd64.deb
-Size: 113280
-SHA256: 86d7da6cf623e7b6737d483bb75defff0547dd4c6083e541bad885beeea2c04c
-SHA1: 7271a2d5c6edb9d4c46da92ff7ec443a7215bc45
-MD5sum: 1eb9c858a090de51a6962b9957c87ea5
+Filename: pool/main/p/php8.2/php8.2-xml_8.2.36-2001~bullseye41_amd64.deb
+Size: 113076
+SHA256: 1d19309a513e71e8f2335a9a7e7150dc61a16e272bed992367c7720e90151232
+SHA1: 2f214243ff995fc417832b22f7dad1371735da4a
+MD5sum: a30fbaeeedc1356c08e5a93e2437da67
 Description: DOM, SimpleXML, XML, and XSL module for PHP
  This package provides the DOM, SimpleXML, XML, and XSL module(s) for PHP.
  .
@@ -1900,7 +2694,7 @@ Description: DOM, SimpleXML, XML, and XSL module for PHP
 
 Package: php8.2-xsl
 Source: php8.2
-Version: 8.2.36-2001~bullseye20
+Version: 8.2.36-2001~bullseye41
 Architecture: all
 Maintainer: Debian PHP Maintainers <team+pkg-php@tracker.debian.org>
 Installed-Size: 87
@@ -1908,31 +2702,31 @@ Depends: php8.2-common, php8.2-xml
 Homepage: http://www.php.net/
 Priority: optional
 Section: php
-Filename: pool/main/p/php8.2/php8.2-xsl_8.2.36-2001~bullseye20_all.deb
+Filename: pool/main/p/php8.2/php8.2-xsl_8.2.36-2001~bullseye41_all.deb
 Size: 55384
-SHA256: 930bddf9a063a5c091f9fd9d5bdc6c5e2aa285b34023bf0ed5288aef573ef1c4
-SHA1: c3eb051f95e3e435e208f006bd8dc2c37e745487
-MD5sum: dc7efff7ae87c6de650c3f6e9cc63fc2
+SHA256: 157e2c0bfa45318b0c7421d56945d0c5867398c93fa0671c4810fa5d263ab1f7
+SHA1: 539fee250cce9a357e37e274885e289fc181bda0
+MD5sum: 0ffd866e4dd1232f4cf9bbe300930ef2
 Description: XSL module for PHP (dummy)
  This package is a transitional dummy package and can be safely
  removed.
 
 Package: php8.2-zip
 Source: php8.2
-Version: 8.2.36-2001~bullseye20
+Version: 8.2.36-2001~bullseye41
 Architecture: amd64
 Maintainer: Debian PHP Maintainers <team+pkg-php@tracker.debian.org>
 Installed-Size: 120
-Depends: php-common (>= 1:81~), ucf, php8.2-common (= 8.2.36-2001~bullseye20), libc6 (>= 2.27), libzip4 (>= 1.7.0)
+Depends: php-common (>= 1:81~), ucf, php8.2-common (= 8.2.36-2001~bullseye41), libc6 (>= 2.27), libzip4 (>= 1.7.0)
 Provides: php-zip
 Homepage: http://www.php.net/
 Priority: optional
 Section: php
-Filename: pool/main/p/php8.2/php8.2-zip_8.2.36-2001~bullseye20_amd64.deb
-Size: 26228
-SHA256: c35f9bae0a1580a917b1dcb13da57d1de52bc3d2a26031dfd8df62c1f7e56dd3
-SHA1: 7a03d26dd5ac5a6a881f5362c55c4c9378d9d85d
-MD5sum: a2a9d8752a89a7f4d364cf355c7964a0
+Filename: pool/main/p/php8.2/php8.2-zip_8.2.36-2001~bullseye41_amd64.deb
+Size: 26184
+SHA256: 6c6be0b4c94396a16bbf7d4b230a7f3be5c7ca891207cfe3c0a05c2b57e8b827
+SHA1: c201c5d3aa6b4315bf86dad2436bf49df0e2cd19
+MD5sum: 447b0dbe3c03de0571479bccdf2e3101
 Description: Zip module for PHP
  This package provides the Zip module(s) for PHP.
  .
