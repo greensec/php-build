@@ -97,17 +97,25 @@ curl -fsSL "https://keyserver.ubuntu.com/pks/lookup?op=get&search=0x4F4EA0AAE526
     -o /etc/apt/keyrings/ppa.asc
 gpg --dearmor --yes </etc/apt/keyrings/ppa.asc >/etc/apt/keyrings/ppa.gpg
 cat >/etc/apt/sources.list.d/sury.list <<EOF
-# binaries for build-deps: upstream pruned the whole bullseye pool
-# (index intact, every .deb 404s) - the greensec mirror kept the files
-deb [signed-by=/etc/apt/keyrings/sury.gpg] $SURY_BIN/ $DIST main
 deb-src [signed-by=/etc/apt/keyrings/sury.gpg] $SURY/ $SRC_DIST main
 # the Ubuntu PPA pool keeps the last EOL-branch packaging (php5.6-8.1)
 # even where debian dists dropped it
 deb-src [signed-by=/etc/apt/keyrings/ppa.gpg] $PPA/ $PPA_SUITE main
+EOF
+case "$DIST" in
+    bullseye)
+        # binaries for build-deps: upstream pruned the whole bullseye pool
+        # (index intact, every .deb 404s) - the greensec mirror kept the files.
+        # buster is skipped: the mirror's buster metadata is empty (NOSPLIT)
+        # and upstream never had a buster Release for this repo at all.
+        cat >>/etc/apt/sources.list.d/sury.list <<EOF
+deb [signed-by=/etc/apt/keyrings/sury.gpg] $SURY_BIN/ $DIST main
 # last packaging for EOL branches lives here; pool files are gone upstream,
 # so this only works again if sury ever restores them
 deb-src [signed-by=/etc/apt/keyrings/sury.gpg] $SURY/ $DIST main
 EOF
+        ;;
+esac
 
 # sury backports a few libraries for DIST (pcre2, gd, xml2 - only ones in the
 # mirror pool that outrank the distro). Building against them would leak
