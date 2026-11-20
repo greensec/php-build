@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>php-build - PHP packages for EOL Debian suites</title>
+<style>
+  :root {
+    --bg: #0d1117; --fg: #e6edf3; --mut: #8b949e; --acc: #58a6ff;
+    --card: #161b22; --border: #30363d; --code: #0a0d12;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--bg); color: var(--fg);
+    font: 16px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  }
+  main { max-width: 860px; margin: 0 auto; padding: 2.5rem 1.25rem 4rem; }
+  h1 { font-size: 1.9rem; margin: 0 0 .25rem; }
+  h2 { font-size: 1.25rem; margin: 2.25rem 0 .75rem; border-bottom: 1px solid var(--border); padding-bottom: .35rem; }
+  .tag { color: var(--mut); font-size: 1.05rem; margin-top: 0; }
+  a { color: var(--acc); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  code, pre { font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace; }
+  pre {
+    background: var(--code); border: 1px solid var(--border); border-radius: 6px;
+    padding: .9rem 1rem; overflow-x: auto; font-size: .85rem; line-height: 1.5;
+  }
+  code { background: var(--code); border-radius: 4px; padding: .1em .35em; font-size: .88em; }
+  pre code { background: none; padding: 0; }
+  .card {
+    background: var(--card); border: 1px solid var(--border); border-radius: 8px;
+    padding: 1rem 1.25rem; margin: .9rem 0;
+  }
+  table { width: 100%; border-collapse: collapse; font-size: .92rem; }
+  th, td { text-align: left; padding: .45rem .6rem; border-bottom: 1px solid var(--border); }
+  th { color: var(--mut); font-weight: 600; font-size: .82rem; text-transform: uppercase; letter-spacing: .04em; }
+  td code { font-size: .85em; }
+  .warn { border-left: 3px solid #d29922; }
+  .note { border-left: 3px solid var(--acc); }
+  .muted { color: var(--mut); }
+  footer { margin-top: 3rem; color: var(--mut); font-size: .85rem; border-top: 1px solid var(--border); padding-top: 1rem; }
+  #vstatus { color: var(--mut); font-size: .9rem; }
+</style>
+</head>
+<body>
+<main>
+  <h1>php-build</h1>
+  <p class="tag">Debian packages of PHP for suites that <a href="https://packages.sury.org">packages.sury.org</a> no longer builds.</p>
+
+  <h2>What is this?</h2>
+  <p>
+    Sury stopped publishing packages for end-of-life Debian releases - the bullseye pool was deleted
+    upstream. This repository rebuilds the current PHP upstream releases with sury's own packaging
+    (from the bookworm source packages) inside clean containers of the target suite, and publishes the
+    result as a signed APT repository on GitHub Pages.
+  </p>
+  <p>
+    The package set is identical to what sury would have shipped: all SAPIs (cli, fpm, cgi, phpdbg,
+    embed, apache2, litespeed) and the full extension set. Runtime dependencies are pinned to the
+    distro's own libraries during the build, so the packages install on a plain bullseye/buster
+    system - no other third-party repository is required at install time.
+  </p>
+  <p>
+    Source and build pipeline: <a href="https://github.com/greensec/php-build">github.com/greensec/php-build</a>.
+  </p>
+
+  <h2>Installation</h2>
+  <p>Import the signing key and add the repository (replace <code>&lt;dist&gt;</code> with <code>bullseye</code> or <code>buster</code>):</p>
+<pre><code>curl -fsSL https://greensec.github.io/php-build/public.key \
+  | gpg --dearmor -o /etc/apt/keyrings/php-build.gpg
+
+echo "deb [signed-by=/etc/apt/keyrings/php-build.gpg] \
+https://greensec.github.io/php-build/repo &lt;dist&gt; main" \
+  &gt; /etc/apt/sources.list.d/php-build.list
+
+apt-get update
+apt-get install php8.4-cli php8.4-fpm   # or any php&lt;branch&gt;-&lt;ext&gt;</code></pre>
+  <p class="muted">
+    Equivalent helper: <a href="https://github.com/greensec/php-build/blob/main/add-repository.sh">add-repository.sh</a>.
+  </p>
+
+  <h2>Currently published</h2>
+  <p id="vstatus">Loading package index...</p>
+  <div id="versions"></div>
+  <p class="muted">
+    Per-branch build dates and fix notes: <a href="https://github.com/greensec/php-build/blob/main/VERSIONS.md">VERSIONS.md</a>.
+  </p>
+
+  <h2>Details</h2>
+  <div class="card">
+    <ul>
+      <li><strong>Architecture:</strong> amd64 only.</li>
+      <li><strong>Suites:</strong> bullseye (and buster once published); each suite is self-contained - plain Debian archive + this repo is enough to install.</li>
+      <li><strong>Version scheme:</strong> <code>&lt;upstream&gt;-&lt;debian-rev*1000+1&gt;~&lt;dist&gt;&lt;build-id&gt;</code>, e.g. <code>8.2.36-2001~bullseye20</code>. The trailing build id makes every rebuild of the same upstream version unique and upgradeable.</li>
+      <li><strong>Signing:</strong> dedicated GPG key, <a href="public.key">public.key</a> (also served as <a href="public.gpg">public.gpg</a>); <code>InRelease</code> is signed.</li>
+      <li><strong>Packaging source:</strong> unmodified sury <code>debian/</code> tree for the newest supported suite, plus the newest upstream security tarball.</li>
+      <li><strong>Builds:</strong> GitHub Actions on a self-hosted runner, reproducible via <code>workflow_dispatch</code>; EOL branches (5.6-8.1) can be rebuilt from <a href="https://github.com/remicollet/php-src-security">php-src-security</a> backports.</li>
+    </ul>
+  </div>
+
+  <div class="card warn">
+    <strong>Not affiliated.</strong> Unofficial rebuilds - not provided by Ondrej Sury, the Debian PHP team, or Debian security. If a dist-upgrade path exists for your hosts, prefer it; this repo is a bridge for systems that must stay on an EOL suite.
+  </div>
+
+  <div class="card note">
+    <strong>Mixing with sury.</strong> These packages supersede the stale sury copies cleanly (higher
+    version), and the repo can coexist with a sury mirror. It intentionally does <em>not</em> ship
+    sury's backported libraries (pcre2 10.40, libgd3 2.3.3, ...), so packages satisfy the distro's own
+    versions.
+  </div>
+
+  <footer>
+    Generated page for <a href="https://github.com/greensec/php-build">greensec/php-build</a> -
+    served from the <code>gh-pages</code> branch, synced from <code>site/</code> on main.
+  </footer>
+</main>
+
+<script>
+(async function () {
+  var DISTS = ["bullseye", "buster"];
+  var status = document.getElementById("vstatus");
+  var root = document.getElementById("versions");
+  var found = [];
+
+  for (var i = 0; i < DISTS.length; i++) {
+    var d = DISTS[i];
+    var url = "repo/dists/" + d + "/main/binary-amd64/Packages";
+    try {
+      var r = await fetch(url);
+      if (!r.ok) continue;
+      var text = await r.text();
+      var branches = {};
+      text.split(/\n\n/).forEach(function (st) {
+        var pkg = /^Package: (.+)$/m.exec(st);
+        var ver = /^Version: (.+)$/m.exec(st);
+        if (!pkg || !ver) return;
+        var m = /^php(\d+\.\d+)-/.exec(pkg[1]);
+        if (!m) return;
+        var b = "PHP " + m[1];
+        branches[b] = branches[b] || { version: ver[1], count: 0, pkgs: [] };
+        branches[b].count++;
+        branches[b].pkgs.push(pkg[1]);
+      });
+      found.push({ dist: d, branches: branches });
+    } catch (e) { /* index not published yet */ }
+  }
+
+  if (!found.length) {
+    status.textContent = "No package index reachable - the repository may not be published yet.";
+    return;
+  }
+  status.textContent = "";
+
+  found.forEach(function (f) {
+    var h = document.createElement("h3");
+    h.textContent = "debian " + f.dist;
+    root.appendChild(h);
+    var t = document.createElement("table");
+    t.innerHTML = "<tr><th>branch</th><th>version</th><th>binary packages</th></tr>";
+    Object.keys(f.branches).sort().forEach(function (b) {
+      var it = f.branches[b];
+      var tr = document.createElement("tr");
+      tr.innerHTML = "<td>" + b + "</td><td><code>" + it.version +
+        "</code></td><td>" + it.count + "</td>";
+      t.appendChild(tr);
+    });
+    root.appendChild(t);
+  });
+})();
+</script>
+</body>
+</html>
