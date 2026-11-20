@@ -57,8 +57,10 @@
   <p>
     The package set is identical to what sury would have shipped: all SAPIs (cli, fpm, cgi, phpdbg,
     embed, apache2, litespeed) and the full extension set. Runtime dependencies are pinned to the
-    distro's own libraries during the build, so the packages install on a plain bullseye/buster
-    system - no other third-party repository is required at install time.
+    distro's own libraries during the build - no sury packages are needed at install time. Builds
+    link against the <a href="https://www.freexian.com/lts/extended/">Freexian Extended LTS</a>
+    variants of those libraries where they exist, so hosts must have the ELTS repository configured
+    (it is also the only remaining source of base-system security fixes on these EOL suites).
   </p>
   <p>
     Source and build pipeline: <a href="https://github.com/greensec/php-build">github.com/greensec/php-build</a>.
@@ -76,7 +78,28 @@ https://greensec.github.io/php-build/repo &lt;dist&gt; main" \
 apt-get update
 apt-get install php8.4-cli php8.4-fpm   # or any php&lt;branch&gt;-&lt;ext&gt;</code></pre>
   <p class="muted">
-    Equivalent helper: <a href="https://github.com/greensec/php-build/blob/main/add-repository.sh">add-repository.sh</a>.
+    Equivalent helper: <a href="https://github.com/greensec/php-build/blob/main/add-repository.sh">add-repository.sh</a>
+    (sets up both this repo and the Freexian ELTS repo below).
+  </p>
+
+  <h3>Freexian Extended LTS (required)</h3>
+  <p>
+    Both buster and bullseye are end-of-life - Debian ships no more security updates for them.
+    The packages are built against
+    <a href="https://www.freexian.com/lts/extended/">Freexian Extended LTS</a> libraries, and hosts
+    need that repository anyway for base-system security fixes:
+  </p>
+<pre><code>curl -fsSL https://deb.freexian.com/extended-lts/archive-key.gpg \
+  -o /usr/share/keyrings/freexian-elts.gpg
+
+echo "deb [signed-by=/usr/share/keyrings/freexian-elts.gpg] \
+https://deb.freexian.com/extended-lts &lt;dist&gt;-lts main contrib non-free" \
+  &gt; /etc/apt/sources.list.d/freexian-elts.list
+
+apt-get update</code></pre>
+  <p class="muted">
+    The <code>&lt;dist&gt;-lts</code> suites carry only Freexian's security updates - they supplement,
+    not replace, the archive.debian.org sources.
   </p>
 
   <h2>Currently published</h2>
@@ -90,7 +113,7 @@ apt-get install php8.4-cli php8.4-fpm   # or any php&lt;branch&gt;-&lt;ext&gt;</
   <div class="card">
     <ul>
       <li><strong>Architecture:</strong> amd64 only.</li>
-      <li><strong>Suites:</strong> bullseye (and buster once published); each suite is self-contained - plain Debian archive + this repo is enough to install.</li>
+      <li><strong>Suites:</strong> bullseye and buster; each needs archive.debian.org + Freexian ELTS + this repo to install.</li>
       <li><strong>Version scheme:</strong> <code>&lt;upstream&gt;-&lt;debian-rev*1000+1&gt;~&lt;dist&gt;&lt;build-id&gt;</code>, e.g. <code>8.2.36-2001~bullseye20</code>. The trailing build id makes every rebuild of the same upstream version unique and upgradeable.</li>
       <li><strong>Signing:</strong> dedicated GPG key, <a href="public.key">public.key</a> (also served as <a href="public.gpg">public.gpg</a>); <code>InRelease</code> is signed.</li>
       <li><strong>Packaging source:</strong> unmodified sury <code>debian/</code> tree for the newest supported suite, plus the newest upstream security tarball.</li>
