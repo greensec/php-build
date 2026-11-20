@@ -213,6 +213,18 @@ else
     ./buildconf --force
     # quilt defaults to ./patches - debian keeps them in debian/patches
     export QUILT_PATCHES=debian/patches
+    # patches/<pkg>/pre.d/*.patch are applied with fuzz tolerance before the
+    # quilt loop - for big patches whose context drifted (openssl 1.1 compat
+    # on 5.6). The series twin is then dropped by the already-in-tree check.
+    if [ -d "$ROOT/patches/$PKG/pre.d" ]; then
+        for pp in "$ROOT/patches/$PKG/pre.d"/*.patch; do
+            [ -e "$pp" ] || continue
+            echo ">>> pre-applying $(basename "$pp")"
+            patch -p1 --fuzz=3 -f < "$pp"
+            find . -name '*.rej' -delete 2>/dev/null || true
+            find . -name '*.orig' -delete 2>/dev/null || true
+        done
+    fi
     # patches/<pkg>/series.drops lists series entries to remove before
     # pushing - for patches that still apply but duplicate code already in
     # the backports tree (e.g. 0197-backport-zend_string_efree on 7.1)
