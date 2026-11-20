@@ -1,0 +1,17 @@
+Codename: buster
+Date: Fri, 20 Nov 2026 15:44:31 UTC
+Architectures: amd64
+Components: main
+Description: greensec/php-build
+MD5Sum:
+ cc4fcc68d5aaefb8424f9e467b9b98e0 38390 main/binary-amd64/Packages
+ 2d98edcc893623cd126195fcfd0839ad 7376 main/binary-amd64/Packages.gz
+ c6ae360c4aadc68d3088ffb3af10b507 68 main/binary-amd64/Release
+SHA1:
+ 628edabecec3b2f26e5bd1fd630a9d33bf9960e5 38390 main/binary-amd64/Packages
+ 9a776bf5a1ba26d3db849ad5ead643caeac1969f 7376 main/binary-amd64/Packages.gz
+ ebefbce4f10dd822911a8f92724248d7d306b445 68 main/binary-amd64/Release
+SHA256:
+ d99cf93a591259e645462624da954e1a1c35edf966266b844497db1043844615 38390 main/binary-amd64/Packages
+ e41f144de0bd8e6fdc2a9a1cd5ace17a00c9cd26d6d10ae8e6392d3bccb91c5f 7376 main/binary-amd64/Packages.gz
+ c26d10b961eeda41e21dcb5126caaaefdc4d4289a635d2adc63ac2fefb8150a5 68 main/binary-amd64/Release
