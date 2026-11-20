@@ -4,10 +4,11 @@ on:
   workflow_dispatch:
     inputs:
       php_branch:
-        description: 'PHP branch'
+        description: 'PHP branch ("all" = every phpnet branch in conf/branches.map)'
         type: choice
         required: true
         options:
+          - 'all'
           - '8.2'
           - '8.3'
           - '8.4'
@@ -38,8 +39,35 @@ permissions:
   contents: write
 
 jobs:
+  branches:
+    runs-on: ubuntu-latest
+    outputs:
+      list: ${{ steps.list.outputs.branches }}
+    steps:
+      - uses: actions/checkout@v7
+      - id: list
+        run: |
+          if [ "${{ inputs.php_branch }}" = "all" ]; then
+            awk '$1 ~ /^[0-9]/ && $2 == "phpnet" {print $1}' conf/branches.map \
+              | jq -R . | jq -sc . >/tmp/branches.json
+          else
+            printf '["%s"]\n' "${{ inputs.php_branch }}" >/tmp/branches.json
+          fi
+          cat /tmp/branches.json
+          echo "branches=$(cat /tmp/branches.json)" >> "$GITHUB_OUTPUT"
+
   build:
-    name: "php${{ inputs.php_branch }} for ${{ inputs.dist }}"
+    needs: branches
+    name: "php${{ matrix.php_branch }} for ${{ inputs.dist }}"
+    strategy:
+      fail-fast: false
+      matrix:
+        php_branch: ${{ fromJSON(needs.branches.outputs.list) }}
+    # serialize builds - the runner fleet is one box and the publish step
+    # pushes to the same gh-pages branch
+    concurrency:
+      group: "php-build-${{ inputs.dist }}"
+      cancel-in-progress: false
     runs-on: [self-hosted, linux, x64]
     container:
       image: "debian:${{ inputs.dist }}"
@@ -68,15 +96,15 @@ jobs:
             cache
           # unique key per run = always save; restore-keys pulls the
           # latest ccache for this branch+dist
-          key: "${{ inputs.dist }}-php${{ inputs.php_branch }}-build-cache-${{ github.run_id }}"
+          key: "${{ inputs.dist }}-php${{ matrix.php_branch }}-build-cache-${{ github.run_id }}"
           restore-keys: |
-            "${{ inputs.dist }}-php${{ inputs.php_branch }}-build-cache-"
-            "${{ inputs.dist }}-php${{ inputs.php_branch }}-"
+            "${{ inputs.dist }}-php${{ matrix.php_branch }}-build-cache-"
+            "${{ inputs.dist }}-php${{ matrix.php_branch }}-"
 
       - name: Build package
         run: ./scripts/build.sh
         env:
-          PHP_BRANCH: ${{ inputs.php_branch }}
+          PHP_BRANCH: ${{ matrix.php_branch }}
           DIST: ${{ inputs.dist }}
           # keeps rebuilt versions unique for the repo publisher's dedupe
           BUILD_ID: ${{ github.run_number }}
@@ -87,12 +115,12 @@ jobs:
         with:
           path: |
             cache
-          key: "${{ inputs.dist }}-php${{ inputs.php_branch }}-build-cache-${{ github.run_id }}"
+          key: "${{ inputs.dist }}-php${{ matrix.php_branch }}-build-cache-${{ github.run_id }}"
 
       - name: Upload deb files
         uses: actions/upload-artifact@v7
         with:
-          name: "php${{ inputs.php_branch }}-${{ inputs.dist }}"
+          name: "php${{ matrix.php_branch }}-${{ inputs.dist }}"
           path: ./out/*.deb
 
       - name: Publish to gh-pages apt repo

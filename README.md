@@ -34,8 +34,9 @@ which still serves the last builds.
 ## Building
 
 GitHub Actions → `build php packages` → pick branch + dist, tick
-`release` to publish to gh-pages. Artifact-only runs leave the .debs as
-a workflow artifact.
+`release` to publish to gh-pages. Choosing `all` fans out to one matrix
+job per `phpnet` branch from `conf/branches.map` (serialized on the
+runner). Artifact-only runs leave the .debs as a workflow artifact.
 
 Locally:
 
@@ -50,8 +51,6 @@ PHP_BRANCH=8.2 DIST=bullseye ./scripts/build.sh
 newer release than the repo carries for any `phpnet` branch.
 
 ## Patches and packaging overlays
-
-Same conventions as `nagios-nrpe-server-ap`:
 
 - `patches/<pkg>/*.patch` - appended to `debian/patches/series` of the
   fetched source before building (`legacy_*` files only apply when a
