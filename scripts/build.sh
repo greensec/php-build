@@ -216,7 +216,9 @@ base_ver=$(dpkg-parsechangelog -SVersion)
 up_ver=${base_ver%%-*}
 rev=${base_ver#*-}
 rev_num=${rev%%[^0-9]*}
-new_ver="${up_ver}-$((10#${rev_num:-0}*1000+1))~${DIST}1"
+# BUILD_ID keeps rebuilt versions unique - the publisher dedupes by
+# version+filename, so rebuilding the same upstream needs a bump anyway
+new_ver="${up_ver}-$((10#${rev_num:-0}*1000+1))~${DIST}${BUILD_ID:-1}"
 dch -b -v "$new_ver" "Rebuild of ${base_ver} for ${DIST} (greensec php-build)."
 
 # -g would only be stripped again by dh_strip (noautodbgsym) - compiling
