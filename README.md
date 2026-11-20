@@ -1,8 +1,8 @@
 # php-build
 
 PHP packages for suites [sury](https://packages.sury.org/php/) stopped
-building (currently: **Debian bullseye, amd64**), published as an apt
-repository via GitHub Pages:
+building (currently: **Debian buster + bullseye, amd64**), published as
+an apt repository via GitHub Pages:
 
 ```
 deb [signed-by=/usr/share/keyrings/greensec-php-build.key arch=amd64] \
@@ -11,6 +11,25 @@ deb [signed-by=/usr/share/keyrings/greensec-php-build.key arch=amd64] \
 
 `./add-repository.sh` on a host wires it up (or let the ansible
 `repositories` role manage it).
+
+## Freexian Extended LTS required
+
+Both dists are EOL - Debian publishes no more security updates for them.
+Our builds link against the libraries from
+[Freexian Extended LTS](https://www.freexian.com/lts/extended/) (`o=Freexian`
+variants take precedence over the frozen archive ones), so hosts **must
+have the ELTS repo configured** to satisfy runtime dependencies and keep
+receiving base-system fixes:
+
+```
+wget -O /usr/share/keyrings/freexian-elts.gpg \
+    https://deb.freexian.com/extended-lts/archive-key.gpg
+echo "deb [signed-by=/usr/share/keyrings/freexian-elts.gpg] \
+    https://deb.freexian.com/extended-lts $(. /etc/os-release; echo "$VERSION_CODENAME")-lts \
+    main contrib non-free" >/etc/apt/sources.list.d/freexian-elts.list
+```
+
+`./add-repository.sh` sets this up automatically alongside our repo.
 
 ## How it works
 
@@ -43,7 +62,8 @@ Locally:
 ```sh
 docker build -f docker/Dockerfile.bullseye -t php-build-bullseye .
 docker run --rm -v "$PWD:/php-build" -e PHP_BRANCH=8.2 -e DIST=bullseye php-build-bullseye
-# or directly on a bullseye host:
+# (docker/Dockerfile.buster + DIST=buster for buster)
+# or directly on a matching host:
 PHP_BRANCH=8.2 DIST=bullseye ./scripts/build.sh
 ```
 

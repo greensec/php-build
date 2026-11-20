@@ -1,6 +1,9 @@
 #!/bin/sh
 # Adds the greensec php-build apt repository.
-# Currently ships bullseye (amd64) PHP packages rebuilt from sury sources.
+# Ships buster + bullseye (amd64) PHP packages rebuilt from sury sources.
+# Both dists are EOL: Debian publishes no more security updates, so the
+# Freexian Extended LTS repository is configured as well - it carries the
+# remaining base-system security fixes the PHP builds link against.
 
 set -eu
 
@@ -21,11 +24,11 @@ else
 fi
 
 case "${DISTRO_ID}:${CODENAME}" in
-    debian:bullseye)
+    debian:bullseye|debian:buster)
         ;;
     *)
         echo "Unsupported distribution: ${DISTRO_ID}:${CODENAME}"
-        echo "This repository currently only ships debian:bullseye (amd64)."
+        echo "This repository currently only ships debian:bullseye and debian:buster (amd64)."
         exit 1
         ;;
 esac
@@ -36,6 +39,13 @@ SOURCE_NAME=greensec-php-build
 ${SUDO} apt-get update
 ${SUDO} apt-get -y install ca-certificates wget
 ${SUDO} wget -O "${KEYRING}" https://greensec.github.io/php-build/public.key
+
+# Freexian Extended LTS - security updates for the EOL base system.
+ELTS_KEYRING=/usr/share/keyrings/freexian-elts.gpg
+${SUDO} wget -O "${ELTS_KEYRING}" https://deb.freexian.com/extended-lts/archive-key.gpg
+${SUDO} tee /etc/apt/sources.list.d/freexian-elts.list >/dev/null <<EOF
+deb [signed-by=${ELTS_KEYRING}] https://deb.freexian.com/extended-lts ${CODENAME}-lts main contrib non-free
+EOF
 
 if [ -f "/etc/apt/sources.list.d/${DISTRO_ID}.sources" ]; then
     ${SUDO} rm -f "/etc/apt/sources.list.d/${SOURCE_NAME}.list"

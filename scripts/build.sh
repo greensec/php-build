@@ -117,6 +117,20 @@ EOF
         ;;
 esac
 
+# Freexian Extended LTS carries the only remaining security updates for these
+# EOL dists. Build against its patched library variants so runtime deps can
+# resolve against the securer packages. The ${DIST}-lts suites are partial
+# (security updates only) - the archive lines above still provide the base.
+case "$DIST" in
+    buster|bullseye)
+        curl -fsSL https://deb.freexian.com/extended-lts/archive-key.gpg \
+            -o /etc/apt/keyrings/freexian-elts.gpg
+        cat >/etc/apt/sources.list.d/freexian-elts.list <<EOF
+deb [signed-by=/etc/apt/keyrings/freexian-elts.gpg] https://deb.freexian.com/extended-lts ${DIST}-lts main contrib non-free
+EOF
+        ;;
+esac
+
 # sury backports a few libraries for DIST (pcre2, gd, xml2 - only ones in the
 # mirror pool that outrank the distro). Building against them would leak
 # Depends: entries (e.g. libpcre2-8-0 >= 10.38) that plain DIST cannot
@@ -125,6 +139,12 @@ esac
 cat >/etc/apt/preferences.d/php-build-distro-libs.pref <<'EOF'
 Package: libpcre2-8-0 libpcre2-16-0 libpcre2-32-0 libpcre2-posix2 libpcre2-dev libgd3 libgd-dev libxml2 libxml2-dev libxml2-utils
 Pin: release o=Debian
+Pin-Priority: 1001
+
+# Freexian continues the distro version lineage with security fixes; same
+# priority so the higher (patched) version wins over the frozen archive.
+Package: libpcre2-8-0 libpcre2-16-0 libpcre2-32-0 libpcre2-posix2 libpcre2-dev libgd3 libgd-dev libxml2 libxml2-dev libxml2-utils
+Pin: release o=Freexian
 Pin-Priority: 1001
 EOF
 apt-get update -qq

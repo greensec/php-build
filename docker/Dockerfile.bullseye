@@ -9,6 +9,12 @@ RUN sed -i -e '/bullseye-updates/d' -e '/bullseye-backports/d' \
  && apt-get update -qq && apt-get install -y --no-install-recommends \
     build-essential devscripts quilt dpkg-dev equivs ca-certificates \
     curl xz-utils git gnupg rsync locales-all tzdata \
+ && install -m0755 -d /etc/apt/keyrings \
+ && curl -fsSL https://deb.freexian.com/extended-lts/archive-key.gpg \
+        -o /etc/apt/keyrings/freexian-elts.gpg \
+ && echo "deb [signed-by=/etc/apt/keyrings/freexian-elts.gpg] https://deb.freexian.com/extended-lts bullseye-lts main contrib non-free" \
+        >/etc/apt/sources.list.d/freexian-elts.list \
+ && apt-get update -qq \
  && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /php-build
