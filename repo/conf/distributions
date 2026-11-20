@@ -1,11 +1,11 @@
 Description: greensec/php-build
-Codename: bullseye
+Codename: buster
 Architectures: amd64
 Components: main
 SignWith: 913D23342459EED342AA7C06B6FC89BCBDD49336
 
 Description: greensec/php-build
-Codename: buster
+Codename: bullseye
 Architectures: amd64
 Components: main
 SignWith: 913D23342459EED342AA7C06B6FC89BCBDD49336
