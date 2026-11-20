@@ -43,6 +43,8 @@ jobs:
     runs-on: [self-hosted, linux, x64]
     container:
       image: "debian:${{ inputs.dist }}"
+      # tmpfs workdir for the build tree (runner has 125G RAM)
+      options: --shm-size=32g
     steps:
       - name: Point EOL suites at archive.debian.org
         if: inputs.dist == 'bullseye'

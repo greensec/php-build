@@ -66,6 +66,9 @@ apt-get install -y --no-install-recommends \
 # ccache lives inside the checkout so actions/cache can persist it
 export PATH="/usr/lib/ccache:$PATH"
 export CCACHE_DIR="${CCACHE_DIR:-$ROOT/cache/ccache}"
+# the build dir is a fresh mktemp every run - keep cache keys independent
+# of paths and mtimes
+export CCACHE_NOHASHDIR=1 CCACHE_COMPILERCHECK=content
 mkdir -p "$CCACHE_DIR"
 
 install -m0755 -d /etc/apt/keyrings
@@ -173,6 +176,16 @@ if [ -n "${missing}" ]; then
     dpkg-checkbuilddeps   # fail loudly if anything is still unmet
 fi
 
+# per-package or generic prepare hook (runs inside the source tree)
+for hook in "$ROOT/prepare/$PKG.sh" "$ROOT/prepare/all.sh"; do
+    if [ -e "$hook" ]; then
+        echo ">>> running prepare hook $(basename "$hook")"
+        cp "$hook" debian/prepare.sh
+        bash ./debian/prepare.sh
+        break
+    fi
+done
+
 # repo-local patches appended to the quilt series
 if [ -d "$ROOT/patches/$PKG" ]; then
     for x in "$ROOT/patches/$PKG"/*; do
@@ -195,6 +208,9 @@ rev_num=${rev%%[^0-9]*}
 new_ver="${up_ver}-$((10#${rev_num:-0}*1000+1))~${DIST}1"
 dch -b -v "$new_ver" "Rebuild of ${base_ver} for ${DIST} (greensec php-build)."
 
+# -g would only be stripped again by dh_strip (noautodbgsym) - compiling
+# without it is ~10-15% faster and produces identical .debs
+export DEB_CFLAGS_STRIP="-g -g3 -ggdb" DEB_CXXFLAGS_STRIP="-g -g3 -ggdb"
 DEB_BUILD_OPTIONS="noautodbgsym nocheck nodocs" \
     dpkg-buildpackage -j"$(nproc)" -d -us -uc -b
 
