@@ -383,7 +383,17 @@ DEB_BUILD_OPTIONS="noautodbgsym nocheck nodocs" \
 echo ">>> building php-defaults for $DIST"
 mkdir -p "$WORKDIR/defaults"
 cd "$WORKDIR/defaults"
-apt-get source "php-defaults/${SRC_DIST}"
+# sury prunes pool files aggressively - fall back across suites like the
+# main source fetch (the Ubuntu PPA keeps its sources around)
+got_defaults=""
+for suite in "$SRC_DIST" "$PPA_SUITE" "$DIST"; do
+    if apt-get source "php-defaults/${suite}" 2>/dev/null; then
+        got_defaults=1
+        echo ">>> php-defaults source: $suite"
+        break
+    fi
+done
+[ -n "$got_defaults" ] || { echo "ERROR: no php-defaults source in $SRC_DIST, $PPA_SUITE or $DIST" >&2; exit 1; }
 cd php-defaults-*/
 dch -b -l "~${DIST}" "Rebuild for ${DIST} (greensec php-build)."
 dpkg-buildpackage -b -d -us -uc
