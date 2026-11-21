@@ -12,6 +12,7 @@ base-system security fixes and our builds link against its libraries.
 
 | branch | version | built | fixes |
 |---|---|---|---|
+| 8.6 | 8.6.0-2001~bullseye77 | 2026-11-21 | current upstream |
 | 8.5 | 8.5.13-2001~bullseye1 | 2026-11-20 | 16 CVEs: RCE, PHP-FPM privilege escalation, request smuggling, signature bypass, information disclosure, DoS |
 | 8.4 | 8.4.28-2001~bullseye1 | 2026-11-20 | same synchronized security batch |
 | 8.3 | 8.3.37-2001~bullseye1 | 2026-11-20 | same synchronized security batch |
